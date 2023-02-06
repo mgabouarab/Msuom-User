@@ -1,0 +1,35 @@
+/* 
+  HelperLocalizable.strings
+
+ //  Created by MGAbouarab®
+  
+*/
+
+"Pick Image" = "اختر صورة";
+"Pick Video" = "التقط فيديو";
+"Camera" = "الكاميرا";
+"Gallery" = "معرض الصور";
+"Cancel" = "الغاء";
+ "Reloading..." = "جاري التحميل...";
+ "Your are not login" = "لم تقم بتسجيل الدخول";
+ "No Notifications Found" = "لا توجد إشعارات";
+ "Start logging into your account with us" = "قم بتسجيل الدخول";
+ "Login" = "تسجيل الدخول";
+
+
+
+"Try again" = "حاول مرة أخرى";
+"Delete" = "حذف";
+"Logout" = "تسجيل خروج";
+"Login" = "تسجيل الدخول";
+"Refuse" = "رفض";
+"Please check your connection" = "يرجى التحقق من اتصالك";
+"Do you Need to delete this account?" = "هل تريد حذف هذا الحساب؟";
+"Do you Need to delete this Item?" = "هل تريد حذف هذا العنصر؟";
+"Are you sure you want to logout?" = "هل أنت متأكد أنك تريد تسجيل الخروج؟";
+"You should login first" = "يجب عليك تسجيل الدخول أولا";
+"Are you sure to refuse?" = "هل أنت متأكد من الرفض؟";
+
+"Do you Need to delete your account?" = "هل تريد حذف الحساب؟";
+
+"No Data Found" = "لا يوجد بيانات";

@@ -1,0 +1,103 @@
+/* 
+  ValidationLocalized.strings
+
+ //  Created by MGAbouarab®
+  
+*/
+
+//MARK: - Name -
+"Please enter first name." = "Please enter first name.";
+"First name is too short." = "First name is too short.";
+"First name is too long." = "First name is too long.";
+"Please enter last name." = "Please enter last name.";
+"Last name is too short." = "Last name is too short.";
+"Last name is too long." = "Last name is too long.";
+"Please enter family name." = "Please enter family name.";
+"Family name is too short." = "Family name is too short.";
+"Family name is too long." = "Family name is too long.";
+"Please enter full name." = "Please enter full name.";
+"Full name is too short." = "Full name is too short.";
+"Full name is too long." = "Full name is too long.";
+"Please enter name." = "Please enter name.";
+"Name is too short." = "Name is too short.";
+"Name is too long." = "Name is too long.";
+"Please enter store arabic name." = "Please enter store arabic name.";
+"Store arabic name is too short." = "Store arabic name is too short.";
+"Store arabic name is too long." = "Store arabic name is too long.";
+
+//MARK: - Phone -
+"Please enter your phone number." = "Please enter your phone number.";
+"Please enter correct phone number." = "Please enter correct phone number.";
+"Please enter correct whatsApp number." = "Please enter correct whatsApp number.";
+
+//MARK: - Verification Code -
+"Please enter verification code" = "Please enter verification code";
+"Verification Code should be 6 digits." = "Verification Code should be 6 digits.";
+
+//MARK: - Email -
+"Please enter email field." = "Please enter email field.";
+"Please enter correct email address." = "Please enter correct email address.";
+
+//MARK: - Passwords -
+"Please enter password field." = "Please enter password field.";
+"Password is too short, it should be 6 characters at least." = "Password is too short, it should be 6 characters at least.";
+"Please enter new password field." = "Please enter new password field.";
+"New password is too short, it should be 6 characters at least." = "New password is too short, it should be 6 characters at least.";
+"Please enter old password field." = "Please enter old password field.";
+"Old password is too short, it should be 6 characters at least." = "Old password is too short, it should be 6 characters at least.";
+"Please enter confirm new password field." = "Please enter confirm new password field.";
+"Please enter confirm password field." = "Please enter confirm password field.";
+"Passwords not match." = "Passwords not match.";
+"Please read and agree our terms and conditions first" = "Please read and agree our terms and conditions first";
+
+//MARK: - Locations -
+"Please select country." = "Please select country.";
+"Please select governorate" = "Please select governorate";
+"Please select city." = "Please select city.";
+"Please select the floor" = "Please select the floor";
+"Please select area." = "Please select area.";
+"Please enter street name." = "Please enter street name.";
+"Please enter address type." = "Please enter address type.";
+"Please select the location." = "Please select the location.";
+"Please write address details" = "Please write address details";
+
+//MARK: - Images -
+"Please pick cover picture." = "Please pick cover picture.";
+"Please pick your profile picture." = "Please pick your profile picture.";
+"Please pick license picture." = "Please pick license picture.";
+"Please pick product image." = "Please pick product image.";
+
+//MARK: - Cars -
+"Please pick car picture" = "Please pick car picture";
+"Please enter car palet." = "Please enter car palet.";
+"Please select car model." = "Please select car model.";
+"Please Select car type." = "Please Select car type.";
+
+//MARK: - Date -
+"Please enter the age." = "Please enter the age.";
+"If it is your age, please grow up first =D." = "If it is your age, please grow up first =D.";
+"Please selecte older date." = "Please selecte older date.";
+"Please selecte newer date." = "Please selecte newer date.";
+"Please select the date." = "Please select the date.";
+
+//MARK: - Message -
+"You Must Send Subject Title" = "You Must Send Subject Title";
+"Please enter your message" = "Please enter your message";
+"Please enter title type" = "Please enter title type";
+
+//MARK: - Bank -
+"Please enter bank account holder name" = "Please enter bank account holder name";
+"Please enter bank name" = "Please enter bank name";
+"Please select bank transfer image" = "Please select bank transfer image";
+"Please enter from bank name" = "Please enter from bank name";
+"Please enter bank account number" = "Please enter bank account number";
+
+//MARK: - category -
+"Please Select category" = "Please Select category";
+"Please enter price before" = "Please enter price before";
+"Please enter price after" = "Please enter price after";
+"price before is smaller than price after" = "price before is smaller than price after";
+"Please enter description" = "Please enter description";
+
+"Please select the topic" = "Please select the topic";
+"Please select the inquiry" = "Please select the inquiry";

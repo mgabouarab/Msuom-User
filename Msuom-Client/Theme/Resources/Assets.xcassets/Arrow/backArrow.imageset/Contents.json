@@ -1,0 +1,47 @@
+{
+  "images" : [
+    {
+      "filename" : "backArrowEn.png",
+      "idiom" : "universal",
+      "language-direction" : "left-to-right",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "backArrowAr.png",
+      "idiom" : "universal",
+      "language-direction" : "right-to-left",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "backArrowEn@2x.png",
+      "idiom" : "universal",
+      "language-direction" : "left-to-right",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "backArrowAr@2x.png",
+      "idiom" : "universal",
+      "language-direction" : "right-to-left",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "backArrowEn@3x.png",
+      "idiom" : "universal",
+      "language-direction" : "left-to-right",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "backArrowAr@3x.png",
+      "idiom" : "universal",
+      "language-direction" : "right-to-left",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "original"
+  }
+}

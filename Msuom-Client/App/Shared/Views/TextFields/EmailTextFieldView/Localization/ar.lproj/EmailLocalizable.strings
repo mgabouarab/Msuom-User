@@ -1,0 +1,10 @@
+/* 
+  EmailLocalizable.strings
+  Msuom
+
+  Created by MGAbouarab on 23/10/2022.
+  
+*/
+
+"E-mail Address" = "البريد الإلكتروني";
+"Please enter your e-mail address" = "الرجاء إدخال البريد الإلكتروني";

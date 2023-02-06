@@ -1,0 +1,106 @@
+/* 
+  ValidationLocalized.strings
+
+ //  Created by MGAbouarab®
+  
+*/
+
+//MARK: - Name -
+"Please enter first name." = "الرجاء إدخال الاسم الأول.";
+"First name is too short." = "الاسم الأول قصير جدًا.";
+"First name is too long." = "الاسم الأول طويل جدًا.";
+"Please enter last name." = "الرجاء إدخال الاسم الأخير.";
+"Last name is too short." = "الاسم الأخير قصير جدًا.";
+"Last name is too long." = "الاسم الأخير طويل جدًا.";
+"Please enter family name." = "الرجاء إدخال اسم العائلة.";
+"Family name is too short." = "اسم العائلة قصير جدا.";
+"Family name is too long." = "اسم العائلة طويل جدًا.";
+"Please enter full name." = "الرجاء إدخال الاسم الكامل.";
+"Full name is too short." = "الاسم الكامل قصير جدا.";
+"Full name is too long." = "الاسم الكامل طويل جدًا.";
+"Please enter name." = "الرجاء إدخال الاسم.";
+"Name is too short." = "الإسم قصير جدا.";
+"Name is too long." = "الاسم طويل جدا.";
+"Please enter store arabic name." = "الرجاء إدخال اسم المتجر بالعربية.";
+"Store arabic name is too short." = "اسم المتجر بالعربية قصير جدًا.";
+"Store arabic name is too long." = "الاسم بالعربية طويل جدًا للمتجر.";
+"Please enter store english name." = "الرجاء إدخال اسم المتجر بالانجليزية.";
+"Store english name is too short." = "اسم المتجر بالانجليزية قصير جدًا.";
+"Store english name is too long." = "الاسم بالانجليزية طويل جدًا للمتجر.";
+
+//MARK: - Phone -
+"Please enter your phone number." = "يرجى إدخال رقم الجوال الخاص بك.";
+"Please enter correct phone number." = "الرجاء إدخال رقم جوال صحيح.";
+"Please enter correct whatsApp number." = "الرجاء إدخال رقم واتساب صحيح.";
+
+//MARK: - Verification Code -
+"Please enter verification code" = "الرجاء إدخال رمز التحقق";
+"Verification Code should be 6 digits." = "يجب أن يتكون رمز التحقق من 6 أرقام.";
+
+//MARK: - Email -
+"Please enter email field." = "الرجاء إدخال حقل البريد الإلكتروني.";
+"Please enter correct email address." = "رجاء، أدخل عنوان البريد الإلكتروني صحيح.";
+
+//MARK: - Passwords -
+"Please enter password field." = "الرجاء إدخال حقل كلمة المرور.";
+"Password is too short, it should be 6 characters at least." = "كلمة المرور قصيرة جدًا ، يجب أن تتكون من 6 أحرف على الأقل.";
+"Please enter new password field." = "الرجاء إدخال حقل كلمة المرور الجديدة.";
+"New password is too short, it should be 6 characters at least." = "كلمة المرور الجديدة قصيرة جدًا ، يجب أن تتكون من 6 أحرف على الأقل.";
+"Please enter old password field." = "الرجاء إدخال حقل كلمة المرور القديمة.";
+"Old password is too short, it should be 6 characters at least." = "كلمة المرور القديمة قصيرة جدًا ، يجب أن تتكون من 6 أحرف على الأقل.";
+"Please enter confirm new password field." = "الرجاء إدخال حقل تأكيد كلمة المرور الجديدة.";
+"Please enter confirm password field." = "الرجاء إدخال حقل تأكيد كلمة المرور.";
+"Passwords not match." = "كلمات المرور غير متطابقة.";
+"Please read and agree our terms and conditions first" = "يرجى قراءة البنود والشروط الخاصة بنا والموافقة عليها أولاً";
+
+//MARK: - Locations -
+"Please select country." = "الرجاء تحديد الدولة.";
+"Please select governorate" = "الرجاء تحديد المحافظة";
+"Please select city." = "الرجاء تحديد المدينة.";
+"Please select the floor" = "الرجاء تحديد الطابق";
+"Please select area." = "الرجاء تحديد المنطقة.";
+"Please enter street name." = "الرجاء إدخال اسم الشارع.";
+"Please enter address type." = "الرجاء إدخال نوع العنوان.";
+"Please select the location." = "الرجاء تحديد الموقع.";
+"Please write address details" = "الرجاء كتابة تفاصيل العنوان";
+
+//MARK: - Images -
+"Please pick cover picture." = "الرجاء اختيار صورة الغلاف.";
+"Please pick your profile picture." = "يرجى اختيار صورة ملفك الشخصي.";
+"Please pick license picture." = "الرجاء اختيار صورة الترخيص.";
+"Please pick product image." = "الرجاء اختيار صورة المنتج.";
+
+//MARK: - Cars -
+"Please pick car picture" = "الرجاء اختيار صورة السيارة";
+"Please enter car palet." = "الرجاء إدخال رقم لوحة السيارة.";
+"Please select car model." = "الرجاء تحديد طراز السيارة.";
+"Please Select car type." = "الرجاء تحديد نوع السيارة.";
+
+//MARK: - Date -
+"Please enter the age." = "الرجاء إدخال العمر.";
+"If it is your age, please grow up first =D." = "إذا كان هذا هو عمرك ، فالرجاء أن تكبر أولاً.";
+"Please select older date." = "يرجى تحديد تاريخ أقدم.";
+"Please select newer date." = "الرجاء تحديد تاريخ أحدث.";
+"Please select the date." = "الرجاء تحديد التاريخ.";
+
+//MARK: - Message -
+"You Must Send Subject Title" = "يجب عليك إرسال عنوان الموضوع";
+"Please enter your message" = "أدرج رسالتك من فضلك";
+"Please enter title type" = "الرجاء إدخال نوع العنوان";
+
+//MARK: - Bank -
+"Please enter bank account holder name" = "الرجاء إدخال اسم صاحب الحساب المصرفي";
+"Please enter bank name" = "الرجاء إدخال اسم البنك";
+"Please select bank transfer image" = "الرجاء تحديد صورة التحويل المصرفي";
+"Please enter from bank name" = "الرجاء إدخال من اسم البنك";
+"Please enter bank account number" = "الرجاء إدخال رقم الحساب المصرفي";
+
+//MARK: - category -
+"Please Select category" = "الرجاء تحديد القسم";
+"Please enter price before" = "الرجاء إدخال السعر قبل";
+"Please enter price after" = "الرجاء إدخال السعر بعد";
+"price before is smaller than price after" = "السعر قبل أقل من السعر بعد";
+"Please enter description" = "الرجاء إدخال الوصف";
+
+"Please select the topic" = "الرجاء اختيار الموضوع";
+"Please select the inquiry" = "الرجاء اختيار نوع الإستعلام";

@@ -1,0 +1,14 @@
+/* 
+  InfoPlist.strings
+
+ Created by MGAbouarab®
+  
+*/
+
+"CFBundleDisplayName" = "مسيوم";
+"NSCameraUsageDescription" = "to pick your order picture";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "to get nearest estates around you";
+"NSLocationAlwaysUsageDescription" = "to get nearest estates around you";
+"NSLocationWhenInUseUsageDescription" = "to get nearest estates around you";
+"NSPhotoLibraryUsageDescription" = "to pick your order picture";
+"NSMicrophoneUsageDescription" = "to send voice messages";

@@ -1,0 +1,31 @@
+/* 
+  HelperLocalizable.strings
+
+    Created by MGAbouarab®
+  
+*/
+
+"Pick Image" = "Pick Image";
+"Pick Video" = "Pick Video";
+"Camera" = "Camera";
+"Gallery" = "Gallery";
+"Cancel" = "Cancel";
+"Reloading..." = "Reloading...";
+"Your are not login" = "Your are not login";
+"No Notifications Found" = "No Notifications Found";
+"Start logging into your account with us" = "Start logging into your account with us";
+"Login" = "Login";
+
+
+"Try again" = "Try again";
+"Delete" = "Delete";
+"Logout" = "Logout";
+"Login" = "Login";
+"Refuse" = "Refuse";
+"Please check your connection" = "Please check your connection";
+"Do you Need to delete this account?" = "Do you Need to delete this account?";
+"Are you sure you want to logout?" = "Are you sure you want to logout?";
+"You should login first" = "You should login first";
+"Are you sure to refuse?" = "Are you sure to refuse?";
+
+"No Data Found" = "No Data Found";

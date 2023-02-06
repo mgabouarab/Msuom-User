@@ -1,0 +1,270 @@
+/* 
+  Localizable.strings
+
+ Created by MGAbouarab®
+  
+*/
+
+
+"Verification Code" = "كود التحقق";
+"Please enter verification code" = "الرجاء ادخال رمز التحقق";
+
+
+"Open With" = "فتح بواسطة";
+"Cancel" = "الغاء";
+"Maps" = "الخرائط";
+"Google Maps" = "خرائط جوجل";
+
+"Done" = "تم";
+"Next" = "التالى";
+"Start" = "إبدأ تجربتك الان";
+"Skip" = "تخطى";
+"Home" = "الرئيسة";
+"Auctions" = "المزادات";
+"Notifications" = "الإشعارات";
+"Cars" = "السيارات";
+"My Account" = "حسابي";
+"Confirm" = "تأكيد";
+"App Language" = "لغة التطبيق";
+"Welcome" = "مرحبا بك";
+"Please select the language" = "من فضلك قم بتحديد اللغة التي تريدها";
+"Define specialization" = "تحديد التخصص";
+"There are many specialties that suit you. Select the specialty and send your request with ease." = "يوجد العديد من التخصصات التي تناسبك حدد التخصص وارسل طلبك بكل سهولة";
+"Receiving quotations" = "استقبال عروض الأسعار";
+"After sending your order, quotations will be sent as soon as possible" = "بعد ارسال الطلب الخاص بك بيتم إرسال عروض الأسعار في أسرع وقت";
+"Contact with the Lawyer" = "التواصل مع المحامي";
+"You can contact your attorney after the quote is approved." = "يمكنك التواصل مع المحامي الخاص بك بعد الموافقة على عرض السعر";
+"Please enter password" = "الرجاء ادخال كلمة المرور";
+"Password" = "كلمة المرور";
+"Welcome" = "مرحبا بك";
+"Start logging in to your account" = "باشر بتسجيل الدخول لحسابك";
+"Forget Password?" = "هل نسيت كلمة المرور؟";
+"Login" = "تسجيل دخول";
+"Don't have account?" = "ليس لديك حساب؟";
+"Register New" = "تسجيل جديد";
+"Please fill in the following information to join us" = "برجاء تعبئة البيانات التالية للانضمام إلينا";
+"Username" = "إسم المستخدم";
+"Please enter username" = "الرجاء ادخال إسم المستخدم";
+"Confirm Password" = "تأكيد كلمة المرور";
+"Please enter confirm password" = "الرجاء ادخال تأكيد كلمة المرور";
+"Have an account?" = "هل لديك حساب؟";
+"Activation code" = "كود التفعيل";
+"Please enter the activation code sent to you via mobile" = "برجاء ادخال كود التفعيل المرسل إليك عبر الجوال";
+"You haven't received the code yet?" = "لم تستلم الكود بعد؟";
+"Resend the code" = "أعد إرسال الكود";
+"Resend" = "إعادة إرسال";
+"Resend after" = "إعادة إرسال بعد";
+"Register" = "إنشاء حساب";
+"Forget Password" = "نسيت كلمة المرور";
+"Continue" = "متابعة";
+
+
+
+//MARK: - More -
+"More" = "المزيد";
+
+"Account Info" = "معلومات حسابى";
+"Profile" = "الملف الشخصى";
+
+"General Settings" = "إعدادات عامة";
+"Language Settings" = "إعدادات اللغة";
+
+
+"General Info" = "معلومات عامة";
+"About Msuom" = "عن مسيوم";
+"FQA" = "الأسئلة الشائعة";
+"Contact us" = "تواصل معنا";
+"Privacy Policy" = "سياسية الخصوصية";
+"Terms and Conditions" = "الشروط و الاحكام";
+
+
+"Delete Account" = "حذف الحساب";
+"Logout" = "تسجيل خروج";
+
+"Message" = "الرسالة";
+"Please write a message" = "برجاء كتابة الرسالة";
+
+"Current Password" = "كلمة المرور الحالية";
+"Please enter the password" = "الرجاء ادخال كلمة المرور";
+
+"New Password" = "كلمة المرور الجديدة";
+"Please enter the password" = "الرجاء ادخال كلمة المرور";
+
+"Confirm the new password" = "تأكيد كلمة المرور الجديدة";
+"Please enter the password" = "الرجاء ادخال كلمة المرور";
+
+"Saving changes" = "حفظ التغييرات";
+"Change password" = "تغيير كلمة المرور";
+
+"Please enter New password" = "الرجاء ادخال كلمة المرور الجديدة";
+"Please enter Confirm password" = "الرجاء ادخال كلمة المرور الجديدة";
+
+"Next Auctions" = "المزادات القادمة";
+"Recent added cars" = "أخر السيارات المضافة";
+"See all" = "عرض الكل";
+"Cash price:" = "سعر الكاش:";
+"How to sell:" = "كيفية البيع:";
+"Live" = "بث مباشر";
+"Auction Number" = "مزاد رقم";
+"Start at" = "يبدأ في";
+"Please select the vehicle type first" = "يرجي تحديد نوع السيارة أولاً";
+"Advertisement" = "إعلان";
+"Auction" = "مزاد";
+"Find what you want" = "ابحث عن ما تريد";
+"Notifications" = "الإشعارات";
+"Search" = "البحث";
+
+
+
+///////////////////////// Cars /////////////////////
+"Add Car" = "إضافة سيارة";
+
+"Purchasing price" = "سعر الشراء";
+"Please enter the purchase price" = "يرجي ادخال سعر الشراء";
+
+"Brand" = "الماركة";
+"Choose the brand" = "اختر الماركة";
+
+"Vehicle Type" = "نوع السيارة";
+"Choose the type of vehicle" = "اختر نوع السيارة";
+
+"Vehicle class" = "فئة السيارة";
+"Choose the vehicle class" = "اختر فئة السيارة";
+
+"Year" = "السنة";
+"Choose the year" = "يرجي ادخال سنة الصنع";
+
+"Specifications" = "المواصفات";
+"Choose specifications" = "اختر المواصفات";
+
+"Incoming" = "الوارد";
+"Choose incoming" = "اختر الوارد";
+
+"Color" = "اللون";
+"Choose the color" = "اختر اللون";
+
+"Vehicle drive type" = "نوع الدفع";
+"Choose the type of vehicle drive" = "اختر نوع الدفع";
+
+"Fuel type" = "نوع الوقود";
+"Choose the type of fuel" = "اختر نوع الوقود";
+
+"Asphalt type" = "نوع القير";
+"Choose the type of asphalt" = "اختر نوع القير";
+
+"Status" = "الحالة";
+"Choose status" = "اختر الحالة";
+
+"The number of cylinders" = "عدد السلندرات";
+"Enter the number of cylinders" = "يرجي ادخال عدد السلندرات";
+
+"Engine size" = "حجم المحرك";
+"Choose the engine size" = "اختر حجم المحرك";
+
+"How to sell" = "كيفية البيع";
+"Choose how to sell" = "اختر كيفية البيع";
+
+"Walkway" = "الممشي";
+"Enter the walkway" = "يرجي ادخال الممشي";
+
+"City" = "المدينة";
+"Choose the city" = "اختر المدينة";
+
+"Vehicle description" = "وصف السيارة بالانجليزية";
+"Additional details about the car's history, condition, accidents, repairs, maintenance, number of owners, specifications...etc" = "تفاصيل اضافية عن تاريخ السيارة، الحالة، الحوادث، الاصلاحات، الصيانة، عدد الملاك، المواصفات...الخ";
+
+"I agree to" = "أوافق على";
+"Sold as is, not refundable or exchangeable" = "تباع كما هي لا ترد ولا تستبدل";
+"Car return or exchange guarantee" = "ضمان استرجاع او استبال السيارة";
+"Add" = "اضافة";
+"Please select front image" = "الرجاء اختيار صورة السيارة من الامام";
+"Please select back image" = "الرجاء اختيار صورة السيارة من الخلف";
+"Please select left image" = "الرجاء اختيار صورة السيارة من الجانب الايسر";
+"Please select right image" = "الرجاء اختيار صورة السيارة من الجانب الايمن";
+"Please select inside image" = "الرجاء اختيار صورة السيارة من الداخل";
+"Enter Vehicle description" = "ادخل وصف السيارة";
+"Select all images" = "الرجاء ارفاق كافة الصور";
+
+///Car Details
+"Car Details" = "تفاصيل السيارة";
+"Seller information:" = "معلومات البائع:";
+"Cash price" = "سعر الكاش";
+"SR" = "ر.س";
+"How to sell" = "كيفية البيع";
+"Specifications:" = "المواصفات:";
+"Brand:" = "الماركة:";
+"Type:" = "النوع :";
+"Incoming:" = "الوارد:";
+"Category:" = "الفئة:";
+"Gear type:" = "نوع القير:";
+"Push type:" = "نوع الدفع:";
+"Number of cylinders:" = "عدد السلندرات:";
+"Status:" = "الحالة:";
+"Walkway:" = "الممشي:";
+"Region:" = "المنطقة:";
+"Year:" = "السنة:";
+"Fuel type:" = "نوع الوقود:";
+"Engine size:" = "حجم المحرك:";
+"Color:" = "اللون:";
+"Description of the vehicle:" = "وصف السيارة:";
+"Edit" = "تعديل";
+"Delete" = "حذف";
+"Edit Car" = "تعديل السيارة";
+"Visitor" = "التصفح كزائر";
+"Select Date" = "اختر التاريخ";
+"Select" = "اختر";
+"Birthday" = "تاريخ الميلاد";
+"Select Your Birthday" = "اختر تاريخ الميلاد";
+"Overview" = "نظرة عامة";
+"Our mission" = "مهمتنا";
+"Goals" = "أهدافنا";
+"Our values" = "قيمنا";
+
+"My Auctions" = "مزايداتي";
+"Wallet" = "المحفظة";
+"My Ads" = "اعلاناتي";
+"My Favourite" = "المفضلة";
+"Complains" = "النزاعات والشكاوي";
+"Evaluate Car" = "تقييم السيارة";
+"Help" = "طلب مساعدة";
+"Car show" = "المعارض";
+"Offers" = "العروض";
+"Car Auction" = "حراج السيارات";
+"Subscribed Auctions" = "مزادات مشترك بها";
+"Auctions I won" = "مزادات فزت بها";
+"Current Balance" = "رصيدك الحالي";
+"Add Balance" = "إضافة رصيد";
+"Ads" = "الإعلانات";
+"Car Evaluation" = "تقييم السيارة";
+"Certificated Evaluation" = "تقييم معتمد";
+"General Evaluation" = "تقييم عام";
+"Vehicle shipping service" = "خدمة شحن المركبات";
+"Enter your address" = "ادخل العنوان";
+"Address" = "العنوان";
+"How Can we help You" = "كيف نقدر نساعدك";
+"Search..." = "بحث...";
+"Other cars for your search result" = "سيارات أخرى لنتائج البحث الخاصة بك";
+"The value shown above is an approximation based on the Museum database" = "تعتبر القيمة المبينة أعلاه تقريبية تم تحديدها بناءا على قاعدة بيانات موقع مسيوم";
+"Congratulations" = "تهانينا";
+"Your request has been sent successfully, and you can follow up on your request from the My Requests list" = "تم ارسال طلبك بنجاح ويمكنك متابعة  طلبك من قائمة طلباتي";
+"Follow order" = "متابعة الطلب";
+"Go Home" = "الرجوع للرئيسية";
+"Enter Amount" = "ادخل المبلغ";
+"Browse by car brand" = "تصفح حسب ماركة السيارة";
+"Filter By" = "فلترة النتائج";
+"Filter" = "تصفية";
+"Offers by brands" = "عروض حسب الماركة";
+"Offers by company" = "عروض حسب الشركة";
+"Offer Details" = "تفاصيل العرض";
+"Call" = "اتصال";
+"Provider name" = "اسم المعرض";
+"Enter provider name" = "ادخل اسم المعرض";
+"Provider Details" = "تفاصيل المعرض";
+"About the exhibition:" = " نبذه عن المعرض:";
+"Go to the exhibition" = "الذهاب للمعرض";
+"Arabic vehicle description" = "وصف السيارة بالعربية";
+"My Orders" = "طلباتي";
+"Shipping Orders" = "طلبات الشحن";
+"Evaluation Orders" = "طلبات التقييم";
+"Summary Report Orders" = "طلبات التقرير الموجز";
+"Purchase Orders" = "طلبات الشراء";

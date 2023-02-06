@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SliderView" customModule="LocationClient" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="pVY-dW-gnG" id="tWP-1J-cHI"/>
+                <outlet property="pageControl" destination="u4M-b5-O4V" id="13k-Oz-q0a"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5fJ-1b-IOj">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="180"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pVY-dW-gnG">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="180"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="32" minimumInteritemSpacing="32" id="iSd-Gb-CO4">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="16" minY="4" maxX="16" maxY="4"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u4M-b5-O4V">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="0.0"/>
+                            <color key="pageIndicatorTintColor" name="blackColor"/>
+                            <color key="currentPageIndicatorTintColor" name="whiteColor"/>
+                        </pageControl>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="5fJ-1b-IOj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="HAo-AO-hQT"/>
+                <constraint firstItem="5fJ-1b-IOj" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="SvQ-qt-ujD"/>
+                <constraint firstItem="5fJ-1b-IOj" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="bSe-B7-1Dr"/>
+                <constraint firstItem="5fJ-1b-IOj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ppV-Yw-Pb2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="48" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="blackColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

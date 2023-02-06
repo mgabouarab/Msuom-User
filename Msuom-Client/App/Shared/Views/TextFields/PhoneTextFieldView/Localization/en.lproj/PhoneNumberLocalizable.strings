@@ -1,0 +1,23 @@
+/* 
+  PhoneNumberLocalizable.strings
+  Msuom
+
+  Created by MGAbouarab on 22/10/2022.
+  
+*/
+
+"Phone Number" = "Phone Number";
+"Please enter your phone number" = "Please enter your phone number";
+
+//MARK: - Validations -
+"Please enter your phone number." = "Please enter your phone number.";
+"Please enter correct phone number." = "Please enter correct phone number.";
+"Please enter correct whatsApp number." = "Please enter correct whatsApp number.";
+
+//MARK: - Country Code -
+"Choose" = "Choose";
+"Done" = "Done";
+"Cancel" = "Cancel";
+
+"Select Country" = "Select Country";
+"Search" = "Search";

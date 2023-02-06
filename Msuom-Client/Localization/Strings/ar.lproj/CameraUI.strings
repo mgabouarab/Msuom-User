@@ -1,0 +1,17 @@
+/* 
+ CameraUI.strings
+ 
+ Created by MGAbouarab®
+ 
+ */
+
+"PHOTO" = "صورة";
+"AEAF_LOCK_TEXT" = "AE/AF LOCK";
+"API_CANCEL_TITLE" = "الغاء";
+"HDR_AUTO" = "اوتوماتيكي";
+"HDR_ON" = "On";
+"HDR_OFF" = "Off";
+"TIMER_OFF_TEXT" = "Off";
+"USE_PHOTO" = "استخدم";
+"USE_VIDEO" = "استخدم";
+"ZOOM_FACTOR_TEXT" = "+/-";

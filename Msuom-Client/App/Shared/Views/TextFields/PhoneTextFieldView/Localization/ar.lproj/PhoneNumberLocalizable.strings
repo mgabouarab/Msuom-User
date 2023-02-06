@@ -1,0 +1,22 @@
+/* 
+  PhoneNumberLocalizable.strings
+  Msuom
+
+  Created by MGAbouarab on 22/10/2022.
+  
+*/
+
+"Phone Number" = "رقم الجوال";
+"Please enter your phone number" = "الرجاء ادخال رقم الجوال";
+//MARK: - Phone -
+"Please enter your phone number." = "يرجى إدخال رقم الجوال الخاص بك.";
+"Please enter correct phone number." = "الرجاء إدخال رقم جوال صحيح.";
+"Please enter correct whatsApp number." = "الرجاء إدخال رقم واتساب صحيح.";
+//MARK: - Country Code -
+"Choose" = "اختر";
+"Done" = "تم";
+"Cancel" = "الغاء";
+
+"Select Country" = "اختر الدولة";
+"Search" = "بحث";
+

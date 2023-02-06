@@ -1,0 +1,12 @@
+/* 
+ PhotosUI.strings
+ 
+ Created by MGAbouarab®
+ 
+ */
+
+"ALL_PHOTOS_IN_LIBRARY" = "اللحظات";
+"PXUserCollectionsSectionTitle" = "البوماتي";
+"FULL_PHOTOS_GRID_ZOOM_LEVEL_TITLE" = "لحظات";
+"NO_PHOTOS_OR_VIDEOS" = "لايوجد صور او فيديوهات";
+"EMPTY_ALBUM_LIST_MESSAGE_iPhone" = "You can take photos and videos using camera, or sync photos and videos onto your iPhone using iTunes";
