@@ -118,19 +118,19 @@ extension OrdersVC: UITableViewDataSource {
         switch self.selectedType {
         case .shipping:
             let item = self.shippingOrderDetails[indexPath.row]
-            cell.configureWith(data: item)
+//            cell.configureWith(data: item)
             return cell
         case .evaluation:
             let item = self.evaluationOrderDetails[indexPath.row]
-            cell.configureWith(data: item)
+//            cell.configureWith(data: item)
             return cell
         case .purchaseOrder:
             let item = self.purchaseOrderDetails[indexPath.row]
-            cell.configureWith(data: item)
+//            cell.configureWith(data: item)
             return cell
         case .summaryReport:
             let item = self.summaryReportDetails[indexPath.row]
-            cell.configureWith(data: item)
+//            cell.configureWith(data: item)
             return cell
         }
         

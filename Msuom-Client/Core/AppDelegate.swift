@@ -10,7 +10,7 @@ import Firebase
 import IQKeyboardManager
 
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //MARK: - Properties -
