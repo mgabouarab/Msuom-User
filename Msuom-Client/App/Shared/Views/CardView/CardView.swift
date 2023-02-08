@@ -10,7 +10,7 @@ import UIKit
 class CardView: UIView {
     
     //MARK: - Proprites -
-    private let cornerRadius: CGFloat = 20
+    private let cornerRadius: CGFloat = 12
     
     //MARK: - Init -
     override init(frame: CGRect) {

@@ -25,7 +25,7 @@ class SegmentedCollectionCell: UICollectionViewCell {
     }
     
     //MARK: - Design -
-    func setup(name: String, isSelected: Bool, with selectedColor: UIColor = Theme.colors.mainColor, and unselectedColor: UIColor = Theme.colors.mainDarkFontColor) {
+    func setup(name: String, isSelected: Bool, with selectedColor: UIColor = Theme.colors.secondaryColor, and unselectedColor: UIColor = Theme.colors.mainDarkFontColor) {
         
         self.nameLabel.text = name
         self.contentView.backgroundColor =  isSelected ? selectedColor : .clear

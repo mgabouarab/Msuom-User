@@ -268,3 +268,17 @@
 "Evaluation Orders" = "طلبات التقييم";
 "Summary Report Orders" = "طلبات التقرير الموجز";
 "Purchase Orders" = "طلبات الشراء";
+"Order Number:" = "رقم الطلب:";
+"Ad Number:" = "رقم الاعلان:";
+"Available" = "متاح";
+"Not Available" = "غير متاح";
+"Order Details" = "تفاصيل الطلب";
+"Delivery price:" = "سعر التوصيل:";
+"Accept" = "قبول";
+"Refuse" = "رفض";
+"Select payment method:" = "تحديد طريقة الدفع:";
+"Evaluation price:" = "سعر التقييم:";
+"Notes:" = "ملاحظات:";
+"Amount to be paid:" = "المبلغ المطلوب دفعه:";
+"Payment" = "دفع";
+"Waiting for the service provider's response" = "في انتظار رد مقدم الخدمة";

@@ -12,6 +12,9 @@ enum OrderRouter {
     case evaluationOrderDetails(page: Int)
     case purchaseOrderDetails(page: Int)
     case summaryReportDetails(page: Int)
+    case detailsOrder(id: String)
+    case acceptRejectOffer(id: String, status: String)
+    case payOrder(id: String, paymentMethod: String, price: String)
 }
 
 extension OrderRouter: APIRouter {
@@ -27,6 +30,12 @@ extension OrderRouter: APIRouter {
             return .get
         case .summaryReportDetails:
             return .get
+        case .detailsOrder:
+            return .get
+        case .acceptRejectOffer:
+            return .put
+        case .payOrder:
+            return .put
         }
     }
     
@@ -41,6 +50,12 @@ extension OrderRouter: APIRouter {
             return "orders"
         case .summaryReportDetails:
             return "orders"
+        case .detailsOrder:
+            return "detailsOrder"
+        case .acceptRejectOffer:
+            return "acceptRejectOffer"
+        case .payOrder:
+            return "payOrder"
         }
     }
     
@@ -70,6 +85,21 @@ extension OrderRouter: APIRouter {
                 "type": "summaryReport",
                 "limit": listLimit,
                 "page": page
+            ]
+        case .detailsOrder(let id):
+            return [
+                "id": id
+            ]
+        case .acceptRejectOffer(let id, let status):
+            return [
+                "id": id,
+                "orderStatus": status
+            ]
+        case .payOrder(let id, let paymentMethod, let price):
+            return [
+                "id": id,
+                "paymentMethod": paymentMethod,
+                "price": price
             ]
         }
     }

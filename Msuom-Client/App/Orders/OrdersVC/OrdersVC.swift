@@ -44,6 +44,9 @@ class OrdersVC: BaseVC {
     private var purchaseOrderDetails: [PurchaseOrderDetails] = []
     private var summaryReportDetails: [SummaryReportDetails] = []
     private var selectedType: Types = .shipping
+    private var currentPage: Int = 1
+    private var isLast: Bool = false
+    private var isFetching: Bool = false
     
     
     //MARK: - Creation -
@@ -57,6 +60,10 @@ class OrdersVC: BaseVC {
         super.viewDidLoad()
         self.configureInitialDesign()
         self.setupTableView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.refresh()
     }
     
     //MARK: - Design Methods -
@@ -80,6 +87,23 @@ class OrdersVC: BaseVC {
         
         self.tableView.refreshControl?.endRefreshing()
         self.tableView.animateToTop()
+        
+        self.currentPage = 1
+        self.isLast = false
+        self.isFetching = false
+        
+        switch self.selectedType {
+            
+        case .shipping:
+            self.getShippingOrderDetails(page: self.currentPage)
+        case .evaluation:
+            self.getEvaluationOrderDetails(page: self.currentPage)
+        case .purchaseOrder:
+            self.getPurchaseOrderDetails(page: self.currentPage)
+        case .summaryReport:
+            self.getSummaryReportDetails(page: self.currentPage)
+        }
+        
     }
     
 }
@@ -90,7 +114,10 @@ extension OrdersVC {
     func setupTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.register(cellType: OrdersCell.self, bundle: nil)
+        self.tableView.register(cellType: ShippingOrderCell.self, bundle: nil)
+        self.tableView.register(cellType: EvaluationOrderCell.self, bundle: nil)
+        self.tableView.register(cellType: SummaryReportOrderCell.self, bundle: nil)
+        self.tableView.register(cellType: PurchaseOrderCell.self, bundle: nil)
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.tableView.tableFooterView = UIView(frame: .zero)
         self.tableView.addRefresh(action: #selector(self.refresh))
@@ -113,24 +140,27 @@ extension OrdersVC: UITableViewDataSource {
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(with: OrdersCell.self, for: indexPath)
         
         switch self.selectedType {
         case .shipping:
+            let cell = tableView.dequeueReusableCell(with: ShippingOrderCell.self, for: indexPath)
             let item = self.shippingOrderDetails[indexPath.row]
-//            cell.configureWith(data: item)
+            cell.configureWith(data: item)
             return cell
         case .evaluation:
+            let cell = tableView.dequeueReusableCell(with: EvaluationOrderCell.self, for: indexPath)
             let item = self.evaluationOrderDetails[indexPath.row]
-//            cell.configureWith(data: item)
+            cell.configureWith(data: item)
             return cell
         case .purchaseOrder:
+            let cell = tableView.dequeueReusableCell(with: PurchaseOrderCell.self, for: indexPath)
             let item = self.purchaseOrderDetails[indexPath.row]
-//            cell.configureWith(data: item)
+            cell.configureWith(data: item)
             return cell
         case .summaryReport:
+            let cell = tableView.dequeueReusableCell(with: SummaryReportOrderCell.self, for: indexPath)
             let item = self.summaryReportDetails[indexPath.row]
-//            cell.configureWith(data: item)
+            cell.configureWith(data: item)
             return cell
         }
         
@@ -138,12 +168,44 @@ extension OrdersVC: UITableViewDataSource {
 }
 extension OrdersVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        switch self.selectedType {
+        case .shipping:
+            let item = self.shippingOrderDetails[indexPath.row]
+            let vc = ShippingOrderVC.create(data: item, id: nil)
+            self.push(vc)
+        case .evaluation:
+            let item = self.evaluationOrderDetails[indexPath.row]
+            let vc = EvaluationOrderVC.create(data: item, id: nil)
+            self.push(vc)
+        case .purchaseOrder:
+            let item = self.purchaseOrderDetails[indexPath.row]
+            let vc = PurchaseOrderVC.create(data: item, id: nil)
+            self.push(vc)
+        case .summaryReport:
+            let item = self.summaryReportDetails[indexPath.row]
+            let vc = SummaryReportOrderVC.create(data: item, id: nil)
+            self.push(vc)
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !self.isLast && !self.isFetching && (indexPath.row % listLimit == 0) {
+            switch self.selectedType {
+            case .shipping:
+                self.getShippingOrderDetails(page: self.currentPage)
+            case .evaluation:
+                self.getEvaluationOrderDetails(page: self.currentPage)
+            case .purchaseOrder:
+                self.getPurchaseOrderDetails(page: self.currentPage)
+            case .summaryReport:
+                self.getSummaryReportDetails(page: self.currentPage)
+            }
+        }
+    }
 }
+
 //MARK: - End Of TableView -
 
 
@@ -156,6 +218,11 @@ extension OrdersVC {
             guard let self = self else {return}
             self.shippingOrderDetails = response.data ?? []
             self.tableView.reloadData()
+            self.currentPage += 1
+            if self.shippingOrderDetails.isEmpty || (response.data ?? []).isEmpty || response.data?.count != listLimit {
+                self.isLast = true
+            }
+            self.isFetching = false
         }
     }
     private func getEvaluationOrderDetails(page: Int) {
@@ -164,6 +231,11 @@ extension OrdersVC {
             guard let self = self else {return}
             self.evaluationOrderDetails = response.data ?? []
             self.tableView.reloadData()
+            self.currentPage += 1
+            if self.evaluationOrderDetails.isEmpty || (response.data ?? []).isEmpty || response.data?.count != listLimit {
+                self.isLast = true
+            }
+            self.isFetching = false
         }
     }
     private func getPurchaseOrderDetails(page: Int) {
@@ -172,6 +244,11 @@ extension OrdersVC {
             guard let self = self else {return}
             self.purchaseOrderDetails = response.data ?? []
             self.tableView.reloadData()
+            self.currentPage += 1
+            if self.purchaseOrderDetails.isEmpty || (response.data ?? []).isEmpty || response.data?.count != listLimit {
+                self.isLast = true
+            }
+            self.isFetching = false
         }
     }
     private func getSummaryReportDetails(page: Int) {
@@ -180,6 +257,11 @@ extension OrdersVC {
             guard let self = self else {return}
             self.summaryReportDetails = response.data ?? []
             self.tableView.reloadData()
+            self.currentPage += 1
+            if self.summaryReportDetails.isEmpty || (response.data ?? []).isEmpty || response.data?.count != listLimit {
+                self.isLast = true
+            }
+            self.isFetching = false
         }
     }
     
@@ -203,5 +285,6 @@ extension OrdersVC: SegmentedCollectionDelegate {
         self.segmentedItems[indexPath.row].isSelected = true
         self.selectedType = Types(rawValue: self.segmentedItems[indexPath.row].id)!
         self.segmentedCollection.reload()
+        self.refresh()
     }
 }
