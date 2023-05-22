@@ -379,5 +379,18 @@ struct ValidationService {
         return description
     }
     
+    static func validate(attachment data: Data?) throws -> Data {
+        guard let data = data else {
+            throw ValidationError.noAttachment
+        }
+        return data
+    }
+    
+    static func validate(text: String?, errorMessage: String) throws -> String {
+        guard let text = text, !text.trimWhiteSpace().isEmpty else {
+            throw ValidationError.emptyText(errorMessage: errorMessage)
+        }
+        return text
+    }
 }
 

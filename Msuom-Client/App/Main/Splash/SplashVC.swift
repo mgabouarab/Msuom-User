@@ -15,6 +15,7 @@ class SplashVC: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
     }
+    static var hasNotification = false
     
     static func create() -> SplashVC {
         let vc = AppStoryboards.main.instantiate(SplashVC.self)
@@ -37,6 +38,10 @@ class SplashVC: UIViewController {
     
     //MARK: - Logic Methods -
     private func goNext() {
+        guard !SplashVC.hasNotification else {
+            SplashVC.hasNotification = false
+            return
+        }
         switch UserDefaults.isLogin {
         case true:
             self.goToHome()
@@ -65,7 +70,9 @@ extension SplashVC {
         CarRouter.addCarData.send { [weak self] (response: APIGenericResponse<AddCarData>) in
             guard let self = self else {return}
             UserDefaults.addCarData = response.data
-            self.goNext()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.goNext()
+            }
         }
     }
 }

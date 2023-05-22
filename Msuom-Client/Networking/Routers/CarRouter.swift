@@ -59,7 +59,7 @@ enum CarRouter {
     case carDetails(id: String)
     case deleteCar(id: String)
     case toggleAdFav(id: String)
-    case toggleAuctionFav(id: String)
+    case toggleAuctionFav(id: String, streamId: String)
     case haraj(brandId: String?, page: Int)
     case harajFilter(brandId: String?, typeId: String?, cityId: String?, statusId: String?)
     case offers(page: Int, type: String)
@@ -249,10 +249,11 @@ extension CarRouter: APIRouter {
                 "type": "advertise",
                 "carId": id
             ]
-        case .toggleAuctionFav(let id):
+        case .toggleAuctionFav(let id, let streamId):
             return [
                 "type": "bid",
-                "bidId": id
+                "bidId": id,
+                "streamId": streamId
             ]
         case .haraj(let brandId, let page):
             return [

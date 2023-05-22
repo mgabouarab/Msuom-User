@@ -59,13 +59,30 @@ extension UserDefaults {
         case notificationCount
         case user
         case addCarData
+        case permission
     }
     
     @ModelsDefault(key: Keys.themeStyle.rawValue, defaultValue: .systemStyle)
     static var themeStyle: Theme.Style
     
     @ModelsDefault(key: Keys.user.rawValue, defaultValue: nil)
-    static var user: User?
+    static var user: User? {
+        didSet {
+            permission = user?.permissions ?? []
+            
+            /*
+             - 0 : "live"
+             - 1 : "normal"
+             - 2 : "finishBid"
+             - 3 : "advertise"
+             - 4 : "sellDecision"
+             */
+            
+        }
+    }
+    
+    @ValueDefault(key: Keys.permission.rawValue, defaultValue: [])
+    static var permission: [String]
     
     @ValueDefault(key: Keys.googleMapKey.rawValue, defaultValue: String())
     static var googleMapKey: String

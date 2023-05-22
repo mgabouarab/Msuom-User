@@ -28,6 +28,11 @@ enum CarValidationError: Error {
     case emptyWalkway
     case emptyCity
     case emptyDescription
+    case emptyStartAuctionPrice
+    case emptyAuctionStartDate
+    case emptyAuctionEndDate
+    case emptyAuctionStartTime
+    case emptyAuctionEndTime
     
 }
 extension CarValidationError: LocalizedError {
@@ -37,6 +42,8 @@ extension CarValidationError: LocalizedError {
             return "Select all images".localized
         case .emptyPrice:
             return "Please enter the purchase price".localized
+        case .emptyStartAuctionPrice:
+            return "Please enter auction start price".localized
         case .emptyBrand:
             return "Choose the brand".localized
         case .emptyType:
@@ -71,6 +78,14 @@ extension CarValidationError: LocalizedError {
             return "Choose the city".localized
         case .emptyDescription:
             return "Enter Vehicle description".localized
+        case .emptyAuctionStartDate:
+            return "Please enter auction start date".localized
+        case .emptyAuctionEndDate:
+            return "Please enter auction end date".localized
+        case .emptyAuctionStartTime:
+            return "Please enter auction start time".localized
+        case .emptyAuctionEndTime:
+            return "Please enter auction end time".localized
         }
     }
 }

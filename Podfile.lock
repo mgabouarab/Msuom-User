@@ -2,6 +2,9 @@ PODS:
   - Alamofire (5.6.4)
   - Firebase/CoreOnly (10.3.0):
     - FirebaseCore (= 10.3.0)
+  - Firebase/DynamicLinks (10.3.0):
+    - Firebase/CoreOnly
+    - FirebaseDynamicLinks (~> 10.3.0)
   - Firebase/Messaging (10.3.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 10.3.0)
@@ -11,6 +14,8 @@ PODS:
     - GoogleUtilities/Logger (~> 7.8)
   - FirebaseCoreInternal (10.3.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
+  - FirebaseDynamicLinks (10.3.0):
+    - FirebaseCore (~> 10.0)
   - FirebaseInstallations (10.3.0):
     - FirebaseCore (~> 10.0)
     - GoogleUtilities/Environment (~> 7.8)
@@ -55,15 +60,24 @@ PODS:
     - nanopb/encode (= 2.30909.0)
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
+  - OpenTok (2.25.0):
+    - VonageWebRTC (= 99.2.39)
   - PromisesObjC (2.1.1)
+  - Socket.IO-Client-Swift (16.0.1):
+    - Starscream (~> 4.0)
+  - Starscream (4.0.4)
+  - VonageWebRTC (99.2.39)
 
 DEPENDENCIES:
   - Alamofire
+  - Firebase/DynamicLinks
   - Firebase/Messaging
   - IQKeyboardManager
   - IQKeyboardManagerSwift
   - Kingfisher
   - lottie-ios
+  - OpenTok
+  - Socket.IO-Client-Swift (~> 16.0.1)
 
 SPEC REPOS:
   trunk:
@@ -71,6 +85,7 @@ SPEC REPOS:
     - Firebase
     - FirebaseCore
     - FirebaseCoreInternal
+    - FirebaseDynamicLinks
     - FirebaseInstallations
     - FirebaseMessaging
     - GoogleDataTransport
@@ -80,13 +95,18 @@ SPEC REPOS:
     - Kingfisher
     - lottie-ios
     - nanopb
+    - OpenTok
     - PromisesObjC
+    - Socket.IO-Client-Swift
+    - Starscream
+    - VonageWebRTC
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Firebase: f92fc551ead69c94168d36c2b26188263860acd9
   FirebaseCore: 988754646ab3bd4bdcb740f1bfe26b9f6c0d5f2a
   FirebaseCoreInternal: 29b76f784d607df8b2a1259d73c3f04f1210137b
+  FirebaseDynamicLinks: 51c81d07bd63155bb56d76b0abdda79c8a3d8d02
   FirebaseInstallations: e2f26126089dcf41e215f7b8925af8d953c7d602
   FirebaseMessaging: e345b219fd15d325f0cf2fef28cb8ce00d851b3f
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
@@ -96,8 +116,12 @@ SPEC CHECKSUMS:
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
   lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
+  OpenTok: f837a493e3e6993ae604ede80d2548dde4f8cc96
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  VonageWebRTC: 4b57187170ef4ea435006e932600646a0521d6b0
 
-PODFILE CHECKSUM: 9c85122b3d51ac3f0c3fa47865c9e0db1a81582b
+PODFILE CHECKSUM: 727a0ab03d6d4d492a94bba5039ab35124e9affc
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

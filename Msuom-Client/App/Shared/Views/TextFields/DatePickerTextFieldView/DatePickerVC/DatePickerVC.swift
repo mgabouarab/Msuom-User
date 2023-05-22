@@ -15,6 +15,7 @@ class DatePickerVC: UIViewController {
 
     //MARK: - IBOutlets -
     @IBOutlet weak private var calendar: UIDatePicker!
+    @IBOutlet weak private var titleLabel: UILabel!
     
     //MARK: - Propreties -
     let delegate: DatePickerDelegate
@@ -31,6 +32,33 @@ class DatePickerVC: UIViewController {
     //MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    //MARK: - Design -
+    func configure(mode: DatePickerTextFieldView.Mode) {
+        switch mode {
+        case .date(let min, let max):
+            self.calendar.datePickerMode = .date
+            self.calendar.maximumDate = max
+            self.calendar.minimumDate = min
+        case .time(let min, let max):
+            self.calendar.datePickerMode = .time
+            self.calendar.maximumDate = max
+            self.calendar.minimumDate = min
+            self.calendar.preferredDatePickerStyle = .wheels
+        case .dateAndTime(let min, let max):
+            self.calendar.datePickerMode = .dateAndTime
+            self.calendar.maximumDate = max
+            self.calendar.minimumDate = min
+        }
+    }
+    func set(selectedDate: Date?) {
+        if let selectedDate = selectedDate {
+            self.calendar.date = selectedDate
+        }
+    }
+    func set(title: String?) {
+        self.titleLabel.text = title
     }
     
     //MARK: - Deinit -

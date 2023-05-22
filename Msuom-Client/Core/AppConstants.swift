@@ -24,7 +24,9 @@ var appDateFormate = {
 var appTimeFormate = {
     return "HH:ss"
 }()
-
+var appFullDateFormate = {
+    return "dd/MM/yyy hh:mm a"
+}()
 var listLimit = {
    return 20
 }()

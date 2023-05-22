@@ -14,6 +14,7 @@ class ShippingOrderCell: UITableViewCell {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var bodyLabel: UILabel!
     @IBOutlet weak private var orderNumberLabel: UILabel!
+    @IBOutlet weak private var statusLabel: UILabel!
     
     //MARK: - properties -
     
@@ -43,6 +44,7 @@ class ShippingOrderCell: UITableViewCell {
         self.titleLabel.text = items.joined(separator: " ")
         self.bodyLabel.text = data.description
         self.orderNumberLabel.text = "Ad Number:".localized + " " + "\(data.orderNo ?? 0)"
+        self.statusLabel.text = data.orderStatusTxt
     }
     
     //MARK: - Actions -

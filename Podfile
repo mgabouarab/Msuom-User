@@ -13,5 +13,9 @@ pod 'Kingfisher'
 pod 'Firebase/Messaging'
 pod 'IQKeyboardManagerSwift'
 pod 'IQKeyboardManager'
+pod 'Firebase/DynamicLinks'
+pod 'OpenTok'
+pod 'lottie-ios'
+pod 'Socket.IO-Client-Swift', '~> 16.0.1'
 
 end

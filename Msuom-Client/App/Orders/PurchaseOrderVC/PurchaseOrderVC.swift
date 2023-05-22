@@ -20,6 +20,8 @@ class PurchaseOrderVC: BaseVC {
     @IBOutlet weak private var amountToBePaidLabel: UILabel!
     @IBOutlet weak private var waitingView: UIView!
     @IBOutlet weak private var payStack: UIStackView!
+    @IBOutlet weak private var acceptRefuseStackView: UIStackView!
+    @IBOutlet weak private var deliveryPriceView: CardView!
     
     //MARK: - Properties -
     private var data: PurchaseOrderDetails?
@@ -63,14 +65,40 @@ class PurchaseOrderVC: BaseVC {
         if let status = data.orderStatus, let orderStatus = OrderStatus(rawValue: status) {
             switch orderStatus {
             case .waitForAccept:
+                self.waitingView.isHidden = false
+                self.payStack.isHidden = true
+                self.acceptRefuseStackView.isHidden = true
+                self.deliveryPriceView.isHidden = true
+            case .acceptOrder:
                 self.waitingView.isHidden = true
-                self.payStack.isHidden = false
+                self.payStack.isHidden = true
+                self.acceptRefuseStackView.isHidden = true
+                self.deliveryPriceView.isHidden = true
+            case .sendOffer:
+                self.waitingView.isHidden = true
+                self.payStack.isHidden = true
+                self.acceptRefuseStackView.isHidden = false
+                self.deliveryPriceView.isHidden = false
+            case .rejectOrder:
+                self.waitingView.isHidden = true
+                self.payStack.isHidden = true
+                self.acceptRefuseStackView.isHidden = true
+                self.deliveryPriceView.isHidden = true
             case .waitForPay:
                 self.waitingView.isHidden = true
                 self.payStack.isHidden = false
+                self.acceptRefuseStackView.isHidden = true
+                self.deliveryPriceView.isHidden = false
+            case .processing:
+                self.waitingView.isHidden = true
+                self.payStack.isHidden = false
+                self.acceptRefuseStackView.isHidden = true
+                self.deliveryPriceView.isHidden = false
             case .finishOrder:
                 self.waitingView.isHidden = true
                 self.payStack.isHidden = true
+                self.acceptRefuseStackView.isHidden = true
+                self.deliveryPriceView.isHidden = false
             }
         }
     }
@@ -79,6 +107,20 @@ class PurchaseOrderVC: BaseVC {
     @IBAction private func payButtonPressed() {
         if let id = self.data?.id, let price = self.data?.price, let paymentMethod = self.data?.paymentMethod {
             self.payOrder(id: id, paymentMethod: paymentMethod, price: "\(price)")
+        }
+    }
+    @IBAction private func acceptButtonPressed() {
+        if let id = self.data?.id {
+            self.acceptRejectOffer(id: id, status: "accept")
+        } else if let id = self.id {
+            self.acceptRejectOffer(id: id, status: "accept")
+        }
+    }
+    @IBAction private func rejectButtonPressed() {
+        if let id = self.data?.id {
+            self.acceptRejectOffer(id: id, status: "reject")
+        } else if let id = self.id {
+            self.acceptRejectOffer(id: id, status: "reject")
         }
     }
     
@@ -98,6 +140,14 @@ extension PurchaseOrderVC {
     private func payOrder(id: String, paymentMethod: String, price: String) {
         self.showIndicator()
         OrderRouter.payOrder(id: id, paymentMethod: paymentMethod, price: price).send { [weak self] (response: APIGenericResponse<PurchaseOrderDetails>) in
+            guard let self = self, let data = response.data else {return}
+            self.data = data
+            self.setViewWith(data: data)
+        }
+    }
+    private func acceptRejectOffer(id: String, status: String) {
+        self.showIndicator()
+        OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGenericResponse<PurchaseOrderDetails>) in
             guard let self = self, let data = response.data else {return}
             self.data = data
             self.setViewWith(data: data)

@@ -11,7 +11,11 @@ import UIKit
 
 enum OrderStatus: String {
     case waitForAccept
+    case acceptOrder
+    case sendOffer
+    case rejectOrder
     case waitForPay
+    case processing
     case finishOrder
 }
 
@@ -83,6 +87,14 @@ class ShippingOrderVC: BaseVC {
                 self.confirmView.isHidden = true
                 self.acceptRefuseStackView.isHidden = true
                 self.paymentView.isHidden = true
+            case .acceptOrder:
+                fatalError()
+            case .sendOffer:
+                fatalError()
+            case .rejectOrder:
+                fatalError()
+            case .processing:
+                fatalError()
             }
         }
     }

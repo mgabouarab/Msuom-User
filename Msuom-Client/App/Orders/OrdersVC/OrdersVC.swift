@@ -214,6 +214,7 @@ extension OrdersVC {
     
     private func getShippingOrderDetails(page: Int) {
         self.showIndicator()
+        self.isFetching = true
         OrderRouter.shippingOrderDetails(page: page).send { [weak self] (response: APIGenericResponse<[ShippingOrderDetails]>) in
             guard let self = self else {return}
             self.shippingOrderDetails = response.data ?? []
@@ -227,6 +228,7 @@ extension OrdersVC {
     }
     private func getEvaluationOrderDetails(page: Int) {
         self.showIndicator()
+        self.isFetching = true
         OrderRouter.evaluationOrderDetails(page: page).send { [weak self] (response: APIGenericResponse<[EvaluationOrderDetails]>) in
             guard let self = self else {return}
             self.evaluationOrderDetails = response.data ?? []
@@ -240,6 +242,7 @@ extension OrdersVC {
     }
     private func getPurchaseOrderDetails(page: Int) {
         self.showIndicator()
+        self.isFetching = true
         OrderRouter.purchaseOrderDetails(page: page).send { [weak self] (response: APIGenericResponse<[PurchaseOrderDetails]>) in
             guard let self = self else {return}
             self.purchaseOrderDetails = response.data ?? []
@@ -253,6 +256,7 @@ extension OrdersVC {
     }
     private func getSummaryReportDetails(page: Int) {
         self.showIndicator()
+        self.isFetching = true
         OrderRouter.summaryReportDetails(page: page).send { [weak self] (response: APIGenericResponse<[SummaryReportDetails]>) in
             guard let self = self else {return}
             self.summaryReportDetails = response.data ?? []

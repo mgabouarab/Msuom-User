@@ -19,8 +19,9 @@ class ImageViewerCell: UICollectionViewCell {
         self.setupScrollView()
     }
     
-    func setupCell(image: ImageViewerItem) {
-        self.scrollView.isUserInteractionEnabled = true
+    func setupCell(image: ImageViewerItem, enableZoom: Bool = true) {
+        self.imageView.contentMode = enableZoom ? .scaleAspectFit : .scaleAspectFill
+        self.scrollView.isUserInteractionEnabled = enableZoom
         if let url = image.urlImage {
             self.imageView.setWith(string: url)
         } else if let data = image.dataImage {

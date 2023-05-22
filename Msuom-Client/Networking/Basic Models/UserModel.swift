@@ -11,7 +11,7 @@ struct User: Codable {
     let id: String
     let name: String
     let rating: Double
-    let email: String
+    let email: String?
     let userType: String
     let status: String
     let activationCode: String
@@ -28,5 +28,9 @@ struct User: Codable {
     let cityName: String
     let createAt: String
     let token: String
+    let canRateCar: Bool?
+    let canRefundableCar: Bool?
+    var permissions: [String]?
+    let providerId: String?
     
 }

@@ -98,12 +98,72 @@
 		2C3C27A92992833500FECAB8 /* PurchaseOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3C27A72992833500FECAB8 /* PurchaseOrderCell.xib */; };
 		2C3C27AC299283D400FECAB8 /* SummaryReportOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3C27AA299283D400FECAB8 /* SummaryReportOrderCell.swift */; };
 		2C3C27AD299283D400FECAB8 /* SummaryReportOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3C27AB299283D400FECAB8 /* SummaryReportOrderCell.xib */; };
+		2C3D7A662A18F170004DD1FB /* AdvantageAndDisadvantageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A222A18F170004DD1FB /* AdvantageAndDisadvantageModel.swift */; };
+		2C3D7A672A18F170004DD1FB /* AdvantageAndDisadvantageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A242A18F170004DD1FB /* AdvantageAndDisadvantageCell.xib */; };
+		2C3D7A682A18F170004DD1FB /* AdvantageAndDisadvantageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A252A18F170004DD1FB /* AdvantageAndDisadvantageCell.swift */; };
+		2C3D7A692A18F170004DD1FB /* CompleteAuctionInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A262A18F170004DD1FB /* CompleteAuctionInfoVC.swift */; };
+		2C3D7A6A2A18F170004DD1FB /* AddAuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A282A18F170004DD1FB /* AddAuctionVC.swift */; };
+		2C3D7A6B2A18F170004DD1FB /* LiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A2A2A18F170004DD1FB /* LiveVC.swift */; };
+		2C3D7A6C2A18F170004DD1FB /* LiveCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A2C2A18F170004DD1FB /* LiveCommentsCell.swift */; };
+		2C3D7A6D2A18F170004DD1FB /* LiveCommentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A2D2A18F170004DD1FB /* LiveCommentsCell.xib */; };
+		2C3D7A6E2A18F170004DD1FB /* SocketConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A2E2A18F170004DD1FB /* SocketConstans.swift */; };
+		2C3D7A6F2A18F170004DD1FB /* AuctionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A302A18F170004DD1FB /* AuctionDetails.swift */; };
+		2C3D7A702A18F170004DD1FB /* AuctionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A312A18F170004DD1FB /* AuctionDetailsVC.swift */; };
+		2C3D7A712A18F170004DD1FB /* AuctionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A342A18F170004DD1FB /* AuctionInfoView.swift */; };
+		2C3D7A722A18F170004DD1FB /* AuctionInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A352A18F170004DD1FB /* AuctionInfoView.xib */; };
+		2C3D7A732A18F170004DD1FB /* NextAuctionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A372A18F170004DD1FB /* NextAuctionsView.swift */; };
+		2C3D7A742A18F170004DD1FB /* NextAuctionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A382A18F170004DD1FB /* NextAuctionsView.xib */; };
+		2C3D7A772A18F170004DD1FB /* FeedbacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A3D2A18F170004DD1FB /* FeedbacksView.swift */; };
+		2C3D7A782A18F170004DD1FB /* FeedbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A3F2A18F170004DD1FB /* FeedbackCell.xib */; };
+		2C3D7A792A18F170004DD1FB /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A402A18F170004DD1FB /* FeedbackCell.swift */; };
+		2C3D7A7A2A18F170004DD1FB /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A422A18F170004DD1FB /* FeedbackVC.swift */; };
+		2C3D7A7B2A18F170004DD1FB /* FeedbacksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A432A18F170004DD1FB /* FeedbacksView.xib */; };
+		2C3D7A7C2A18F170004DD1FB /* AllFeedbacksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A452A18F170004DD1FB /* AllFeedbacksVC.swift */; };
+		2C3D7A7D2A18F170004DD1FB /* SellerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A472A18F170004DD1FB /* SellerInfoView.xib */; };
+		2C3D7A7E2A18F170004DD1FB /* SellerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A482A18F170004DD1FB /* SellerInfoView.swift */; };
+		2C3D7A7F2A18F170004DD1FB /* CarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A4A2A18F170004DD1FB /* CarInfoView.swift */; };
+		2C3D7A802A18F170004DD1FB /* CarInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A4B2A18F170004DD1FB /* CarInfoView.xib */; };
+		2C3D7A812A18F170004DD1FB /* SellIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A4D2A18F170004DD1FB /* SellIndicatorView.xib */; };
+		2C3D7A822A18F170004DD1FB /* SellIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A4E2A18F170004DD1FB /* SellIndicatorView.swift */; };
+		2C3D7A832A18F170004DD1FB /* AuctionAdvantagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A502A18F170004DD1FB /* AuctionAdvantagesView.swift */; };
+		2C3D7A842A18F170004DD1FB /* AuctionAdvantagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A522A18F170004DD1FB /* AuctionAdvantagesCell.swift */; };
+		2C3D7A852A18F170004DD1FB /* AuctionAdvantagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A532A18F170004DD1FB /* AuctionAdvantagesCell.xib */; };
+		2C3D7A862A18F170004DD1FB /* AuctionAdvantagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A542A18F170004DD1FB /* AuctionAdvantagesView.xib */; };
+		2C3D7A872A18F170004DD1FB /* ExpandableDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A562A18F170004DD1FB /* ExpandableDetailsView.xib */; };
+		2C3D7A882A18F170004DD1FB /* ExpandableDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A572A18F170004DD1FB /* ExpandableDetailsView.swift */; };
+		2C3D7A892A18F170004DD1FB /* LastBidsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A592A18F170004DD1FB /* LastBidsView.xib */; };
+		2C3D7A8A2A18F170004DD1FB /* LastBidsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A5A2A18F170004DD1FB /* LastBidsView.swift */; };
+		2C3D7A8B2A18F170004DD1FB /* AllLastBidsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A5C2A18F170004DD1FB /* AllLastBidsVC.swift */; };
+		2C3D7A8C2A18F170004DD1FB /* LastBidsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A5E2A18F170004DD1FB /* LastBidsCell.xib */; };
+		2C3D7A8D2A18F170004DD1FB /* LastBidsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A5F2A18F170004DD1FB /* LastBidsCell.swift */; };
+		2C3D7A8E2A18F170004DD1FB /* AuctionPricesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A612A18F170004DD1FB /* AuctionPricesView.xib */; };
+		2C3D7A8F2A18F170004DD1FB /* AuctionPricesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A622A18F170004DD1FB /* AuctionPricesView.swift */; };
+		2C3D7A902A18F170004DD1FB /* LiveContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A642A18F170004DD1FB /* LiveContainerVC.swift */; };
+		2C3D7A912A18F170004DD1FB /* Auctions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D7A652A18F170004DD1FB /* Auctions.storyboard */; };
+		2C3D7A932A18F54E004DD1FB /* AuctionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D7A922A18F54E004DD1FB /* AuctionRouter.swift */; };
 		2C3E224E29290E0300C38B57 /* SelectCarImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E224D29290E0300C38B57 /* SelectCarImagesView.swift */; };
 		2C3E225029290E1600C38B57 /* SelectCarImagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E224F29290E1600C38B57 /* SelectCarImagesView.xib */; };
 		2C44B8512800DD8700728351 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C44B8502800DD8700728351 /* AlertView.swift */; };
 		2C44B8532800E31600728351 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C44B8522800E31600728351 /* AlertView.xib */; };
 		2C4DCFDD29084F9000D63EE3 /* countriesAr.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C4DCFDC29084F9000D63EE3 /* countriesAr.json */; };
 		2C4DCFE3290859DF00D63EE3 /* IntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DCFE2290859DF00D63EE3 /* IntroModel.swift */; };
+		2C4E9A58299A4F09008787DD /* HomeSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A56299A4F09008787DD /* HomeSliderCell.swift */; };
+		2C4E9A59299A4F09008787DD /* HomeSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E9A57299A4F09008787DD /* HomeSliderCell.xib */; };
+		2C4E9A5D299A4FE8008787DD /* HomeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A5B299A4FE8008787DD /* HomeCategoryCell.swift */; };
+		2C4E9A5E299A4FE8008787DD /* HomeCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E9A5C299A4FE8008787DD /* HomeCategoryCell.xib */; };
+		2C4E9A62299A5087008787DD /* HomeTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A60299A5087008787DD /* HomeTypeCell.swift */; };
+		2C4E9A63299A5087008787DD /* HomeTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E9A61299A5087008787DD /* HomeTypeCell.xib */; };
+		2C4E9A67299A5110008787DD /* CurrentAuctionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A65299A5110008787DD /* CurrentAuctionsCell.swift */; };
+		2C4E9A68299A5110008787DD /* CurrentAuctionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E9A66299A5110008787DD /* CurrentAuctionsCell.xib */; };
+		2C4E9A6C299A5144008787DD /* ComingAuctionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A6A299A5144008787DD /* ComingAuctionsCell.swift */; };
+		2C4E9A6D299A5144008787DD /* ComingAuctionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E9A6B299A5144008787DD /* ComingAuctionsCell.xib */; };
+		2C4E9A71299A51B5008787DD /* HarajHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A6F299A51B5008787DD /* HarajHomeCell.swift */; };
+		2C4E9A72299A51B5008787DD /* HarajHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E9A70299A51B5008787DD /* HarajHomeCell.xib */; };
+		2C4E9A76299A51EC008787DD /* CarShowHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A74299A51EC008787DD /* CarShowHomeCell.swift */; };
+		2C4E9A77299A51EC008787DD /* CarShowHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E9A75299A51EC008787DD /* CarShowHomeCell.xib */; };
+		2C4E9A7C299AF0DF008787DD /* ComingSoonAuctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4E9A7A299AF0DF008787DD /* ComingSoonAuctionCell.xib */; };
+		2C4E9A7E299B018A008787DD /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A7D299B018A008787DD /* HomeModel.swift */; };
+		2C4E9A84299B0737008787DD /* BrowseCarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A81299B0737008787DD /* BrowseCarVC.swift */; };
 		2C4FDC1D29892E3A00797B9A /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4FDC1C29892E3A00797B9A /* OfferModel.swift */; };
 		2C4FDC212989B9D200797B9A /* OfferDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4FDC202989B9D200797B9A /* OfferDetailsVC.swift */; };
 		2C4FDC262989CEC200797B9A /* ProvidersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4FDC232989CEC200797B9A /* ProvidersCell.swift */; };
@@ -122,7 +182,7 @@
 		2C54F1CA2923F5B8008F99CE /* AuctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C54F1C82923F5B8008F99CE /* AuctionCell.xib */; };
 		2C54F1CD292417E5008F99CE /* AuctionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C54F1CC292417E5008F99CE /* AuctionsVC.swift */; };
 		2C54F1D029241CFC008F99CE /* CarsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C54F1CF29241CFC008F99CE /* CarsVC.swift */; };
-		2C54F1D329244C27008F99CE /* VehicleTypeSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C54F1D229244C26008F99CE /* VehicleTypeSelectionVC.swift */; };
+		2C54F1D329244C27008F99CE /* AuctionTypeSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C54F1D229244C26008F99CE /* AuctionTypeSelectionVC.swift */; };
 		2C54F1D629245A07008F99CE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C54F1D529245A07008F99CE /* HeaderView.swift */; };
 		2C54F1D829245A1D008F99CE /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C54F1D729245A1D008F99CE /* HeaderView.xib */; };
 		2C54F1DD2924654E008F99CE /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C54F1DA2924654E008F99CE /* NotificationsCell.swift */; };
@@ -167,10 +227,14 @@
 		2C8AB0AE29076644003D233E /* NormalTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C8AB0AD29076644003D233E /* NormalTextFieldView.xib */; };
 		2C8AB0B029076AF1003D233E /* UnderLineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AB0AF29076AF1003D233E /* UnderLineButton.swift */; };
 		2C8AB0B32907754C003D233E /* CircleBorderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AB0B22907754C003D233E /* CircleBorderedImageView.swift */; };
+		2C90D52729947BBB009D1039 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C90D52629947BBB009D1039 /* HomeRouter.swift */; };
 		2C918503280DD48F00262AF5 /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C918502280DD48F00262AF5 /* VerificationCodeVC.swift */; };
 		2C918506280DD79400262AF5 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C918505280DD79400262AF5 /* ForgetPasswordVC.swift */; };
 		2C918509280DE6B700262AF5 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C918508280DE6B700262AF5 /* ResetPasswordVC.swift */; };
 		2C9651B82924665300B30B11 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9651B72924665300B30B11 /* NotificationModel.swift */; };
+		2C9C72402A1A1B7F001C90E5 /* play.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C9C723F2A1A1B7F001C90E5 /* play.json */; };
+		2C9C72462A1A3AAA001C90E5 /* LiveStreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C72432A1A3AAA001C90E5 /* LiveStreamCell.swift */; };
+		2C9C72472A1A3AAA001C90E5 /* LiveStreamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9C72442A1A3AAA001C90E5 /* LiveStreamCell.xib */; };
 		2C9D8EC3290B900500D8A9CC /* MoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D8EC2290B900500D8A9CC /* MoreModel.swift */; };
 		2C9FED782918EDEA001D0446 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FED772918EDEA001D0446 /* ChangePasswordVC.swift */; };
 		2CA0AC19291297F4006CBC78 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0AC18291297F4006CBC78 /* EditProfileVC.swift */; };
@@ -217,6 +281,8 @@
 		2CBC94BE286D0C6D00E42AB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC94C0286D0C6D00E42AB5 /* Localizable.strings */; };
 		2CBD858028063F380036C9B1 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD857F28063F380036C9B1 /* Print.swift */; };
 		2CC025C4293F274A00DB4D10 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC025C3293F274A00DB4D10 /* ScannerVC.swift */; };
+		2CD9A46F299B9ADB00EBD6AC /* CurrentAuctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */; };
+		2CD9A470299B9ADB00EBD6AC /* CurrentAuctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */; };
 		2CE14366280C02B500A601F5 /* indicatorGifImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CE14365280C02B400A601F5 /* indicatorGifImage.gif */; };
 		2CE14368280C067100A601F5 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE14367280C067100A601F5 /* UITextView.swift */; };
 		2CE1436A280C06DC00A601F5 /* CollectionViewContentSized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE14369280C06DC00A601F5 /* CollectionViewContentSized.swift */; };
@@ -224,6 +290,15 @@
 		2CE14370280C0C7100A601F5 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE1436F280C0C7100A601F5 /* Auth.storyboard */; };
 		2CE14373280C132300A601F5 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE14372280C132300A601F5 /* AuthRouter.swift */; };
 		2CE7C8AA29220FE000EE6100 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7C8A929220FE000EE6100 /* AboutVC.swift */; };
+		2CF038B92A18FCC800AE3042 /* EvaluationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF038B32A18FCC800AE3042 /* EvaluationViewCell.swift */; };
+		2CF038BA2A18FCC800AE3042 /* EvaluationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF038B42A18FCC800AE3042 /* EvaluationViewCell.xib */; };
+		2CF038BB2A18FCC800AE3042 /* EvaluationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF038B52A18FCC800AE3042 /* EvaluationView.xib */; };
+		2CF038BC2A18FCC800AE3042 /* EvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF038B62A18FCC800AE3042 /* EvaluationView.swift */; };
+		2CF038BD2A18FCC800AE3042 /* EvaluationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF038B72A18FCC800AE3042 /* EvaluationModel.swift */; };
+		2CF038C12A18FEBC00AE3042 /* SelectFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF038BF2A18FEBC00AE3042 /* SelectFileView.swift */; };
+		2CF038C22A18FEBC00AE3042 /* SelectFileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF038C02A18FEBC00AE3042 /* SelectFileView.xib */; };
+		2CF038C32A1901CD00AE3042 /* ComingSoonAuctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E9A79299AF0DF008787DD /* ComingSoonAuctionCell.swift */; };
+		2CF038CB2A1A17A800AE3042 /* newBid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CF038CA2A1A17A800AE3042 /* newBid.mp3 */; };
 		2CF202B2293365DA004DC391 /* CarDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF202B1293365DA004DC391 /* CarDetailsVC.swift */; };
 		2CF41C7D28FC1F7E00BF923D /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41C7C28FC1F7E00BF923D /* Locator.swift */; };
 		2CF41C8128FC200200BF923D /* ImageViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF41C8028FC200100BF923D /* ImageViewerVC.swift */; };
@@ -376,12 +451,73 @@
 		2C3C27A72992833500FECAB8 /* PurchaseOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseOrderCell.xib; sourceTree = "<group>"; };
 		2C3C27AA299283D400FECAB8 /* SummaryReportOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryReportOrderCell.swift; sourceTree = "<group>"; };
 		2C3C27AB299283D400FECAB8 /* SummaryReportOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryReportOrderCell.xib; sourceTree = "<group>"; };
+		2C3D7A222A18F170004DD1FB /* AdvantageAndDisadvantageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvantageAndDisadvantageModel.swift; sourceTree = "<group>"; };
+		2C3D7A242A18F170004DD1FB /* AdvantageAndDisadvantageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvantageAndDisadvantageCell.xib; sourceTree = "<group>"; };
+		2C3D7A252A18F170004DD1FB /* AdvantageAndDisadvantageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvantageAndDisadvantageCell.swift; sourceTree = "<group>"; };
+		2C3D7A262A18F170004DD1FB /* CompleteAuctionInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteAuctionInfoVC.swift; sourceTree = "<group>"; };
+		2C3D7A282A18F170004DD1FB /* AddAuctionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAuctionVC.swift; sourceTree = "<group>"; };
+		2C3D7A2A2A18F170004DD1FB /* LiveVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveVC.swift; sourceTree = "<group>"; };
+		2C3D7A2C2A18F170004DD1FB /* LiveCommentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveCommentsCell.swift; sourceTree = "<group>"; };
+		2C3D7A2D2A18F170004DD1FB /* LiveCommentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveCommentsCell.xib; sourceTree = "<group>"; };
+		2C3D7A2E2A18F170004DD1FB /* SocketConstans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketConstans.swift; sourceTree = "<group>"; };
+		2C3D7A302A18F170004DD1FB /* AuctionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuctionDetails.swift; sourceTree = "<group>"; };
+		2C3D7A312A18F170004DD1FB /* AuctionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuctionDetailsVC.swift; sourceTree = "<group>"; };
+		2C3D7A342A18F170004DD1FB /* AuctionInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuctionInfoView.swift; sourceTree = "<group>"; };
+		2C3D7A352A18F170004DD1FB /* AuctionInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuctionInfoView.xib; sourceTree = "<group>"; };
+		2C3D7A372A18F170004DD1FB /* NextAuctionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextAuctionsView.swift; sourceTree = "<group>"; };
+		2C3D7A382A18F170004DD1FB /* NextAuctionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextAuctionsView.xib; sourceTree = "<group>"; };
+		2C3D7A3D2A18F170004DD1FB /* FeedbacksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbacksView.swift; sourceTree = "<group>"; };
+		2C3D7A3F2A18F170004DD1FB /* FeedbackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackCell.xib; sourceTree = "<group>"; };
+		2C3D7A402A18F170004DD1FB /* FeedbackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackCell.swift; sourceTree = "<group>"; };
+		2C3D7A422A18F170004DD1FB /* FeedbackVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
+		2C3D7A432A18F170004DD1FB /* FeedbacksView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbacksView.xib; sourceTree = "<group>"; };
+		2C3D7A452A18F170004DD1FB /* AllFeedbacksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFeedbacksVC.swift; sourceTree = "<group>"; };
+		2C3D7A472A18F170004DD1FB /* SellerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SellerInfoView.xib; sourceTree = "<group>"; };
+		2C3D7A482A18F170004DD1FB /* SellerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerInfoView.swift; sourceTree = "<group>"; };
+		2C3D7A4A2A18F170004DD1FB /* CarInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarInfoView.swift; sourceTree = "<group>"; };
+		2C3D7A4B2A18F170004DD1FB /* CarInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarInfoView.xib; sourceTree = "<group>"; };
+		2C3D7A4D2A18F170004DD1FB /* SellIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SellIndicatorView.xib; sourceTree = "<group>"; };
+		2C3D7A4E2A18F170004DD1FB /* SellIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellIndicatorView.swift; sourceTree = "<group>"; };
+		2C3D7A502A18F170004DD1FB /* AuctionAdvantagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuctionAdvantagesView.swift; sourceTree = "<group>"; };
+		2C3D7A522A18F170004DD1FB /* AuctionAdvantagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuctionAdvantagesCell.swift; sourceTree = "<group>"; };
+		2C3D7A532A18F170004DD1FB /* AuctionAdvantagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuctionAdvantagesCell.xib; sourceTree = "<group>"; };
+		2C3D7A542A18F170004DD1FB /* AuctionAdvantagesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuctionAdvantagesView.xib; sourceTree = "<group>"; };
+		2C3D7A562A18F170004DD1FB /* ExpandableDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableDetailsView.xib; sourceTree = "<group>"; };
+		2C3D7A572A18F170004DD1FB /* ExpandableDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableDetailsView.swift; sourceTree = "<group>"; };
+		2C3D7A592A18F170004DD1FB /* LastBidsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LastBidsView.xib; sourceTree = "<group>"; };
+		2C3D7A5A2A18F170004DD1FB /* LastBidsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastBidsView.swift; sourceTree = "<group>"; };
+		2C3D7A5C2A18F170004DD1FB /* AllLastBidsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllLastBidsVC.swift; sourceTree = "<group>"; };
+		2C3D7A5E2A18F170004DD1FB /* LastBidsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LastBidsCell.xib; sourceTree = "<group>"; };
+		2C3D7A5F2A18F170004DD1FB /* LastBidsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastBidsCell.swift; sourceTree = "<group>"; };
+		2C3D7A612A18F170004DD1FB /* AuctionPricesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuctionPricesView.xib; sourceTree = "<group>"; };
+		2C3D7A622A18F170004DD1FB /* AuctionPricesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuctionPricesView.swift; sourceTree = "<group>"; };
+		2C3D7A642A18F170004DD1FB /* LiveContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveContainerVC.swift; sourceTree = "<group>"; };
+		2C3D7A652A18F170004DD1FB /* Auctions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auctions.storyboard; sourceTree = "<group>"; };
+		2C3D7A922A18F54E004DD1FB /* AuctionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuctionRouter.swift; sourceTree = "<group>"; };
 		2C3E224D29290E0300C38B57 /* SelectCarImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCarImagesView.swift; sourceTree = "<group>"; };
 		2C3E224F29290E1600C38B57 /* SelectCarImagesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCarImagesView.xib; sourceTree = "<group>"; };
 		2C44B8502800DD8700728351 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		2C44B8522800E31600728351 /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		2C4DCFDC29084F9000D63EE3 /* countriesAr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countriesAr.json; sourceTree = "<group>"; };
 		2C4DCFE2290859DF00D63EE3 /* IntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroModel.swift; sourceTree = "<group>"; };
+		2C4E9A56299A4F09008787DD /* HomeSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderCell.swift; sourceTree = "<group>"; };
+		2C4E9A57299A4F09008787DD /* HomeSliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSliderCell.xib; sourceTree = "<group>"; };
+		2C4E9A5B299A4FE8008787DD /* HomeCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCell.swift; sourceTree = "<group>"; };
+		2C4E9A5C299A4FE8008787DD /* HomeCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCell.xib; sourceTree = "<group>"; };
+		2C4E9A60299A5087008787DD /* HomeTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTypeCell.swift; sourceTree = "<group>"; };
+		2C4E9A61299A5087008787DD /* HomeTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTypeCell.xib; sourceTree = "<group>"; };
+		2C4E9A65299A5110008787DD /* CurrentAuctionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAuctionsCell.swift; sourceTree = "<group>"; };
+		2C4E9A66299A5110008787DD /* CurrentAuctionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentAuctionsCell.xib; sourceTree = "<group>"; };
+		2C4E9A6A299A5144008787DD /* ComingAuctionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingAuctionsCell.swift; sourceTree = "<group>"; };
+		2C4E9A6B299A5144008787DD /* ComingAuctionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComingAuctionsCell.xib; sourceTree = "<group>"; };
+		2C4E9A6F299A51B5008787DD /* HarajHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarajHomeCell.swift; sourceTree = "<group>"; };
+		2C4E9A70299A51B5008787DD /* HarajHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HarajHomeCell.xib; sourceTree = "<group>"; };
+		2C4E9A74299A51EC008787DD /* CarShowHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShowHomeCell.swift; sourceTree = "<group>"; };
+		2C4E9A75299A51EC008787DD /* CarShowHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarShowHomeCell.xib; sourceTree = "<group>"; };
+		2C4E9A79299AF0DF008787DD /* ComingSoonAuctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonAuctionCell.swift; sourceTree = "<group>"; };
+		2C4E9A7A299AF0DF008787DD /* ComingSoonAuctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComingSoonAuctionCell.xib; sourceTree = "<group>"; };
+		2C4E9A7D299B018A008787DD /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		2C4E9A81299B0737008787DD /* BrowseCarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCarVC.swift; sourceTree = "<group>"; };
 		2C4FDC1C29892E3A00797B9A /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
 		2C4FDC202989B9D200797B9A /* OfferDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsVC.swift; sourceTree = "<group>"; };
 		2C4FDC232989CEC200797B9A /* ProvidersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersCell.swift; sourceTree = "<group>"; };
@@ -400,7 +536,7 @@
 		2C54F1C82923F5B8008F99CE /* AuctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionCell.xib; sourceTree = "<group>"; };
 		2C54F1CC292417E5008F99CE /* AuctionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionsVC.swift; sourceTree = "<group>"; };
 		2C54F1CF29241CFC008F99CE /* CarsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsVC.swift; sourceTree = "<group>"; };
-		2C54F1D229244C26008F99CE /* VehicleTypeSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTypeSelectionVC.swift; sourceTree = "<group>"; };
+		2C54F1D229244C26008F99CE /* AuctionTypeSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionTypeSelectionVC.swift; sourceTree = "<group>"; };
 		2C54F1D529245A07008F99CE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		2C54F1D729245A1D008F99CE /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		2C54F1DA2924654E008F99CE /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
@@ -446,10 +582,14 @@
 		2C8AB0AD29076644003D233E /* NormalTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalTextFieldView.xib; sourceTree = "<group>"; };
 		2C8AB0AF29076AF1003D233E /* UnderLineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineButton.swift; sourceTree = "<group>"; };
 		2C8AB0B22907754C003D233E /* CircleBorderedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBorderedImageView.swift; sourceTree = "<group>"; };
+		2C90D52629947BBB009D1039 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		2C918502280DD48F00262AF5 /* VerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
 		2C918505280DD79400262AF5 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		2C918508280DE6B700262AF5 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		2C9651B72924665300B30B11 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		2C9C723F2A1A1B7F001C90E5 /* play.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = play.json; sourceTree = "<group>"; };
+		2C9C72432A1A3AAA001C90E5 /* LiveStreamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamCell.swift; sourceTree = "<group>"; };
+		2C9C72442A1A3AAA001C90E5 /* LiveStreamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveStreamCell.xib; sourceTree = "<group>"; };
 		2C9D8EC2290B900500D8A9CC /* MoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreModel.swift; sourceTree = "<group>"; };
 		2C9FED772918EDEA001D0446 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		2CA0AC18291297F4006CBC78 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
@@ -507,6 +647,8 @@
 		2CBC94C1286D0C7000E42AB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CBD857F28063F380036C9B1 /* Print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
 		2CC025C3293F274A00DB4D10 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
+		2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAuctionCell.swift; sourceTree = "<group>"; };
+		2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentAuctionCell.xib; sourceTree = "<group>"; };
 		2CE14365280C02B400A601F5 /* indicatorGifImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicatorGifImage.gif; sourceTree = "<group>"; };
 		2CE14367280C067100A601F5 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		2CE14369280C06DC00A601F5 /* CollectionViewContentSized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewContentSized.swift; sourceTree = "<group>"; };
@@ -514,6 +656,14 @@
 		2CE1436F280C0C7100A601F5 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		2CE14372280C132300A601F5 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		2CE7C8A929220FE000EE6100 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		2CF038B32A18FCC800AE3042 /* EvaluationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationViewCell.swift; sourceTree = "<group>"; };
+		2CF038B42A18FCC800AE3042 /* EvaluationViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluationViewCell.xib; sourceTree = "<group>"; };
+		2CF038B52A18FCC800AE3042 /* EvaluationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluationView.xib; sourceTree = "<group>"; };
+		2CF038B62A18FCC800AE3042 /* EvaluationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationView.swift; sourceTree = "<group>"; };
+		2CF038B72A18FCC800AE3042 /* EvaluationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationModel.swift; sourceTree = "<group>"; };
+		2CF038BF2A18FEBC00AE3042 /* SelectFileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFileView.swift; sourceTree = "<group>"; };
+		2CF038C02A18FEBC00AE3042 /* SelectFileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectFileView.xib; sourceTree = "<group>"; };
+		2CF038CA2A1A17A800AE3042 /* newBid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newBid.mp3; sourceTree = "<group>"; };
 		2CF202B1293365DA004DC391 /* CarDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailsVC.swift; sourceTree = "<group>"; };
 		2CF41C7C28FC1F7E00BF923D /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		2CF41C8028FC200100BF923D /* ImageViewerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerVC.swift; sourceTree = "<group>"; };
@@ -669,6 +819,7 @@
 		2C178CA527F7C17000D32327 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2C3D7A202A18F170004DD1FB /* Auctions */,
 				2C197953298A8405000EB796 /* Orders */,
 				2C0FCE952927B34400108FA8 /* Cars */,
 				2C54F1AF2922CD1C008F99CE /* Home */,
@@ -757,6 +908,8 @@
 		2C178CB727F7C26700D32327 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CF038CA2A1A17A800AE3042 /* newBid.mp3 */,
+				2C9C723F2A1A1B7F001C90E5 /* play.json */,
 				2CE14364280C022600A601F5 /* Gifs */,
 				2C178CB827F7C26F00D32327 /* Font */,
 				2C178CB927F7C28100D32327 /* Theme.xcassets */,
@@ -850,6 +1003,7 @@
 				2C178CF327F7C48900D32327 /* APIRouter.swift */,
 				2C34B18529474D2400EAA358 /* SettingRouter.swift */,
 				2CA73C0A29478BD50055839E /* CarRouter.swift */,
+				2C3D7A922A18F54E004DD1FB /* AuctionRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -1067,6 +1221,248 @@
 			path = PurchaseOrderCell;
 			sourceTree = "<group>";
 		};
+		2C3D7A202A18F170004DD1FB /* Auctions */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A212A18F170004DD1FB /* CompleteAuctionInfoVC */,
+				2C3D7A272A18F170004DD1FB /* AddAuctionVC */,
+				2C3D7A292A18F170004DD1FB /* LiveVC */,
+				2C3D7A2E2A18F170004DD1FB /* SocketConstans.swift */,
+				2C3D7A2F2A18F170004DD1FB /* AuctionDetailsVC */,
+				2C3D7A632A18F170004DD1FB /* LiveContainerVC */,
+				2C3D7A652A18F170004DD1FB /* Auctions.storyboard */,
+			);
+			path = Auctions;
+			sourceTree = "<group>";
+		};
+		2C3D7A212A18F170004DD1FB /* CompleteAuctionInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A222A18F170004DD1FB /* AdvantageAndDisadvantageModel.swift */,
+				2C3D7A232A18F170004DD1FB /* Cell */,
+				2C3D7A262A18F170004DD1FB /* CompleteAuctionInfoVC.swift */,
+			);
+			path = CompleteAuctionInfoVC;
+			sourceTree = "<group>";
+		};
+		2C3D7A232A18F170004DD1FB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A242A18F170004DD1FB /* AdvantageAndDisadvantageCell.xib */,
+				2C3D7A252A18F170004DD1FB /* AdvantageAndDisadvantageCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2C3D7A272A18F170004DD1FB /* AddAuctionVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A282A18F170004DD1FB /* AddAuctionVC.swift */,
+			);
+			path = AddAuctionVC;
+			sourceTree = "<group>";
+		};
+		2C3D7A292A18F170004DD1FB /* LiveVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C9C72412A1A3A7C001C90E5 /* LiveStreamCell */,
+				2C3D7A2A2A18F170004DD1FB /* LiveVC.swift */,
+				2C3D7A2B2A18F170004DD1FB /* LiveCommentsCell */,
+			);
+			path = LiveVC;
+			sourceTree = "<group>";
+		};
+		2C3D7A2B2A18F170004DD1FB /* LiveCommentsCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A2C2A18F170004DD1FB /* LiveCommentsCell.swift */,
+				2C3D7A2D2A18F170004DD1FB /* LiveCommentsCell.xib */,
+			);
+			path = LiveCommentsCell;
+			sourceTree = "<group>";
+		};
+		2C3D7A2F2A18F170004DD1FB /* AuctionDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A302A18F170004DD1FB /* AuctionDetails.swift */,
+				2C3D7A312A18F170004DD1FB /* AuctionDetailsVC.swift */,
+				2C3D7A322A18F170004DD1FB /* Views */,
+			);
+			path = AuctionDetailsVC;
+			sourceTree = "<group>";
+		};
+		2C3D7A322A18F170004DD1FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A332A18F170004DD1FB /* AuctionInfoView */,
+				2C3D7A362A18F170004DD1FB /* NextAuctionsView */,
+				2C3D7A3C2A18F170004DD1FB /* FeedbacksView */,
+				2C3D7A462A18F170004DD1FB /* SellerInfoView */,
+				2C3D7A492A18F170004DD1FB /* CarInfoView */,
+				2C3D7A4C2A18F170004DD1FB /* SellIndicatorView */,
+				2C3D7A4F2A18F170004DD1FB /* AuctionAdvantagesView */,
+				2C3D7A552A18F170004DD1FB /* ExpandableDetailsView */,
+				2C3D7A582A18F170004DD1FB /* LastBidsView */,
+				2C3D7A602A18F170004DD1FB /* AuctionPricesView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C3D7A332A18F170004DD1FB /* AuctionInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A342A18F170004DD1FB /* AuctionInfoView.swift */,
+				2C3D7A352A18F170004DD1FB /* AuctionInfoView.xib */,
+			);
+			path = AuctionInfoView;
+			sourceTree = "<group>";
+		};
+		2C3D7A362A18F170004DD1FB /* NextAuctionsView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A372A18F170004DD1FB /* NextAuctionsView.swift */,
+				2C3D7A382A18F170004DD1FB /* NextAuctionsView.xib */,
+			);
+			path = NextAuctionsView;
+			sourceTree = "<group>";
+		};
+		2C3D7A3C2A18F170004DD1FB /* FeedbacksView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A3D2A18F170004DD1FB /* FeedbacksView.swift */,
+				2C3D7A3E2A18F170004DD1FB /* FeedbackCell */,
+				2C3D7A412A18F170004DD1FB /* FeedbackVC */,
+				2C3D7A432A18F170004DD1FB /* FeedbacksView.xib */,
+				2C3D7A442A18F170004DD1FB /* AllFeedbacksVC */,
+			);
+			path = FeedbacksView;
+			sourceTree = "<group>";
+		};
+		2C3D7A3E2A18F170004DD1FB /* FeedbackCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A3F2A18F170004DD1FB /* FeedbackCell.xib */,
+				2C3D7A402A18F170004DD1FB /* FeedbackCell.swift */,
+			);
+			path = FeedbackCell;
+			sourceTree = "<group>";
+		};
+		2C3D7A412A18F170004DD1FB /* FeedbackVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A422A18F170004DD1FB /* FeedbackVC.swift */,
+			);
+			path = FeedbackVC;
+			sourceTree = "<group>";
+		};
+		2C3D7A442A18F170004DD1FB /* AllFeedbacksVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A452A18F170004DD1FB /* AllFeedbacksVC.swift */,
+			);
+			path = AllFeedbacksVC;
+			sourceTree = "<group>";
+		};
+		2C3D7A462A18F170004DD1FB /* SellerInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A472A18F170004DD1FB /* SellerInfoView.xib */,
+				2C3D7A482A18F170004DD1FB /* SellerInfoView.swift */,
+			);
+			path = SellerInfoView;
+			sourceTree = "<group>";
+		};
+		2C3D7A492A18F170004DD1FB /* CarInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A4A2A18F170004DD1FB /* CarInfoView.swift */,
+				2C3D7A4B2A18F170004DD1FB /* CarInfoView.xib */,
+			);
+			path = CarInfoView;
+			sourceTree = "<group>";
+		};
+		2C3D7A4C2A18F170004DD1FB /* SellIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A4D2A18F170004DD1FB /* SellIndicatorView.xib */,
+				2C3D7A4E2A18F170004DD1FB /* SellIndicatorView.swift */,
+			);
+			path = SellIndicatorView;
+			sourceTree = "<group>";
+		};
+		2C3D7A4F2A18F170004DD1FB /* AuctionAdvantagesView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A502A18F170004DD1FB /* AuctionAdvantagesView.swift */,
+				2C3D7A512A18F170004DD1FB /* Cell */,
+				2C3D7A542A18F170004DD1FB /* AuctionAdvantagesView.xib */,
+			);
+			path = AuctionAdvantagesView;
+			sourceTree = "<group>";
+		};
+		2C3D7A512A18F170004DD1FB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A522A18F170004DD1FB /* AuctionAdvantagesCell.swift */,
+				2C3D7A532A18F170004DD1FB /* AuctionAdvantagesCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2C3D7A552A18F170004DD1FB /* ExpandableDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A562A18F170004DD1FB /* ExpandableDetailsView.xib */,
+				2C3D7A572A18F170004DD1FB /* ExpandableDetailsView.swift */,
+			);
+			path = ExpandableDetailsView;
+			sourceTree = "<group>";
+		};
+		2C3D7A582A18F170004DD1FB /* LastBidsView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A592A18F170004DD1FB /* LastBidsView.xib */,
+				2C3D7A5A2A18F170004DD1FB /* LastBidsView.swift */,
+				2C3D7A5B2A18F170004DD1FB /* AllLastBidsVC */,
+				2C3D7A5D2A18F170004DD1FB /* LastBidsCell */,
+			);
+			path = LastBidsView;
+			sourceTree = "<group>";
+		};
+		2C3D7A5B2A18F170004DD1FB /* AllLastBidsVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A5C2A18F170004DD1FB /* AllLastBidsVC.swift */,
+			);
+			path = AllLastBidsVC;
+			sourceTree = "<group>";
+		};
+		2C3D7A5D2A18F170004DD1FB /* LastBidsCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A5E2A18F170004DD1FB /* LastBidsCell.xib */,
+				2C3D7A5F2A18F170004DD1FB /* LastBidsCell.swift */,
+			);
+			path = LastBidsCell;
+			sourceTree = "<group>";
+		};
+		2C3D7A602A18F170004DD1FB /* AuctionPricesView */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A612A18F170004DD1FB /* AuctionPricesView.xib */,
+				2C3D7A622A18F170004DD1FB /* AuctionPricesView.swift */,
+			);
+			path = AuctionPricesView;
+			sourceTree = "<group>";
+		};
+		2C3D7A632A18F170004DD1FB /* LiveContainerVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C3D7A642A18F170004DD1FB /* LiveContainerVC.swift */,
+			);
+			path = LiveContainerVC;
+			sourceTree = "<group>";
+		};
 		2C3E224C29290DE900C38B57 /* SelectCarImagesView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1091,6 +1487,86 @@
 				2CA73C08294788CA0055839E /* AddCarData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2C4E9A55299A4EDF008787DD /* HomeSliderCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E9A56299A4F09008787DD /* HomeSliderCell.swift */,
+				2C4E9A57299A4F09008787DD /* HomeSliderCell.xib */,
+			);
+			path = HomeSliderCell;
+			sourceTree = "<group>";
+		};
+		2C4E9A5A299A4FBC008787DD /* HomeCategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E9A5B299A4FE8008787DD /* HomeCategoryCell.swift */,
+				2C4E9A5C299A4FE8008787DD /* HomeCategoryCell.xib */,
+			);
+			path = HomeCategoryCell;
+			sourceTree = "<group>";
+		};
+		2C4E9A5F299A5073008787DD /* HomeTypeCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E9A60299A5087008787DD /* HomeTypeCell.swift */,
+				2C4E9A61299A5087008787DD /* HomeTypeCell.xib */,
+			);
+			path = HomeTypeCell;
+			sourceTree = "<group>";
+		};
+		2C4E9A64299A50C4008787DD /* CurrentAuctionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E9A65299A5110008787DD /* CurrentAuctionsCell.swift */,
+				2C4E9A66299A5110008787DD /* CurrentAuctionsCell.xib */,
+			);
+			path = CurrentAuctionsCell;
+			sourceTree = "<group>";
+		};
+		2C4E9A69299A5138008787DD /* ComingAuctionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E9A6A299A5144008787DD /* ComingAuctionsCell.swift */,
+				2C4E9A6B299A5144008787DD /* ComingAuctionsCell.xib */,
+			);
+			path = ComingAuctionsCell;
+			sourceTree = "<group>";
+		};
+		2C4E9A6E299A516C008787DD /* HarajHomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E9A6F299A51B5008787DD /* HarajHomeCell.swift */,
+				2C4E9A70299A51B5008787DD /* HarajHomeCell.xib */,
+			);
+			path = HarajHomeCell;
+			sourceTree = "<group>";
+		};
+		2C4E9A73299A51C9008787DD /* CarShowHomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E9A74299A51EC008787DD /* CarShowHomeCell.swift */,
+				2C4E9A75299A51EC008787DD /* CarShowHomeCell.xib */,
+			);
+			path = CarShowHomeCell;
+			sourceTree = "<group>";
+		};
+		2C4E9A78299AF0BC008787DD /* ComingSoonAuctionCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E9A79299AF0DF008787DD /* ComingSoonAuctionCell.swift */,
+				2C4E9A7A299AF0DF008787DD /* ComingSoonAuctionCell.xib */,
+			);
+			path = ComingSoonAuctionCell;
+			sourceTree = "<group>";
+		};
+		2C4E9A7F299B070F008787DD /* BrowseCarVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E9A81299B0737008787DD /* BrowseCarVC.swift */,
+			);
+			path = BrowseCarVC;
 			sourceTree = "<group>";
 		};
 		2C4FDC1E2989AB5400797B9A /* offerCell */ = {
@@ -1148,6 +1624,7 @@
 		2C54F1AF2922CD1C008F99CE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2C4E9A7F299B070F008787DD /* BrowseCarVC */,
 				2C5E97352924CF060007E92A /* SearchVC */,
 				2C54F1D929246538008F99CE /* NotificationsVC */,
 				2C54F1D129244BF1008F99CE /* VehicleTypeSelectionVC */,
@@ -1155,6 +1632,7 @@
 				2C54F1CB292417CC008F99CE /* AuctionsVC */,
 				2C54F1B82922CECF008F99CE /* HomeVC */,
 				2C54F1B62922CE72008F99CE /* Home.storyboard */,
+				2C90D52629947BBB009D1039 /* HomeRouter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1162,7 +1640,17 @@
 		2C54F1B82922CECF008F99CE /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				2CD9A46C299B9AAE00EBD6AC /* CurrentAuctionCell */,
+				2C4E9A78299AF0BC008787DD /* ComingSoonAuctionCell */,
+				2C4E9A73299A51C9008787DD /* CarShowHomeCell */,
+				2C4E9A6E299A516C008787DD /* HarajHomeCell */,
+				2C4E9A69299A5138008787DD /* ComingAuctionsCell */,
+				2C4E9A64299A50C4008787DD /* CurrentAuctionsCell */,
+				2C4E9A5F299A5073008787DD /* HomeTypeCell */,
+				2C4E9A5A299A4FBC008787DD /* HomeCategoryCell */,
+				2C4E9A55299A4EDF008787DD /* HomeSliderCell */,
 				2C54F1B12922CD67008F99CE /* HomeVC.swift */,
+				2C4E9A7D299B018A008787DD /* HomeModel.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -1222,7 +1710,7 @@
 		2C54F1D129244BF1008F99CE /* VehicleTypeSelectionVC */ = {
 			isa = PBXGroup;
 			children = (
-				2C54F1D229244C26008F99CE /* VehicleTypeSelectionVC.swift */,
+				2C54F1D229244C26008F99CE /* AuctionTypeSelectionVC.swift */,
 			);
 			path = VehicleTypeSelectionVC;
 			sourceTree = "<group>";
@@ -1318,6 +1806,9 @@
 		2C5FD599286DED0B002DB350 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2CF038BE2A18FEBC00AE3042 /* SelectFileView */,
+				2CF038B82A18FCC800AE3042 /* AuctionPriceView */,
+				2CF038B12A18FCC800AE3042 /* EvaluationView */,
 				2CFC794C2987E14E0089131A /* Cells */,
 				2CFC7928298656340089131A /* LottieView */,
 				2CC025C2293F273300DB4D10 /* ScannerVC */,
@@ -1505,6 +1996,15 @@
 				2CBB3E9E2908B02D00A32C3E /* MoreCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2C9C72412A1A3A7C001C90E5 /* LiveStreamCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C9C72432A1A3AAA001C90E5 /* LiveStreamCell.swift */,
+				2C9C72442A1A3AAA001C90E5 /* LiveStreamCell.xib */,
+			);
+			path = LiveStreamCell;
 			sourceTree = "<group>";
 		};
 		2C9D8EC1290B8FF300D8A9CC /* Models */ = {
@@ -1770,6 +2270,15 @@
 			path = ScannerVC;
 			sourceTree = "<group>";
 		};
+		2CD9A46C299B9AAE00EBD6AC /* CurrentAuctionCell */ = {
+			isa = PBXGroup;
+			children = (
+				2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */,
+				2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */,
+			);
+			path = CurrentAuctionCell;
+			sourceTree = "<group>";
+		};
 		2CE14364280C022600A601F5 /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
@@ -1809,6 +2318,42 @@
 				2CE7C8A929220FE000EE6100 /* AboutVC.swift */,
 			);
 			path = AboutVC;
+			sourceTree = "<group>";
+		};
+		2CF038B12A18FCC800AE3042 /* EvaluationView */ = {
+			isa = PBXGroup;
+			children = (
+				2CF038B22A18FCC800AE3042 /* EvaluationViewCell */,
+				2CF038B52A18FCC800AE3042 /* EvaluationView.xib */,
+				2CF038B62A18FCC800AE3042 /* EvaluationView.swift */,
+				2CF038B72A18FCC800AE3042 /* EvaluationModel.swift */,
+			);
+			path = EvaluationView;
+			sourceTree = "<group>";
+		};
+		2CF038B22A18FCC800AE3042 /* EvaluationViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2CF038B32A18FCC800AE3042 /* EvaluationViewCell.swift */,
+				2CF038B42A18FCC800AE3042 /* EvaluationViewCell.xib */,
+			);
+			path = EvaluationViewCell;
+			sourceTree = "<group>";
+		};
+		2CF038B82A18FCC800AE3042 /* AuctionPriceView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AuctionPriceView;
+			sourceTree = "<group>";
+		};
+		2CF038BE2A18FEBC00AE3042 /* SelectFileView */ = {
+			isa = PBXGroup;
+			children = (
+				2CF038BF2A18FEBC00AE3042 /* SelectFileView.swift */,
+				2CF038C02A18FEBC00AE3042 /* SelectFileView.xib */,
+			);
+			path = SelectFileView;
 			sourceTree = "<group>";
 		};
 		2CF202B0293365B6004DC391 /* CarDetailsVC */ = {
@@ -2074,58 +2619,86 @@
 			files = (
 				2C8431F92904734C00AC6009 /* countriesEn.json in Resources */,
 				2C5FD59F286DED39002DB350 /* StarRatingStackView.xib in Resources */,
+				2C4E9A59299A4F09008787DD /* HomeSliderCell.xib in Resources */,
+				2C3D7A812A18F170004DD1FB /* SellIndicatorView.xib in Resources */,
 				2CFC79512987E17C0089131A /* BrandCell.xib in Resources */,
 				2C4FDC282989CEC200797B9A /* ProvidersCell.xib in Resources */,
 				2C3C2799299281D200FECAB8 /* ShippingOrderCell.xib in Resources */,
 				2CFC793E2986BED20089131A /* FQACell.xib in Resources */,
+				2CD9A470299B9ADB00EBD6AC /* CurrentAuctionCell.xib in Resources */,
 				2C34D621297EDF910005E9DC /* DatePickerVC.xib in Resources */,
+				2C3D7A862A18F170004DD1FB /* AuctionAdvantagesView.xib in Resources */,
 				2CE14370280C0C7100A601F5 /* Auth.storyboard in Resources */,
 				2C178CC227F7C29000D32327 /* Cairo-Medium.ttf in Resources */,
 				2CE14366280C02B500A601F5 /* indicatorGifImage.gif in Resources */,
+				2CF038CB2A1A17A800AE3042 /* newBid.mp3 in Resources */,
 				2C1A344229880D2B007D9B2D /* OffersCell.xib in Resources */,
 				2CBC94AA286D0BC500E42AB5 /* InfoPlist.strings in Resources */,
 				2C8431EB2904291800AC6009 /* PhoneTextFieldView.xib in Resources */,
 				2C4DCFDD29084F9000D63EE3 /* countriesAr.json in Resources */,
+				2CF038C22A18FEBC00AE3042 /* SelectFileView.xib in Resources */,
+				2C4E9A7C299AF0DF008787DD /* ComingSoonAuctionCell.xib in Resources */,
 				2C178CC327F7C29000D32327 /* Cairo-Regular.ttf in Resources */,
+				2C4E9A63299A5087008787DD /* HomeTypeCell.xib in Resources */,
 				2C54F1D829245A1D008F99CE /* HeaderView.xib in Resources */,
+				2C3D7A722A18F170004DD1FB /* AuctionInfoView.xib in Resources */,
 				2CBC94BA286D0C4400E42AB5 /* PhotosUI.strings in Resources */,
 				2CF41C9828FC217C00BF923D /* SliderView.xib in Resources */,
 				2C3C27AD299283D400FECAB8 /* SummaryReportOrderCell.xib in Resources */,
 				2C3C279E2992821100FECAB8 /* EvaluationOrderCell.xib in Resources */,
 				2C54F1CA2923F5B8008F99CE /* AuctionCell.xib in Resources */,
+				2C3D7A912A18F170004DD1FB /* Auctions.storyboard in Resources */,
+				2C3D7A892A18F170004DD1FB /* LastBidsView.xib in Resources */,
 				2CBC9498286D078F00E42AB5 /* ValidationLocalized.strings in Resources */,
+				2C3D7A782A18F170004DD1FB /* FeedbackCell.xib in Resources */,
+				2C3D7A8C2A18F170004DD1FB /* LastBidsCell.xib in Resources */,
+				2C4E9A6D299A5144008787DD /* ComingAuctionsCell.xib in Resources */,
 				2CBC94BE286D0C6D00E42AB5 /* Localizable.strings in Resources */,
+				2C4E9A5E299A4FE8008787DD /* HomeCategoryCell.xib in Resources */,
 				2C178C9D27F7BBF800D32327 /* LaunchScreen.storyboard in Resources */,
 				2C178CBA27F7C28100D32327 /* Theme.xcassets in Resources */,
+				2C9C72472A1A3AAA001C90E5 /* LiveStreamCell.xib in Resources */,
 				2C178CC127F7C29000D32327 /* Cairo-SemiBold.ttf in Resources */,
 				2C5FD5A0286DED39002DB350 /* README.md in Resources */,
+				2C3D7A7B2A18F170004DD1FB /* FeedbacksView.xib in Resources */,
 				2CF41C9528FC211F00BF923D /* SliderCell.xib in Resources */,
+				2C3D7A8E2A18F170004DD1FB /* AuctionPricesView.xib in Resources */,
 				2CB750C92905CF7B00FEDED9 /* EmailLocalizable.strings in Resources */,
 				2CA0AC302912C18D006CBC78 /* AppTextView.xib in Resources */,
+				2C3D7A672A18F170004DD1FB /* AdvantageAndDisadvantageCell.xib in Resources */,
 				2CFC793029865C8B0089131A /* check_animation.json in Resources */,
 				2C44B8532800E31600728351 /* AlertView.xib in Resources */,
 				2C178C9A27F7BBF800D32327 /* Assets.xcassets in Resources */,
 				2C54F1B72922CE72008F99CE /* Home.storyboard in Resources */,
 				2C178CC627F7C29000D32327 /* Cairo-Bold.ttf in Resources */,
 				2C178CC427F7C29000D32327 /* Cairo-Light.ttf in Resources */,
+				2C9C72402A1A1B7F001C90E5 /* play.json in Resources */,
 				2C197955298A8466000EB796 /* Orders.storyboard in Resources */,
+				2CF038BB2A18FCC800AE3042 /* EvaluationView.xib in Resources */,
+				2C4E9A72299A51B5008787DD /* HarajHomeCell.xib in Resources */,
 				2CFB3839290696E2001619E1 /* PasswordTextFieldView.xib in Resources */,
 				2C34D619297ED9E80005E9DC /* DatePickerTextFieldView.xib in Resources */,
 				2C178CC527F7C29000D32327 /* Cairo-Black.ttf in Resources */,
 				2C3020F2297EA3F6000B47C9 /* GoogleService-Info.plist in Resources */,
 				2CBC94B2286D0C0700E42AB5 /* PhotoLibraryServices.strings in Resources */,
+				2C3D7A872A18F170004DD1FB /* ExpandableDetailsView.xib in Resources */,
 				2CFC792C29865C7C0089131A /* wallet_animation.json in Resources */,
 				2CF41C9B28FC23A100BF923D /* Shared.storyboard in Resources */,
+				2C3D7A742A18F170004DD1FB /* NextAuctionsView.xib in Resources */,
 				2C54F1DF2924654E008F99CE /* NotificationsCell.xib in Resources */,
 				2CF41C8E28FC20AD00BF923D /* SegmentedCollection.xib in Resources */,
 				2C178C9827F7BBF600D32327 /* Main.storyboard in Resources */,
 				2CFB384629069A3C001619E1 /* PasswordLocalizable.strings in Resources */,
+				2C4E9A68299A5110008787DD /* CurrentAuctionsCell.xib in Resources */,
 				2C3C27A92992833500FECAB8 /* PurchaseOrderCell.xib in Resources */,
 				2CBC94A4286D09F600E42AB5 /* CoreLocalizable.strings in Resources */,
 				2C54F1C02922CF9E008F99CE /* CarCell.xib in Resources */,
 				2CB750CF2905DA2300FEDED9 /* EmailTextFieldView.xib in Resources */,
 				2C5702ED297F58A2008B0415 /* MyAuctionsCell.xib in Resources */,
 				2CBB3EA32908B02D00A32C3E /* MoreCell.xib in Resources */,
+				2CF038BA2A18FCC800AE3042 /* EvaluationViewCell.xib in Resources */,
+				2C3D7A7D2A18F170004DD1FB /* SellerInfoView.xib in Resources */,
+				2C3D7A852A18F170004DD1FB /* AuctionAdvantagesCell.xib in Resources */,
 				2C6F37722926B28400730812 /* DropDownTextFieldView.xib in Resources */,
 				2CFC792E29865C840089131A /* phone_animation.json in Resources */,
 				2CBC94AE286D0BE400E42AB5 /* PhotoLibrary.strings in Resources */,
@@ -2134,8 +2707,11 @@
 				2CBC949E286D097D00E42AB5 /* HelperLocalizable.strings in Resources */,
 				2CBB3EA52908B08400A32C3E /* More.storyboard in Resources */,
 				2CF41C8B28FC207100BF923D /* SegmentedCollectionCell.xib in Resources */,
+				2C3D7A6D2A18F170004DD1FB /* LiveCommentsCell.xib in Resources */,
 				2CF41C8428FC201300BF923D /* ImageViewerCell.xib in Resources */,
 				2C8AB0AE29076644003D233E /* NormalTextFieldView.xib in Resources */,
+				2C4E9A77299A51EC008787DD /* CarShowHomeCell.xib in Resources */,
+				2C3D7A802A18F170004DD1FB /* CarInfoView.xib in Resources */,
 				2C3E225029290E1600C38B57 /* SelectCarImagesView.xib in Resources */,
 				2C8431F229042E8800AC6009 /* PhoneNumberLocalizable.strings in Resources */,
 			);
@@ -2190,7 +2766,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3D7A832A18F170004DD1FB /* AuctionAdvantagesView.swift in Sources */,
 				2CE1436E280C0C5A00A601F5 /* LoginVC.swift in Sources */,
+				2C3D7A692A18F170004DD1FB /* CompleteAuctionInfoVC.swift in Sources */,
 				2C8AB0AC29076639003D233E /* NormalTextFieldView.swift in Sources */,
 				2C5FD5A1286DED39002DB350 /* StarRatingStackView.swift in Sources */,
 				2C54F1BF2922CF9E008F99CE /* CarCell.swift in Sources */,
@@ -2202,18 +2780,23 @@
 				2C178D3227F7CC3800D32327 /* AppIndicator.swift in Sources */,
 				2CA522022993120B00925E8A /* ShippingOrderVC.swift in Sources */,
 				2C54F1D029241CFC008F99CE /* CarsVC.swift in Sources */,
+				2C3D7A822A18F170004DD1FB /* SellIndicatorView.swift in Sources */,
 				2C7EBB6F298F9C81003D9709 /* OrderDetailsModels.swift in Sources */,
 				2C178D1C27F7CAF900D32327 /* ScrollView.swift in Sources */,
 				2C4FDC1D29892E3A00797B9A /* OfferModel.swift in Sources */,
 				2CF41C9428FC211F00BF923D /* SliderCell.swift in Sources */,
 				2CB750B42905A66F00FEDED9 /* CountryProtocols.swift in Sources */,
+				2CD9A46F299B9ADB00EBD6AC /* CurrentAuctionCell.swift in Sources */,
+				2C90D52729947BBB009D1039 /* HomeRouter.swift in Sources */,
 				2C178D4D27F7D15A00D32327 /* ImagePicker.swift in Sources */,
 				2C4FDC322989EB3C00797B9A /* ProviderDetailsVC.swift in Sources */,
+				2C3D7A712A18F170004DD1FB /* AuctionInfoView.swift in Sources */,
 				2C59B827297ECC200052093A /* RegisterVC.swift in Sources */,
 				2C8431ED29042A7800AC6009 /* PhoneTextFieldView.swift in Sources */,
 				2CF41C8128FC200200BF923D /* ImageViewerVC.swift in Sources */,
 				2CB750AC2905A59800FEDED9 /* PhoneValidationErrors.swift in Sources */,
 				2CB750AA2905A56F00FEDED9 /* PhoneValidationService.swift in Sources */,
+				2CF038B92A18FCC800AE3042 /* EvaluationViewCell.swift in Sources */,
 				2C6F377A2926B80F00730812 /* DropDownListCell.swift in Sources */,
 				2C178D4C27F7D15A00D32327 /* Emailer.swift in Sources */,
 				2CE14373280C132300A601F5 /* AuthRouter.swift in Sources */,
@@ -2225,7 +2808,10 @@
 				2C178D0027F7C87800D32327 /* BaseVC.swift in Sources */,
 				2C54F1D629245A07008F99CE /* HeaderView.swift in Sources */,
 				2C5702FD297F5FB2008B0415 /* MyFavouriteVC.swift in Sources */,
+				2C3D7A8A2A18F170004DD1FB /* LastBidsView.swift in Sources */,
 				2CF41C8A28FC207100BF923D /* SegmentedCollectionCell.swift in Sources */,
+				2C3D7A902A18F170004DD1FB /* LiveContainerVC.swift in Sources */,
+				2CF038C12A18FEBC00AE3042 /* SelectFileView.swift in Sources */,
 				2CA522052993128000925E8A /* EvaluationOrderVC.swift in Sources */,
 				2CFC79562987EA060089131A /* HarajFilterVC.swift in Sources */,
 				2C178CF427F7C48900D32327 /* APIRouter.swift in Sources */,
@@ -2233,7 +2819,9 @@
 				2C34D620297EDF910005E9DC /* DatePickerVC.swift in Sources */,
 				2C178CD427F7C2DC00D32327 /* Extensions+Bundle.swift in Sources */,
 				2C178C9127F7BBF600D32327 /* AppDelegate.swift in Sources */,
+				2C3D7A732A18F170004DD1FB /* NextAuctionsView.swift in Sources */,
 				2C178CFF27F7C87800D32327 /* BaseNav.swift in Sources */,
+				2C3D7A772A18F170004DD1FB /* FeedbacksView.swift in Sources */,
 				2C54F1C52923F1FD008F99CE /* AuctionModel.swift in Sources */,
 				2C6F377D2926BE2700730812 /* DropDownTextFieldViewProtocols.swift in Sources */,
 				2C6F37762926B60100730812 /* DropDownListVC.swift in Sources */,
@@ -2241,13 +2829,15 @@
 				2C5702EC297F58A2008B0415 /* MyAuctionsVC.swift in Sources */,
 				2C3E224E29290E0300C38B57 /* SelectCarImagesView.swift in Sources */,
 				2CB750C62905CEF200FEDED9 /* EmailNumberTextFieldView+Localization.swift in Sources */,
+				2C3D7A842A18F170004DD1FB /* AuctionAdvantagesCell.swift in Sources */,
 				2C178D4327F7CFD700D32327 /* AppTabBarController.swift in Sources */,
 				2CA0AC2E2912C143006CBC78 /* AppTextView.swift in Sources */,
 				2C5FD5A8286DED84002DB350 /* MainAppButton.swift in Sources */,
 				2C5E97372924CF170007E92A /* SearchVC.swift in Sources */,
 				2CBC94A9286D0A3500E42AB5 /* AppConstants.swift in Sources */,
-				2C54F1D329244C27008F99CE /* VehicleTypeSelectionVC.swift in Sources */,
+				2C54F1D329244C27008F99CE /* AuctionTypeSelectionVC.swift in Sources */,
 				2CE7C8AA29220FE000EE6100 /* AboutVC.swift in Sources */,
+				2C3D7A662A18F170004DD1FB /* AdvantageAndDisadvantageModel.swift in Sources */,
 				2CFC7944298716700089131A /* CarEvaluationResultVC.swift in Sources */,
 				2CA522082993129B00925E8A /* SummaryReportOrderVC.swift in Sources */,
 				2C0D225D280D50EA0059E82B /* AuthParameterKeys.swift in Sources */,
@@ -2256,12 +2846,15 @@
 				2C5702EB297F58A2008B0415 /* MyAuctionsCell.swift in Sources */,
 				2CFC79352986A71D0089131A /* CarEvaluationVC.swift in Sources */,
 				2C178D2C27F7CB1800D32327 /* Array.swift in Sources */,
+				2C3D7A7E2A18F170004DD1FB /* SellerInfoView.swift in Sources */,
 				2C178D2027F7CAF900D32327 /* TableView&CollectionView.swift in Sources */,
 				2C178CD927F7C2DC00D32327 /* Extensions+UITextView.swift in Sources */,
+				2C3D7A6F2A18F170004DD1FB /* AuctionDetails.swift in Sources */,
 				2C178D1A27F7CAF900D32327 /* StackView.swift in Sources */,
 				2C1E901527FA77C7005C8B7E /* IntroLanguageVC.swift in Sources */,
 				2C0FCE9A2927B57400108FA8 /* AddCarVC.swift in Sources */,
 				2C178D1F27F7CAF900D32327 /* UI+String.swift in Sources */,
+				2CF038C32A1901CD00AE3042 /* ComingSoonAuctionCell.swift in Sources */,
 				2C44B8512800DD8700728351 /* AlertView.swift in Sources */,
 				2CB750B92905A6F000FEDED9 /* CountriesResultVC.swift in Sources */,
 				2C6F37702926B24600730812 /* DropDownTextFieldView.swift in Sources */,
@@ -2273,14 +2866,19 @@
 				2C9651B82924665300B30B11 /* NotificationModel.swift in Sources */,
 				2C8431EF29042C8500AC6009 /* PhoneNumberTextFieldView+Localization.swift in Sources */,
 				2C34D617297ED9DB0005E9DC /* DatePickerTextFieldView.swift in Sources */,
+				2C4E9A71299A51B5008787DD /* HarajHomeCell.swift in Sources */,
 				2CA0AC252912AC68006CBC78 /* CardView.swift in Sources */,
 				2C3C279D2992821100FECAB8 /* EvaluationOrderCell.swift in Sources */,
 				2C37A63A290030820054442E /* UIView.swift in Sources */,
+				2C3D7A6E2A18F170004DD1FB /* SocketConstans.swift in Sources */,
 				2C178D2527F7CAF900D32327 /* UISegmentedControl.swift in Sources */,
 				2CFB383B290696EA001619E1 /* PasswordTextFieldView.swift in Sources */,
 				2C03E4BD27FDBA6300A081DF /* Optional.swift in Sources */,
 				2C178D3727F7CCD500D32327 /* ValidationService.swift in Sources */,
+				2C4E9A58299A4F09008787DD /* HomeSliderCell.swift in Sources */,
 				2C178D3927F7CCD500D32327 /* RegularExpression.swift in Sources */,
+				2C4E9A76299A51EC008787DD /* CarShowHomeCell.swift in Sources */,
+				2C4E9A67299A5110008787DD /* CurrentAuctionsCell.swift in Sources */,
 				2C178D2127F7CAF900D32327 /* AnimateGifImage.swift in Sources */,
 				2C178D2327F7CAF900D32327 /* UIImageView.swift in Sources */,
 				2C178CF827F7C4A900D32327 /* Constant.swift in Sources */,
@@ -2308,32 +2906,42 @@
 				2C178D2427F7CAF900D32327 /* UILabel.swift in Sources */,
 				2C8AB0B029076AF1003D233E /* UnderLineButton.swift in Sources */,
 				2C3C27A82992833500FECAB8 /* PurchaseOrderCell.swift in Sources */,
+				2C4E9A62299A5087008787DD /* HomeTypeCell.swift in Sources */,
 				2CA0AC1B2912998E006CBC78 /* InAppLanguageVC.swift in Sources */,
 				2CB750B22905A64C00FEDED9 /* CountryModel.swift in Sources */,
+				2C3D7A882A18F170004DD1FB /* ExpandableDetailsView.swift in Sources */,
 				2CFC7947298724760089131A /* SuccessEvaluationVC.swift in Sources */,
 				2C1A344029880D2B007D9B2D /* OffersCell.swift in Sources */,
+				2C9C72462A1A3AAA001C90E5 /* LiveStreamCell.swift in Sources */,
 				2C6F37782926B72800730812 /* DropDownListResultVC.swift in Sources */,
+				2CF038BC2A18FCC800AE3042 /* EvaluationView.swift in Sources */,
 				2C0D3DC5280050EB002736E7 /* APIParameters.swift in Sources */,
 				2CBD858028063F380036C9B1 /* Print.swift in Sources */,
 				2C178CF127F7C46E00D32327 /* UserModel.swift in Sources */,
+				2C3D7A6C2A18F170004DD1FB /* LiveCommentsCell.swift in Sources */,
 				2C72D167293CC55000A6AADF /* CarValidationService.swift in Sources */,
 				2CA0AC222912A5F8006CBC78 /* InfoVC.swift in Sources */,
 				2C4FDC212989B9D200797B9A /* OfferDetailsVC.swift in Sources */,
 				2CFC792A298656400089131A /* LottieView.swift in Sources */,
 				2C54F1C3292384B1008F99CE /* CarModel.swift in Sources */,
 				2C178D3827F7CCD500D32327 /* ValidationError.swift in Sources */,
+				2C3D7A8F2A18F170004DD1FB /* AuctionPricesView.swift in Sources */,
 				2C9FED782918EDEA001D0446 /* ChangePasswordVC.swift in Sources */,
 				2C8AB0B32907754C003D233E /* CircleBorderedImageView.swift in Sources */,
 				2CA73C09294788CA0055839E /* AddCarData.swift in Sources */,
+				2C4E9A5D299A4FE8008787DD /* HomeCategoryCell.swift in Sources */,
 				2C8AB0A9290760E0003D233E /* TextFieldView.swift in Sources */,
 				2C918509280DE6B700262AF5 /* ResetPasswordVC.swift in Sources */,
+				2C3D7A792A18F170004DD1FB /* FeedbackCell.swift in Sources */,
 				2C178C9327F7BBF600D32327 /* SceneDelegate.swift in Sources */,
 				2C918506280DD79400262AF5 /* ForgetPasswordVC.swift in Sources */,
 				2CFC7932298665F60089131A /* MyCarsModel.swift in Sources */,
 				2CB750C12905CB6D00FEDED9 /* EmailValidationService.swift in Sources */,
+				2C4E9A7E299B018A008787DD /* HomeModel.swift in Sources */,
 				2C918503280DD48F00262AF5 /* VerificationCodeVC.swift in Sources */,
 				2CFC79402986C13E0089131A /* FQAModel.swift in Sources */,
 				2C4FDC272989CEC200797B9A /* ProvidersVC.swift in Sources */,
+				2C3D7A8D2A18F170004DD1FB /* LastBidsCell.swift in Sources */,
 				2C178D2227F7CAF900D32327 /* UIWindow.swift in Sources */,
 				2CA0AC2A2912B35C006CBC78 /* ContactUsVC.swift in Sources */,
 				2C54F1DD2924654E008F99CE /* NotificationsCell.swift in Sources */,
@@ -2344,36 +2952,48 @@
 				2C178CD327F7C2DC00D32327 /* Language.swift in Sources */,
 				2C178CD827F7C2DC00D32327 /* Extensions+UICollectionView.swift in Sources */,
 				2C54F1CD292417E5008F99CE /* AuctionsVC.swift in Sources */,
+				2C3D7A6B2A18F170004DD1FB /* LiveVC.swift in Sources */,
 				2C37A63629002DE80054442E /* Localizable+Storyboard.swift in Sources */,
+				2C3D7A6A2A18F170004DD1FB /* AddAuctionVC.swift in Sources */,
 				2CA0AC32291321B7006CBC78 /* PulseAnimation.swift in Sources */,
 				2C37A638290030600054442E /* UITextField.swift in Sources */,
 				2C54F1B42922CD67008F99CE /* HomeVC.swift in Sources */,
 				2CF41C8528FC201300BF923D /* ImageViewerCell.swift in Sources */,
+				2C3D7A7F2A18F170004DD1FB /* CarInfoView.swift in Sources */,
 				2CFC794A2987D14D0089131A /* HarajVC.swift in Sources */,
 				2CC025C4293F274A00DB4D10 /* ScannerVC.swift in Sources */,
 				2CF41C7D28FC1F7E00BF923D /* Locator.swift in Sources */,
 				2C178D1D27F7CAF900D32327 /* UITableView.swift in Sources */,
 				2CA0AC19291297F4006CBC78 /* EditProfileVC.swift in Sources */,
+				2C3D7A702A18F170004DD1FB /* AuctionDetailsVC.swift in Sources */,
 				2C178D4E27F7D15A00D32327 /* AppHelper.swift in Sources */,
 				2C178CAD27F7C22400D32327 /* UserDefaultsExtensions.swift in Sources */,
 				2CFB384329069997001619E1 /* PasswordTextFieldView + Localization.swift in Sources */,
 				2C3C27AC299283D400FECAB8 /* SummaryReportOrderCell.swift in Sources */,
 				2C54F1DE2924654E008F99CE /* NotificationsVC.swift in Sources */,
 				2CF41C8F28FC20AD00BF923D /* SegmentedCollection.swift in Sources */,
+				2C3D7A8B2A18F170004DD1FB /* AllLastBidsVC.swift in Sources */,
 				2C0D3DCA28007407002736E7 /* TopAlert.swift in Sources */,
 				2C178D2F27F7CB1800D32327 /* Double.swift in Sources */,
 				2C68817E2913FB1000AB9C14 /* ProfileRouter.swift in Sources */,
 				2C178D1E27F7CAF900D32327 /* UIDevice.swift in Sources */,
+				2CF038BD2A18FCC800AE3042 /* EvaluationModel.swift in Sources */,
 				2C178CF927F7C4A900D32327 /* Utilities.swift in Sources */,
+				2C3D7A682A18F170004DD1FB /* AdvantageAndDisadvantageCell.swift in Sources */,
 				2C1A344129880D2B007D9B2D /* OffersVC.swift in Sources */,
+				2C3D7A7A2A18F170004DD1FB /* FeedbackVC.swift in Sources */,
 				2CFC793C2986BED20089131A /* FQACell.swift in Sources */,
+				2C4E9A6C299A5144008787DD /* ComingAuctionsCell.swift in Sources */,
 				2C178CB327F7C26200D32327 /* Constants.swift in Sources */,
 				2CE1436A280C06DC00A601F5 /* CollectionViewContentSized.swift in Sources */,
+				2C4E9A84299B0737008787DD /* BrowseCarVC.swift in Sources */,
 				2C178D4127F7CF2900D32327 /* AppStoryboards.swift in Sources */,
 				2C178D2B27F7CB1800D32327 /* Date.swift in Sources */,
 				2C4FDC2B2989E2FC00797B9A /* ProvidersFilterVC.swift in Sources */,
 				2C4FDC262989CEC200797B9A /* ProvidersCell.swift in Sources */,
+				2C3D7A932A18F54E004DD1FB /* AuctionRouter.swift in Sources */,
 				2CBB3EA12908B02D00A32C3E /* MoreCell.swift in Sources */,
+				2C3D7A7C2A18F170004DD1FB /* AllFeedbacksVC.swift in Sources */,
 				2CF202B2293365DA004DC391 /* CarDetailsVC.swift in Sources */,
 				2C178D0727F7C97700D32327 /* AppAlert.swift in Sources */,
 				2CB750B72905A6B800FEDED9 /* CountriesVC.swift in Sources */,

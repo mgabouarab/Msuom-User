@@ -50,7 +50,7 @@ class CarsVC: BaseVC {
         self.getCarsData()
     }
     @IBAction private func addButtonPressed() {
-        let vc = VehicleTypeSelectionVC.create(delegate: self)
+        let vc = AuctionTypeSelectionVC.create(delegate: self)
         self.present(vc, animated: false)
     }
 }
@@ -144,14 +144,14 @@ extension CarsVC {
 }
 
 //MARK: - Delegation -
-extension CarsVC: VehicleTypeSelectionDelegate {
-    func didSelect(type: VehicleTypeSelectionVC.VehicleTypes) {
+extension CarsVC: AuctionTypeSelectionDelegate {
+    func didSelect(type: AuctionTypeSelectionVC.AuctionTypes) {
         switch type {
             
-        case .ads:
+        case .normal:
             let vc = AddCarVC.create()
             self.push(vc)
-        case .auction:
+        case .live:
             let vc = AddCarVC.create()
             self.push(vc)
         }

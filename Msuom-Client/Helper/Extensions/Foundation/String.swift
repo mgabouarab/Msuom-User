@@ -70,7 +70,7 @@ extension String {
         return Double(self) ?? 0.0
     }
     func toInt() -> Int {
-        return Int(self) ?? 0
+        return Int(Double(self) ?? 0)
     }
     func toPrice() -> String {
         return String(format: "%.01f", self.toDouble()) + " " + appCurrency
@@ -89,10 +89,10 @@ extension String {
         let newValue = self.trimmingCharacters(in: .whitespacesAndNewlines)
         return newValue
     }
-    func toDate() -> Date? {
+    func toDate(formate: String = "dd-MM-yyyy") -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en")
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = formate
         let date = dateFormatter.date(from: self)
         return date
     }

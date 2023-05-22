@@ -8,14 +8,43 @@
 import Foundation
 
 struct NotificationModel: Codable {
-    let id: String
+    
+    let adminId: String?
+    let bidId: String?
+    let carId: String?
+    let commentId: String?
+    let disputeId: String?
+    let key: String?
+    let message: String?
+    let nextBidId: String?
+    let notificationId: String?
+    let notifyId: String?
+    let orderId: String?
+    let streamId: String?
+    let timeAdd: String?
     let title: String?
-}
-
-extension NotificationModel {
-    static let notifications: [NotificationModel] = [
-        NotificationModel(id: "", title: "kdsnlknsdlkj jsdk vjsd kjlds ljvcs dljvh dsl"),
-        NotificationModel(id: "", title: "kdsk je vkj ewivju ewijv eijv eij"),
-        NotificationModel(id: "", title: "j wcvjwe bvlkj.ewnv; kwej v;jkew vkjw evkdsk je vkj ewivju ewijv eijv eij"),
-    ]
+    let userId: String?
+    
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case adminId
+        case bidId
+        case carId
+        case commentId
+        case disputeId
+        case key
+        case message
+        case nextBidId
+        case notificationId
+        case notifyId
+        case orderId
+        case streamId
+        case timeAdd
+        case title
+        case userId = "user_id"
+        
+        
+    }
+    
 }

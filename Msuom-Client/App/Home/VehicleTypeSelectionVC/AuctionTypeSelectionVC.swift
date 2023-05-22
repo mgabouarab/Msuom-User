@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol VehicleTypeSelectionDelegate {
-    func didSelect(type: VehicleTypeSelectionVC.VehicleTypes)
+protocol AuctionTypeSelectionDelegate {
+    func didSelect(type: AuctionTypeSelectionVC.AuctionTypes)
 }
 
-class VehicleTypeSelectionVC: UIViewController {
+class AuctionTypeSelectionVC: UIViewController {
     
-    enum VehicleTypes {
-        case ads
-        case auction
+    enum AuctionTypes {
+        case normal
+        case live
     }
     
     //MARK: - IBOutlets -
@@ -23,11 +23,11 @@ class VehicleTypeSelectionVC: UIViewController {
     @IBOutlet weak private var containerView: UIView!
     
     //MARK: - Proprieties -
-    private var delegate: VehicleTypeSelectionDelegate!
+    private var delegate: AuctionTypeSelectionDelegate!
     
     //MARK: - Creation -
-    static func create(delegate: VehicleTypeSelectionDelegate) -> VehicleTypeSelectionVC {
-        let vc = AppStoryboards.home.instantiate(VehicleTypeSelectionVC.self)
+    static func create(delegate: AuctionTypeSelectionDelegate) -> AuctionTypeSelectionVC {
+        let vc = AppStoryboards.home.instantiate(AuctionTypeSelectionVC.self)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
         vc.delegate = delegate
@@ -75,20 +75,20 @@ class VehicleTypeSelectionVC: UIViewController {
         }
         
     }
-    @IBAction private func auctionButtonPressed() {
+    @IBAction private func liveButtonPressed() {
         
         self.setupInitialDesign(withDuration: 0.5) {
             self.dismiss(animated: true) {
-                self.delegate.didSelect(type: .auction)
+                self.delegate.didSelect(type: .live)
             }
         }
         
     }
-    @IBAction private func adButtonPressed() {
+    @IBAction private func normalButtonPressed() {
         
         self.setupInitialDesign(withDuration: 0.5) {
             self.dismiss(animated: true) {
-                self.delegate.didSelect(type: .ads)
+                self.delegate.didSelect(type: .normal)
             }
         }
     }

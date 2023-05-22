@@ -7,6 +7,76 @@
 
 import UIKit
 
+struct SearchModel: Codable {
+    let id: String
+    let image: String?
+    let name: String?
+    let price: String?
+    let sellTypeName: String?
+    let type: String
+}
+
+
+//{
+//  "currency" : "ر.س",
+//  "endDate" : "26\/02\/2023",
+//  "endTime" : "10:30 PM",
+//  "hasSell" : false,
+//  
+//  
+//  "isRunning" : false,
+//  
+//  "startDate" : "26\/02\/2023",
+//  "startPrice" : "سعر البداية : 30000",
+//  "startTime" : "07:30 PM",
+//    live
+//},
+
+
+
+
+
+
+
+
+extension SearchModel {
+    
+    //MARK: - SubStructs -
+    struct CellData: CarCellViewData {
+        let image: String?
+        let name: String?
+        let price: String
+        let sellType: String
+    }
+    
+    //MARK: - Views Data -
+    func cellViewData() -> CellData {
+        
+        var displayedPrice: String {
+            guard let price = self.price else {return ""}
+            return price
+        }
+        var displayedSellType: String {
+            guard let type = self.sellTypeName else {return ""}
+            return type
+        }
+        var displayedName: String {
+            
+            return self.name ?? ""
+            
+        }
+        
+        return CellData(
+            image: self.image,
+            name: displayedName,
+            price: displayedPrice,
+            sellType: displayedSellType
+        )
+        
+    }
+    
+    
+}
 
 //MARK: - ViewController
 class SearchVC: BaseVC {
@@ -16,7 +86,7 @@ class SearchVC: BaseVC {
     @IBOutlet weak private var searchTextField: UITextField!
     
     //MARK: - Properties -
-    private var cars: [Car] = []
+    private var cars: [SearchModel] = []
     
     //MARK: - Creation -
     static func create() -> SearchVC {
@@ -74,7 +144,7 @@ extension SearchVC: UITableViewDataSource {
 extension SearchVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let car = self.cars[indexPath.row]
-//        self.goToCar(id: car.id)
+        self.goToCar(id: car.id)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
@@ -92,13 +162,14 @@ extension SearchVC {
             self.tableView.reloadData()
             return
         }
+        
         self.showIndicator()
-        print(word)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.hideIndicator()
-//            self.cars = Car.cars
+        HomeRouter.search(keyword: word).send { [weak self] (response: APIGenericResponse<[SearchModel]>) in
+            guard let self = self else {return}
+            self.cars = response.data ?? []
             self.tableView.reloadData()
         }
+        
     }
 }
 

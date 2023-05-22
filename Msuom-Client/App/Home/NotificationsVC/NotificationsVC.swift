@@ -17,6 +17,9 @@ class NotificationsVC: BaseVC {
     
     //MARK: - Properties -
     private var items: [NotificationModel] = []
+    private var currentPage: Int = 1
+    private var isLast: Bool = false
+    private var isFetching: Bool = false
     
     
     //MARK: - Creation -
@@ -50,6 +53,9 @@ class NotificationsVC: BaseVC {
         self.tableView.refreshControl?.endRefreshing()
         self.items = []
         self.tableView.reloadData()
+        self.currentPage = 1
+        self.isLast = false
+        self.isFetching = false
         self.getNotifications()
     }
     
@@ -75,13 +81,18 @@ extension NotificationsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(with: NotificationsCell.self, for: indexPath)
         let item = self.items[indexPath.row]
-        cell.configureWith(data: item.title)
+        cell.configureWith(data: item.message)
         return cell
     }
 }
 extension NotificationsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !self.isLast && !self.isFetching && (indexPath.row % listLimit == 0) {
+            self.getNotifications()
+        }
     }
 }
 //MARK: - End Of TableView -
@@ -91,10 +102,16 @@ extension NotificationsVC: UITableViewDelegate {
 extension NotificationsVC {
     private func getNotifications() {
         self.showIndicator()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.hideIndicator()
-            self.items = NotificationModel.notifications
+        self.isFetching = true
+        HomeRouter.notifications(page: self.currentPage).send { [weak self] (response: APIGenericResponse<[NotificationModel]>) in
+            guard let self = self else {return}
+            self.items = response.data ?? []
             self.tableView.reloadData()
+            self.currentPage += 1
+            if self.items.isEmpty || (response.data ?? []).isEmpty || response.data?.count != listLimit {
+                self.isLast = true
+            }
+            self.isFetching = false
         }
     }
 }

@@ -37,6 +37,7 @@ class NormalTextFieldView: TextFieldView {
             self.textField.xibPlaceholderLocKey = placeholderLocalizedKey
         }
     }
+    var onChangeTextValue: ((String?)->())?
     
     //MARK: - Initializer -
     override init(frame: CGRect) {
@@ -104,6 +105,12 @@ class NormalTextFieldView: TextFieldView {
     func textValue() -> String? {
         self.textField.textValue
     }
+    
+    //MARK: - Actions -
+    @IBAction func textDidChange(_ sender: UITextField) {
+        self.onChangeTextValue?(sender.text)
+    }
+    
     
 }
 

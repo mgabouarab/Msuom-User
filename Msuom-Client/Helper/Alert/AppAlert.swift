@@ -14,6 +14,7 @@ fileprivate enum AlertActions {
     case login
     case logout
     case refuse
+    case info(image: String, message: String, actionTitle: String)
 }
 extension AlertActions {
     var imageName: String {
@@ -30,6 +31,8 @@ extension AlertActions {
             return "login"
         case .refuse:
             return "warningAlert"
+        case .info(let image, _, _):
+            return image
         }
     }
     var message: String {
@@ -46,6 +49,8 @@ extension AlertActions {
             return "You should login first".helperLocalizable
         case .refuse:
             return "Are you sure to refuse".helperLocalizable
+        case .info(_, let message, _):
+            return message
         }
     }
     var actionTitle: String {
@@ -62,6 +67,8 @@ extension AlertActions {
             return "Login".helperLocalizable
         case .refuse:
             return "Refuse".helperLocalizable
+        case .info(_ , _ , let actionTitle):
+            return actionTitle
         }
     }
 }
@@ -77,7 +84,7 @@ fileprivate func createAlert(action: AlertActions, completion:@escaping(()->Void
     //MARK: - ActionSheet Design -
     let actionSheet = UIAlertController(title: "\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
     let cancelAction = UIAlertAction(title: "Cancel".helperLocalizable, style: .cancel, handler: nil)
-    let tryAgainAction = UIAlertAction(title: action.actionTitle, style: (action == .delete || action == .login || action == .deleteAccount) ? .destructive : .default, handler: { (action) in
+    let tryAgainAction = UIAlertAction(title: action.actionTitle, style: (action.actionTitle == AlertActions.delete.actionTitle || action.actionTitle == AlertActions.login.actionTitle || action.actionTitle == AlertActions.deleteAccount.actionTitle) ? .destructive : .default, handler: { (action) in
         completion()
     })
     actionSheet.addAction(tryAgainAction)
@@ -159,5 +166,15 @@ class AppAlert {
     }
     static func showRefuseAlert(complation: @escaping () -> ()) {
         createAlert(action: .refuse, completion: complation)
+    }
+    static func confirmInfo(image: String, message: String, actionTitle: String, completion: @escaping () -> ()) {
+        createAlert(
+            action: .info(
+                image: image,
+                message: message,
+                actionTitle: actionTitle
+            ),
+            completion: completion
+        )
     }
 }

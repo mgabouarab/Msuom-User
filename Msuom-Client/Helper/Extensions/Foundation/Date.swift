@@ -28,26 +28,21 @@ extension Date {
     func isAfterNow() -> Bool {
         return Date() > self
     }
-    func apiString() -> String {
+    func apiDateString(dateFormat: String = appDateFormate) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en")
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = dateFormat
         let date = dateFormatter.string(from: self)
         return date
     }
-    func displayedText() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.locale = Locale(identifier: Language.isRTL() ? "ar" : "en")
-        let date = dateFormatter.string(from: self)
-        return date
-    }
-    func short() -> Date {
+    func apiTimeString(dateFormat: String = appTimeFormate) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en")
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = dateFormat
         let date = dateFormatter.string(from: self)
-        return dateFormatter.date(from: date)!
+        return date
     }
 }
+
+
 

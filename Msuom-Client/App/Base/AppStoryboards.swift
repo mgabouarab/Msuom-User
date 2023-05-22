@@ -15,7 +15,8 @@ public enum AppStoryboards: String {
     case home = "Home"
     case cars = "Cars"
     case orders = "Orders"
-
+    case auctions = "Auctions"
+    
 }
 extension AppStoryboards {
     public func instantiate<VC: UIViewController>(_ viewController: VC.Type) -> VC {

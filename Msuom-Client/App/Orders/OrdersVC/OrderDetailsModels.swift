@@ -21,6 +21,7 @@ struct ShippingOrderDetails: Codable {
     let type: String?
     let typeName: String?
     let year: String?
+    let orderStatusTxt: String?
 }
 
 struct EvaluationOrderDetails: Codable {
@@ -38,6 +39,7 @@ struct EvaluationOrderDetails: Codable {
     let type: String?
     let typeName: String?
     let walkway: String?
+    let orderStatusTxt: String?
 }
 
 struct PurchaseOrderDetails: Codable {
@@ -59,6 +61,7 @@ struct PurchaseOrderDetails: Codable {
     let type: String?
     let typeName: String?
     let year: String?
+    let orderStatusTxt: String?
     
     
     
@@ -79,6 +82,7 @@ struct SummaryReportDetails: Codable {
     let type: String?
     let typeName: String?
     let year: String?
+    let orderStatusTxt: String?
     
     
 }

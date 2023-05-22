@@ -8,9 +8,9 @@ import Foundation
 
 //MARK: - Request Enums -
 enum Server: String {
-    case baseURL = "https://mseom.4hoste.com:30036/api/"
-    case socketURL = "https://mseom.4hoste.com"
-    case socketPort = "30036"
+    case baseURL = "https://mseomtest.4hoste.com/api/"
+    case socketURL = "https://mseomtest.4hoste.com"
+    case socketPort = "30040"
 }
 enum HTTPHeaderKeys {
     static let authentication = "Authorization"

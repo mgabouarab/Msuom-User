@@ -100,6 +100,8 @@ enum ValidationError: Error {
     case emptyPriceAfter
     case priceBeforeSmallThanPriceAfter
     case emptyDescription
+    case noAttachment
+    case emptyText(errorMessage: String)
     
 }
 extension ValidationError: LocalizedError {
@@ -267,7 +269,10 @@ extension ValidationError: LocalizedError {
             return "price before is smaller than price after".validationLocalized
         case .emptyDescription:
             return "Please enter description".validationLocalized
-            
+        case .noAttachment:
+            return "Please attach the files".validationLocalized
+        case .emptyText(let errorMessage):
+            return errorMessage
         }
     }
 }

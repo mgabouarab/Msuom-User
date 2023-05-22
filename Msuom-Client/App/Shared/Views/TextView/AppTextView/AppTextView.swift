@@ -26,6 +26,7 @@ class AppTextView: TextFieldView {
             self.placeholderLabel.xibLocKey = placeholderLocalizedKey
         }
     }
+    var onChangeTextValue: ((String?)->())?
     
     //MARK: - Initializer -
     override init(frame: CGRect) {
@@ -105,5 +106,8 @@ extension AppTextView: UITextViewDelegate {
             return
         }
         self.setActiveState()
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        self.onChangeTextValue?(textView.text)
     }
 }

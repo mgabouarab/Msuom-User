@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" customClass="ComingAuctionsCell" customModule="Msuom_Client" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASv-Tw-Ivx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pHP-O7-Cmw">
+                                <rect key="frame" x="0.0" y="4" width="320" height="63"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YO6-DG-13D">
+                                        <rect key="frame" x="16" y="0.0" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" name="mainDarkFontColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zvb-NH-L34" customClass="TableViewContentSized" customModule="Msuom_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="26" width="320" height="37"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Zvb-NH-L34" firstAttribute="leading" secondItem="pHP-O7-Cmw" secondAttribute="leading" id="ezO-ta-Uu5"/>
+                                    <constraint firstItem="YO6-DG-13D" firstAttribute="leading" secondItem="pHP-O7-Cmw" secondAttribute="leading" constant="16" id="iP3-og-Mxp"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pHP-O7-Cmw" secondAttribute="bottom" constant="8" id="KEp-3R-VZn"/>
+                            <constraint firstAttribute="trailing" secondItem="pHP-O7-Cmw" secondAttribute="trailing" id="Rqf-Oz-gyr"/>
+                            <constraint firstItem="pHP-O7-Cmw" firstAttribute="top" secondItem="ASv-Tw-Ivx" secondAttribute="top" constant="4" id="Ycw-Ne-mRp"/>
+                            <constraint firstItem="pHP-O7-Cmw" firstAttribute="leading" secondItem="ASv-Tw-Ivx" secondAttribute="leading" id="t9P-RC-XLp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ASv-Tw-Ivx" secondAttribute="bottom" constant="8" id="9TR-KF-Cnm"/>
+                    <constraint firstItem="ASv-Tw-Ivx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="S0S-dd-2F8"/>
+                    <constraint firstAttribute="trailing" secondItem="ASv-Tw-Ivx" secondAttribute="trailing" id="Wn9-u9-cV4"/>
+                    <constraint firstItem="ASv-Tw-Ivx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="eFD-4Q-NFZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="tableView" destination="Zvb-NH-L34" id="CyT-9U-EX5"/>
+                <outlet property="titleLabel" destination="YO6-DG-13D" id="5Yo-lS-shI"/>
+            </connections>
+            <point key="canvasLocation" x="27.480916030534349" y="33.450704225352112"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="mainDarkFontColor">
+            <color red="0.11400000005960464" green="0.11400000005960464" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

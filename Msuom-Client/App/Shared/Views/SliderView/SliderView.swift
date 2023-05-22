@@ -45,6 +45,10 @@ class SliderView: UIView {
             self.collectionView.reloadData()
         }
     }
+    @IBInspectable
+    var enableIndicator: Bool = true
+    
+    
     
     //MARK: - Init -
     override init(frame: CGRect) {
@@ -150,7 +154,14 @@ extension SliderView {
 extension SliderView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.pageControl.isHidden = true// self.items.count == 1
+        
+        if self.items.count == 1 {
+            self.pageControl.isHidden = true
+        } else {
+            self.pageControl.isHidden = !self.enableIndicator
+        }
+        
+
         return self.items.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

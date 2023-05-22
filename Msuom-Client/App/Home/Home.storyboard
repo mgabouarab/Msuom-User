@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,12 +13,12 @@
         <!--HomeVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="Y6W-OH-hqX" customClass="HomeVC" customModule="Msuom_Provider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="Y6W-OH-hqX" customClass="HomeVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3e7-Ch-ChD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4sp-0S-TxI">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -26,14 +26,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3e7-Ch-ChD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="1Sk-th-gOw"/>
-                            <constraint firstItem="3e7-Ch-ChD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MTd-Om-Jtj"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3e7-Ch-ChD" secondAttribute="trailing" id="mO1-fk-0MD"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3e7-Ch-ChD" secondAttribute="bottom" id="pwz-in-PNe"/>
+                            <constraint firstItem="4sp-0S-TxI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Qnt-Mh-p4d"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4sp-0S-TxI" secondAttribute="trailing" id="TRb-dn-WOt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4sp-0S-TxI" secondAttribute="bottom" id="ZWW-Iu-br8"/>
+                            <constraint firstItem="4sp-0S-TxI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xpM-az-nte"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="3e7-Ch-ChD" id="WNg-3P-LI1"/>
+                        <outlet property="tableView" destination="4sp-0S-TxI" id="dZQ-YT-2Fg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -43,7 +43,7 @@
         <!--AuctionsVC-->
         <scene sceneID="GGr-2V-C8y">
             <objects>
-                <viewController storyboardIdentifier="AuctionsVC" id="xJv-cm-4fG" customClass="AuctionsVC" customModule="Msuom_Provider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuctionsVC" id="xJv-cm-4fG" customClass="AuctionsVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mHk-OI-XIt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
         <!--CarsVC-->
         <scene sceneID="8WL-lv-LBO">
             <objects>
-                <viewController storyboardIdentifier="CarsVC" id="p7F-Jb-80W" customClass="CarsVC" customModule="Msuom_Provider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarsVC" id="p7F-Jb-80W" customClass="CarsVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oaM-Mv-nwX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="1653" y="4"/>
         </scene>
-        <!--Vehicle Type SelectionVC-->
+        <!--Auction Type SelectionVC-->
         <scene sceneID="mWw-LE-WS4">
             <objects>
-                <viewController storyboardIdentifier="VehicleTypeSelectionVC" id="pO5-rP-fzJ" customClass="VehicleTypeSelectionVC" customModule="Msuom_Provider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuctionTypeSelectionVC" id="pO5-rP-fzJ" customClass="AuctionTypeSelectionVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EPV-zL-HlA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +126,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" name="blackColor"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XuL-hg-cfn" customClass="CardView" customModule="Msuom_Provider" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XuL-hg-cfn" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                 <rect key="frame" x="16" y="346.33333333333331" width="361" height="184.33333333333331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7LI-nT-7Sm">
@@ -147,7 +147,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ckW-er-VJ8">
                                                 <rect key="frame" x="0.0" y="102.33333333333337" width="329" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ht-o0-m7I" customClass="SubMainAppButton" customModule="Msuom_Provider" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ht-o0-m7I" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="50"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Auction"/>
@@ -155,10 +155,10 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Auction"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="auctionButtonPressed" destination="pO5-rP-fzJ" eventType="touchUpInside" id="FJA-gb-EJM"/>
+                                                            <action selector="liveButtonPressed" destination="pO5-rP-fzJ" eventType="touchUpInside" id="FJA-gb-EJM"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0N-qN-LmM" customClass="MainAppButton" customModule="Msuom_Provider" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0N-qN-LmM" customClass="MainAppButton" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="170.66666666666663" y="0.0" width="158.33333333333337" height="50"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Advertisement"/>
@@ -166,7 +166,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Advertisement"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="adButtonPressed" destination="pO5-rP-fzJ" eventType="touchUpInside" id="Kpc-Kh-axl"/>
+                                                            <action selector="normalButtonPressed" destination="pO5-rP-fzJ" eventType="touchUpInside" id="Kpc-Kh-axl"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -240,12 +240,12 @@
         <!--NotificationsVC-->
         <scene sceneID="qWV-ZL-3la">
             <objects>
-                <viewController storyboardIdentifier="NotificationsVC" id="8RK-rE-lUK" customClass="NotificationsVC" customModule="Msuom_Provider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationsVC" id="8RK-rE-lUK" customClass="NotificationsVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2bp-4i-Ly2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyn-fW-D3X" customClass="CardView" customModule="Msuom_Provider" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyn-fW-D3X" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                 <rect key="frame" x="20" y="79" width="353" height="719"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="P3X-fK-M8U">
@@ -282,7 +282,7 @@
         <!--SearchVC-->
         <scene sceneID="oQO-K8-18f">
             <objects>
-                <viewController storyboardIdentifier="SearchVC" id="nOg-97-s8N" customClass="SearchVC" customModule="Msuom_Provider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" id="nOg-97-s8N" customClass="SearchVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gVu-GQ-uke">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,6 +376,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9T-F3-msh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4619" y="4"/>
+        </scene>
+        <!--Browse CarVC-->
+        <scene sceneID="UCQ-6F-IFn">
+            <objects>
+                <viewController storyboardIdentifier="BrowseCarVC" id="0f9-hY-02h" customClass="BrowseCarVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SH2-cj-IRI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cfo-NJ-nCN">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t2h-7o-E66"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="t2h-7o-E66" firstAttribute="trailing" secondItem="cfo-NJ-nCN" secondAttribute="trailing" id="6mx-SW-dgM"/>
+                            <constraint firstItem="t2h-7o-E66" firstAttribute="bottom" secondItem="cfo-NJ-nCN" secondAttribute="bottom" id="daM-T6-AEG"/>
+                            <constraint firstItem="cfo-NJ-nCN" firstAttribute="top" secondItem="t2h-7o-E66" secondAttribute="top" id="neF-fO-c3a"/>
+                            <constraint firstItem="cfo-NJ-nCN" firstAttribute="leading" secondItem="t2h-7o-E66" secondAttribute="leading" id="qI3-nU-0CQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="cfo-NJ-nCN" id="KeN-wI-wpl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UY9-PL-ClR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="666"/>
         </scene>
     </scenes>
     <resources>

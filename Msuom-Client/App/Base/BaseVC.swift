@@ -101,16 +101,16 @@ class BaseVC: UIViewController, UIGestureRecognizerDelegate {
         let vc = NotificationsVC.create()
         self.push(vc)
     }
+    func addKeyboardDismiss() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
     
 }
 
 //MARK: - Dismiss Keyboard -
 extension BaseVC {
-    private func addKeyboardDismiss() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)
-    }
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
@@ -155,6 +155,9 @@ extension BaseVC {
     }
     func showLogoutAlert(complation: @escaping () -> ()) {
         AppAlert.showLogoutAlert(complation: complation)
+    }
+    func showConfirmation(message: String, completion: @escaping () -> ()) {
+        AppAlert.confirmInfo(image: "warning", message: message, actionTitle: "Confirm".localized, completion: completion)
     }
     
     func presentLogin() {

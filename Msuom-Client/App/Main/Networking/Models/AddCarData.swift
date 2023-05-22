@@ -30,4 +30,5 @@ struct CarBrandModel: Codable, DropDownItem {
 struct IdName: Codable, DropDownItem {
     let id: String
     let name: String
+    let image: String?
 }

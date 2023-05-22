@@ -97,7 +97,7 @@ class EditProfileVC: BaseVC {
         do {
             let cityId = try CarValidationService.validate(cityId: self.cityTextFieldView.value()?.id)
             let birthday = self.birthdayTextFieldView.value()
-            self.editProfile(name: name, phone: phone, countryCode: nil, email: email, image: profileImage, cityId: cityId, birthday: birthday)
+            self.editProfile(name: name, phone: phone, countryCode: nil, email: email, image: profileImage, cityId: cityId, birthday: birthday?.apiDateString())
         } catch {
             self.showErrorAlert(error: error.localizedDescription)
         }

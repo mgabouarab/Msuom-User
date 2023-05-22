@@ -14,6 +14,38 @@ struct CarValidationService {
         }
         return price
     }
+    static func validate(startPrice price: String?) throws -> String {
+        guard let price, !price.trimWhiteSpace().isEmpty else {
+            throw CarValidationError.emptyStartAuctionPrice
+        }
+        return price
+    }
+    
+    static func validate(startDate: Date?) throws -> String {
+        guard let startDate else {
+            throw CarValidationError.emptyAuctionStartDate
+        }
+        return startDate.apiDateString()
+    }
+    static func validate(startTime: Date?) throws -> String {
+        guard let startTime else {
+            throw CarValidationError.emptyAuctionStartTime
+        }
+        return startTime.apiTimeString()
+    }
+    
+    static func validate(endDate: Date?) throws -> String {
+        guard let endDate else {
+            throw CarValidationError.emptyAuctionEndDate
+        }
+        return endDate.apiDateString()
+    }
+    static func validate(endTime: Date?) throws -> String {
+        guard let endTime else {
+            throw CarValidationError.emptyAuctionEndTime
+        }
+        return endTime.apiTimeString()
+    }
     static func validate(brandId: String?) throws -> String {
         guard let brandId, !brandId.trimWhiteSpace().isEmpty else {
             throw CarValidationError.emptyBrand

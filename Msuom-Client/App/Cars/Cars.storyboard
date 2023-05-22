@@ -419,6 +419,7 @@
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="unselectedPageColor">
                                                                         <color key="value" name="mainWithAlph"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableIndicator" value="NO"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zu2-5X-4nB">

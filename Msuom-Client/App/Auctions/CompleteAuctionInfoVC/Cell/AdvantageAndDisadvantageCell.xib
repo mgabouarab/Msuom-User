@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="337" id="KGk-i7-Jjw" customClass="AdvantageAndDisadvantageCell" customModule="Msuom_Provider" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="337"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="337"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dJc-rW-kQD">
+                        <rect key="frame" x="0.0" y="8" width="320" height="321"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nL6-hz-QTj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-Rg-qcy">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="21"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFn-Bl-o4v">
+                                        <rect key="frame" x="300" y="0.0" width="20" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="tintColor" name="errorColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="deleteImage"/>
+                                        <connections>
+                                            <action selector="deleteButtonPressed" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Rdg-Gz-PNc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pge-b3-pBp">
+                                <rect key="frame" x="0.0" y="21" width="320" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="77" placeholderIntrinsicHeight="288" translatesAutoresizingMaskIntoConstraints="NO" id="pu4-O5-VLO" customClass="NormalTextFieldView" customModule="Msuom_Provider" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Name of the feature or defect (Arabic)"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Please enter name of the feature or defect (Arabic)"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="77" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="gsg-pr-Mtm" customClass="NormalTextFieldView" customModule="Msuom_Provider" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Name of the feature or defect (English)"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Please enter name of the feature or defect (English)"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eym-RS-EHr" customClass="AppTextView" customModule="Msuom_Provider" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="40" width="320" height="120"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="K0S-dj-Kq9"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Description of the feature or defect (Arabic)"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Please enter description of the feature or defect (Arabic)"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-A5-8an" customClass="AppTextView" customModule="Msuom_Provider" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="320" height="120"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="JwF-r3-04N"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Description of the feature or defect (English)"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Please enter description of the feature or defect (English)"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dJc-rW-kQD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Eww-eE-hOH"/>
+                    <constraint firstAttribute="trailing" secondItem="dJc-rW-kQD" secondAttribute="trailing" id="Y8z-Kg-MgC"/>
+                    <constraint firstAttribute="bottom" secondItem="dJc-rW-kQD" secondAttribute="bottom" constant="8" id="f1r-JJ-ihi"/>
+                    <constraint firstItem="dJc-rW-kQD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wdf-nC-yYM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="arabicDescriptionTextView" destination="Eym-RS-EHr" id="PjI-Lw-MCd"/>
+                <outlet property="arabicNameTextFieldView" destination="pu4-O5-VLO" id="Pcm-m5-RNZ"/>
+                <outlet property="deleteView" destination="nL6-hz-QTj" id="fFM-rH-D8T"/>
+                <outlet property="englishDescriptionTextView" destination="ehZ-A5-8an" id="bUX-hk-pcP"/>
+                <outlet property="englishNameTextFieldView" destination="gsg-pr-Mtm" id="TxJ-Yf-IUV"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="144.30803571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="deleteImage" width="31.5" height="38.5"/>
+        <namedColor name="errorColor">
+            <color red="0.92500001192092896" green="0.18400000035762787" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -10,6 +10,24 @@ import UIKit
 
 class DatePickerTextFieldView: TextFieldView {
     
+    enum Mode {
+        case date(minimum: Date? = nil, maximum: Date? = nil)
+        case time(minimum: Date? = nil, maximum: Date? = nil)
+        case dateAndTime(minimum: Date? = nil, maximum: Date? = nil)
+        
+        var formateStyle: String {
+            switch self {
+            case .date:
+                return "EEEE, d MMMM yyyy"
+            case .time:
+                return "h:mm a"
+            case .dateAndTime:
+                return "EEEE, d MMMM yyyy '-' h:mm a"
+            }
+        }
+        
+    }
+    
     //MARK: - IBOutlets -
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var textField: UITextField!
@@ -39,6 +57,9 @@ class DatePickerTextFieldView: TextFieldView {
             self.requiredMark.isHidden = !self.isRequired
         }
     }
+    
+    lazy var mode: Mode = .date()
+    
     private var selectedDate: Date?
     
     //MARK: - Initializer -
@@ -93,18 +114,32 @@ class DatePickerTextFieldView: TextFieldView {
     }
     
     //MARK: - Encapsulation -
-    func set(value: String?) {
-        guard let value, !value.trimWhiteSpace().isEmpty, let dateValue = value.toDate()?.displayedText() else {
+    func set(
+        value: String?,
+        formate: String = Mode.date().formateStyle
+    ) {
+        guard let value, !value.trimWhiteSpace().isEmpty, let dateValue = value.toDate(formate: formate) else {
             self.textField.text = nil
             self.setInactiveState()
             return
         }
-        self.textField.text = dateValue
-        self.selectedDate = value.toDate()
+        self.textField.text = dateValue.displayedText()
+        self.selectedDate = dateValue
         self.setActiveState()
     }
-    func value() -> String? {
-        self.selectedDate?.apiString()
+    func set(value: Date?) {
+        guard let value else {
+            self.textField.text = nil
+            self.selectedDate = nil
+            self.setInactiveState()
+            return
+        }
+        self.textField.text = value.displayedText()
+        self.selectedDate = value
+        self.setActiveState()
+    }
+    func value() -> Date? {
+        self.selectedDate
     }
     
     //MARK: - Action -
@@ -114,14 +149,36 @@ class DatePickerTextFieldView: TextFieldView {
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .coverVertical
         self.parentContainerViewController?.present(vc, animated: true)
+        vc.configure(mode: self.mode)
+        vc.set(selectedDate: self.selectedDate)
+        vc.set(title: self.titleLabel.text)
     }
     
 }
 
 extension DatePickerTextFieldView: DatePickerDelegate {
     func didSelect(date: Date) {
-        self.selectedDate = date.short()
-        self.textField.text = date.displayedText()
+        switch self.mode {
+        case .date:
+            self.selectedDate = date
+            self.textField.text = date.displayedText(dateFormat: mode.formateStyle)
+        case .time:
+            self.selectedDate = date
+            self.textField.text = date.displayedText(dateFormat: mode.formateStyle)
+        case .dateAndTime:
+            self.selectedDate = date
+            self.textField.text = date.displayedText(dateFormat: mode.formateStyle)
+        }
         self.setActiveState()
+    }
+}
+
+private extension Date {
+    func displayedText(dateFormat: String = "dd-MM-yyyy") -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        dateFormatter.locale = Locale(identifier: Language.isRTL() ? "ar" : "en")
+        let date = dateFormatter.string(from: self)
+        return date
     }
 }

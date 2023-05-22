@@ -85,7 +85,7 @@ class RegisterVC: BaseVC {
                 ]
             }
             
-            self.registerWith(name, countryKey, phone, email, password, uploads, cityId, birthday)
+            self.registerWith(name, countryKey, phone, email, password, uploads, cityId, birthday?.apiDateString())
             
         } catch {
             self.showErrorAlert(error: error.localizedDescription)

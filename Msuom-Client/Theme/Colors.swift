@@ -46,6 +46,12 @@ final class AppColors {
         case shadowColor
         case borderColor
         
+        case a
+        case b
+        case c
+        case d
+        case f
+        
     }
     
     //MARK: - Font -
@@ -110,6 +116,23 @@ final class AppColors {
     }
     var borderColor: CGColor {
         return createColor(named: .borderColor).cgColor
+    }
+    
+    //MARK: - Degrees -
+    var a: UIColor {
+        return createColor(named: .a)
+    }
+    var b: UIColor {
+        return createColor(named: .b)
+    }
+    var c: UIColor {
+        return createColor(named: .c)
+    }
+    var d: UIColor {
+        return createColor(named: .d)
+    }
+    var f: UIColor {
+        return createColor(named: .f)
     }
     
 }
