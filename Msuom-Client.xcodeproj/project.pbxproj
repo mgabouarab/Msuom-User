@@ -281,6 +281,8 @@
 		2CBC94BE286D0C6D00E42AB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC94C0286D0C6D00E42AB5 /* Localizable.strings */; };
 		2CBD858028063F380036C9B1 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD857F28063F380036C9B1 /* Print.swift */; };
 		2CC025C4293F274A00DB4D10 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC025C3293F274A00DB4D10 /* ScannerVC.swift */; };
+		2CD047E32A1CC3FC00431238 /* AutoBidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD047E22A1CC3FC00431238 /* AutoBidView.swift */; };
+		2CD047E52A1CC41A00431238 /* AutoBidView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD047E42A1CC41A00431238 /* AutoBidView.xib */; };
 		2CD9A46F299B9ADB00EBD6AC /* CurrentAuctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */; };
 		2CD9A470299B9ADB00EBD6AC /* CurrentAuctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */; };
 		2CE14366280C02B500A601F5 /* indicatorGifImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CE14365280C02B400A601F5 /* indicatorGifImage.gif */; };
@@ -647,6 +649,8 @@
 		2CBC94C1286D0C7000E42AB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CBD857F28063F380036C9B1 /* Print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
 		2CC025C3293F274A00DB4D10 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
+		2CD047E22A1CC3FC00431238 /* AutoBidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBidView.swift; sourceTree = "<group>"; };
+		2CD047E42A1CC41A00431238 /* AutoBidView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoBidView.xib; sourceTree = "<group>"; };
 		2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAuctionCell.swift; sourceTree = "<group>"; };
 		2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentAuctionCell.xib; sourceTree = "<group>"; };
 		2CE14365280C02B400A601F5 /* indicatorGifImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicatorGifImage.gif; sourceTree = "<group>"; };
@@ -1294,6 +1298,7 @@
 		2C3D7A322A18F170004DD1FB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2CD047E12A1CC3CF00431238 /* AutoBidView */,
 				2C3D7A332A18F170004DD1FB /* AuctionInfoView */,
 				2C3D7A362A18F170004DD1FB /* NextAuctionsView */,
 				2C3D7A3C2A18F170004DD1FB /* FeedbacksView */,
@@ -2270,6 +2275,15 @@
 			path = ScannerVC;
 			sourceTree = "<group>";
 		};
+		2CD047E12A1CC3CF00431238 /* AutoBidView */ = {
+			isa = PBXGroup;
+			children = (
+				2CD047E22A1CC3FC00431238 /* AutoBidView.swift */,
+				2CD047E42A1CC41A00431238 /* AutoBidView.xib */,
+			);
+			path = AutoBidView;
+			sourceTree = "<group>";
+		};
 		2CD9A46C299B9AAE00EBD6AC /* CurrentAuctionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2632,6 +2646,7 @@
 				2C178CC227F7C29000D32327 /* Cairo-Medium.ttf in Resources */,
 				2CE14366280C02B500A601F5 /* indicatorGifImage.gif in Resources */,
 				2CF038CB2A1A17A800AE3042 /* newBid.mp3 in Resources */,
+				2CD047E52A1CC41A00431238 /* AutoBidView.xib in Resources */,
 				2C1A344229880D2B007D9B2D /* OffersCell.xib in Resources */,
 				2CBC94AA286D0BC500E42AB5 /* InfoPlist.strings in Resources */,
 				2C8431EB2904291800AC6009 /* PhoneTextFieldView.xib in Resources */,
@@ -2993,6 +3008,7 @@
 				2C4FDC262989CEC200797B9A /* ProvidersCell.swift in Sources */,
 				2C3D7A932A18F54E004DD1FB /* AuctionRouter.swift in Sources */,
 				2CBB3EA12908B02D00A32C3E /* MoreCell.swift in Sources */,
+				2CD047E32A1CC3FC00431238 /* AutoBidView.swift in Sources */,
 				2C3D7A7C2A18F170004DD1FB /* AllFeedbacksVC.swift in Sources */,
 				2CF202B2293365DA004DC391 /* CarDetailsVC.swift in Sources */,
 				2C178D0727F7C97700D32327 /* AppAlert.swift in Sources */,

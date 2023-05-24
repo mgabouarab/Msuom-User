@@ -56,7 +56,7 @@ class SellIndicatorView: UIView {
         }
         
         
-        let doubleProgress = progress.toDouble()/100
+        let doubleProgress = (progress.toDouble() ?? 0)/100
         
         UIView.animate(withDuration: 0.5) { [weak self] in
             guard let self = self else {return}

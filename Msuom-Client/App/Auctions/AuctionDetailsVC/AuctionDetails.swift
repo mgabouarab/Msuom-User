@@ -8,7 +8,6 @@
 import Foundation
 
 struct AuctionDetails: Codable {
-    
     let bidPrice : Numerical?
     let cities : [Cities]
     let currentBid : BidDetails?
@@ -74,6 +73,7 @@ struct BidDetails: Codable {
     let vehicleTypeName : String?
     let walkway : String?
     let year : String?
+    let maxPrice : Numerical?
 }
 
 extension BidDetails {

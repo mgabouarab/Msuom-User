@@ -47,7 +47,7 @@ enum AuctionRouter {
     case commentsLiveStream(streamId: String, bidId: String, page: Int)
     case subscription(streamId: String, bidId: String)
     case sellCar(streamId: String, bidId: String)
-    
+    case checkAutoBid(bidId: String, maxPrice: String)
 }
 
 extension AuctionRouter: APIRouter {
@@ -66,6 +66,7 @@ extension AuctionRouter: APIRouter {
         case .commentsLiveStream: return .get
         case .subscription: return .patch
         case .sellCar: return .patch
+        case .checkAutoBid: return .put
         }
     }
     
@@ -83,6 +84,7 @@ extension AuctionRouter: APIRouter {
         case .commentsLiveStream: return "commentsLiveStream"
         case .subscription: return "subscription"
         case .sellCar: return "sell-car"
+        case .checkAutoBid: return "checkAutoBid"
         }
     }
     
@@ -183,6 +185,11 @@ extension AuctionRouter: APIRouter {
             return [
                 "bidId": bidId,
                 "streamId": streamId
+            ]
+        case .checkAutoBid(let bidId, let maxPrice):
+            return [
+                "bidId": bidId,
+                "maxPrice": maxPrice
             ]
         }
     }

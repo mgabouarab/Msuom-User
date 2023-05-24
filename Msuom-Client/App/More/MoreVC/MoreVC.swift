@@ -318,11 +318,7 @@ extension MoreVC: UITableViewDataSource {
         
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if let _ = self.items[section].title {
-            return 40
-        } else {
-            return 1
-        }
+        self.items[section].headerHeight
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil

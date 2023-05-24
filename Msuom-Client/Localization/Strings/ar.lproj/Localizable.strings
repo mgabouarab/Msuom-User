@@ -364,3 +364,9 @@
 "Join the auction now" = "إنضم للمزاد الان";
 "Subscribe" = "إشترك";
 "Buying order" = "طلب شراء";
+"Automated auction" = "المزاد الالى";
+"Start_Automatic_auction" = "بدأ";
+"The maximum bid" = "الحد الأعلى للمزايدة";
+"Bidding" = "مزايدة";
+"The highest price of the automated auction" = "اعلي سعر للمزاد الالي";
+"Price should be more than current heigh price" = "السعر يجب ان يكون اعلي من";

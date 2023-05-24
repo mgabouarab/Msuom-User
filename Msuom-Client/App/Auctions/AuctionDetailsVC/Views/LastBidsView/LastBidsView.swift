@@ -22,6 +22,7 @@ class LastBidsView: UIView {
     private var bidId: String?
     private var currentPage: Int = 1
     private var isLast: Bool = false
+    var lastBidder:((_ id: String?)->())?
     
     //MARK: - Initializer -
     override init(frame: CGRect) {
@@ -110,6 +111,9 @@ extension LastBidsView: LoadMoreLastBids {
         guard let bidId = self.bidId, !self.isLast else {return}
         AuctionRouter.customersBid(bidId: bidId, page: self.currentPage).send { [weak self] (response: APIGenericResponse<LastBidResponse>) in
             guard let self = self else {return}
+            if currentPage == 1 {
+                lastBidder?(response.data?.customerBids.first?.viewerId)
+            }
             self.isLast = (response.paginate?.currentPage == response.paginate?.lastPage)
             self.currentPage = response.paginate?.currentPage ?? 1
             self.items += response.data?.customerBids ?? []
@@ -131,7 +135,7 @@ struct LastBidResponse: Codable {
 
 
 struct LastBidModel: Codable {
-    let id: String?
+    let viewerId: String?
     let currency: String?
     let price: Numerical?
     let name: String?

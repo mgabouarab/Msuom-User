@@ -95,7 +95,7 @@ open class SocketConnection {
     
     private func emit(for type: EmitTypes, data: [String: Any], completion: (() -> ())?) {
         
-        print("Socket Action is \(type.rawValue) \n data is: \(data)")
+        print("🚦Socket:: Socket Action is \(type.rawValue) \n data is: \(data)/n🚦Socket::")
         
         SocketConnection.sharedInstance.socket.emit(
             type.rawValue,

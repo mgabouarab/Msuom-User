@@ -66,17 +66,19 @@ extension String {
         return Double(self) != nil
     }
     
-    func toDouble() -> Double {
-        return Double(self) ?? 0.0
+    func toDouble() -> Double? {
+        return Double(self)
     }
     func toInt() -> Int {
         return Int(Double(self) ?? 0)
     }
     func toPrice() -> String {
-        return String(format: "%.01f", self.toDouble()) + " " + appCurrency
+        guard let double = self.toDouble() else {return "0" + appCurrency}
+        return String(format: "%.01f", double) + " " + appCurrency
     }
     func toKiloMeter() -> String {
-        return String(format: "%.01f", self.toDouble()) + " " + appDistance
+        guard let double = self.toDouble() else {return "0" + appDistance}
+        return String(format: "%.01f", double) + " " + appDistance
     }
     func increase() -> String {
         return String(self.toInt() + 1)

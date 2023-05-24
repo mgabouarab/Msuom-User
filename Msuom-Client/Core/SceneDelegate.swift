@@ -51,14 +51,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let absoluteString = url.absoluteString.replacingOccurrences(of: "https://maseom.page.link/", with: "")
         let parameters = absoluteString.components(separatedBy: "/")
         
+        guard let id = parameters.last else {return}
+        
         if parameters.contains("auction") {
             
-            let id = parameters[2]
             var vc: UIViewController = UIViewController()
             if parameters.contains("advertise") {
                 vc = CarDetailsVC.create(id: id)
             } else if parameters.contains("live") ||  parameters.contains("normal") {
-                vc = AuctionDetailsVC.create(id: id, isFromHome: true)
+                vc = AuctionDetailsVC.create(id: id)
             }
             var rootVC = (UIApplication.shared.windows.first?.rootViewController as? UITabBarController)
             if rootVC == nil {

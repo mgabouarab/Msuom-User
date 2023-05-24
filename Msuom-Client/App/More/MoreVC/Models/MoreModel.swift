@@ -10,6 +10,9 @@ import UIKit
 struct MoreModel {
     let title: String?
     let items: [MoreItem]
+    var headerHeight: CGFloat {
+        title == nil ? 1 : 40
+    }
 }
 
 struct MoreItem {

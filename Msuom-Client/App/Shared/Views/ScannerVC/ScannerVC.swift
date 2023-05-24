@@ -97,6 +97,12 @@ class ScannerViewController: UIViewController {
     }
     private func found(code: String) {
         print(code)
+        guard (code.contains("live") || code.contains("normal")) else {return}
+        guard let id = code.components(separatedBy: "/").last else {return}
+        let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+        if let window = window, let _ = window.rootViewController as? AppTabBarController, let index = (window.rootViewController as? AppTabBarController)?.selectedIndex  {
+            (window.rootViewController as? AppTabBarController)?.viewControllers?[index].show(AuctionDetailsVC.create(id: id, isFromHome: false), sender: self)
+        }
     }
     private func failed() {
         let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)

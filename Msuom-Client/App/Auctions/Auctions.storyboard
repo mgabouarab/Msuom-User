@@ -472,7 +472,7 @@
                                         <rect key="frame" x="0.0" y="568" width="393" height="135"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f16-0e-ST2">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1372"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1520"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="PKp-VH-Of9" customClass="SellIndicatorView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="0.0" width="361" height="128"/>
@@ -502,7 +502,7 @@
                                                         <color key="textColor" name="mainDarkFontColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="fQ6-yn-zcz" customClass="LastBidsView" customModule="Msuom_Client" customModuleProvider="target">
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="6mD-re-bqS" customClass="AutoBidView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="356" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -511,7 +511,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="77Q-Vt-nGU" customClass="CarInfoView" customModule="Msuom_Client" customModuleProvider="target">
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="fQ6-yn-zcz" customClass="LastBidsView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="504" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -520,7 +520,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="CtW-jm-Sjg" customClass="SellerInfoView" customModule="Msuom_Client" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="77Q-Vt-nGU" customClass="CarInfoView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="652" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -529,7 +529,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="M0t-Ku-jh7" customClass="AuctionAdvantagesView" customModule="Msuom_Client" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="CtW-jm-Sjg" customClass="SellerInfoView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="800" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -538,7 +538,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="SQ5-1n-L8r" customClass="FeedbacksView" customModule="Msuom_Client" customModuleProvider="target">
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="M0t-Ku-jh7" customClass="AuctionAdvantagesView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="948" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -547,7 +547,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="OFP-sG-vhz" customClass="NextAuctionsView" customModule="Msuom_Client" customModuleProvider="target">
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="SQ5-1n-L8r" customClass="FeedbacksView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="1096" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -556,8 +556,17 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-nW-aVQ" customClass="ExpandableDetailsView" customModule="Msuom_Client" customModuleProvider="target">
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="OFP-sG-vhz" customClass="NextAuctionsView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="1244" width="361" height="128"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-nW-aVQ" customClass="ExpandableDetailsView" customModule="Msuom_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="1392" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -568,6 +577,7 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="bPy-3j-lBC" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="KqS-jt-hyp"/>
+                                                    <constraint firstItem="6mD-re-bqS" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="NGm-a8-ARL"/>
                                                     <constraint firstItem="M0t-Ku-jh7" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="VBb-Vu-CLe"/>
                                                     <constraint firstItem="ekF-nm-9it" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" id="boX-ng-27K"/>
                                                     <constraint firstItem="fQ6-yn-zcz" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="bu9-oQ-h4V"/>
@@ -646,6 +656,7 @@
                         <outlet property="actionContainerView" destination="YtO-vJ-vVN" id="cuS-QL-hcv"/>
                         <outlet property="auctionAdvantagesView" destination="M0t-Ku-jh7" id="EMu-ZJ-AQO"/>
                         <outlet property="auctionInfoView" destination="bPy-3j-lBC" id="5sa-CK-AHD"/>
+                        <outlet property="autoBidView" destination="6mD-re-bqS" id="gTp-Dz-M8f"/>
                         <outlet property="carInfoView" destination="77Q-Vt-nGU" id="Csx-RG-tmR"/>
                         <outlet property="containerStackView" destination="Hoc-kS-qit" id="qGc-J5-rRG"/>
                         <outlet property="feedbacksView" destination="SQ5-1n-L8r" id="nPP-xY-dwX"/>

@@ -19,6 +19,7 @@ class AuctionDetailsVC: BaseVC {
     @IBOutlet weak private var sellIndicator: SellIndicatorView!
     @IBOutlet weak private var auctionInfoView: AuctionInfoView!
     @IBOutlet weak private var carInfoView: CarInfoView!
+    @IBOutlet weak private var autoBidView: AutoBidView!
     @IBOutlet weak private var lastBidsView: LastBidsView!
     @IBOutlet weak private var sellerInfoView: SellerInfoView!
     @IBOutlet weak private var termsAndConditionView: ExpandableDetailsView!
@@ -95,6 +96,11 @@ class AuctionDetailsVC: BaseVC {
         self.isFinished = data.currentBid?.isFinished == "finished"
         self.isRunning = data.currentBid?.isRunning ?? false
         self.firstImageLinkForDeepLink = data.currentBid?.image
+        self.autoBidView.isHidden = !(data.currentBid?.hasSubscription ?? false)
+        self.lastBidsView.lastBidder = { [weak self] userId in
+            guard let self = self else {return}
+            self.autoBidView.isMyLastBid = userId == UserDefaults.user?.id
+        }
         
         
         self.subscribeActionButton.isHidden = data.currentBid?.hasSubscription ?? false
@@ -161,7 +167,16 @@ class AuctionDetailsVC: BaseVC {
         }
         
         self.startTimer()
-        
+        if let streamId = self.id, let currentBidId = currentBidId, let price = data.currentBid?.lastBidPrice?.doubleValue {
+            self.autoBidView.set(
+                isAutoEnabled: data.currentBid?.autoBid ?? false,
+                maxManualIncrease: data.bidPrice?.doubleValue ?? 500,
+                streamId: streamId,
+                bidId: currentBidId,
+                max: data.currentBid?.maxPrice?.doubleValue
+            )
+            self.autoBidView.currentHighBid = price
+        }
         self.refundableView.text = data.currentBid?.refundable
         self.sellerInfoView.set(
             name: data.provider?.name,
@@ -202,7 +217,7 @@ class AuctionDetailsVC: BaseVC {
             guard let self = self else {return}
             if isRunning {
                 guard let fullDate = self.fullEndDate else {return}
-                if let time = fullDate.toTimeRemain() {
+                if let _ = fullDate.toTimeRemain() {
 //                    print("Time remain to end is\n \(time)\n")
                 } else {
                     guard let currentBidId, !isFinished else {
@@ -216,7 +231,7 @@ class AuctionDetailsVC: BaseVC {
                 }
             } else {
                 guard let fullDate = self.fullStartDate else {return}
-                if let time = fullDate.toTimeRemain() {
+                if let _ = fullDate.toTimeRemain() {
 //                    print("Time remain to start is\n \(time)\n")
                 } else {
                     if let currentBidId = self.currentBidId {
@@ -248,7 +263,8 @@ class AuctionDetailsVC: BaseVC {
         }
     }
     @objc private func openShareSheet() {
-        guard let link = URL(string: "https://maseom.page.link/auction/\(type)/\(self.id!)") else { return }
+        guard let currentBidId = self.currentBidId else {return}
+        guard let link = URL(string: "https://maseom.page.link/auction/\(type)/\(currentBidId)") else { return }
 
         let dynamicLinksDomainURIPrefix = "https://maseom.page.link"
         let linkBuilder = DynamicLinkComponents(link: link, domainURIPrefix: dynamicLinksDomainURIPrefix)
@@ -431,15 +447,20 @@ extension AuctionDetailsVC {
             let avatar = newBidding?["avatar"] as? String
             let createAt = newBidding?["createAt"] as? String
             let currency = newBidding?["currency"] as? String
-            let id = newBidding?["id"] as? String
+            let id = newBidding?["viewerId"] as? String
             let name = newBidding?["name"] as? String
             let price = newBidding?["price"] as? Double
             
+            
+            if let lastBidPrice = lastBidPrice, let userId = id {
+                self.autoBidView.currentHighBid = lastBidPrice
+                self.autoBidView.isMyLastBid = UserDefaults.user?.id == userId
+            }
             self.priceView.update(currentPrice: lastBidPrice?.toPrice())
             self.priceView.update(numberOfBidding: "\(countBids ?? 0)")
             self.sellIndicator.set(progress: soldProgress)
             self.priceView.playSound()
-            self.lastBidsView.add(bid:LastBidModel(id: id, currency: currency, price: .double(price ?? 0), name: name, avatar: avatar, createAt: createAt)
+            self.lastBidsView.add(bid:LastBidModel(viewerId: id, currency: currency, price: .double(price ?? 0), name: name, avatar: avatar, createAt: createAt)
             )
         }
     }

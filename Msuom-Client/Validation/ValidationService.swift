@@ -366,7 +366,7 @@ struct ValidationService {
         guard let priceAfter = priceAfter, !priceAfter.trimWhiteSpace().isEmpty else {
             throw ValidationError.emptyPriceAfter
         }
-        guard priceBefore.toDouble() > priceAfter.toDouble() else {
+        guard priceBefore.toDouble() ?? 0 > priceAfter.toDouble() ?? 0 else {
             throw ValidationError.priceBeforeSmallThanPriceAfter
         }
         return (priceBefore, priceAfter)
