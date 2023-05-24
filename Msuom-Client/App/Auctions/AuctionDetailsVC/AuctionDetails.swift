@@ -51,6 +51,9 @@ struct BidDetails: Codable {
     let isRefundable : Bool?
     let isRunning : Bool?
     let isTrySell : Bool?
+    let isAfterSaleService : Bool?
+    let isShipping : Bool?
+    let open : Bool?
     let km : String?
     let lastBidPrice : Numerical?
     let leftSideCar : String?
@@ -74,18 +77,29 @@ struct BidDetails: Codable {
     let walkway : String?
     let year : String?
     let maxPrice : Numerical?
+    let descriptionBid: String?
 }
 
 extension BidDetails {
     
     //MARK: - SubStructs -
     struct HomeSoonAuction {
+        let id: String
         let image: String
         let name: String
         let startPrice: String
         let fullStartDate: String
         let fullEndDate: String
+        let number: String?
+        let description: String?
         let isLive: Bool
+        let isStart: Bool
+        
+        let isAfterSaleService: Bool
+        let isShipping: Bool
+        let open: Bool
+        
+        
     }
     
     //MARK: - Views Data -
@@ -141,14 +155,45 @@ extension BidDetails {
             }
             return true
         }
+        var isStart: Bool {
+            guard self.isRunning == true else {
+                return false
+            }
+            return true
+        }
+        var isAfterSaleService: Bool {
+            guard self.isAfterSaleService == true else {
+                return false
+            }
+            return true
+        }
+        var isShipping: Bool {
+            guard self.isShipping == true else {
+                return false
+            }
+            return true
+        }
+        var open: Bool {
+            guard self.open == true else {
+                return false
+            }
+            return true
+        }
         
         return  HomeSoonAuction(
+            id: self.id ?? "No ID Found",
             image: displayedImage,
             name: displayedName,
             startPrice: displayedStartPrice,
             fullStartDate: displayedFullDate,
             fullEndDate: displayedFullEndDate,
-            isLive: isLive
+            number: self.adNumber?.stringValue,
+            description: descriptionBid,
+            isLive: isLive,
+            isStart: isStart,
+            isAfterSaleService: isAfterSaleService,
+            isShipping: isShipping,
+            open: open
         )
         
     }

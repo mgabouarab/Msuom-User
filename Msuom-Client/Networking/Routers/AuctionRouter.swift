@@ -48,6 +48,10 @@ enum AuctionRouter {
     case subscription(streamId: String, bidId: String)
     case sellCar(streamId: String, bidId: String)
     case checkAutoBid(bidId: String, maxPrice: String)
+    case subscribeWinnerBids(type: String)
+    case afterSaleServices(bidId: String)
+    case afterSaleServiceOrder(bidId: String, latitude: Double, longitude: Double, address: String, serviceId: String)
+    case shippingOrders(bidId: String, latitude: Double?, longitude: Double?, address: String?, isDelivery: Bool)
 }
 
 extension AuctionRouter: APIRouter {
@@ -67,6 +71,10 @@ extension AuctionRouter: APIRouter {
         case .subscription: return .patch
         case .sellCar: return .patch
         case .checkAutoBid: return .put
+        case .subscribeWinnerBids: return .get
+        case .afterSaleServices: return .get
+        case .afterSaleServiceOrder: return .post
+        case .shippingOrders: return .post
         }
     }
     
@@ -85,6 +93,10 @@ extension AuctionRouter: APIRouter {
         case .subscription: return "subscription"
         case .sellCar: return "sell-car"
         case .checkAutoBid: return "checkAutoBid"
+        case .subscribeWinnerBids: return "subscribe-winner-bids"
+        case .afterSaleServices: return "afterSaleServices"
+        case .afterSaleServiceOrder: return "afterSaleServiceOrder"
+        case .shippingOrders: return "shippingOrders"
         }
     }
     
@@ -190,6 +202,30 @@ extension AuctionRouter: APIRouter {
             return [
                 "bidId": bidId,
                 "maxPrice": maxPrice
+            ]
+        case .subscribeWinnerBids(let type):
+            return [
+                "type": type
+            ]
+        case .afterSaleServices(let bidId):
+            return [
+                "bidId": bidId
+            ]
+        case .afterSaleServiceOrder(let bidId, let latitude, let longitude, let address, let serviceId):
+            return [
+                "bidId": bidId,
+                "latitude": latitude,
+                "longitude": longitude,
+                "address": address,
+                "serviceId": serviceId
+            ]
+        case .shippingOrders(let bidId, let latitude, let longitude, let address, let isDelivery):
+            return [
+                "bidId": bidId,
+                "latitude": latitude,
+                "longitude": longitude,
+                "address": address,
+                "isDelivery": isDelivery
             ]
         }
     }

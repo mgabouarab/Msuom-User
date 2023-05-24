@@ -240,6 +240,7 @@
 "General Evaluation" = "تقييم عام";
 "Vehicle shipping service" = "خدمة شحن المركبات";
 "Enter your address" = "ادخل العنوان";
+"Select your address" = "اختر العنوان";
 "Address" = "العنوان";
 "How Can we help You" = "كيف نقدر نساعدك";
 "Search..." = "بحث...";
@@ -370,3 +371,13 @@
 "Bidding" = "مزايدة";
 "The highest price of the automated auction" = "اعلي سعر للمزاد الالي";
 "Price should be more than current heigh price" = "السعر يجب ان يكون اعلي من";
+"Subscribed Auctions" = "مزادات مشترك بها";
+"Wined Auctions" = "مزادات فزت بها";
+"Charge Request" = "طلب شحن";
+"After sale Services" = "خدمات ما بعد البيع";
+"Open Dispute" =  "فتح نزاع";
+"After seal Services" = "خدمات ما بعد البيع";
+"Auction Number" = "رقم المزاد";
+"Select Location" = "إختر الموقع";
+"Delivery" = "توصيل";
+"Receive" = "استلام";

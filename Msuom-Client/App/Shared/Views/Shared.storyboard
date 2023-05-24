@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Image ViewerVC-->
         <scene sceneID="eiL-EJ-O3F">
             <objects>
-                <viewController storyboardIdentifier="ImageViewerVC" id="aX9-08-key" customClass="ImageViewerVC" customModule="LocationClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageViewerVC" id="aX9-08-key" customClass="ImageViewerVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9p4-Ld-zEX">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,8 +59,78 @@
             </objects>
             <point key="canvasLocation" x="841" y="80"/>
         </scene>
+        <!--Select Address On MapVC-->
+        <scene sceneID="4Y1-mn-VvX">
+            <objects>
+                <viewController storyboardIdentifier="SelectAddressOnMapVC" id="QpK-6b-wis" customClass="SelectAddressOnMapVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZAv-9W-F2o">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Ei-2i-qfe">
+                                <rect key="frame" x="0.0" y="47" width="390" height="797"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7v-Eb-PyQ" customClass="MKMapView">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="707"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLq-al-bub">
+                                        <rect key="frame" x="0.0" y="707" width="390" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3U-kl-0CH" customClass="MainAppButton" customModule="Msuom_Client" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="20" width="358" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="sF8-Lu-eOF"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Confirm"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Confirm"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirmButtonPressed" destination="QpK-6b-wis" eventType="touchUpInside" id="eTi-4T-Xgs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="S3U-kl-0CH" firstAttribute="leading" secondItem="VLq-al-bub" secondAttribute="leading" constant="16" id="9RM-Ze-DIA"/>
+                                            <constraint firstItem="S3U-kl-0CH" firstAttribute="top" secondItem="VLq-al-bub" secondAttribute="top" constant="20" id="NnF-Vi-LZD"/>
+                                            <constraint firstAttribute="trailing" secondItem="S3U-kl-0CH" secondAttribute="trailing" constant="16" id="Qnf-0d-sF2"/>
+                                            <constraint firstAttribute="bottom" secondItem="S3U-kl-0CH" secondAttribute="bottom" constant="20" id="VQ2-rd-Tfg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MapMarker" translatesAutoresizingMaskIntoConstraints="NO" id="iko-cc-U3D">
+                                <rect key="frame" x="184" y="369" width="22.333333333333343" height="31.666666666666686"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vee-1T-J37"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Ei-2i-qfe" firstAttribute="top" secondItem="Vee-1T-J37" secondAttribute="top" id="193-2l-nZh"/>
+                            <constraint firstItem="iko-cc-U3D" firstAttribute="centerX" secondItem="O7v-Eb-PyQ" secondAttribute="centerX" id="82G-b4-NWk"/>
+                            <constraint firstAttribute="bottom" secondItem="5Ei-2i-qfe" secondAttribute="bottom" id="BrW-wK-ROz"/>
+                            <constraint firstItem="iko-cc-U3D" firstAttribute="bottom" secondItem="O7v-Eb-PyQ" secondAttribute="centerY" id="d7v-BV-2GI"/>
+                            <constraint firstItem="Vee-1T-J37" firstAttribute="trailing" secondItem="5Ei-2i-qfe" secondAttribute="trailing" id="wd3-e4-YJO"/>
+                            <constraint firstItem="5Ei-2i-qfe" firstAttribute="leading" secondItem="Vee-1T-J37" secondAttribute="leading" id="ztx-pV-KAB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="O7v-Eb-PyQ" id="V5O-DX-ozy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4qw-ul-AXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1521.5384615384614" y="79.620853080568722"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="MapMarker" width="22.333333969116211" height="31.666666030883789"/>
         <image name="errorAlert" width="30" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

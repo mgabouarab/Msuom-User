@@ -283,6 +283,12 @@
 		2CC025C4293F274A00DB4D10 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC025C3293F274A00DB4D10 /* ScannerVC.swift */; };
 		2CD047E32A1CC3FC00431238 /* AutoBidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD047E22A1CC3FC00431238 /* AutoBidView.swift */; };
 		2CD047E52A1CC41A00431238 /* AutoBidView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD047E42A1CC41A00431238 /* AutoBidView.xib */; };
+		2CD7FC2F2A1EA87E0035CADC /* AfterSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC2C2A1EA87E0035CADC /* AfterSaleCell.swift */; };
+		2CD7FC302A1EA87E0035CADC /* AfterSaleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC2D2A1EA87E0035CADC /* AfterSaleVC.swift */; };
+		2CD7FC312A1EA87E0035CADC /* AfterSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD7FC2E2A1EA87E0035CADC /* AfterSaleCell.xib */; };
+		2CD7FC342A1EAEC70035CADC /* SelectLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC332A1EAEC70035CADC /* SelectLocationView.swift */; };
+		2CD7FC362A1EAED90035CADC /* SelectLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD7FC352A1EAED90035CADC /* SelectLocationView.xib */; };
+		2CD7FC392A1EB0400035CADC /* SelectAddressOnMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC382A1EB0400035CADC /* SelectAddressOnMapVC.swift */; };
 		2CD9A46F299B9ADB00EBD6AC /* CurrentAuctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */; };
 		2CD9A470299B9ADB00EBD6AC /* CurrentAuctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */; };
 		2CE14366280C02B500A601F5 /* indicatorGifImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CE14365280C02B400A601F5 /* indicatorGifImage.gif */; };
@@ -651,6 +657,12 @@
 		2CC025C3293F274A00DB4D10 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
 		2CD047E22A1CC3FC00431238 /* AutoBidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBidView.swift; sourceTree = "<group>"; };
 		2CD047E42A1CC41A00431238 /* AutoBidView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoBidView.xib; sourceTree = "<group>"; };
+		2CD7FC2C2A1EA87E0035CADC /* AfterSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSaleCell.swift; sourceTree = "<group>"; };
+		2CD7FC2D2A1EA87E0035CADC /* AfterSaleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSaleVC.swift; sourceTree = "<group>"; };
+		2CD7FC2E2A1EA87E0035CADC /* AfterSaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterSaleCell.xib; sourceTree = "<group>"; };
+		2CD7FC332A1EAEC70035CADC /* SelectLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationView.swift; sourceTree = "<group>"; };
+		2CD7FC352A1EAED90035CADC /* SelectLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectLocationView.xib; sourceTree = "<group>"; };
+		2CD7FC382A1EB0400035CADC /* SelectAddressOnMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressOnMapVC.swift; sourceTree = "<group>"; };
 		2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAuctionCell.swift; sourceTree = "<group>"; };
 		2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentAuctionCell.xib; sourceTree = "<group>"; };
 		2CE14365280C02B400A601F5 /* indicatorGifImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicatorGifImage.gif; sourceTree = "<group>"; };
@@ -1811,6 +1823,7 @@
 		2C5FD599286DED0B002DB350 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2CD7FC322A1EAEAA0035CADC /* SelectLocationView */,
 				2CF038BE2A18FEBC00AE3042 /* SelectFileView */,
 				2CF038B82A18FCC800AE3042 /* AuctionPriceView */,
 				2CF038B12A18FCC800AE3042 /* EvaluationView */,
@@ -2208,6 +2221,7 @@
 		2CBB3E9C2908B00E00A32C3E /* More */ = {
 			isa = PBXGroup;
 			children = (
+				2CD7FC2B2A1EA85F0035CADC /* AfterSaleVC */,
 				2C4FDC2D2989EA5C00797B9A /* ProviderDetailsVC */,
 				2C4FDC292989E2E700797B9A /* ProvidersFilterVC */,
 				2C4FDC222989CC0F00797B9A /* ProvidersVC */,
@@ -2282,6 +2296,34 @@
 				2CD047E42A1CC41A00431238 /* AutoBidView.xib */,
 			);
 			path = AutoBidView;
+			sourceTree = "<group>";
+		};
+		2CD7FC2B2A1EA85F0035CADC /* AfterSaleVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7FC2C2A1EA87E0035CADC /* AfterSaleCell.swift */,
+				2CD7FC2D2A1EA87E0035CADC /* AfterSaleVC.swift */,
+				2CD7FC2E2A1EA87E0035CADC /* AfterSaleCell.xib */,
+			);
+			path = AfterSaleVC;
+			sourceTree = "<group>";
+		};
+		2CD7FC322A1EAEAA0035CADC /* SelectLocationView */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7FC372A1EB01F0035CADC /* SelectAddressOnMapVC */,
+				2CD7FC332A1EAEC70035CADC /* SelectLocationView.swift */,
+				2CD7FC352A1EAED90035CADC /* SelectLocationView.xib */,
+			);
+			path = SelectLocationView;
+			sourceTree = "<group>";
+		};
+		2CD7FC372A1EB01F0035CADC /* SelectAddressOnMapVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7FC382A1EB0400035CADC /* SelectAddressOnMapVC.swift */,
+			);
+			path = SelectAddressOnMapVC;
 			sourceTree = "<group>";
 		};
 		2CD9A46C299B9AAE00EBD6AC /* CurrentAuctionCell */ = {
@@ -2698,6 +2740,7 @@
 				2CBC94B2286D0C0700E42AB5 /* PhotoLibraryServices.strings in Resources */,
 				2C3D7A872A18F170004DD1FB /* ExpandableDetailsView.xib in Resources */,
 				2CFC792C29865C7C0089131A /* wallet_animation.json in Resources */,
+				2CD7FC362A1EAED90035CADC /* SelectLocationView.xib in Resources */,
 				2CF41C9B28FC23A100BF923D /* Shared.storyboard in Resources */,
 				2C3D7A742A18F170004DD1FB /* NextAuctionsView.xib in Resources */,
 				2C54F1DF2924654E008F99CE /* NotificationsCell.xib in Resources */,
@@ -2726,6 +2769,7 @@
 				2CF41C8428FC201300BF923D /* ImageViewerCell.xib in Resources */,
 				2C8AB0AE29076644003D233E /* NormalTextFieldView.xib in Resources */,
 				2C4E9A77299A51EC008787DD /* CarShowHomeCell.xib in Resources */,
+				2CD7FC312A1EA87E0035CADC /* AfterSaleCell.xib in Resources */,
 				2C3D7A802A18F170004DD1FB /* CarInfoView.xib in Resources */,
 				2C3E225029290E1600C38B57 /* SelectCarImagesView.xib in Resources */,
 				2C8431F229042E8800AC6009 /* PhoneNumberLocalizable.strings in Resources */,
@@ -2806,6 +2850,7 @@
 				2C178D4D27F7D15A00D32327 /* ImagePicker.swift in Sources */,
 				2C4FDC322989EB3C00797B9A /* ProviderDetailsVC.swift in Sources */,
 				2C3D7A712A18F170004DD1FB /* AuctionInfoView.swift in Sources */,
+				2CD7FC2F2A1EA87E0035CADC /* AfterSaleCell.swift in Sources */,
 				2C59B827297ECC200052093A /* RegisterVC.swift in Sources */,
 				2C8431ED29042A7800AC6009 /* PhoneTextFieldView.swift in Sources */,
 				2CF41C8128FC200200BF923D /* ImageViewerVC.swift in Sources */,
@@ -2910,6 +2955,7 @@
 				2C1269AA27F927BA00168C31 /* IntroVC.swift in Sources */,
 				2C5702F0297F5C90008B0415 /* WalletVC.swift in Sources */,
 				2CFC7927298650120089131A /* MoreRouter.swift in Sources */,
+				2CD7FC392A1EB0400035CADC /* SelectAddressOnMapVC.swift in Sources */,
 				2C8431E8290356E100AC6009 /* AppButton.swift in Sources */,
 				2C178CF027F7C46E00D32327 /* UploadData.swift in Sources */,
 				2C3C2798299281D200FECAB8 /* ShippingOrderCell.swift in Sources */,
@@ -2953,6 +2999,7 @@
 				2CFC7932298665F60089131A /* MyCarsModel.swift in Sources */,
 				2CB750C12905CB6D00FEDED9 /* EmailValidationService.swift in Sources */,
 				2C4E9A7E299B018A008787DD /* HomeModel.swift in Sources */,
+				2CD7FC342A1EAEC70035CADC /* SelectLocationView.swift in Sources */,
 				2C918503280DD48F00262AF5 /* VerificationCodeVC.swift in Sources */,
 				2CFC79402986C13E0089131A /* FQAModel.swift in Sources */,
 				2C4FDC272989CEC200797B9A /* ProvidersVC.swift in Sources */,
@@ -2973,6 +3020,7 @@
 				2CA0AC32291321B7006CBC78 /* PulseAnimation.swift in Sources */,
 				2C37A638290030600054442E /* UITextField.swift in Sources */,
 				2C54F1B42922CD67008F99CE /* HomeVC.swift in Sources */,
+				2CD7FC302A1EA87E0035CADC /* AfterSaleVC.swift in Sources */,
 				2CF41C8528FC201300BF923D /* ImageViewerCell.swift in Sources */,
 				2C3D7A7F2A18F170004DD1FB /* CarInfoView.swift in Sources */,
 				2CFC794A2987D14D0089131A /* HarajVC.swift in Sources */,

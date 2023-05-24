@@ -131,7 +131,7 @@ extension APIRouter {
                     switch value.key {
                     case .success:
                         completion(valueObject ,nil)
-                    case .fail:
+                    case .fail, .exception:
                         AppAlert.showErrorAlert(error: value.message)
                         completion(nil ,nil)
                     case .unauthenticated, .blocked:
@@ -189,8 +189,8 @@ extension APIRouter {
                         } else {
                             completion(valueObject ,nil)
                         }
-                    case .exception:
-                        completion(nil, nil)
+//                    case .exception:
+//                        completion(nil, nil)
                     }
                 } else {
                     completion(valueObject ,nil)

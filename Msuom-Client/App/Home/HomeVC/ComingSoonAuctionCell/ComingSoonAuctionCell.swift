@@ -51,7 +51,7 @@ class ComingSoonAuctionCell: UITableViewCell {
         cellImageView.setWith(string: data.image)
         nameLabel.text = data.name
         priceLabel.text = data.startPrice
-        self.fullDate = data.fullStartDate
+        self.fullDate = data.isStart ? data.fullEndDate : data.fullStartDate
         self.timer?.invalidate()
         self.timer = nil
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateDate), userInfo: nil, repeats: true)
@@ -61,8 +61,10 @@ class ComingSoonAuctionCell: UITableViewCell {
         guard let fullDate = self.fullDate else {return}
         if let time = fullDate.toTimeRemain() {
             self.timeLabel.text = "Remain".localized + " " + time
+            self.timeLabel.textColor = Theme.colors.mainDarkFontColor
         } else {
             self.timeLabel.text = "Finished".localized
+            self.timeLabel.textColor = Theme.colors.errorColor
         }
     }
     
