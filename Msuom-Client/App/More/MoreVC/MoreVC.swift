@@ -360,7 +360,8 @@ extension MoreVC {
         self.push(vc)
     }
     private func goToComplain() {
-        
+        let vc = ReportsVC.create()
+        self.push(vc)
     }
     private func goToEvaluateCar() {
         let vc = CarEvaluationVC.create()

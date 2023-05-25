@@ -10,7 +10,8 @@ import UIKit
 class SelectImageCell: UICollectionViewCell {
     
     //MARK: - IBOutlets -
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var deleteButton: UIButton!
 
     //MARK: - properties -
     var deleteAction: (()->())?
@@ -41,4 +42,10 @@ class SelectImageCell: UICollectionViewCell {
         self.deleteAction?()
     }
 
+}
+
+extension SelectImageCell {
+    func enableDelete(_ isEnabled: Bool) {
+        self.deleteButton.isHidden = !isEnabled
+    }
 }

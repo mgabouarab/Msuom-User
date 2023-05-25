@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectImageView" customModule="Msuom_Client" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="dSG-yx-phv" id="N1H-6D-8rN"/>
                 <outlet property="collectionView" destination="Jd7-Zv-QUr" id="zM4-Gf-cF3"/>
                 <outlet property="titleLabel" destination="mnf-xB-3bu" id="Rfk-Ww-pF2"/>
             </connections>

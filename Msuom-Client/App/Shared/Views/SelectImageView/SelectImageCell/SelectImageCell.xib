@@ -44,6 +44,7 @@
             </constraints>
             <size key="customSize" width="167" height="125"/>
             <connections>
+                <outlet property="deleteButton" destination="VSB-4z-VnW" id="7NS-wM-hn7"/>
                 <outlet property="imageView" destination="Z48-P7-l5M" id="adm-ht-0Y5"/>
             </connections>
             <point key="canvasLocation" x="138.1679389312977" y="46.126760563380287"/>

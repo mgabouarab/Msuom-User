@@ -295,6 +295,10 @@
 		2CD7FC442A1F59420035CADC /* SelectImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD7FC432A1F59420035CADC /* SelectImageView.xib */; };
 		2CD7FC462A1F64450035CADC /* OpenReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC452A1F64450035CADC /* OpenReportVC.swift */; };
 		2CD7FC482A1F683D0035CADC /* MultipleMediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC472A1F683D0035CADC /* MultipleMediaPicker.swift */; };
+		2CD7FC4B2A1F7EBB0035CADC /* ReportDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC4A2A1F7EBB0035CADC /* ReportDetailsVC.swift */; };
+		2CD7FC502A1F80AE0035CADC /* ReportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC4D2A1F80AE0035CADC /* ReportsCell.swift */; };
+		2CD7FC512A1F80AE0035CADC /* ReportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC4E2A1F80AE0035CADC /* ReportsVC.swift */; };
+		2CD7FC522A1F80AE0035CADC /* ReportsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD7FC4F2A1F80AE0035CADC /* ReportsCell.xib */; };
 		2CD9A46F299B9ADB00EBD6AC /* CurrentAuctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */; };
 		2CD9A470299B9ADB00EBD6AC /* CurrentAuctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */; };
 		2CE14366280C02B500A601F5 /* indicatorGifImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CE14365280C02B400A601F5 /* indicatorGifImage.gif */; };
@@ -675,6 +679,10 @@
 		2CD7FC432A1F59420035CADC /* SelectImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectImageView.xib; sourceTree = "<group>"; };
 		2CD7FC452A1F64450035CADC /* OpenReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenReportVC.swift; sourceTree = "<group>"; };
 		2CD7FC472A1F683D0035CADC /* MultipleMediaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleMediaPicker.swift; sourceTree = "<group>"; };
+		2CD7FC4A2A1F7EBB0035CADC /* ReportDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailsVC.swift; sourceTree = "<group>"; };
+		2CD7FC4D2A1F80AE0035CADC /* ReportsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsCell.swift; sourceTree = "<group>"; };
+		2CD7FC4E2A1F80AE0035CADC /* ReportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsVC.swift; sourceTree = "<group>"; };
+		2CD7FC4F2A1F80AE0035CADC /* ReportsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsCell.xib; sourceTree = "<group>"; };
 		2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAuctionCell.swift; sourceTree = "<group>"; };
 		2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentAuctionCell.xib; sourceTree = "<group>"; };
 		2CE14365280C02B400A601F5 /* indicatorGifImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicatorGifImage.gif; sourceTree = "<group>"; };
@@ -2234,6 +2242,8 @@
 		2CBB3E9C2908B00E00A32C3E /* More */ = {
 			isa = PBXGroup;
 			children = (
+				2CD7FC4C2A1F809D0035CADC /* ReportsVC */,
+				2CD7FC492A1F7EA00035CADC /* ReportDetailsVC */,
 				2CD7FC3A2A1F44500035CADC /* OpenReportVC */,
 				2CD7FC2B2A1EA85F0035CADC /* AfterSaleVC */,
 				2C4FDC2D2989EA5C00797B9A /* ProviderDetailsVC */,
@@ -2366,6 +2376,24 @@
 				2CD7FC402A1F4CA60035CADC /* SelectImageCell.xib */,
 			);
 			path = SelectImageCell;
+			sourceTree = "<group>";
+		};
+		2CD7FC492A1F7EA00035CADC /* ReportDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7FC4A2A1F7EBB0035CADC /* ReportDetailsVC.swift */,
+			);
+			path = ReportDetailsVC;
+			sourceTree = "<group>";
+		};
+		2CD7FC4C2A1F809D0035CADC /* ReportsVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7FC4D2A1F80AE0035CADC /* ReportsCell.swift */,
+				2CD7FC4E2A1F80AE0035CADC /* ReportsVC.swift */,
+				2CD7FC4F2A1F80AE0035CADC /* ReportsCell.xib */,
+			);
+			path = ReportsVC;
 			sourceTree = "<group>";
 		};
 		2CD9A46C299B9AAE00EBD6AC /* CurrentAuctionCell */ = {
@@ -2762,6 +2790,7 @@
 				2C3D7A7B2A18F170004DD1FB /* FeedbacksView.xib in Resources */,
 				2CF41C9528FC211F00BF923D /* SliderCell.xib in Resources */,
 				2C3D7A8E2A18F170004DD1FB /* AuctionPricesView.xib in Resources */,
+				2CD7FC522A1F80AE0035CADC /* ReportsCell.xib in Resources */,
 				2CB750C92905CF7B00FEDED9 /* EmailLocalizable.strings in Resources */,
 				2CA0AC302912C18D006CBC78 /* AppTextView.xib in Resources */,
 				2C3D7A672A18F170004DD1FB /* AdvantageAndDisadvantageCell.xib in Resources */,
@@ -2904,6 +2933,7 @@
 				2C6F377A2926B80F00730812 /* DropDownListCell.swift in Sources */,
 				2C178D4C27F7D15A00D32327 /* Emailer.swift in Sources */,
 				2CE14373280C132300A601F5 /* AuthRouter.swift in Sources */,
+				2CD7FC4B2A1F7EBB0035CADC /* ReportDetailsVC.swift in Sources */,
 				2C178D2E27F7CB1800D32327 /* String.swift in Sources */,
 				2CA5220B299312B800925E8A /* PurchaseOrderVC.swift in Sources */,
 				2C5FD5AA286DED84002DB350 /* AnimatedImageView.swift in Sources */,
@@ -2921,6 +2951,7 @@
 				2C178CF427F7C48900D32327 /* APIRouter.swift in Sources */,
 				2C6FFE5028043DFA00102815 /* Collection.swift in Sources */,
 				2C34D620297EDF910005E9DC /* DatePickerVC.swift in Sources */,
+				2CD7FC502A1F80AE0035CADC /* ReportsCell.swift in Sources */,
 				2C178CD427F7C2DC00D32327 /* Extensions+Bundle.swift in Sources */,
 				2C178C9127F7BBF600D32327 /* AppDelegate.swift in Sources */,
 				2C3D7A732A18F170004DD1FB /* NextAuctionsView.swift in Sources */,
@@ -3055,6 +3086,7 @@
 				2C54F1DD2924654E008F99CE /* NotificationsCell.swift in Sources */,
 				2C5FD5AB286DED84002DB350 /* FloatingTextField.swift in Sources */,
 				2C34B18629474D2400EAA358 /* SettingRouter.swift in Sources */,
+				2CD7FC512A1F80AE0035CADC /* ReportsVC.swift in Sources */,
 				2C178D4F27F7D15A00D32327 /* PhoneCaller.swift in Sources */,
 				2CFC79372986ADD80089131A /* CarEvaluationModel.swift in Sources */,
 				2C178CD327F7C2DC00D32327 /* Language.swift in Sources */,

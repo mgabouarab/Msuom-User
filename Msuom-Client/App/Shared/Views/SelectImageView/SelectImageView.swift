@@ -12,14 +12,14 @@ class SelectImageView: UIView {
     struct ImageModel {
         let data: Data?
         let url: String?
-        let id: Int?
+        let id: String?
         
         init(data: Data) {
             self.data = data
             self.url = nil
             self.id = nil
         }
-        init(url: String, id: Int) {
+        init(url: String, id: String) {
             self.data = nil
             self.url = url
             self.id = id
@@ -30,6 +30,7 @@ class SelectImageView: UIView {
     //MARK: - IBOutlet -
     @IBOutlet weak private var collectionView: UICollectionView!
     @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var addButton: UIButton!
     
     //MARK: - Properties -
     @IBInspectable
@@ -40,7 +41,8 @@ class SelectImageView: UIView {
     }
     
     private var items: [ImageModel] = []
-    private var deletedIds: [Int] = []
+    private var deletedIds: [String] = []
+    private var enableDelete: Bool = true
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -91,6 +93,12 @@ class SelectImageView: UIView {
     func getImagesData() -> [Data] {
         self.items.compactMap({$0.data})
     }
+    func set(images: [ImageModel], enableDelete: Bool) {
+        self.items = images
+        self.enableDelete = enableDelete
+        self.addButton.isHidden = !enableDelete
+        self.collectionView.reloadData()
+    }
     
     //MARK: - Actions -
     @IBAction private func selectImageButtonPressed() {
@@ -125,11 +133,16 @@ extension SelectImageView: UICollectionViewDataSource {
             guard let self = self else {return}
             self.delete(at: indexPath.row)
         }
+        cell.enableDelete(self.enableDelete)
         return cell
     }
 }
 extension SelectImageView: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = self.items[indexPath.row]
+        let vc = ImageViewerVC.create(images: [ImageViewerItem(urlImage: item.url, dataImage: nil)])
+        self.parentContainerViewController?.present(vc, animated: true)
+    }
 }
 extension SelectImageView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

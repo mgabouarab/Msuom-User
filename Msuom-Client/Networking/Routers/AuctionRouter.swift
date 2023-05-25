@@ -55,6 +55,8 @@ enum AuctionRouter {
     
     case dispute(bidId: String, questionId: String?, description: String)
     case disputeQuestions
+    case disputesUser
+    case disputeDetails(disputeId: String)
     
 }
 
@@ -81,6 +83,8 @@ extension AuctionRouter: APIRouter {
         case .shippingOrders: return .post
         case .dispute: return .post
         case .disputeQuestions: return .get
+        case .disputeDetails: return .get
+        case .disputesUser: return .get
         }
     }
     
@@ -105,6 +109,8 @@ extension AuctionRouter: APIRouter {
         case .shippingOrders: return "shippingOrders"
         case .dispute: return "dispute"
         case .disputeQuestions: return "dispute-questions"
+        case .disputeDetails: return "dispute-details"
+        case .disputesUser: return "disputes-user"
         }
     }
     
@@ -243,6 +249,12 @@ extension AuctionRouter: APIRouter {
             ]
         case .disputeQuestions:
             return nil
+        case .disputesUser:
+            return nil
+        case .disputeDetails(let disputeId):
+            return [
+                "disputeId": disputeId
+            ]
         }
     }
     
