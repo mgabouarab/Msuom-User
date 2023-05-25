@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SelectImageCell" customModule="Msuom_Client" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="167" height="125"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="167" height="125"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z48-P7-l5M">
+                        <rect key="frame" x="0.0" y="0.0" width="167" height="125"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSB-4z-VnW">
+                        <rect key="frame" x="0.0" y="0.0" width="20" height="19"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="trash.circle.fill" catalog="system"/>
+                        <connections>
+                            <action selector="deleteButtonPressed" destination="gTV-IL-0wX" eventType="touchUpInside" id="t3S-uX-rS1"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Z48-P7-l5M" secondAttribute="bottom" id="0Q2-ch-v8O"/>
+                <constraint firstItem="Z48-P7-l5M" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Qc1-cZ-Lwx"/>
+                <constraint firstItem="VSB-4z-VnW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Rkk-4r-ySq"/>
+                <constraint firstItem="VSB-4z-VnW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Y1i-3E-ZhJ"/>
+                <constraint firstAttribute="trailing" secondItem="Z48-P7-l5M" secondAttribute="trailing" id="Yhc-Ok-efU"/>
+                <constraint firstItem="Z48-P7-l5M" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cwX-zY-gZd"/>
+            </constraints>
+            <size key="customSize" width="167" height="125"/>
+            <connections>
+                <outlet property="imageView" destination="Z48-P7-l5M" id="adm-ht-0Y5"/>
+            </connections>
+            <point key="canvasLocation" x="138.1679389312977" y="46.126760563380287"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="trash.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

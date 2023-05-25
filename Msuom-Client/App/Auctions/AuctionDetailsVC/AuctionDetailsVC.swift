@@ -165,8 +165,6 @@ class AuctionDetailsVC: BaseVC {
         if let endDate = data.currentBid?.endDate, let endTime = data.currentBid?.endTime {
             self.fullEndDate = endDate + " " + endTime
         }
-        
-        self.startTimer()
         if let streamId = self.id, let currentBidId = currentBidId, let price = data.currentBid?.lastBidPrice?.doubleValue {
             self.autoBidView.set(
                 isAutoEnabled: data.currentBid?.autoBid ?? false,
@@ -204,6 +202,13 @@ class AuctionDetailsVC: BaseVC {
         if SocketConnection.sharedInstance.socket.status != .connected {
             self.enterSocket()
         }
+        
+        if data.currentBid?.isFinished != "finished" {
+            self.startTimer()
+            self.autoBidView.isHidden = true
+        }
+        
+        
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.containerStackView.alpha = 1
         }

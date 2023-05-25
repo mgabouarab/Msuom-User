@@ -289,6 +289,12 @@
 		2CD7FC342A1EAEC70035CADC /* SelectLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC332A1EAEC70035CADC /* SelectLocationView.swift */; };
 		2CD7FC362A1EAED90035CADC /* SelectLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD7FC352A1EAED90035CADC /* SelectLocationView.xib */; };
 		2CD7FC392A1EB0400035CADC /* SelectAddressOnMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC382A1EB0400035CADC /* SelectAddressOnMapVC.swift */; };
+		2CD7FC3D2A1F4A660035CADC /* SelectImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC3C2A1F4A660035CADC /* SelectImageView.swift */; };
+		2CD7FC412A1F4CA60035CADC /* SelectImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC3F2A1F4CA60035CADC /* SelectImageCell.swift */; };
+		2CD7FC422A1F4CA60035CADC /* SelectImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD7FC402A1F4CA60035CADC /* SelectImageCell.xib */; };
+		2CD7FC442A1F59420035CADC /* SelectImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD7FC432A1F59420035CADC /* SelectImageView.xib */; };
+		2CD7FC462A1F64450035CADC /* OpenReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC452A1F64450035CADC /* OpenReportVC.swift */; };
+		2CD7FC482A1F683D0035CADC /* MultipleMediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC472A1F683D0035CADC /* MultipleMediaPicker.swift */; };
 		2CD9A46F299B9ADB00EBD6AC /* CurrentAuctionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */; };
 		2CD9A470299B9ADB00EBD6AC /* CurrentAuctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */; };
 		2CE14366280C02B500A601F5 /* indicatorGifImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CE14365280C02B400A601F5 /* indicatorGifImage.gif */; };
@@ -663,6 +669,12 @@
 		2CD7FC332A1EAEC70035CADC /* SelectLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationView.swift; sourceTree = "<group>"; };
 		2CD7FC352A1EAED90035CADC /* SelectLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectLocationView.xib; sourceTree = "<group>"; };
 		2CD7FC382A1EB0400035CADC /* SelectAddressOnMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressOnMapVC.swift; sourceTree = "<group>"; };
+		2CD7FC3C2A1F4A660035CADC /* SelectImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageView.swift; sourceTree = "<group>"; };
+		2CD7FC3F2A1F4CA60035CADC /* SelectImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageCell.swift; sourceTree = "<group>"; };
+		2CD7FC402A1F4CA60035CADC /* SelectImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectImageCell.xib; sourceTree = "<group>"; };
+		2CD7FC432A1F59420035CADC /* SelectImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectImageView.xib; sourceTree = "<group>"; };
+		2CD7FC452A1F64450035CADC /* OpenReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenReportVC.swift; sourceTree = "<group>"; };
+		2CD7FC472A1F683D0035CADC /* MultipleMediaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleMediaPicker.swift; sourceTree = "<group>"; };
 		2CD9A46D299B9ADB00EBD6AC /* CurrentAuctionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAuctionCell.swift; sourceTree = "<group>"; };
 		2CD9A46E299B9ADB00EBD6AC /* CurrentAuctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentAuctionCell.xib; sourceTree = "<group>"; };
 		2CE14365280C02B400A601F5 /* indicatorGifImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicatorGifImage.gif; sourceTree = "<group>"; };
@@ -1823,6 +1835,7 @@
 		2C5FD599286DED0B002DB350 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2CD7FC3B2A1F48030035CADC /* SelectImageView */,
 				2CD7FC322A1EAEAA0035CADC /* SelectLocationView */,
 				2CF038BE2A18FEBC00AE3042 /* SelectFileView */,
 				2CF038B82A18FCC800AE3042 /* AuctionPriceView */,
@@ -2221,6 +2234,7 @@
 		2CBB3E9C2908B00E00A32C3E /* More */ = {
 			isa = PBXGroup;
 			children = (
+				2CD7FC3A2A1F44500035CADC /* OpenReportVC */,
 				2CD7FC2B2A1EA85F0035CADC /* AfterSaleVC */,
 				2C4FDC2D2989EA5C00797B9A /* ProviderDetailsVC */,
 				2C4FDC292989E2E700797B9A /* ProvidersFilterVC */,
@@ -2275,6 +2289,7 @@
 		2CBD857E28063DEA0036C9B1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2CD7FC472A1F683D0035CADC /* MultipleMediaPicker.swift */,
 				2C178D4927F7D15A00D32327 /* AppHelper.swift */,
 				2CBD857F28063F380036C9B1 /* Print.swift */,
 			);
@@ -2324,6 +2339,33 @@
 				2CD7FC382A1EB0400035CADC /* SelectAddressOnMapVC.swift */,
 			);
 			path = SelectAddressOnMapVC;
+			sourceTree = "<group>";
+		};
+		2CD7FC3A2A1F44500035CADC /* OpenReportVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7FC452A1F64450035CADC /* OpenReportVC.swift */,
+			);
+			path = OpenReportVC;
+			sourceTree = "<group>";
+		};
+		2CD7FC3B2A1F48030035CADC /* SelectImageView */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7FC3E2A1F4B3E0035CADC /* SelectImageCell */,
+				2CD7FC3C2A1F4A660035CADC /* SelectImageView.swift */,
+				2CD7FC432A1F59420035CADC /* SelectImageView.xib */,
+			);
+			path = SelectImageView;
+			sourceTree = "<group>";
+		};
+		2CD7FC3E2A1F4B3E0035CADC /* SelectImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7FC3F2A1F4CA60035CADC /* SelectImageCell.swift */,
+				2CD7FC402A1F4CA60035CADC /* SelectImageCell.xib */,
+			);
+			path = SelectImageCell;
 			sourceTree = "<group>";
 		};
 		2CD9A46C299B9AAE00EBD6AC /* CurrentAuctionCell */ = {
@@ -2735,8 +2777,10 @@
 				2C4E9A72299A51B5008787DD /* HarajHomeCell.xib in Resources */,
 				2CFB3839290696E2001619E1 /* PasswordTextFieldView.xib in Resources */,
 				2C34D619297ED9E80005E9DC /* DatePickerTextFieldView.xib in Resources */,
+				2CD7FC442A1F59420035CADC /* SelectImageView.xib in Resources */,
 				2C178CC527F7C29000D32327 /* Cairo-Black.ttf in Resources */,
 				2C3020F2297EA3F6000B47C9 /* GoogleService-Info.plist in Resources */,
+				2CD7FC422A1F4CA60035CADC /* SelectImageCell.xib in Resources */,
 				2CBC94B2286D0C0700E42AB5 /* PhotoLibraryServices.strings in Resources */,
 				2C3D7A872A18F170004DD1FB /* ExpandableDetailsView.xib in Resources */,
 				2CFC792C29865C7C0089131A /* wallet_animation.json in Resources */,
@@ -2903,6 +2947,7 @@
 				2C0D225D280D50EA0059E82B /* AuthParameterKeys.swift in Sources */,
 				2C9D8EC3290B900500D8A9CC /* MoreModel.swift in Sources */,
 				2C178CB527F7C26200D32327 /* Colors.swift in Sources */,
+				2CD7FC3D2A1F4A660035CADC /* SelectImageView.swift in Sources */,
 				2C5702EB297F58A2008B0415 /* MyAuctionsCell.swift in Sources */,
 				2CFC79352986A71D0089131A /* CarEvaluationVC.swift in Sources */,
 				2C178D2C27F7CB1800D32327 /* Array.swift in Sources */,
@@ -2967,6 +3012,7 @@
 				2C178D2427F7CAF900D32327 /* UILabel.swift in Sources */,
 				2C8AB0B029076AF1003D233E /* UnderLineButton.swift in Sources */,
 				2C3C27A82992833500FECAB8 /* PurchaseOrderCell.swift in Sources */,
+				2CD7FC482A1F683D0035CADC /* MultipleMediaPicker.swift in Sources */,
 				2C4E9A62299A5087008787DD /* HomeTypeCell.swift in Sources */,
 				2CA0AC1B2912998E006CBC78 /* InAppLanguageVC.swift in Sources */,
 				2CB750B22905A64C00FEDED9 /* CountryModel.swift in Sources */,
@@ -3015,6 +3061,7 @@
 				2C178CD827F7C2DC00D32327 /* Extensions+UICollectionView.swift in Sources */,
 				2C54F1CD292417E5008F99CE /* AuctionsVC.swift in Sources */,
 				2C3D7A6B2A18F170004DD1FB /* LiveVC.swift in Sources */,
+				2CD7FC412A1F4CA60035CADC /* SelectImageCell.swift in Sources */,
 				2C37A63629002DE80054442E /* Localizable+Storyboard.swift in Sources */,
 				2C3D7A6A2A18F170004DD1FB /* AddAuctionVC.swift in Sources */,
 				2CA0AC32291321B7006CBC78 /* PulseAnimation.swift in Sources */,
@@ -3049,6 +3096,7 @@
 				2C4E9A6C299A5144008787DD /* ComingAuctionsCell.swift in Sources */,
 				2C178CB327F7C26200D32327 /* Constants.swift in Sources */,
 				2CE1436A280C06DC00A601F5 /* CollectionViewContentSized.swift in Sources */,
+				2CD7FC462A1F64450035CADC /* OpenReportVC.swift in Sources */,
 				2C4E9A84299B0737008787DD /* BrowseCarVC.swift in Sources */,
 				2C178D4127F7CF2900D32327 /* AppStoryboards.swift in Sources */,
 				2C178D2B27F7CB1800D32327 /* Date.swift in Sources */,

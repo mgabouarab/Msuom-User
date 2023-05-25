@@ -52,6 +52,10 @@ enum AuctionRouter {
     case afterSaleServices(bidId: String)
     case afterSaleServiceOrder(bidId: String, latitude: Double, longitude: Double, address: String, serviceId: String)
     case shippingOrders(bidId: String, latitude: Double?, longitude: Double?, address: String?, isDelivery: Bool)
+    
+    case dispute(bidId: String, questionId: String?, description: String)
+    case disputeQuestions
+    
 }
 
 extension AuctionRouter: APIRouter {
@@ -75,6 +79,8 @@ extension AuctionRouter: APIRouter {
         case .afterSaleServices: return .get
         case .afterSaleServiceOrder: return .post
         case .shippingOrders: return .post
+        case .dispute: return .post
+        case .disputeQuestions: return .get
         }
     }
     
@@ -97,6 +103,8 @@ extension AuctionRouter: APIRouter {
         case .afterSaleServices: return "afterSaleServices"
         case .afterSaleServiceOrder: return "afterSaleServiceOrder"
         case .shippingOrders: return "shippingOrders"
+        case .dispute: return "dispute"
+        case .disputeQuestions: return "dispute-questions"
         }
     }
     
@@ -227,6 +235,14 @@ extension AuctionRouter: APIRouter {
                 "address": address,
                 "isDelivery": isDelivery
             ]
+        case .dispute(let bidId, let questionId, let description):
+            return [
+                "bidId": bidId,
+                "questionId": questionId,
+                "description": description
+            ]
+        case .disputeQuestions:
+            return nil
         }
     }
     

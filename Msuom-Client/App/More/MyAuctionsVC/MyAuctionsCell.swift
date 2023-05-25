@@ -73,9 +73,6 @@ class MyAuctionsCell: UITableViewCell {
     @IBAction private func afterSaleButtonPressed() {
         self.saleAction?()
     }
-    @objc private func cardViewTapped() {
-        self.tapAction?()
-    }
     @IBAction private func openTapped() {
         self.openAction?()
     }

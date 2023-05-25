@@ -131,6 +131,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Open Dispute"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="openTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hhX-te-7Hy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faP-vS-s23" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
                                         <rect key="frame" x="210.5" y="0.0" width="93.5" height="48"/>
