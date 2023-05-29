@@ -6,12 +6,39 @@
 
 import Foundation
 
-//MARK: - Request Enums -
-enum Server: String {
-    case baseURL = "https://mseomtest.4hoste.com/api/"
-    case socketURL = "https://mseomtest.4hoste.com"
-    case socketPort = "30040"
+enum Server {
+    static var baseURL: String {
+        #if DEBUG
+        "https://mseomtest.4hoste.com/api/"
+        #else
+        "https://mseom.4hoste.com/api/"
+        #endif
+        
+    }
+    static var socketURL: String {
+        #if DEBUG
+        "https://mseomtest.4hoste.com"
+        #else
+        "https://mseom.4hoste.com"
+        #endif
+    }
+    static var socketPort: String {
+        #if DEBUG
+        "30040"
+        #else
+        "30036"
+        #endif
+        
+    }
 }
+
+
+//MARK: - Request Enums -
+//enum Server: String {
+//    case baseURL = "https://mseom.4hoste.com/api/"
+//    case socketURL = "https://mseom.4hoste.com"
+//    case socketPort = "30036"
+//}
 enum HTTPHeaderKeys {
     static let authentication = "Authorization"
     static let contentType = "Content-Type"

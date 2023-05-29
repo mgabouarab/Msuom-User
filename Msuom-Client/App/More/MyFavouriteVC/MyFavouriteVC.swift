@@ -86,6 +86,7 @@ extension MyFavouriteVC {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(cellType: CarCell.self, bundle: nil)
+        self.tableView.register(cellType: ComingSoonAuctionCell.self, bundle: nil)
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.tableView.tableFooterView = UIView(frame: .zero)
         self.tableView.addRefresh(action: #selector(self.refresh))
@@ -93,13 +94,21 @@ extension MyFavouriteVC {
 }
 extension MyFavouriteVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.tableView.setPlaceholder(isEmpty: items.isEmpty)
         return items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(with: CarCell.self, for: indexPath)
         let item = self.items[indexPath.row]
-        cell.configureWith(data: item)
-        return cell
+        switch self.type {
+        case .advertise:
+            let cell = tableView.dequeueReusableCell(with: CarCell.self, for: indexPath)
+            cell.configureWith(data: item)
+            return cell
+        case .bid:
+            let cell = tableView.dequeueReusableCell(with: ComingSoonAuctionCell.self, for: indexPath)
+            cell.configureWith(model: item)
+            return cell
+        }
     }
 }
 extension MyFavouriteVC: UITableViewDelegate {
@@ -110,7 +119,8 @@ extension MyFavouriteVC: UITableViewDelegate {
             let vc = CarDetailsVC.create(id: itemId)
             self.push(vc)
         case .bid:
-            break
+            let vc = AuctionDetailsVC.create(id: itemId)
+            self.push(vc)
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

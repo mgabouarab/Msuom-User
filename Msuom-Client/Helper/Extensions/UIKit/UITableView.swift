@@ -245,7 +245,7 @@ extension TableViewPlaceHolder {
         case .notifications:
             return "No Notifications Found".helperLocalizable
         case .empty:
-            return "No Data Found".helperLocalizable
+            return ""//"No Data Found".helperLocalizable
         case .emptyHome:
             return "No Posts Found".localized
         }
@@ -281,7 +281,7 @@ extension TableViewPlaceHolder {
         case .notifications:
             return "NoNotifications"
         case .empty:
-            return "emptyPlaceholder"
+            return "NoDataFound"
         case .emptyHome:
             return ""
         }

@@ -48,21 +48,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zZs-xb-hKf">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xZz-qF-9T0">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                                <subviews>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="b1A-JY-UhG" customClass="DropDownTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="0.0" width="361" height="197"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="City"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="addressMarker"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XMW-tH-gaJ">
+                                        <rect key="frame" x="30" y="213" width="333" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Gop-xM-Lhe"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedDidChange:" destination="xJv-cm-4fG" eventType="valueChanged" id="ssL-Zn-myh"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zZs-xb-hKf">
+                                        <rect key="frame" x="0.0" y="269" width="393" height="490"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zZs-xb-hKf" firstAttribute="leading" secondItem="xZz-qF-9T0" secondAttribute="leading" id="8j5-Ba-jX9"/>
+                                    <constraint firstItem="b1A-JY-UhG" firstAttribute="leading" secondItem="xZz-qF-9T0" secondAttribute="leading" constant="16" id="97t-l3-SjY"/>
+                                    <constraint firstItem="XMW-tH-gaJ" firstAttribute="leading" secondItem="xZz-qF-9T0" secondAttribute="leading" constant="30" id="sCt-8w-Ub6"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L2M-OG-cVL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="L2M-OG-cVL" firstAttribute="bottom" secondItem="zZs-xb-hKf" secondAttribute="bottom" id="3PG-MW-rom"/>
-                            <constraint firstItem="L2M-OG-cVL" firstAttribute="trailing" secondItem="zZs-xb-hKf" secondAttribute="trailing" id="cuB-lg-kfX"/>
-                            <constraint firstItem="zZs-xb-hKf" firstAttribute="leading" secondItem="L2M-OG-cVL" secondAttribute="leading" id="iCh-uV-dij"/>
-                            <constraint firstItem="zZs-xb-hKf" firstAttribute="top" secondItem="L2M-OG-cVL" secondAttribute="top" id="wuB-zN-61w"/>
+                            <constraint firstItem="xZz-qF-9T0" firstAttribute="top" secondItem="L2M-OG-cVL" secondAttribute="top" id="Ymu-7N-KXj"/>
+                            <constraint firstItem="xZz-qF-9T0" firstAttribute="trailing" secondItem="L2M-OG-cVL" secondAttribute="trailing" id="sea-Sm-50Z"/>
+                            <constraint firstItem="xZz-qF-9T0" firstAttribute="bottom" secondItem="L2M-OG-cVL" secondAttribute="bottom" id="ti3-wp-Scp"/>
+                            <constraint firstItem="xZz-qF-9T0" firstAttribute="leading" secondItem="L2M-OG-cVL" secondAttribute="leading" id="vvx-63-yNU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cityTextFieldView" destination="b1A-JY-UhG" id="owo-Y2-X0U"/>
+                        <outlet property="segmentedControl" destination="XMW-tH-gaJ" id="hcN-1O-nFQ"/>
                         <outlet property="tableView" destination="zZs-xb-hKf" id="apn-QF-0j2"/>
                     </connections>
                 </viewController>
@@ -410,6 +444,7 @@
     </scenes>
     <resources>
         <image name="addButton" width="60.333332061767578" height="60.333332061767578"/>
+        <image name="addressMarker" width="10" height="14"/>
         <image name="counterBackground" width="375" height="812"/>
         <image name="searchIcon" width="15" height="15"/>
         <image name="warning" width="46" height="42"/>

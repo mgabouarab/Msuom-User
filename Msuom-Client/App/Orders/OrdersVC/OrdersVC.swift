@@ -128,12 +128,16 @@ extension OrdersVC: UITableViewDataSource {
         
         switch self.selectedType {
         case .shipping:
+            self.tableView.setPlaceholder(isEmpty: shippingOrderDetails.isEmpty)
             return self.shippingOrderDetails.count
         case .evaluation:
+            self.tableView.setPlaceholder(isEmpty: evaluationOrderDetails.isEmpty)
             return self.evaluationOrderDetails.count
         case .purchaseOrder:
+            self.tableView.setPlaceholder(isEmpty: purchaseOrderDetails.isEmpty)
             return self.purchaseOrderDetails.count
         case .summaryReport:
+            self.tableView.setPlaceholder(isEmpty: summaryReportDetails.isEmpty)
             return self.summaryReportDetails.count
         }
         

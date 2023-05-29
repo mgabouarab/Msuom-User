@@ -57,7 +57,10 @@ enum AuctionRouter {
     case disputeQuestions
     case disputesUser
     case disputeDetails(disputeId: String)
-    
+    case listOfComingOrCurrentBids(type: String, cityId: String?)
+    case showAllProviders(type: String)
+    case providerStreams(type: String, providerId: String)
+    case filterStreams(streamIds: String)
 }
 
 extension AuctionRouter: APIRouter {
@@ -85,6 +88,10 @@ extension AuctionRouter: APIRouter {
         case .disputeQuestions: return .get
         case .disputeDetails: return .get
         case .disputesUser: return .get
+        case .listOfComingOrCurrentBids: return .get
+        case .showAllProviders: return .get
+        case .providerStreams: return .get
+        case .filterStreams: return .get
         }
     }
     
@@ -111,6 +118,10 @@ extension AuctionRouter: APIRouter {
         case .disputeQuestions: return "dispute-questions"
         case .disputeDetails: return "dispute-details"
         case .disputesUser: return "disputes-user"
+        case .listOfComingOrCurrentBids: return "listOfComingOrCurrentBids"
+        case .showAllProviders: return "showAllProviders"
+        case .providerStreams: return "providerStreams"
+        case .filterStreams: return "filterStreams"
         }
     }
     
@@ -254,6 +265,24 @@ extension AuctionRouter: APIRouter {
         case .disputeDetails(let disputeId):
             return [
                 "disputeId": disputeId
+            ]
+        case .listOfComingOrCurrentBids(let type, let cityId):
+            return [
+                "type": type,
+                "cityId": cityId
+            ]
+        case .showAllProviders(let type):
+            return [
+                "type": type
+            ]
+        case .providerStreams(let type, let providerId):
+            return [
+                "type": type,
+                "providerId": providerId
+            ]
+        case .filterStreams(let streamIds):
+            return [
+                "streamIds": streamIds
             ]
         }
     }

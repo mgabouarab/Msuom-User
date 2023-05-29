@@ -24,6 +24,11 @@ final class CarEvaluationVC: BaseVC {
     @IBOutlet weak private var phoneLabel: UILabel!
     @IBOutlet weak private var emailLabel: UILabel!
     @IBOutlet weak private var addressTextFieldView: NormalTextFieldView!
+    @IBOutlet weak private var receiveView: UIView!
+    @IBOutlet weak private var deliveryView: UIView!
+    @IBOutlet weak private var receiveButton: UIButton!
+    @IBOutlet weak private var deliveryButton: UIButton!
+    
     
     //MARK: - Properties -
     private var brandArray: [DropDownItem] = []
@@ -53,6 +58,20 @@ final class CarEvaluationVC: BaseVC {
     private func configureInitialDesign() {
         self.scrollView.alpha = 0
         self.addBackButtonWith(title: "Car Evaluation".localized)
+        
+        let receiveTap = UITapGestureRecognizer(target: self, action: #selector(self.receiveViewTapTapped))
+        let deliveryTap = UITapGestureRecognizer(target: self, action: #selector(self.deliveryViewTapTapped))
+        
+        
+        self.receiveView.addGestureRecognizer(receiveTap)
+        self.deliveryView.addGestureRecognizer(deliveryTap)
+        
+        self.deliveryViewTapTapped()
+        
+        
+        
+        
+        
     }
     
     //MARK: - Logic Methods -
@@ -153,6 +172,21 @@ final class CarEvaluationVC: BaseVC {
             self.showErrorAlert(error: error.localizedDescription)
         }
     }
+    private var isDelivery: Bool = true
+    @objc private func receiveViewTapTapped() {
+        self.receiveButton.isSelected = true
+        self.deliveryButton.isSelected = false
+        self.isDelivery = true
+    }
+    @objc private func deliveryViewTapTapped() {
+        self.deliveryButton.isSelected = true
+        self.receiveButton.isSelected = false
+        self.isDelivery = false
+    }
+    
+    
+    
+    
     
     
 }
@@ -162,7 +196,7 @@ final class CarEvaluationVC: BaseVC {
 extension CarEvaluationVC {
     private func carEvaluation(brandId: String, typeId: String, categoryId: String, statusId: String, walkway: String, type: String, address: String) {
         self.showIndicator()
-        MoreRouter.carEvaluation(brandId: brandId, typeId: typeId, categoryId: categoryId, statusId: statusId, walkway: walkway, type: type, address: address).send { [weak self] (response: APIGenericResponse<CarEvaluationResultModel>) in
+        MoreRouter.carEvaluation(brandId: brandId, typeId: typeId, categoryId: categoryId, statusId: statusId, walkway: walkway, type: type, address: address, isDelivery: self.isDelivery).send { [weak self] (response: APIGenericResponse<CarEvaluationResultModel>) in
             guard let self = self else {return}
             if let data = response.data, type == "general", data.result != nil {
                 let vc = CarEvaluationResultVC.create(result: data, evaluateDescription: self.evaluateLabel.text)
@@ -188,8 +222,8 @@ extension CarEvaluationVC {
         self.showIndicator()
         MoreRouter.dataUsedForEvaluation.send { [weak self] (response: APIGenericResponse<CarEvaluationModel>) in
             guard let self = self else {return}
-            self.evaluateLabel.text = response.data?.carPreview
-            self.chargeLabel.text = response.data?.shippingServices
+            self.evaluateLabel.text = response.data?.carPreview?.htmlToAttributedString?.string
+            self.chargeLabel.text = response.data?.shippingServices?.htmlToAttributedString?.string
             self.whatsAppLabel.text = response.data?.phoneNoWhats
             self.phoneLabel.text = response.data?.phoneNo
             self.emailLabel.text = response.data?.email

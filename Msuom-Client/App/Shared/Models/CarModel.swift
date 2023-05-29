@@ -227,7 +227,7 @@ extension Car {
             return sellerImage
         }
         var displayedSellerAddress: String {
-            guard let sellerAddress = self.owner.address else {
+            guard let sellerAddress = self.owner.cityName else {
                 print("Car with id: \(self.details.id) has no sellerAddress value")
                 return ""
             }

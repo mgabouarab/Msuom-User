@@ -58,7 +58,7 @@ class EditProfileVC: BaseVC {
             self.cityTextFieldView.set(value: Item(id: id, name: name))
         }
         
-        self.birthdayTextFieldView.set(value: user?.birthday)
+        self.birthdayTextFieldView.set(value: user?.birthday, formate: appDateFormate)
         
     }
     private func configureInitialData() {

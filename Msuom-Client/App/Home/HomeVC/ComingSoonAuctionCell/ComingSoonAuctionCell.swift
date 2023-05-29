@@ -15,10 +15,12 @@ class ComingSoonAuctionCell: UITableViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var priceLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
+    @IBOutlet weak private var liveView: UIStackView!
     
     //MARK: - Properties -
     private var timer: Timer?
     private var fullDate: String?
+    private var isStart: Bool = false
     
     //MARK: - Lifecycle -
     override func awakeFromNib() {
@@ -39,9 +41,11 @@ class ComingSoonAuctionCell: UITableViewCell {
     }
     
     func configureWith(data: Auction.HomeSoonAuction) {
+        self.liveView.isHidden = !data.isLive
         cellImageView.setWith(string: data.image)
+        isStart = data.isStart
         nameLabel.text = data.name
-        priceLabel.text = data.startPrice
+        priceLabel.text = data.startPrice + " " + appCurrency
         self.fullDate = data.fullStartDate
         self.timer?.invalidate()
         self.timer = nil
@@ -49,8 +53,21 @@ class ComingSoonAuctionCell: UITableViewCell {
     }
     func configureWith(details data: BidDetails.HomeSoonAuction) {
         cellImageView.setWith(string: data.image)
+        self.liveView.isHidden = !data.isLive
+        isStart = data.isStart
         nameLabel.text = data.name
-        priceLabel.text = data.startPrice
+        priceLabel.text = data.startPrice + " " + appCurrency
+        self.fullDate = data.isStart ? data.fullEndDate : data.fullStartDate
+        self.timer?.invalidate()
+        self.timer = nil
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateDate), userInfo: nil, repeats: true)
+    }
+    func configureWith(model data: MyCarsModel) {
+        cellImageView.setWith(string: data.image)
+        self.liveView.isHidden = !data.isLive
+        isStart = data.isStart
+        nameLabel.text = data.name
+        priceLabel.text = (data.startPrice ?? "0") + " " + appCurrency
         self.fullDate = data.isStart ? data.fullEndDate : data.fullStartDate
         self.timer?.invalidate()
         self.timer = nil
@@ -61,7 +78,7 @@ class ComingSoonAuctionCell: UITableViewCell {
         guard let fullDate = self.fullDate else {return}
         if let time = fullDate.toTimeRemain() {
             self.timeLabel.text = "Remain".localized + " " + time
-            self.timeLabel.textColor = Theme.colors.mainDarkFontColor
+            self.timeLabel.textColor = isStart ? Theme.colors.mainDarkFontColor : Theme.colors.errorColor
         } else {
             self.timeLabel.text = "Finished".localized
             self.timeLabel.textColor = Theme.colors.errorColor

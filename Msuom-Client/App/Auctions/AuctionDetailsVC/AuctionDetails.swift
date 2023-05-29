@@ -208,12 +208,12 @@ struct Advantages : Codable {
     var isSelected: Bool?
 }
 
-struct Cities : Codable {
+struct Cities : Codable, DropDownItem {
     let address : String?
-    let id : String?
+    let id : String
     let latitude : Numerical?
     let longitude : Numerical?
-    let name : String?
+    let name : String
 }
 
 struct Provider : Codable {
@@ -248,6 +248,20 @@ struct BidStream: Codable {
     let startTime : String?
     let status : String?
     let type : String?
+    let address: String?
+    let bio: String?
+    let carCount: String?
+    let cityName: String?
+    let image: String?
+    let latitude: String?
+    let longitude: String?
+    let phoneNo: String?
+    let star: Bool?
+    let userType: String?
+    var isSelected: Bool?
+    var bidsCount: Numerical?
+    var lastBidPrice: Numerical?
+    var isPlaying: Bool?
 }
 
 struct Credentials : Codable {

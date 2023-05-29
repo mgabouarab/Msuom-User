@@ -25,6 +25,58 @@ struct MyCarsModel: Codable {
     let twitter: String?
     let whats: String?
     
+    let endDate: String?
+    let endedAt: String?
+    let endTime: String?
+    let isRunning: Bool?
+    let startDate: String?
+    let startedAt: String?
+    let startPrice: String?
+    let startTime: String?
+    let streamId: String?
+    
+    
+    
+    var fullStartDate: String {
+        guard let startDate = self.startDate else {
+            print("The Auction with id: \(self.id) has no startDate")
+            return ""
+        }
+        guard let startTime = self.startTime else {
+            print("The Auction with id: \(self.id) has no startTime")
+            return ""
+        }
+        return "\(startDate) \(startTime)"
+    }
+    var fullEndDate: String {
+        guard let endDate = self.endDate else {
+            print("The Auction with id: \(self.id) has no endDate")
+            return ""
+        }
+        guard let endTime = self.endTime else {
+            print("The Auction with id: \(self.id) has no endTime")
+            return ""
+        }
+        return "\(endDate) \(endTime)"
+    }
+    
+    var isLive: Bool {
+        guard let type = self.type, type == "live" else {
+            return false
+        }
+        return true
+    }
+    var isStart: Bool {
+        guard self.isRunning == true else {
+            return false
+        }
+        return true
+    }
+    
+    
+    
+    
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
@@ -43,6 +95,17 @@ struct MyCarsModel: Codable {
         self.twitter = try container.decodeIfPresent(String.self, forKey: .twitter)
         self.whats = try container.decodeIfPresent(String.self, forKey: .whats)
         
+        self.endDate = try container.decodeIfPresent(String.self, forKey: .endDate)
+        self.endedAt = try container.decodeIfPresent(String.self, forKey: .endedAt)
+        self.endTime = try container.decodeIfPresent(String.self, forKey: .endTime)
+        self.isRunning = try container.decodeIfPresent(Bool.self, forKey: .isRunning)
+        self.startDate = try container.decodeIfPresent(String.self, forKey: .startDate)
+        self.startedAt = try container.decodeIfPresent(String.self, forKey: .startedAt)
+        self.startPrice = try container.decodeIfPresent(String.self, forKey: .startPrice)
+        self.startTime = try container.decodeIfPresent(String.self, forKey: .startTime)
+        self.streamId = try container.decodeIfPresent(String.self, forKey: .streamId)
+        
+        
     }
     
     
@@ -54,6 +117,3 @@ extension MyCarsModel: CarCellViewData {
         return self.sellTypeName ?? ""
     }
 }
-
-
-

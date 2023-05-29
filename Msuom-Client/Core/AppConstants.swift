@@ -19,7 +19,7 @@ var appDistance = {
 }()
 
 var appDateFormate = {
-    return "yyyy/MM/dd"
+    return "dd/MM/yyyy"
 }()
 var appTimeFormate = {
     return "HH:ss"
@@ -28,5 +28,5 @@ var appFullDateFormate = {
     return "dd/MM/yyy hh:mm a"
 }()
 var listLimit = {
-   return 20
+   return 500
 }()

@@ -17,6 +17,8 @@ open class SocketConnection {
         case sendBid = "sendBid"
         case finishedAuction = "finishedAuction"
         case addComment = "addComment"
+        case enterFilterStreams = "enterFilterStreams"
+        case exitFilterStreams = "exitFilterStreams"
     }
     enum DataSocketKeys {
         static let bidId = "bidId"
@@ -29,11 +31,13 @@ open class SocketConnection {
         static let comment = "comment"
         static let lang = "lang"
         static let autoBid = "autoBid"
+        static let providerId = "providerId"
     }
     enum ChannelTypes {
         static let newBid = "newBid"
         static let onBidFinished = "onBidFinished"
         static let newComment = "newComment"
+        static let providerStreamFinished = "providerStreamFinished"
     }
     
     //MARK: - Properties -
@@ -41,7 +45,7 @@ open class SocketConnection {
     let manager: SocketManager
     public var socket: SocketIOClient
     public var isExitingChat: Bool = false
-    private let url = Server.socketURL.rawValue + ":" + Server.socketPort.rawValue
+    private let url = Server.socketURL + ":" + Server.socketPort
     
     //MARK: - Init -
     private init() {
@@ -104,6 +108,27 @@ open class SocketConnection {
         )
     }
 
+    func enterFilterStreams(
+        providerId: String,
+        completion: (() -> ())?
+    ) {
+        var data = [String: Any]()
+        data[DataSocketKeys.providerId] = providerId
+        data[DataSocketKeys.viewerId] = UserDefaults.user?.id ?? ""
+        emit(for: EmitTypes.enterFilterStreams, data: data, completion: completion)
+    }
+    
+    func exitFilterStreams(
+        providerId: String,
+        completion: (() -> ())?
+    ) {
+        var data = [String: Any]()
+        data[DataSocketKeys.providerId] = providerId
+        data[DataSocketKeys.viewerId] = UserDefaults.user?.id ?? ""
+        emit(for: EmitTypes.exitFilterStreams, data: data, completion: completion)
+    }
+    
+    
 
     func enterAuction(
         streamId: String,

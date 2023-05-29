@@ -11,11 +11,11 @@ import AVKit
 extension UIImageView {
     func setWith(string: String?) {
         self.kf.indicatorType = .activity
-        
+        self.image = UIImage(named: "AppIcon")
         guard let string = string else {return}
         
         guard let stringUrl = string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let httpURL = URL(string: stringUrl), httpURL.isFileURL || (httpURL.host != nil && httpURL.scheme != nil) else {
-            self.image = UIImage(named: string)
+            self.image = UIImage(named: string) ?? UIImage(named: "AppIcon")
             return
         }
         

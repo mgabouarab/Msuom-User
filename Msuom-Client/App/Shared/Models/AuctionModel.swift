@@ -24,6 +24,7 @@ struct Auction: Codable {
     private let startPrice: String?
     private let startTime: String?
     private let type: String?
+    private let isRunning: Bool?
     
 }
 
@@ -68,6 +69,7 @@ extension Auction {
         let fullStartDate: String
         let fullEndDate: String
         let isLive: Bool
+        let isStart: Bool
     }
     
     //MARK: - Views Data -
@@ -123,6 +125,12 @@ extension Auction {
             }
             return true
         }
+        var isStart: Bool {
+            guard self.isRunning == true else {
+                return false
+            }
+            return true
+        }
         
         return  HomeSoonAuction(
             id: self.id,
@@ -131,7 +139,8 @@ extension Auction {
             startPrice: displayedStartPrice,
             fullStartDate: displayedFullDate,
             fullEndDate: displayedFullEndDate,
-            isLive: isLive
+            isLive: isLive,
+            isStart: isStart
         )
         
     }
@@ -176,7 +185,7 @@ extension Numerical {
     var stringValue: String? {
         switch self {
         case .string(let value): return value
-        case .double(let value): return String(value)
+        case .double(let value): return String(Int(value))
         }
     }
     

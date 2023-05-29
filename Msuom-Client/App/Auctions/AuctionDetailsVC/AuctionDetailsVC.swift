@@ -205,9 +205,12 @@ class AuctionDetailsVC: BaseVC {
         
         if data.currentBid?.isFinished != "finished" {
             self.startTimer()
+        } else {
+            self.autoBidView.isHidden = true
+            self.feedbacksView.enableAddComment = false
+            self.actionContainerView.isHidden = true
             self.autoBidView.isHidden = true
         }
-        
         
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.containerStackView.alpha = 1

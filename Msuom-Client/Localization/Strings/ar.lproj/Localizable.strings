@@ -289,8 +289,8 @@
 " S" = " ث";
 "Remain" = "متبقي";
 "Finished" = "منتهي";
-"Current_bids" = "الجارية";
-"Next_bids" = "الحالية";
+"Current_bids" = "الحالية";
+"Next_bids" = "القادمة";
 "Buying Deposit" = "عربون الشراء";
 "Next" = "التالي";
 "Add Auction" = "إضافة مزاد";
@@ -390,3 +390,11 @@
 "Seller response" = "رد البائع";
 "Number:" = "الرقم:";
 "Management escalation" = "تصعيد للإدارة";
+"Charge Method" = "طريقة الشحن";
+"City" = "المدينة";
+"Stores" = "المعارض";
+"Bids" = "المزادات";
+"Show Auction" = "عرض المزاد";
+"Start Auction Time: " = "وقت بداية المزاد: ";
+"End Auction Time: " = "وقت نهاية المزاد: ";
+"Please select at lest one auction" = "اختر مزاد واحد علي الاقل";

@@ -12,7 +12,7 @@ enum MoreRouter {
     case advertises(page: Int)
     case favs(type: String)
     case dataUsedForEvaluation
-    case carEvaluation(brandId: String, typeId: String, categoryId: String, statusId: String, walkway: String, type: String, address: String)
+    case carEvaluation(brandId: String, typeId: String, categoryId: String, statusId: String, walkway: String, type: String, address: String, isDelivery: Bool)
     case chargeWallet(price: String)
 }
 
@@ -45,7 +45,7 @@ extension MoreRouter: APIRouter {
         case .advertises(let page): return ["page": page, "limit": listLimit]
         case .favs(let type): return ["type": type]
         case .dataUsedForEvaluation: return nil
-        case .carEvaluation(let brandId, let typeId, let categoryId, let statusId, let walkway, let type, let address):
+        case .carEvaluation(let brandId, let typeId, let categoryId, let statusId, let walkway, let type, let address, let isDelivery):
             return [
                 "brandId": brandId,
                 "typeId": typeId,
@@ -53,7 +53,8 @@ extension MoreRouter: APIRouter {
                 "statusId": statusId,
                 "walkway": walkway,
                 "type": type,
-                "address": address
+                "address": address,
+                "isDelivery": isDelivery
             ]
         case .chargeWallet(let price):
             return [

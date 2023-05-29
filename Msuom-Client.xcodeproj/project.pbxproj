@@ -81,6 +81,16 @@
 		2C1A344129880D2B007D9B2D /* OffersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A343E29880D2B007D9B2D /* OffersVC.swift */; };
 		2C1A344229880D2B007D9B2D /* OffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1A343F29880D2B007D9B2D /* OffersCell.xib */; };
 		2C1E901527FA77C7005C8B7E /* IntroLanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1E901427FA77C7005C8B7E /* IntroLanguageVC.swift */; };
+		2C2EB2832A2338BA006EF7E2 /* AuctionsStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB2812A2338BA006EF7E2 /* AuctionsStoreCell.swift */; };
+		2C2EB2842A2338BA006EF7E2 /* AuctionsStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2EB2822A2338BA006EF7E2 /* AuctionsStoreCell.xib */; };
+		2C2EB2872A23656A006EF7E2 /* AuctionCitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB2862A23656A006EF7E2 /* AuctionCitiesVC.swift */; };
+		2C2EB28D2A237ED5006EF7E2 /* ShowAllProvidersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB28A2A237ED5006EF7E2 /* ShowAllProvidersVC.swift */; };
+		2C2EB2932A2387E6006EF7E2 /* ProviderStreamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB2902A2387E6006EF7E2 /* ProviderStreamsCell.swift */; };
+		2C2EB2942A2387E6006EF7E2 /* ProviderStreamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB2912A2387E6006EF7E2 /* ProviderStreamsVC.swift */; };
+		2C2EB2952A2387E6006EF7E2 /* ProviderStreamsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2EB2922A2387E6006EF7E2 /* ProviderStreamsCell.xib */; };
+		2C2EB29A2A248438006EF7E2 /* FilterStreamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB2972A248438006EF7E2 /* FilterStreamsCell.swift */; };
+		2C2EB29B2A248438006EF7E2 /* FilterStreamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB2982A248438006EF7E2 /* FilterStreamsVC.swift */; };
+		2C2EB29C2A248438006EF7E2 /* FilterStreamsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2EB2992A248438006EF7E2 /* FilterStreamsCell.xib */; };
 		2C3020F2297EA3F6000B47C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C3020F1297EA3F6000B47C9 /* GoogleService-Info.plist */; };
 		2C34B18629474D2400EAA358 /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C34B18529474D2400EAA358 /* SettingRouter.swift */; };
 		2C34D617297ED9DB0005E9DC /* DatePickerTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C34D616297ED9DB0005E9DC /* DatePickerTextFieldView.swift */; };
@@ -451,6 +461,16 @@
 		2C1A343E29880D2B007D9B2D /* OffersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersVC.swift; sourceTree = "<group>"; };
 		2C1A343F29880D2B007D9B2D /* OffersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OffersCell.xib; sourceTree = "<group>"; };
 		2C1E901427FA77C7005C8B7E /* IntroLanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroLanguageVC.swift; sourceTree = "<group>"; };
+		2C2EB2812A2338BA006EF7E2 /* AuctionsStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionsStoreCell.swift; sourceTree = "<group>"; };
+		2C2EB2822A2338BA006EF7E2 /* AuctionsStoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionsStoreCell.xib; sourceTree = "<group>"; };
+		2C2EB2862A23656A006EF7E2 /* AuctionCitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCitiesVC.swift; sourceTree = "<group>"; };
+		2C2EB28A2A237ED5006EF7E2 /* ShowAllProvidersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllProvidersVC.swift; sourceTree = "<group>"; };
+		2C2EB2902A2387E6006EF7E2 /* ProviderStreamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderStreamsCell.swift; sourceTree = "<group>"; };
+		2C2EB2912A2387E6006EF7E2 /* ProviderStreamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderStreamsVC.swift; sourceTree = "<group>"; };
+		2C2EB2922A2387E6006EF7E2 /* ProviderStreamsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProviderStreamsCell.xib; sourceTree = "<group>"; };
+		2C2EB2972A248438006EF7E2 /* FilterStreamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStreamsCell.swift; sourceTree = "<group>"; };
+		2C2EB2982A248438006EF7E2 /* FilterStreamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStreamsVC.swift; sourceTree = "<group>"; };
+		2C2EB2992A248438006EF7E2 /* FilterStreamsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterStreamsCell.xib; sourceTree = "<group>"; };
 		2C3020F1297EA3F6000B47C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C34B18529474D2400EAA358 /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
 		2C34D616297ED9DB0005E9DC /* DatePickerTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextFieldView.swift; sourceTree = "<group>"; };
@@ -1194,6 +1214,51 @@
 			path = IntroLanguage;
 			sourceTree = "<group>";
 		};
+		2C2EB2802A233859006EF7E2 /* AuctionsStoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C2EB2812A2338BA006EF7E2 /* AuctionsStoreCell.swift */,
+				2C2EB2822A2338BA006EF7E2 /* AuctionsStoreCell.xib */,
+			);
+			path = AuctionsStoreCell;
+			sourceTree = "<group>";
+		};
+		2C2EB2852A236546006EF7E2 /* AuctionCitiesVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C2EB2862A23656A006EF7E2 /* AuctionCitiesVC.swift */,
+			);
+			path = AuctionCitiesVC;
+			sourceTree = "<group>";
+		};
+		2C2EB2882A237EB9006EF7E2 /* ShowAllProvidersVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C2EB28A2A237ED5006EF7E2 /* ShowAllProvidersVC.swift */,
+			);
+			path = ShowAllProvidersVC;
+			sourceTree = "<group>";
+		};
+		2C2EB28F2A2387D1006EF7E2 /* ProviderStreamsVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C2EB2902A2387E6006EF7E2 /* ProviderStreamsCell.swift */,
+				2C2EB2912A2387E6006EF7E2 /* ProviderStreamsVC.swift */,
+				2C2EB2922A2387E6006EF7E2 /* ProviderStreamsCell.xib */,
+			);
+			path = ProviderStreamsVC;
+			sourceTree = "<group>";
+		};
+		2C2EB2962A24841B006EF7E2 /* FilterStreamsVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C2EB2972A248438006EF7E2 /* FilterStreamsCell.swift */,
+				2C2EB2982A248438006EF7E2 /* FilterStreamsVC.swift */,
+				2C2EB2992A248438006EF7E2 /* FilterStreamsCell.xib */,
+			);
+			path = FilterStreamsVC;
+			sourceTree = "<group>";
+		};
 		2C34D614297ED8DC0005E9DC /* DatePickerTextFieldView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1260,6 +1325,9 @@
 		2C3D7A202A18F170004DD1FB /* Auctions */ = {
 			isa = PBXGroup;
 			children = (
+				2C2EB2962A24841B006EF7E2 /* FilterStreamsVC */,
+				2C2EB28F2A2387D1006EF7E2 /* ProviderStreamsVC */,
+				2C2EB2882A237EB9006EF7E2 /* ShowAllProvidersVC */,
 				2C3D7A212A18F170004DD1FB /* CompleteAuctionInfoVC */,
 				2C3D7A272A18F170004DD1FB /* AddAuctionVC */,
 				2C3D7A292A18F170004DD1FB /* LiveVC */,
@@ -1731,6 +1799,7 @@
 		2C54F1CB292417CC008F99CE /* AuctionsVC */ = {
 			isa = PBXGroup;
 			children = (
+				2C2EB2802A233859006EF7E2 /* AuctionsStoreCell */,
 				2C54F1CC292417E5008F99CE /* AuctionsVC.swift */,
 			);
 			path = AuctionsVC;
@@ -2336,6 +2405,7 @@
 		2CD7FC322A1EAEAA0035CADC /* SelectLocationView */ = {
 			isa = PBXGroup;
 			children = (
+				2C2EB2852A236546006EF7E2 /* AuctionCitiesVC */,
 				2CD7FC372A1EB01F0035CADC /* SelectAddressOnMapVC */,
 				2CD7FC332A1EAEC70035CADC /* SelectLocationView.swift */,
 				2CD7FC352A1EAED90035CADC /* SelectLocationView.xib */,
@@ -2798,6 +2868,7 @@
 				2C44B8532800E31600728351 /* AlertView.xib in Resources */,
 				2C178C9A27F7BBF800D32327 /* Assets.xcassets in Resources */,
 				2C54F1B72922CE72008F99CE /* Home.storyboard in Resources */,
+				2C2EB2952A2387E6006EF7E2 /* ProviderStreamsCell.xib in Resources */,
 				2C178CC627F7C29000D32327 /* Cairo-Bold.ttf in Resources */,
 				2C178CC427F7C29000D32327 /* Cairo-Light.ttf in Resources */,
 				2C9C72402A1A1B7F001C90E5 /* play.json in Resources */,
@@ -2816,6 +2887,8 @@
 				2CD7FC362A1EAED90035CADC /* SelectLocationView.xib in Resources */,
 				2CF41C9B28FC23A100BF923D /* Shared.storyboard in Resources */,
 				2C3D7A742A18F170004DD1FB /* NextAuctionsView.xib in Resources */,
+				2C2EB2842A2338BA006EF7E2 /* AuctionsStoreCell.xib in Resources */,
+				2C2EB29C2A248438006EF7E2 /* FilterStreamsCell.xib in Resources */,
 				2C54F1DF2924654E008F99CE /* NotificationsCell.xib in Resources */,
 				2CF41C8E28FC20AD00BF923D /* SegmentedCollection.xib in Resources */,
 				2C178C9827F7BBF600D32327 /* Main.storyboard in Resources */,
@@ -2929,6 +3002,7 @@
 				2CF41C8128FC200200BF923D /* ImageViewerVC.swift in Sources */,
 				2CB750AC2905A59800FEDED9 /* PhoneValidationErrors.swift in Sources */,
 				2CB750AA2905A56F00FEDED9 /* PhoneValidationService.swift in Sources */,
+				2C2EB29A2A248438006EF7E2 /* FilterStreamsCell.swift in Sources */,
 				2CF038B92A18FCC800AE3042 /* EvaluationViewCell.swift in Sources */,
 				2C6F377A2926B80F00730812 /* DropDownListCell.swift in Sources */,
 				2C178D4C27F7D15A00D32327 /* Emailer.swift in Sources */,
@@ -2965,7 +3039,9 @@
 				2C3E224E29290E0300C38B57 /* SelectCarImagesView.swift in Sources */,
 				2CB750C62905CEF200FEDED9 /* EmailNumberTextFieldView+Localization.swift in Sources */,
 				2C3D7A842A18F170004DD1FB /* AuctionAdvantagesCell.swift in Sources */,
+				2C2EB2832A2338BA006EF7E2 /* AuctionsStoreCell.swift in Sources */,
 				2C178D4327F7CFD700D32327 /* AppTabBarController.swift in Sources */,
+				2C2EB29B2A248438006EF7E2 /* FilterStreamsVC.swift in Sources */,
 				2CA0AC2E2912C143006CBC78 /* AppTextView.swift in Sources */,
 				2C5FD5A8286DED84002DB350 /* MainAppButton.swift in Sources */,
 				2C5E97372924CF170007E92A /* SearchVC.swift in Sources */,
@@ -2998,8 +3074,10 @@
 				2CF41C9928FC217C00BF923D /* SliderView.swift in Sources */,
 				2C178CE127F7C34A00D32327 /* PushNotifications.swift in Sources */,
 				2C197957298A8F70000EB796 /* KeyChain.swift in Sources */,
+				2C2EB2872A23656A006EF7E2 /* AuctionCitiesVC.swift in Sources */,
 				2C4DCFE3290859DF00D63EE3 /* IntroModel.swift in Sources */,
 				2C9651B82924665300B30B11 /* NotificationModel.swift in Sources */,
+				2C2EB2942A2387E6006EF7E2 /* ProviderStreamsVC.swift in Sources */,
 				2C8431EF29042C8500AC6009 /* PhoneNumberTextFieldView+Localization.swift in Sources */,
 				2C34D617297ED9DB0005E9DC /* DatePickerTextFieldView.swift in Sources */,
 				2C4E9A71299A51B5008787DD /* HarajHomeCell.swift in Sources */,
@@ -3042,6 +3120,7 @@
 				2CFB383F290697E9001619E1 /* PasswordValidationService.swift in Sources */,
 				2C178D2427F7CAF900D32327 /* UILabel.swift in Sources */,
 				2C8AB0B029076AF1003D233E /* UnderLineButton.swift in Sources */,
+				2C2EB28D2A237ED5006EF7E2 /* ShowAllProvidersVC.swift in Sources */,
 				2C3C27A82992833500FECAB8 /* PurchaseOrderCell.swift in Sources */,
 				2CD7FC482A1F683D0035CADC /* MultipleMediaPicker.swift in Sources */,
 				2C4E9A62299A5087008787DD /* HomeTypeCell.swift in Sources */,
@@ -3081,6 +3160,7 @@
 				2CFC79402986C13E0089131A /* FQAModel.swift in Sources */,
 				2C4FDC272989CEC200797B9A /* ProvidersVC.swift in Sources */,
 				2C3D7A8D2A18F170004DD1FB /* LastBidsCell.swift in Sources */,
+				2C2EB2932A2387E6006EF7E2 /* ProviderStreamsCell.swift in Sources */,
 				2C178D2227F7CAF900D32327 /* UIWindow.swift in Sources */,
 				2CA0AC2A2912B35C006CBC78 /* ContactUsVC.swift in Sources */,
 				2C54F1DD2924654E008F99CE /* NotificationsCell.swift in Sources */,
@@ -3430,7 +3510,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3469,7 +3549,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

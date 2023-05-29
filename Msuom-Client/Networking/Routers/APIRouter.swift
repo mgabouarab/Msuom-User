@@ -29,7 +29,7 @@ extension APIRouter {
     func asURLRequest() throws -> URLRequest {
         
         //MARK: - URL -
-        var urlRequest = URLRequest(url: try Server.baseURL.rawValue.asURL().appendingPathComponent(path))
+        var urlRequest = URLRequest(url: try Server.baseURL.asURL().appendingPathComponent(path))
         
         //MARK: - HTTTP Method -
         urlRequest.httpMethod = method.rawValue
@@ -366,8 +366,9 @@ extension APIRouter {
     }
     
     //MARK: - Helper Methods -
-    #if DEBUG
+    
     private func printApiResponse(_ responseData: Data?) {
+    #if DEBUG
         guard let responseData = responseData else {
             print("\n\n====================================\n⚡️⚡️RESPONSE IS::\n" ,responseData as Any, "\n====================================\n\n")
             return
@@ -379,7 +380,8 @@ extension APIRouter {
             return
         }
         print("\n\n====================================\n⚡️⚡️RESPONSE IS::\n" ,responseData, "\n====================================\n\n")
-    }
     #endif
+    }
+    
     
 }
