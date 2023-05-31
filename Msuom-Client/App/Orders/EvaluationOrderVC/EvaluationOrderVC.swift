@@ -20,6 +20,8 @@ class EvaluationOrderVC: BaseVC {
     @IBOutlet weak private var orderNumberLabel: UILabel!
     @IBOutlet weak private var priceLabel: UILabel!
     @IBOutlet weak private var notesLabel: UILabel!
+    @IBOutlet weak private var waitingView: UIView!
+    @IBOutlet weak private var infoView: UIView!
     
     //MARK: - Properties -
     private var data: EvaluationOrderDetails?
@@ -61,6 +63,21 @@ class EvaluationOrderVC: BaseVC {
         self.orderNumberLabel.text = "Order Number:".localized + " " + "\(data.orderNo ?? 0)"
         self.priceLabel.text = "\(data.price ?? 0) \(data.currency ?? appCurrency)"
         self.notesLabel.text = data.notes
+        self.statusLabel.text = data.statusName
+        
+        if let status = data.orderStatus, let orderStatus = OrderStatus(rawValue: status) {
+            switch orderStatus {
+            case .waitForAccept:
+                self.waitingView.isHidden = false
+                self.infoView.isHidden = true
+            case .waitForPay:
+                break
+            default:
+                self.waitingView.isHidden = true
+                self.infoView.isHidden = false
+            }
+        }
+        
     }
     
     //MARK: - Actions -

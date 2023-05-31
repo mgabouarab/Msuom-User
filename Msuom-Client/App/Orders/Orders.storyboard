@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -65,10 +65,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-gJ-iiU">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="326.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="359.33333333333331"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9Kg-Fp-UAg">
-                                                <rect key="frame" x="16" y="20" width="361" height="286.33333333333331"/>
+                                                <rect key="frame" x="16" y="20" width="361" height="319.33333333333331"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="124.33333333333333" translatesAutoresizingMaskIntoConstraints="NO" id="RDB-ch-83u" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="124.33333333333333"/>
@@ -207,7 +207,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="POS-MS-B3L">
-                                                        <rect key="frame" x="0.0" y="286.33333333333331" width="361" height="50"/>
+                                                        <rect key="frame" x="0.0" y="294.33333333333331" width="361" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrd-Xn-GHc" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="50"/>
@@ -240,8 +240,17 @@
                                                             <constraint firstAttribute="height" constant="50" id="V0w-RN-OF2"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting provider response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTx-te-4Td">
+                                                        <rect key="frame" x="0.0" y="302.33333333333331" width="361" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="mainDarkFontColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Waiting provider response"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxZ-VD-Ywc" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="286.33333333333331" width="361" height="33"/>
+                                                        <rect key="frame" x="0.0" y="319.33333333333331" width="361" height="33"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="12d-ZK-ED0">
                                                                 <rect key="frame" x="0.0" y="8" width="361" height="17"/>
@@ -351,8 +360,10 @@
                         <outlet property="confirmView" destination="scV-n1-PsM" id="5NB-DP-QVa"/>
                         <outlet property="imageView" destination="ggk-dG-H4k" id="gyf-Sv-gNT"/>
                         <outlet property="orderNumberLabel" destination="eIk-sF-OwZ" id="DPG-oG-Npq"/>
+                        <outlet property="orderStatusLabel" destination="kTx-te-4Td" id="SKA-Si-FzX"/>
                         <outlet property="paymentView" destination="ZxZ-VD-Ywc" id="I3t-A4-EXP"/>
                         <outlet property="priceLabel" destination="hz0-dg-9J8" id="Eo8-H8-vtF"/>
+                        <outlet property="priceView" destination="RAk-tn-i00" id="f7m-Qw-PdA"/>
                         <outlet property="tableView" destination="XeS-vU-Lb8" id="R4O-D8-jXB"/>
                         <outlet property="titleLabel" destination="6cR-HC-CS8" id="t5r-Jk-Oyg"/>
                     </connections>
@@ -373,10 +384,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ErX-cD-S3v">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="498"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="532"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0aw-Yn-cpv">
-                                                <rect key="frame" x="16" y="20" width="361" height="458"/>
+                                                <rect key="frame" x="16" y="20" width="361" height="492"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5D-QH-2fb" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="90"/>
@@ -597,117 +608,174 @@
                                                             <constraint firstAttribute="bottom" secondItem="8oh-qM-Axv" secondAttribute="bottom" constant="8" id="P2h-X1-tSN"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="8IN-21-JCx" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="106" width="361" height="120"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Opp-oe-X6k">
+                                                        <rect key="frame" x="0.0" y="106" width="361" height="352"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2xp-UE-nqC">
-                                                                <rect key="frame" x="0.0" y="8" width="361" height="104"/>
+                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="8IN-21-JCx" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="120"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Evaluation price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSu-aD-BcQ">
-                                                                        <rect key="frame" x="16" y="0.0" width="329" height="37"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                                        <color key="textColor" name="mainDarkFontColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Evaluation price:"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </label>
-                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7d-kw-aHH">
-                                                                        <rect key="frame" x="0.0" y="45" width="361" height="1"/>
-                                                                        <color key="backgroundColor" name="separatorColor"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2xp-UE-nqC">
+                                                                        <rect key="frame" x="0.0" y="8" width="361" height="104"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Evaluation price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSu-aD-BcQ">
+                                                                                <rect key="frame" x="16" y="0.0" width="329" height="37"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                                <color key="textColor" name="mainDarkFontColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Evaluation price:"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7d-kw-aHH">
+                                                                                <rect key="frame" x="0.0" y="45" width="361" height="1"/>
+                                                                                <color key="backgroundColor" name="separatorColor"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="wJZ-Kb-OSP"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opE-2b-PVp">
+                                                                                <rect key="frame" x="16" y="54" width="329" height="50"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                                <color key="textColor" name="secondaryColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="1" id="wJZ-Kb-OSP"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="s7d-kw-aHH" secondAttribute="trailing" id="5MZ-g6-N3h"/>
+                                                                            <constraint firstItem="opE-2b-PVp" firstAttribute="leading" secondItem="2xp-UE-nqC" secondAttribute="leading" constant="16" id="8ph-pm-zaL"/>
+                                                                            <constraint firstItem="s7d-kw-aHH" firstAttribute="leading" secondItem="2xp-UE-nqC" secondAttribute="leading" id="S77-hr-mUV"/>
+                                                                            <constraint firstItem="eSu-aD-BcQ" firstAttribute="leading" secondItem="2xp-UE-nqC" secondAttribute="leading" constant="16" id="Xb2-0u-b9k"/>
                                                                         </constraints>
-                                                                    </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opE-2b-PVp">
-                                                                        <rect key="frame" x="16" y="54" width="329" height="50"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                                        <color key="textColor" name="secondaryColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                    </stackView>
                                                                 </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="s7d-kw-aHH" secondAttribute="trailing" id="5MZ-g6-N3h"/>
-                                                                    <constraint firstItem="opE-2b-PVp" firstAttribute="leading" secondItem="2xp-UE-nqC" secondAttribute="leading" constant="16" id="8ph-pm-zaL"/>
-                                                                    <constraint firstItem="s7d-kw-aHH" firstAttribute="leading" secondItem="2xp-UE-nqC" secondAttribute="leading" id="S77-hr-mUV"/>
-                                                                    <constraint firstItem="eSu-aD-BcQ" firstAttribute="leading" secondItem="2xp-UE-nqC" secondAttribute="leading" constant="16" id="Xb2-0u-b9k"/>
+                                                                    <constraint firstItem="2xp-UE-nqC" firstAttribute="top" secondItem="8IN-21-JCx" secondAttribute="top" constant="8" id="7wZ-Cu-zkU"/>
+                                                                    <constraint firstItem="2xp-UE-nqC" firstAttribute="leading" secondItem="8IN-21-JCx" secondAttribute="leading" id="idw-jk-Eze"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="2xp-UE-nqC" secondAttribute="trailing" id="ocp-75-Now"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="2xp-UE-nqC" secondAttribute="bottom" constant="8" id="rx7-sB-C3G"/>
                                                                 </constraints>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="2xp-UE-nqC" firstAttribute="top" secondItem="8IN-21-JCx" secondAttribute="top" constant="8" id="7wZ-Cu-zkU"/>
-                                                            <constraint firstItem="2xp-UE-nqC" firstAttribute="leading" secondItem="8IN-21-JCx" secondAttribute="leading" id="idw-jk-Eze"/>
-                                                            <constraint firstAttribute="trailing" secondItem="2xp-UE-nqC" secondAttribute="trailing" id="ocp-75-Now"/>
-                                                            <constraint firstAttribute="bottom" secondItem="2xp-UE-nqC" secondAttribute="bottom" constant="8" id="rx7-sB-C3G"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="y2J-8w-guf" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="242" width="361" height="120"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wdf-m0-n2d">
-                                                                <rect key="frame" x="0.0" y="8" width="361" height="104"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="y2J-8w-guf" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="136" width="361" height="120"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-4p-lh0">
-                                                                        <rect key="frame" x="16" y="0.0" width="329" height="87"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                                        <color key="textColor" name="mainDarkFontColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Notes:"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </label>
-                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="slE-B2-tua">
-                                                                        <rect key="frame" x="0.0" y="95" width="361" height="1"/>
-                                                                        <color key="backgroundColor" name="separatorColor"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wdf-m0-n2d">
+                                                                        <rect key="frame" x="0.0" y="8" width="361" height="104"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-4p-lh0">
+                                                                                <rect key="frame" x="16" y="0.0" width="329" height="87"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                                <color key="textColor" name="mainDarkFontColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Notes:"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="slE-B2-tua">
+                                                                                <rect key="frame" x="0.0" y="95" width="361" height="1"/>
+                                                                                <color key="backgroundColor" name="separatorColor"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="0aL-Lc-ksu"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kC-Gs-PHv">
+                                                                                <rect key="frame" x="16" y="104" width="329" height="0.0"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <color key="textColor" name="secondaryDarkFontColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="1" id="0aL-Lc-ksu"/>
+                                                                            <constraint firstItem="uEU-4p-lh0" firstAttribute="leading" secondItem="Wdf-m0-n2d" secondAttribute="leading" constant="16" id="ROS-eT-wqy"/>
+                                                                            <constraint firstItem="3kC-Gs-PHv" firstAttribute="leading" secondItem="Wdf-m0-n2d" secondAttribute="leading" constant="16" id="hXH-su-SpC"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="slE-B2-tua" secondAttribute="trailing" id="ov8-ls-PdO"/>
+                                                                            <constraint firstItem="slE-B2-tua" firstAttribute="leading" secondItem="Wdf-m0-n2d" secondAttribute="leading" id="u5j-VC-I2E"/>
                                                                         </constraints>
-                                                                    </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kC-Gs-PHv">
-                                                                        <rect key="frame" x="16" y="104" width="329" height="0.0"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <color key="textColor" name="secondaryDarkFontColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                    </stackView>
                                                                 </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="uEU-4p-lh0" firstAttribute="leading" secondItem="Wdf-m0-n2d" secondAttribute="leading" constant="16" id="ROS-eT-wqy"/>
-                                                                    <constraint firstItem="3kC-Gs-PHv" firstAttribute="leading" secondItem="Wdf-m0-n2d" secondAttribute="leading" constant="16" id="hXH-su-SpC"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="slE-B2-tua" secondAttribute="trailing" id="ov8-ls-PdO"/>
-                                                                    <constraint firstItem="slE-B2-tua" firstAttribute="leading" secondItem="Wdf-m0-n2d" secondAttribute="leading" id="u5j-VC-I2E"/>
+                                                                    <constraint firstItem="Wdf-m0-n2d" firstAttribute="top" secondItem="y2J-8w-guf" secondAttribute="top" constant="8" id="CP1-32-emh"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Wdf-m0-n2d" secondAttribute="bottom" constant="8" id="OPJ-1h-Lfs"/>
+                                                                    <constraint firstItem="Wdf-m0-n2d" firstAttribute="leading" secondItem="y2J-8w-guf" secondAttribute="leading" id="f91-Wt-8aJ"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Wdf-m0-n2d" secondAttribute="trailing" id="vcs-Zl-jf9"/>
                                                                 </constraints>
-                                                            </stackView>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-NF-Y8c" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="272" width="361" height="80"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRT-Vj-WJI">
+                                                                        <rect key="frame" x="163" y="8" width="35" height="64"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" image="pdfIcon"/>
+                                                                        <connections>
+                                                                            <action selector="pdfButtonPressed" destination="ngs-qW-meh" eventType="touchUpInside" id="o9i-fA-E7b"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="pRT-Vj-WJI" firstAttribute="centerX" secondItem="F6H-NF-Y8c" secondAttribute="centerX" id="38m-3j-Via"/>
+                                                                    <constraint firstItem="pRT-Vj-WJI" firstAttribute="top" secondItem="F6H-NF-Y8c" secondAttribute="top" constant="8" id="KRK-h4-nVa"/>
+                                                                    <constraint firstItem="pRT-Vj-WJI" firstAttribute="centerY" secondItem="F6H-NF-Y8c" secondAttribute="centerY" id="Vmo-uK-fNm"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="pRT-Vj-WJI" secondAttribute="bottom" constant="8" id="dUq-BY-1AD"/>
+                                                                    <constraint firstAttribute="height" constant="80" id="ggK-zI-f77"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjD-sS-dOL" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="352" width="361" height="33"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uU7-jm-vjm">
+                                                                        <rect key="frame" x="0.0" y="8" width="361" height="17"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select payment method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9sq-dQ-Ecn">
+                                                                                <rect key="frame" x="16" y="0.0" width="329" height="0.0"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                                <color key="textColor" name="mainDarkFontColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Select payment method:"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </label>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0o1-dz-Yb5">
+                                                                                <rect key="frame" x="0.0" y="8" width="361" height="1"/>
+                                                                                <color key="backgroundColor" name="separatorColor"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="t8w-mS-iuC"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6ki-Ew-hQf" customClass="TableViewContentSized" customModule="Msuom_Client" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="17" width="361" height="0.0"/>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </tableView>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="0o1-dz-Yb5" secondAttribute="trailing" id="2Nv-XR-qR9"/>
+                                                                            <constraint firstItem="6ki-Ew-hQf" firstAttribute="leading" secondItem="uU7-jm-vjm" secondAttribute="leading" id="8ni-s9-PwB"/>
+                                                                            <constraint firstItem="9sq-dQ-Ecn" firstAttribute="leading" secondItem="uU7-jm-vjm" secondAttribute="leading" constant="16" id="DEy-56-ASG"/>
+                                                                            <constraint firstItem="0o1-dz-Yb5" firstAttribute="leading" secondItem="uU7-jm-vjm" secondAttribute="leading" id="d5E-B1-Ax4"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="uU7-jm-vjm" firstAttribute="top" secondItem="FjD-sS-dOL" secondAttribute="top" constant="8" id="A4L-Vn-v6u"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="uU7-jm-vjm" secondAttribute="trailing" id="GLz-a5-1Gn"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="uU7-jm-vjm" secondAttribute="bottom" constant="8" id="LhN-ae-5Qz"/>
+                                                                    <constraint firstItem="uU7-jm-vjm" firstAttribute="leading" secondItem="FjD-sS-dOL" secondAttribute="leading" id="dw0-HQ-Wef"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="Wdf-m0-n2d" firstAttribute="top" secondItem="y2J-8w-guf" secondAttribute="top" constant="8" id="CP1-32-emh"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Wdf-m0-n2d" secondAttribute="bottom" constant="8" id="OPJ-1h-Lfs"/>
-                                                            <constraint firstItem="Wdf-m0-n2d" firstAttribute="leading" secondItem="y2J-8w-guf" secondAttribute="leading" id="f91-Wt-8aJ"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Wdf-m0-n2d" secondAttribute="trailing" id="vcs-Zl-jf9"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-NF-Y8c" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="378" width="361" height="80"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRT-Vj-WJI">
-                                                                <rect key="frame" x="163" y="8" width="35" height="64"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" image="pdfIcon"/>
-                                                                <connections>
-                                                                    <action selector="pdfButtonPressed" destination="ngs-qW-meh" eventType="touchUpInside" id="o9i-fA-E7b"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="pRT-Vj-WJI" firstAttribute="centerX" secondItem="F6H-NF-Y8c" secondAttribute="centerX" id="38m-3j-Via"/>
-                                                            <constraint firstItem="pRT-Vj-WJI" firstAttribute="top" secondItem="F6H-NF-Y8c" secondAttribute="top" constant="8" id="KRK-h4-nVa"/>
-                                                            <constraint firstItem="pRT-Vj-WJI" firstAttribute="centerY" secondItem="F6H-NF-Y8c" secondAttribute="centerY" id="Vmo-uK-fNm"/>
-                                                            <constraint firstAttribute="bottom" secondItem="pRT-Vj-WJI" secondAttribute="bottom" constant="8" id="dUq-BY-1AD"/>
-                                                            <constraint firstAttribute="height" constant="80" id="ggK-zI-f77"/>
-                                                        </constraints>
-                                                    </view>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting provider response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VY-bA-qSK">
+                                                        <rect key="frame" x="0.0" y="474" width="361" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" name="mainDarkFontColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Waiting provider response"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -742,11 +810,13 @@
                     <connections>
                         <outlet property="brandLabel" destination="E6B-FT-l3t" id="Unk-ey-ERm"/>
                         <outlet property="categoryLabel" destination="uj6-Pg-FUD" id="jeg-lA-6KN"/>
+                        <outlet property="infoView" destination="Opp-oe-X6k" id="wUt-De-wDz"/>
                         <outlet property="notesLabel" destination="3kC-Gs-PHv" id="snK-Dn-JGf"/>
                         <outlet property="orderNumberLabel" destination="rtB-yW-UDh" id="ndo-VK-he2"/>
                         <outlet property="priceLabel" destination="opE-2b-PVp" id="zup-Lb-XBy"/>
                         <outlet property="statusLabel" destination="0Ka-Ti-dCg" id="ohE-DX-Mn7"/>
                         <outlet property="typeLabel" destination="bmg-Od-dJz" id="Jg7-31-yze"/>
+                        <outlet property="waitingView" destination="4VY-bA-qSK" id="QvX-bm-ABr"/>
                         <outlet property="walkwayLabel" destination="qpv-Jk-lYF" id="AaR-EK-bZ2"/>
                     </connections>
                 </viewController>
@@ -766,10 +836,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-CE-BWA">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="855"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="889"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="d64-C3-sJM">
-                                                <rect key="frame" x="16" y="20" width="361" height="815"/>
+                                                <rect key="frame" x="16" y="20" width="361" height="849"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZV-MJ-vAg" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="719"/>
@@ -880,6 +950,58 @@
                                                             <constraint firstItem="yYz-Gf-Ech" firstAttribute="top" secondItem="vwz-JV-lEW" secondAttribute="top" constant="8" id="hJS-IF-Dak"/>
                                                         </constraints>
                                                     </view>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pU-t0-ELP" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="823" width="361" height="33"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CMy-bL-vCp">
+                                                                <rect key="frame" x="0.0" y="8" width="361" height="17"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select payment method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gBq-gN-KKK">
+                                                                        <rect key="frame" x="16" y="0.0" width="329" height="0.0"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <color key="textColor" name="mainDarkFontColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Select payment method:"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOs-3d-ebL">
+                                                                        <rect key="frame" x="0.0" y="8" width="361" height="1"/>
+                                                                        <color key="backgroundColor" name="separatorColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="O7m-UW-Ky4"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TmE-6u-tQo" customClass="TableViewContentSized" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="17" width="361" height="0.0"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </tableView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="gBq-gN-KKK" firstAttribute="leading" secondItem="CMy-bL-vCp" secondAttribute="leading" constant="16" id="F9g-IX-EgG"/>
+                                                                    <constraint firstItem="TmE-6u-tQo" firstAttribute="leading" secondItem="CMy-bL-vCp" secondAttribute="leading" id="GqK-PX-P1a"/>
+                                                                    <constraint firstItem="zOs-3d-ebL" firstAttribute="leading" secondItem="CMy-bL-vCp" secondAttribute="leading" id="UMg-NE-DlL"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="zOs-3d-ebL" secondAttribute="trailing" id="qCh-OX-zXl"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="CMy-bL-vCp" firstAttribute="top" secondItem="0pU-t0-ELP" secondAttribute="top" constant="8" id="92G-sH-xWK"/>
+                                                            <constraint firstAttribute="bottom" secondItem="CMy-bL-vCp" secondAttribute="bottom" constant="8" id="Bkf-An-9Nv"/>
+                                                            <constraint firstItem="CMy-bL-vCp" firstAttribute="leading" secondItem="0pU-t0-ELP" secondAttribute="leading" id="SJN-ut-nTI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="CMy-bL-vCp" secondAttribute="trailing" id="wy3-6s-20c"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting provider response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8X-XI-lWg">
+                                                        <rect key="frame" x="0.0" y="831" width="361" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" name="mainDarkFontColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Waiting provider response"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -934,10 +1056,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaD-iB-K4p">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1007"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1041"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="X4z-cb-SJw">
-                                                <rect key="frame" x="16" y="20" width="361" height="967"/>
+                                                <rect key="frame" x="16" y="20" width="361" height="1001"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O34-IT-zKR" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="110"/>
@@ -1137,8 +1259,60 @@
                                                             <constraint firstAttribute="height" constant="50" id="cGD-OL-c4n"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRT-hg-kDz" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="909" width="361" height="33"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eCC-hh-FSd">
+                                                                <rect key="frame" x="0.0" y="8" width="361" height="17"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select payment method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZuK-7i-2DP">
+                                                                        <rect key="frame" x="16" y="0.0" width="329" height="0.0"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <color key="textColor" name="mainDarkFontColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Select payment method:"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTq-gd-c1d">
+                                                                        <rect key="frame" x="0.0" y="8" width="361" height="1"/>
+                                                                        <color key="backgroundColor" name="separatorColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="orQ-qL-zfo"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NDr-Zh-P5e" customClass="TableViewContentSized" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="17" width="361" height="0.0"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </tableView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="QTq-gd-c1d" secondAttribute="trailing" id="9Dv-zr-D3e"/>
+                                                                    <constraint firstItem="ZuK-7i-2DP" firstAttribute="leading" secondItem="eCC-hh-FSd" secondAttribute="leading" constant="16" id="AhT-D8-lks"/>
+                                                                    <constraint firstItem="QTq-gd-c1d" firstAttribute="leading" secondItem="eCC-hh-FSd" secondAttribute="leading" id="OnR-OX-bwd"/>
+                                                                    <constraint firstItem="NDr-Zh-P5e" firstAttribute="leading" secondItem="eCC-hh-FSd" secondAttribute="leading" id="pWN-1I-Fe3"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="eCC-hh-FSd" secondAttribute="bottom" constant="8" id="4Pm-o6-FQL"/>
+                                                            <constraint firstItem="eCC-hh-FSd" firstAttribute="top" secondItem="uRT-hg-kDz" secondAttribute="top" constant="8" id="MHL-RN-ynY"/>
+                                                            <constraint firstItem="eCC-hh-FSd" firstAttribute="leading" secondItem="uRT-hg-kDz" secondAttribute="leading" id="XUK-EF-j3C"/>
+                                                            <constraint firstAttribute="trailing" secondItem="eCC-hh-FSd" secondAttribute="trailing" id="hWl-Fe-Lmg"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting provider response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5j-Kl-gXY">
+                                                        <rect key="frame" x="0.0" y="917" width="361" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" name="mainDarkFontColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Waiting provider response"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pXh-zR-n7N">
-                                                        <rect key="frame" x="0.0" y="917" width="361" height="50"/>
+                                                        <rect key="frame" x="0.0" y="951" width="361" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qTZ-e4-Yc4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="109.66666666666667" height="50"/>

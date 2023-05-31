@@ -398,3 +398,8 @@
 "Start Auction Time: " = "وقت بداية المزاد: ";
 "End Auction Time: " = "وقت نهاية المزاد: ";
 "Please select at lest one auction" = "اختر مزاد واحد علي الاقل";
+"Call" = "إتصال";
+"currentAuctions" = "المزادات الحالية";
+"nextAuctions" = "المزادات القادمة";
+"After Sale Orders" = "طلبات ما بعد البيع";
+"Waiting provider response" = "بإنتظار رد مقدم الخدمة";

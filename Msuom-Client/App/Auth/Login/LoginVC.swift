@@ -58,6 +58,9 @@ class LoginVC: BaseVC {
         let vc = RegisterVC.create()
         self.push(vc)
     }
+    @IBAction private func visitorButtonPressed() {
+        self.dismiss(animated: true)
+    }
     
 }
 

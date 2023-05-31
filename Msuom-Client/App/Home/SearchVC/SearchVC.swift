@@ -47,6 +47,7 @@ extension SearchModel {
         let name: String?
         let price: String
         let sellType: String
+        var isFinancing: String?
     }
     
     //MARK: - Views Data -
@@ -70,7 +71,8 @@ extension SearchModel {
             image: self.image,
             name: displayedName,
             price: displayedPrice,
-            sellType: displayedSellType
+            sellType: displayedSellType,
+            isFinancing: nil
         )
         
     }

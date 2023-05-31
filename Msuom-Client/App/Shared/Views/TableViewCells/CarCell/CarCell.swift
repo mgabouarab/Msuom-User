@@ -12,6 +12,7 @@ protocol CarCellViewData {
     var name: String? {get}
     var price: String {get}
     var sellType: String {get}
+    var isFinancing: String? {get}
 }
 
 class CarCell: UITableViewCell {
@@ -39,12 +40,19 @@ class CarCell: UITableViewCell {
         self.containerView.layer.borderWidth = 1
         self.containerView.clipsToBounds = true
         self.containerView.layer.cornerRadius = 12
+        self.cellImageView.contentMode = .scaleAspectFill
     }
     func configureWith(data: CarCellViewData) {
         cellImageView.setWith(string: data.image)
         nameLabel.text = data.name
         priceLabel.text = data.price
         typeLabel.text = data.sellType
+    }
+    func setupDataWith(data: CarCellViewData) {
+        cellImageView.setWith(string: data.image)
+        nameLabel.text = data.name
+        priceLabel.text = data.price
+        typeLabel.text = data.isFinancing
     }
     
 }

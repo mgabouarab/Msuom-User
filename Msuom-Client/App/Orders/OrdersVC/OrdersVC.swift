@@ -17,6 +17,7 @@ class OrdersVC: BaseVC {
         case evaluation
         case purchaseOrder
         case summaryReport
+        case afterSaleService
     }
     
     struct OrderType: SegmentedCollectionItem{
@@ -37,12 +38,14 @@ class OrdersVC: BaseVC {
         OrderType(id: "shipping", name: "Shipping Orders".localized, isSelected: true),
         OrderType(id: "evaluation", name: "Evaluation Orders".localized, isSelected: false),
         OrderType(id: "summaryReport", name: "Summary Report Orders".localized, isSelected: false),
-        OrderType(id: "purchaseOrder", name: "Purchase Orders".localized, isSelected: false)
+        OrderType(id: "purchaseOrder", name: "Purchase Orders".localized, isSelected: false),
+        OrderType(id: "afterSaleService", name: "After Sale Orders".localized, isSelected: false)
     ]
     private var shippingOrderDetails: [ShippingOrderDetails] = []
     private var evaluationOrderDetails: [EvaluationOrderDetails] = []
     private var purchaseOrderDetails: [PurchaseOrderDetails] = []
     private var summaryReportDetails: [SummaryReportDetails] = []
+    private var afterSaleServiceDetails: [SummaryReportDetails] = []
     private var selectedType: Types = .shipping
     private var currentPage: Int = 1
     private var isLast: Bool = false
@@ -84,6 +87,7 @@ class OrdersVC: BaseVC {
         self.evaluationOrderDetails = []
         self.purchaseOrderDetails = []
         self.summaryReportDetails = []
+        self.afterSaleServiceDetails = []
         
         self.tableView.refreshControl?.endRefreshing()
         self.tableView.animateToTop()
@@ -102,6 +106,8 @@ class OrdersVC: BaseVC {
             self.getPurchaseOrderDetails(page: self.currentPage)
         case .summaryReport:
             self.getSummaryReportDetails(page: self.currentPage)
+        case .afterSaleService:
+            self.getAfterSaleServiceDetails(page: self.currentPage)
         }
         
     }
@@ -139,6 +145,9 @@ extension OrdersVC: UITableViewDataSource {
         case .summaryReport:
             self.tableView.setPlaceholder(isEmpty: summaryReportDetails.isEmpty)
             return self.summaryReportDetails.count
+        case .afterSaleService:
+            self.tableView.setPlaceholder(isEmpty: afterSaleServiceDetails.isEmpty)
+            return self.afterSaleServiceDetails.count
         }
         
         
@@ -166,6 +175,11 @@ extension OrdersVC: UITableViewDataSource {
             let item = self.summaryReportDetails[indexPath.row]
             cell.configureWith(data: item)
             return cell
+        case .afterSaleService:
+            let cell = tableView.dequeueReusableCell(with: SummaryReportOrderCell.self, for: indexPath)
+            let item = self.afterSaleServiceDetails[indexPath.row]
+            cell.configureWith(data: item)
+            return cell
         }
         
     }
@@ -189,6 +203,10 @@ extension OrdersVC: UITableViewDelegate {
             let item = self.summaryReportDetails[indexPath.row]
             let vc = SummaryReportOrderVC.create(data: item, id: nil)
             self.push(vc)
+        case .afterSaleService:
+            let item = self.afterSaleServiceDetails[indexPath.row]
+            let vc = SummaryReportOrderVC.create(data: item, id: nil)
+            self.push(vc)
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -205,6 +223,8 @@ extension OrdersVC: UITableViewDelegate {
                 self.getPurchaseOrderDetails(page: self.currentPage)
             case .summaryReport:
                 self.getSummaryReportDetails(page: self.currentPage)
+            case .afterSaleService:
+                self.getAfterSaleServiceDetails(page: self.currentPage)
             }
         }
     }
@@ -267,6 +287,20 @@ extension OrdersVC {
             self.tableView.reloadData()
             self.currentPage += 1
             if self.summaryReportDetails.isEmpty || (response.data ?? []).isEmpty || response.data?.count != listLimit {
+                self.isLast = true
+            }
+            self.isFetching = false
+        }
+    }
+    private func getAfterSaleServiceDetails(page: Int) {
+        self.showIndicator()
+        self.isFetching = true
+        OrderRouter.afterSaleServiceDetails(page: page).send { [weak self] (response: APIGenericResponse<[SummaryReportDetails]>) in
+            guard let self = self else {return}
+            self.afterSaleServiceDetails = response.data ?? []
+            self.tableView.reloadData()
+            self.currentPage += 1
+            if self.afterSaleServiceDetails.isEmpty || (response.data ?? []).isEmpty || response.data?.count != listLimit {
                 self.isLast = true
             }
             self.isFetching = false

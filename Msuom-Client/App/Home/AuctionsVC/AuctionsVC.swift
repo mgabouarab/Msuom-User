@@ -101,7 +101,7 @@ class AuctionsVC: BaseVC {
         self.getAuctionsData()
     }
     @objc func sectionZeroSeeAll() {
-        let vc = ShowAllProvidersVC.create(type: selectedType.rawValue)
+        let vc = ShowAllProvidersVC.create(type: selectedType.rawValue, topTitle: selectedType == .current ? "currentAuctions".localized : "nextAuctions".localized)
         self.push(vc)
     }
     @objc func sectionOneSeeAll() {
@@ -250,7 +250,7 @@ extension AuctionsVC: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             guard let providerId = self.streams[indexPath.row].providerId else {return}
-            let vc = ProviderStreamsVC.create(type: self.selectedType.rawValue, providerId: providerId)
+            let vc = ProviderStreamsVC.create(type: self.selectedType.rawValue, providerId: providerId, topTitle: selectedType == .current ? "currentAuctions".localized : "nextAuctions".localized)
             self.push(vc)
         case 1:
             guard let id = self.bids[indexPath.row].id else {return}

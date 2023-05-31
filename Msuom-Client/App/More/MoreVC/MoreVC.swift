@@ -39,7 +39,11 @@ class MoreVC: BaseVC {
     //MARK: - Design Methods -
     private func configureInitialDesign() {
         self.setLeading(title: "More".localized)
-        self.setNotificationButton()
+        if UserDefaults.isLogin {
+            self.setNotificationButton()
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
+        }
     }
     
     //MARK: - Logic Methods -
@@ -241,6 +245,11 @@ class MoreVC: BaseVC {
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleItemsDependingOnUserLoginStatus), name: .isLoginChanged, object: nil)
     }
     @objc private func handleItemsDependingOnUserLoginStatus() {
+        if UserDefaults.isLogin {
+            self.setNotificationButton()
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
+        }
         self.items = UserDefaults.isLogin ? [
             MoreModel(title: "Welcome".localized + ", \(UserDefaults.user?.name ?? "")", items: self.accountInfoSectionItems()),
             MoreModel(title: "General Settings".localized, items: self.generalSettingsSectionItems()),

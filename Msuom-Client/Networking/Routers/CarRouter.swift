@@ -122,7 +122,7 @@ extension CarRouter: APIRouter {
         case .haraj:
             return "haraj"
         case .harajFilter:
-            return "harajFilter"
+            return "haraj"
         case .offers:
             return "offers"
         case .offerFilter:
@@ -130,7 +130,7 @@ extension CarRouter: APIRouter {
         case .offerDetails:
             return "offerDetails"
         case .providers:
-            return "providers"
+            return "providerFilter"
         case .providerFilter:
             return "providerFilter"
         case .providerDetails:

@@ -1830,7 +1830,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSS-Do-4rZ">
                                 <rect key="frame" x="0.0" y="762" width="393" height="90"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f7-Ke-YHD" customClass="MainAppButton" customModule="Msuom_Client" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f7-Ke-YHD" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
                                         <rect key="frame" x="16" y="20" width="361" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jWE-P0-Wmw"/>

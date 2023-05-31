@@ -202,7 +202,7 @@ extension CarEvaluationVC {
                 let vc = CarEvaluationResultVC.create(result: data, evaluateDescription: self.evaluateLabel.text)
                 self.push(vc)
             } else if type == "certified" {
-                let vc = SuccessEvaluationVC.create(delegate: self)
+                let vc = SuccessEvaluationVC.create(delegate: self, id: response.data?.id ?? "")
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true)
             }
@@ -240,8 +240,10 @@ extension CarEvaluationVC: SuccessEvaluationDelegate {
         self.tabBarController?.selectedIndex = 0
         self.popToRoot()
     }
-    func goToOrders() {
+    func goToOrders(id: String) {
         self.tabBarController?.selectedIndex = 3
+        let vc = EvaluationOrderVC.create(data: nil, id: id)
+        self.tabBarController?.viewControllers?[3].show(vc, sender: self)
         self.popToRoot()
     }
 }

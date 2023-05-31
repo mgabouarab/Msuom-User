@@ -18,16 +18,17 @@ struct CarEvaluationModel: Codable {
 struct CarEvaluationResultModel: Codable {
     let carsLike: [MyCarsModel]?
     let result: CarEvaluationResult?
+    let id: String?
 }
 
 struct CarEvaluationResult: Codable {
-    let brandName: String
-    let categoryName: String
-    let id: String
-    let noteCarEvaluation: String
-    let price: String
-    let statusName: String
-    let typeName: String
-    let walkway: String
+    let brandName: String?
+    let categoryName: String?
+    let id: String?
+    let noteCarEvaluation: String?
+    let price: String?
+    let statusName: String?
+    let typeName: String?
+    let walkway: String?
 }
 

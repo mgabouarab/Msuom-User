@@ -115,6 +115,7 @@ class IntroPageController: UIPageViewController {
         }
     }
     @objc private func skipButtonPressed() {
+        UserDefaults.isFirstTime = false
         let vc = AppTabBarController.create()
         AppHelper.changeWindowRoot(vc: vc)
     }

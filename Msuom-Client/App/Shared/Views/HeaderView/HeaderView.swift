@@ -11,6 +11,8 @@ class HeaderView: UIView {
     
     //MARK: - IBOutlets -
     @IBOutlet weak private var searchView: UIView!
+    @IBOutlet weak private var notificationButton: UIButton!
+    @IBOutlet weak private var scannerButton: UIButton!
     
     //MARK: - Initializer -
     override init(frame: CGRect) {
@@ -42,18 +44,48 @@ class HeaderView: UIView {
     private func setupInitialDesign() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.searchViewTapped))
         self.searchView.addGestureRecognizer(tap)
+        self.addObservers()
+        self.handleButtons()
+    }
+    private func handleButtons() {
+        if UserDefaults.isLogin {
+            self.notificationButton.isHidden = false
+            self.scannerButton.isHidden = false
+        } else {
+            self.notificationButton.isHidden = true
+            self.scannerButton.isHidden = true
+        }
     }
     
     //MARK: - Actions -
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateChildrenDependingOnUserLoginStatus), name: .isLoginChanged, object: nil)
+    }
+    @objc private func updateChildrenDependingOnUserLoginStatus() {
+        self.handleButtons()
+    }
     @objc private func searchViewTapped() {
         let vc = SearchVC.create()
         self.parentContainerViewController?.show(vc, sender: nil)
     }
     @IBAction private func notificationButtonPressed() {
+        guard UserDefaults.isLogin else {
+            AppAlert.showLogoutAlert {
+                let vc = LoginVC.create()
+                let nav = BaseNav(rootViewController: vc)
+                self.parentContainerViewController?.present(vc, animated: true)
+            }
+            return
+        }
         let vc = NotificationsVC.create()
         self.parentContainerViewController?.show(vc, sender: nil)
     }
     @IBAction private func scannerButtonPressed() {
+        AppAlert.showLogoutAlert {
+            let vc = LoginVC.create()
+            let nav = BaseNav(rootViewController: vc)
+            self.parentContainerViewController?.present(vc, animated: true)
+        }
         let vc = ScannerViewController()
         vc.modalPresentationStyle = .fullScreen
         self.parentContainerViewController?.present(vc, animated: true)

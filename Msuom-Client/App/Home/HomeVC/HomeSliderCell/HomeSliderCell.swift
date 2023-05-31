@@ -18,7 +18,7 @@ class HomeSliderCell: UITableViewCell {
     }
     
     //MARK: - setupDesign -
-    func setup(data: [String]) {
+    func setup(data: [SliderView.SliderItem]) {
         self.sliderView.set(images: data)
     }
     

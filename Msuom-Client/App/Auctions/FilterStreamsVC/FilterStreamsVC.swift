@@ -18,13 +18,14 @@ class FilterStreamsVC: BaseVC {
     //MARK: - Properties -
     private var items: [BidStream] = []
     private var selectedIds: [String] = []
-    
+    private var topTitle: String?
     
     //MARK: - Creation -
-    static func create(selectedIds: [String]) -> FilterStreamsVC {
+    static func create(selectedIds: [String], topTitle: String?) -> FilterStreamsVC {
         let vc = AppStoryboards.auctions.instantiate(FilterStreamsVC.self)
         vc.hidesBottomBarWhenPushed = true
         vc.selectedIds = selectedIds
+        vc.topTitle = topTitle
         return vc
     }
     
@@ -38,7 +39,7 @@ class FilterStreamsVC: BaseVC {
     
     //MARK: - Design Methods -
     private func configureInitialDesign() {
-        self.addBackButtonWith(title: "Auctions".localized)
+        self.addBackButtonWith(title: "\(topTitle ?? "Auctions")".localized)
     }
     
     //MARK: - Logic Methods -
@@ -75,8 +76,17 @@ extension FilterStreamsVC: UITableViewDataSource {
         let item = self.items[indexPath.row]
         cell.configureWith(data: item)
         cell.detailsActions = { [weak self] in
-            guard item.isPlaying == true else {return}
             guard let self = self, let streamId = item.id else {return}
+            guard item.type == "live" else {
+                for index in self.items.indices {
+                    self.items[index].isPlaying = false
+                }
+                let vc = AuctionDetailsVC.create(id: streamId, isFromHome: true)
+                self.push(vc)
+                self.tableView.reloadData()
+                return
+            }
+            guard item.isPlaying == true else {return}
             let vc = AuctionDetailsVC.create(id: streamId, isFromHome: true)
             self.push(vc)
             self.items[indexPath.row].isPlaying = false
@@ -87,6 +97,16 @@ extension FilterStreamsVC: UITableViewDataSource {
 }
 extension FilterStreamsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard self.items[indexPath.row].type == "live" else {
+            guard let streamId = self.items[indexPath.row].id else {return}
+            for index in self.items.indices {
+                self.items[index].isPlaying = false
+            }
+            let vc = AuctionDetailsVC.create(id: streamId, isFromHome: true)
+            self.push(vc)
+            self.tableView.reloadData()
+            return
+        }
         for index in self.items.indices {
             self.items[index].isPlaying = false
         }

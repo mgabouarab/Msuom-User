@@ -10,12 +10,18 @@ import UIKit
 @IBDesignable
 class SliderView: UIView {
     
+    struct SliderItem {
+        let image: String
+        let title: String?
+        let description: String?
+    }
+    
     //MARK: - IBOutlets -
     @IBOutlet weak private var collectionView: UICollectionView!
     @IBOutlet weak private var pageControl: UIPageControl!
     
     //MARK: - Properties -
-    private var items: [String] = [] {
+    private var items: [SliderItem] = [] {
         didSet {
             if !items.isEmpty {
                 self.collectionView.reloadData()
@@ -82,7 +88,7 @@ class SliderView: UIView {
     }
     
     //MARK: - Data -
-    func set(images: [String]) {
+    func set(images: [SliderItem]) {
         self.items = images
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.items = images
@@ -166,7 +172,10 @@ extension SliderView: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(with: SliderCell.self, for: indexPath)
-        cell.imageView.setWith(string: items[indexPath.item])
+        cell.imageView.setWith(string: items[indexPath.item].image)
+        cell.titleLabel.text = items[indexPath.item].title
+        cell.descriptionLabel.text = items[indexPath.item].description
+        cell.blackView.isHidden = items[indexPath.item].description == nil
         if self.isCard {
             cell.cornerRadius = 8
         } else {
@@ -177,7 +186,7 @@ extension SliderView: UICollectionViewDataSource {
 }
 extension SliderView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let items = self.items.map({ImageViewerItem(urlImage: $0, dataImage: nil)})
+        let items = self.items.map({ImageViewerItem(urlImage: $0.image, dataImage: nil)})
         let vc = ImageViewerVC.create(images: items, selectedIndex: self.currentIndex)
         self.parentContainerViewController?.present(vc, animated: true)
     }

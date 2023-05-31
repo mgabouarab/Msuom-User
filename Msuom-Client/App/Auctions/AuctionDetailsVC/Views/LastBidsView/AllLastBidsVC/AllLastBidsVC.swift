@@ -72,7 +72,8 @@ extension AllLastBidsVC: UITableViewDataSource {
             image: item.avatar,
             name: item.name,
             date: item.createAt,
-            bid: item.price?.stringValue?.toPrice()
+            bid: item.price?.stringValue?.toPrice(),
+            isWinner: item.isWinner
         )
         return cell
     }

@@ -56,7 +56,7 @@ struct CarDetails: Codable {
     let owner: String?
     let isFav: Bool?
     let arrImage: [String]?
-    
+    let refundableText: String?
     /*
     "type": "advertise",
     "isRefundable": true,
@@ -101,6 +101,7 @@ extension Car {
         let name: String?
         let price: String
         let sellType: String
+        var isFinancing: String?
     }
     
     //MARK: - Views Data -
@@ -128,7 +129,8 @@ extension Car {
             image: self.details.arrImage?.first,
             name: displayedName,
             price: displayedPrice,
-            sellType: displayedSellType
+            sellType: displayedSellType,
+            isFinancing: nil
         )
         
     }
@@ -170,6 +172,8 @@ extension Car {
         let shareLink: String
         let isMyCar: Bool
         let isFav: Bool
+        let refundableText: String?
+        let ownerPhoneNo: String?
     }
     
     //MARK: - Views Data -
@@ -413,7 +417,9 @@ extension Car {
             longitude: displayedLongitude,
             shareLink: displayedShareLink,
             isMyCar: displayActions,
-            isFav: isFav
+            isFav: isFav,
+            refundableText: self.details.refundableText,
+            ownerPhoneNo: self.owner.phoneNo
         )
         
     }

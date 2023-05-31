@@ -31,7 +31,8 @@ class ShippingOrderVC: BaseVC {
     @IBOutlet weak private var paymentView: UIView!
     @IBOutlet weak private var tableView: TableViewContentSized!
     @IBOutlet weak private var confirmView: UIView!
-    
+    @IBOutlet weak private var orderStatusLabel: UILabel!
+    @IBOutlet weak private var priceView: UIView!
     
     //MARK: - Properties -
     private var data: ShippingOrderDetails?
@@ -73,28 +74,51 @@ class ShippingOrderVC: BaseVC {
         self.bodyLabel.text = data.description
         self.orderNumberLabel.text = "Ad Number:".localized + " " + "\(data.orderNo ?? 0)"
         self.priceLabel.text = "\(data.deliveryPrice ?? 0) \(data.currency ?? appCurrency)"
+        self.orderStatusLabel.text = data.orderStatusTxt
         if let status = data.orderStatus, let orderStatus = OrderStatus(rawValue: status) {
             switch orderStatus {
             case .waitForAccept:
                 self.confirmView.isHidden = true
-                self.acceptRefuseStackView.isHidden = false
+                self.acceptRefuseStackView.isHidden = true
                 self.paymentView.isHidden = true
+                self.orderStatusLabel.isHidden = false
+                self.priceView.isHidden = true
             case .waitForPay:
                 self.confirmView.isHidden = false
                 self.acceptRefuseStackView.isHidden = true
                 self.paymentView.isHidden = false
+                self.orderStatusLabel.isHidden = false
+                self.priceView.isHidden = false
             case .finishOrder:
                 self.confirmView.isHidden = true
                 self.acceptRefuseStackView.isHidden = true
                 self.paymentView.isHidden = true
+                self.orderStatusLabel.isHidden = false
+                self.priceView.isHidden = false
             case .acceptOrder:
-                fatalError()
+                self.confirmView.isHidden = true
+                self.acceptRefuseStackView.isHidden = true
+                self.paymentView.isHidden = true
+                self.orderStatusLabel.isHidden = false
+                self.priceView.isHidden = true
             case .sendOffer:
-                fatalError()
+                self.confirmView.isHidden = true
+                self.acceptRefuseStackView.isHidden = true
+                self.paymentView.isHidden = true
+                self.orderStatusLabel.isHidden = false
+                self.priceView.isHidden = true
             case .rejectOrder:
-                fatalError()
+                self.confirmView.isHidden = true
+                self.acceptRefuseStackView.isHidden = true
+                self.paymentView.isHidden = true
+                self.orderStatusLabel.isHidden = false
+                self.priceView.isHidden = true
             case .processing:
-                fatalError()
+                self.confirmView.isHidden = true
+                self.acceptRefuseStackView.isHidden = true
+                self.paymentView.isHidden = true
+                self.orderStatusLabel.isHidden = false
+                self.priceView.isHidden = true
             }
         }
     }

@@ -19,14 +19,16 @@ class ProviderStreamsVC: BaseVC {
     private var items: [BidStream] = []
     private var type: String!
     private var providerId: String!
+    private var topTitle: String?
     
     
     //MARK: - Creation -
-    static func create(type: String, providerId: String) -> ProviderStreamsVC {
+    static func create(type: String, providerId: String, topTitle: String?) -> ProviderStreamsVC {
         let vc = AppStoryboards.auctions.instantiate(ProviderStreamsVC.self)
         vc.hidesBottomBarWhenPushed = true
         vc.providerId = providerId
         vc.type = type
+        vc.topTitle = topTitle
         return vc
     }
     
@@ -40,7 +42,7 @@ class ProviderStreamsVC: BaseVC {
     
     //MARK: - Design Methods -
     private func configureInitialDesign() {
-        self.addBackButtonWith(title: "Auctions".localized)
+        self.addBackButtonWith(title: "\(topTitle ?? "Auctions")".localized)
     }
     
     //MARK: - Logic Methods -
@@ -53,7 +55,7 @@ class ProviderStreamsVC: BaseVC {
             self.showErrorAlert(error: "Please select at lest one auction".localized)
             return
         }
-        let vc = FilterStreamsVC.create(selectedIds: ids)
+        let vc = FilterStreamsVC.create(selectedIds: ids, topTitle: self.topTitle)
         self.push(vc)
     }
     

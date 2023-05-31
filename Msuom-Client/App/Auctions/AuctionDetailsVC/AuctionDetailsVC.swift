@@ -136,7 +136,10 @@ class AuctionDetailsVC: BaseVC {
         } else {
             self.liveContainerView.isHidden = true
             self.sliderView.isHidden = false
-            self.sliderView.set(images: data.currentBid?.arrImage ?? [])
+            
+            self.sliderView.set(
+                images: (data.currentBid?.arrImage ?? []).map({SliderView.SliderItem(image: $0, title: nil, description: nil)})
+            )
         }
         
         self.nameLabel.text = details?.currentBid?.name
@@ -235,6 +238,8 @@ class AuctionDetailsVC: BaseVC {
                     }
                     SocketConnection.sharedInstance.finishAuction(streamId: self.id, bidId: currentBidId, type: self.type) {
                         print("🚦Socket:: finishedAuction")
+                        self.timer?.invalidate()
+                        self.timer = nil
                     }
                 }
             } else {
@@ -468,7 +473,7 @@ extension AuctionDetailsVC {
             self.priceView.update(numberOfBidding: "\(countBids ?? 0)")
             self.sellIndicator.set(progress: soldProgress)
             self.priceView.playSound()
-            self.lastBidsView.add(bid:LastBidModel(viewerId: id, currency: currency, price: .double(price ?? 0), name: name, avatar: avatar, createAt: createAt)
+            self.lastBidsView.add(bid:LastBidModel(viewerId: id, currency: currency, price: .double(price ?? 0), name: name, avatar: avatar, createAt: createAt, isWinner: false)
             )
         }
     }

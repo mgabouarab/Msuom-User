@@ -18,12 +18,14 @@ class ShowAllProvidersVC: BaseVC {
     //MARK: - Properties -
     private var items: [BidStream] = []
     private var selectedType: String!
+    private var topTitle: String?
     
     //MARK: - Creation -
-    static func create(type: String) -> ShowAllProvidersVC {
+    static func create(type: String, topTitle: String?) -> ShowAllProvidersVC {
         let vc = AppStoryboards.auctions.instantiate(ShowAllProvidersVC.self)
         vc.hidesBottomBarWhenPushed = true
         vc.selectedType = type
+        vc.topTitle = topTitle
         return vc
     }
     
@@ -37,7 +39,7 @@ class ShowAllProvidersVC: BaseVC {
     
     //MARK: - Design Methods -
     private func configureInitialDesign() {
-        self.addBackButtonWith(title: "Auctions".localized)
+        self.addBackButtonWith(title: "\(topTitle ?? "Auctions")".localized)
     }
     
     //MARK: - Logic Methods -
@@ -83,7 +85,7 @@ extension ShowAllProvidersVC: UITableViewDataSource {
 extension ShowAllProvidersVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let providerId = self.items[indexPath.row].providerId else {return}
-        let vc = ProviderStreamsVC.create(type: self.selectedType, providerId: providerId)
+        let vc = ProviderStreamsVC.create(type: self.selectedType, providerId: providerId, topTitle: self.topTitle)
         self.push(vc)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

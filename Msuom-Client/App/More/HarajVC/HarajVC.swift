@@ -110,13 +110,13 @@ extension HarajVC {
     }
     private func filterHaraj(brandId: String?, typeId: String?, cityId: String?, statusId: String?) {
         self.showIndicator()
-        CarRouter.harajFilter(brandId: brandId, typeId: typeId, cityId: cityId, statusId: statusId).send { [weak self] (response: APIGenericResponse<[MyCarsModel]>) in
+        CarRouter.harajFilter(brandId: brandId, typeId: typeId, cityId: cityId, statusId: statusId).send { [weak self] (response: APIGenericResponse<HarajModel>) in
             guard let self = self else {return}
             self.tableView.refreshControl?.endRefreshing()
-            self.items.append(contentsOf: response.data ?? [])
+            self.items.append(contentsOf: response.data?.cars ?? [])
             self.tableView.reloadData()
             self.currentPage += 1
-            if self.items.isEmpty || (response.data ?? []).isEmpty || response.data?.count != listLimit {
+            if self.items.isEmpty || (response.data?.cars ?? []).isEmpty || response.data?.cars.count != listLimit {
                 self.isLast = true
             }
             self.isFetching = false

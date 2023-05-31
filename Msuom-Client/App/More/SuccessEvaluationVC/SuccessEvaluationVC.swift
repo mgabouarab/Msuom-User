@@ -11,7 +11,7 @@ import UIKit
 
 protocol SuccessEvaluationDelegate {
     func goToHome()
-    func goToOrders()
+    func goToOrders(id: String)
 }
 
 class SuccessEvaluationVC: BaseVC {
@@ -21,12 +21,14 @@ class SuccessEvaluationVC: BaseVC {
     
     //MARK: - Properties -
     private var delegate: SuccessEvaluationDelegate!
+    private var id: String!
     
     //MARK: - Creation -
-    static func create(delegate: SuccessEvaluationDelegate) -> SuccessEvaluationVC {
+    static func create(delegate: SuccessEvaluationDelegate, id: String) -> SuccessEvaluationVC {
         let vc = AppStoryboards.cars.instantiate(SuccessEvaluationVC.self)
         vc.hidesBottomBarWhenPushed = true
         vc.delegate = delegate
+        vc.id = id
         return vc
     }
     
@@ -52,7 +54,7 @@ class SuccessEvaluationVC: BaseVC {
     }
     
     @IBAction private func orderButtonPressed() {
-        self.delegate.goToOrders()
+        self.delegate.goToOrders(id: self.id)
         self.dismiss(animated: true)
     }
 }

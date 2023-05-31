@@ -76,6 +76,7 @@ extension ReportsVC {
 }
 extension ReportsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.tableView.setPlaceholder(isEmpty: self.items.isEmpty)
         return items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

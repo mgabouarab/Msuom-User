@@ -10,14 +10,6 @@
 import UIKit
 import AVKit
 
-struct AboutModel: Codable {
-    let link: String
-    let about: String
-    let goals: String
-    let mission: String
-    let rateus: String
-}
-
 
 class AboutVC: BaseVC {
     

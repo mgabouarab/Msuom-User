@@ -13,6 +13,14 @@ class AppTabBarController: UITabBarController {
     
     
     //MARK: - LifeCycle -
+    override func loadView() {
+        super.loadView()
+        let customTabBar = CurvedTabBar()
+        self.setValue(customTabBar, forKey: "tabBar")
+        self.tabBar.isTranslucent = true
+        
+        self.tabBar.backgroundColor = .clear
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -44,15 +52,20 @@ class AppTabBarController: UITabBarController {
     private func initialView(){
         self.setupDesign()
         self.addChilds()
-        self.addMiddleImage()
         self.addMiddleButton()
+        self.addMiddleImage()
+        self.addObservers()
     }
     private func addChilds() {
-        self.viewControllers = [
+        self.viewControllers = UserDefaults.isLogin ? [
             home(),
             auctions(),
             BaseVC(),
             orders(),
+            more()
+        ] : [
+            home(),
+            BaseVC(),
             more()
         ]
     }
@@ -137,7 +150,7 @@ class AppTabBarController: UITabBarController {
     
     //MARK: - Middle Button -
     func addMiddleButton(){
-        let actionButton = UIButton()
+        let actionButton = TabBarButton()
         let unSelectedImage = UIImage()
         let selectedImage = UIImage()
         actionButton.translatesAutoresizingMaskIntoConstraints = false
@@ -156,24 +169,28 @@ class AppTabBarController: UITabBarController {
         actionButton.addTarget(self, action: #selector(self.middleButtonAction), for: .touchUpInside)
     }
     func addMiddleImage(){
-        let length: CGFloat = 64
-        let imageView = UIImageView()
+        let length: CGFloat = 60
+        let imageView = TabBarImageView()
         imageView.image = UIImage(named: "tab2")
         imageView.contentMode = .scaleAspectFill
         
-        
+        imageView.layer.shadowColor = Theme.colors.shadowColor
+        imageView.layer.shadowOpacity = 1
+        imageView.layer.shadowOffset = .zero
+        imageView.layer.shadowRadius = 10
+        imageView.clipsToBounds = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         self.tabBar.addSubview(imageView)
         self.tabBar.bringSubviewToFront(imageView)
         
         imageView.centerXAnchor.constraint(equalTo: self.tabBar.centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: self.tabBar.topAnchor, constant: 20).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: self.tabBar.topAnchor).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: length).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: length).isActive = true
         imageView.layer.cornerRadius = length / 2
-        
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.middleButtonAction))
+        imageView.addGestureRecognizer(tap)
     }
     @objc private func middleButtonAction() {
         guard UserDefaults.isLogin else {
@@ -186,6 +203,25 @@ class AppTabBarController: UITabBarController {
         }
         self.present(self.middelVC(), animated: true, completion: nil)
     }
+    
+    
+    
+    
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateChildrenDependingOnUserLoginStatus), name: .isLoginChanged, object: nil)
+    }
+    @objc private func updateChildrenDependingOnUserLoginStatus() {
+        if UserDefaults.isLogin {
+            self.viewControllers?.insert(auctions(), at: 1)
+            self.viewControllers?.insert(orders(), at: 3)
+        } else {
+            guard viewControllers?.count ?? 0 > 3 else {return}
+            self.viewControllers?.remove(at: 3)
+            self.viewControllers?.remove(at: 1)
+        }
+    }
+    
+    
     
 }
 extension AppTabBarController: UITabBarControllerDelegate {
@@ -202,4 +238,77 @@ extension AppTabBarController: UITabBarControllerDelegate {
         UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
         return true
     }
+}
+
+
+class CurvedTabBar: UITabBar {
+    
+    private var shapeLayer: CALayer?
+    
+    private func addShape() {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = createPath()
+        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.lineWidth = 1.0
+        
+        //The below 4 lines are for shadow above the bar. you can skip them if you do not want a shadow
+        shapeLayer.shadowOffset = CGSize(width:0, height:0)
+        shapeLayer.shadowRadius = 10
+        shapeLayer.shadowColor = UIColor.lightGray.cgColor
+        shapeLayer.shadowOpacity = 0.3
+        
+        if let oldShapeLayer = self.shapeLayer {
+            self.layer.replaceSublayer(oldShapeLayer, with: shapeLayer)
+        } else {
+            self.layer.insertSublayer(shapeLayer, at: 0)
+        }
+        self.shapeLayer = shapeLayer
+    }
+    override func draw(_ rect: CGRect) {
+        self.addShape()
+    }
+    func createPath() -> CGPath {
+        let height: CGFloat = 37.0
+        let path = UIBezierPath()
+        let centerWidth = self.frame.width / 2
+        path.move(to: CGPoint(x: 0, y: 0)) // start top left
+        path.addLine(to: CGPoint(x: (centerWidth - height * 1.5), y: 0)) // the beginning of the trough
+        
+        path.addCurve(to: CGPoint(x: centerWidth, y: height),
+                      controlPoint1: CGPoint(x: (centerWidth - 30), y: 0), controlPoint2: CGPoint(x: centerWidth - 30, y: height))
+        
+        path.addCurve(to: CGPoint(x: (centerWidth + height * 1.5), y: 0),
+                      controlPoint1: CGPoint(x: centerWidth + 30, y: height), controlPoint2: CGPoint(x: (centerWidth + 30), y: 0))
+        
+        path.addLine(to: CGPoint(x: self.frame.width, y: 0))
+        path.addLine(to: CGPoint(x: self.frame.width, y: self.frame.height))
+        path.addLine(to: CGPoint(x: 0, y: self.frame.height))
+        path.close()
+        
+        return path.cgPath
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        guard !clipsToBounds && !isHidden && alpha > 0 else { return nil }
+        for member in subviews.reversed() {
+            if let _ = member as? TabBarImageView, member.frame.contains(point) {
+                return member
+            }
+            
+            
+            let subPoint = member.convert(point, from: self)
+            guard let result = member.hitTest(subPoint, with: event) else { continue }
+            return result
+        }
+        return super.hitTest(point, with: event)
+    }
+
+}
+
+class TabBarButton: UIButton {
+    
+}
+class TabBarImageView: UIImageView {
+    
 }

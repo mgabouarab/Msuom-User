@@ -29,11 +29,13 @@ class LastBidsCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func set(image: String?, name: String?, date: String?, bid: String?) {
+    func set(image: String?, name: String?, date: String?, bid: String?, isWinner: Bool?) {
         self.providerImageView.setWith(string: image)
         self.providerNameLabel.text = name
         self.providerDateLabel.text = date
         self.providerBidLabel.text = bid
+        self.contentView.layer.borderWidth = 1
+        self.contentView.layer.borderColor = (isWinner == true) ? Theme.colors.secondaryColor.cgColor : UIColor.clear.cgColor
     }
     
     

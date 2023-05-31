@@ -37,6 +37,7 @@ struct MyCarsModel: Codable {
     
     
     
+    
     var fullStartDate: String {
         guard let startDate = self.startDate else {
             print("The Auction with id: \(self.id) has no startDate")

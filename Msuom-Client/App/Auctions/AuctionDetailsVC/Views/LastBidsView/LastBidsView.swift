@@ -99,7 +99,8 @@ extension LastBidsView: UITableViewDataSource {
             image: item.avatar,
             name: item.name,
             date: item.createAt,
-            bid: item.price?.stringValue?.toPrice()
+            bid: item.price?.stringValue?.toPrice(),
+            isWinner: item.isWinner
         )
         return cell
     }
@@ -141,4 +142,5 @@ struct LastBidModel: Codable {
     let name: String?
     let avatar: String?
     let createAt: String?
+    let isWinner: Bool?
 }

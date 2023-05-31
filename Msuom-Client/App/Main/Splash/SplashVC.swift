@@ -42,11 +42,11 @@ class SplashVC: UIViewController {
             SplashVC.hasNotification = false
             return
         }
-        switch UserDefaults.isLogin {
+        switch UserDefaults.isFirstTime {
         case true:
-            self.goToHome()
-        case false:
             self.goToLanguage()
+        case false:
+            self.goToHome()
         }
     }
     

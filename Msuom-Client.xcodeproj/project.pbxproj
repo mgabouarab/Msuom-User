@@ -91,6 +91,7 @@
 		2C2EB29A2A248438006EF7E2 /* FilterStreamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB2972A248438006EF7E2 /* FilterStreamsCell.swift */; };
 		2C2EB29B2A248438006EF7E2 /* FilterStreamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB2982A248438006EF7E2 /* FilterStreamsVC.swift */; };
 		2C2EB29C2A248438006EF7E2 /* FilterStreamsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2EB2992A248438006EF7E2 /* FilterStreamsCell.xib */; };
+		2C2EB29E2A262799006EF7E2 /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB29D2A262799006EF7E2 /* AboutModel.swift */; };
 		2C3020F2297EA3F6000B47C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C3020F1297EA3F6000B47C9 /* GoogleService-Info.plist */; };
 		2C34B18629474D2400EAA358 /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C34B18529474D2400EAA358 /* SettingRouter.swift */; };
 		2C34D617297ED9DB0005E9DC /* DatePickerTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C34D616297ED9DB0005E9DC /* DatePickerTextFieldView.swift */; };
@@ -471,6 +472,7 @@
 		2C2EB2972A248438006EF7E2 /* FilterStreamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStreamsCell.swift; sourceTree = "<group>"; };
 		2C2EB2982A248438006EF7E2 /* FilterStreamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStreamsVC.swift; sourceTree = "<group>"; };
 		2C2EB2992A248438006EF7E2 /* FilterStreamsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterStreamsCell.xib; sourceTree = "<group>"; };
+		2C2EB29D2A262799006EF7E2 /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
 		2C3020F1297EA3F6000B47C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C34B18529474D2400EAA358 /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
 		2C34D616297ED9DB0005E9DC /* DatePickerTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextFieldView.swift; sourceTree = "<group>"; };
@@ -2512,6 +2514,7 @@
 			isa = PBXGroup;
 			children = (
 				2CE7C8A929220FE000EE6100 /* AboutVC.swift */,
+				2C2EB29D2A262799006EF7E2 /* AboutModel.swift */,
 			);
 			path = AboutVC;
 			sourceTree = "<group>";
@@ -3200,6 +3203,7 @@
 				2C68817E2913FB1000AB9C14 /* ProfileRouter.swift in Sources */,
 				2C178D1E27F7CAF900D32327 /* UIDevice.swift in Sources */,
 				2CF038BD2A18FCC800AE3042 /* EvaluationModel.swift in Sources */,
+				2C2EB29E2A262799006EF7E2 /* AboutModel.swift in Sources */,
 				2C178CF927F7C4A900D32327 /* Utilities.swift in Sources */,
 				2C3D7A682A18F170004DD1FB /* AdvantageAndDisadvantageCell.swift in Sources */,
 				2C1A344129880D2B007D9B2D /* OffersVC.swift in Sources */,

@@ -48,12 +48,12 @@ class ProviderDetailsVC: BaseVC {
     //MARK: - Design Methods -
     private func configureInitialDesign() {
         self.addBackButtonWith(title: "Provider Details".localized)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "filterIcon"),
-            style: .plain,
-            target: self,
-            action: #selector(self.filterButtonPressed)
-        )
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+//            image: UIImage(named: "filterIcon"),
+//            style: .plain,
+//            target: self,
+//            action: #selector(self.filterButtonPressed)
+//        )
         self.configureWith(data: self.providerDetails)
     }
     func configureWith(data: OfferProvider) {
@@ -73,9 +73,7 @@ class ProviderDetailsVC: BaseVC {
         AppHelper.openLocationOnMap(lat: latitude, long: longitude)
     }
     @objc private func filterButtonPressed() {
-//        let vc = ProvidersFilterVC.create(delegate: self)
-//        let nav = BaseNav(rootViewController: vc)
-//        self.present(nav, animated: true)
+        
     }
 }
 
@@ -97,13 +95,15 @@ extension ProviderDetailsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(with: CarCell.self, for: indexPath)
         let item = self.items[indexPath.row]
-        cell.configureWith(data: item)
+        cell.setupDataWith(data: item)
         return cell
     }
 }
 extension ProviderDetailsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let id = self.items[indexPath.row].id
+        let vc = CarDetailsVC.create(id: id)
+        self.push(vc)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
@@ -137,4 +137,3 @@ extension ProviderDetailsVC {
 extension ProviderDetailsVC {
     
 }
-

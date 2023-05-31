@@ -7,13 +7,21 @@
 
 import Foundation
 
+struct HomeSliderModel: Codable {
+    let id: String
+    let name: String
+    let image: String
+    let title: String?
+    let description: String?
+}
+
 struct HomeModel: Codable {
     
     let key: HomeKeys
     let rotation: ScrollDirection
     
     
-    let sliders: [IdName]
+    let sliders: [HomeSliderModel]
     let carBrands: [IdName]
     let carStructures: [IdName]
     var bidsComingSoon: [Auction]
@@ -29,7 +37,7 @@ struct HomeModel: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.key = try container.decode(HomeKeys.self, forKey: .key)
         self.rotation = try container.decode(ScrollDirection.self, forKey: .rotation)
-        self.sliders = try container.decodeIfPresent([IdName].self, forKey: .sliders) ?? []
+        self.sliders = try container.decodeIfPresent([HomeSliderModel].self, forKey: .sliders) ?? []
         self.carBrands = try container.decodeIfPresent([IdName].self, forKey: .carBrands) ?? []
         self.carStructures = try container.decodeIfPresent([IdName].self, forKey: .carStructures) ?? []
         self.bidsComingSoon = try container.decodeIfPresent([Auction].self, forKey: .bidsComingSoon) ?? []

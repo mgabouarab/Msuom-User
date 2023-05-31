@@ -82,7 +82,7 @@ extension AppDelegate {
     //MARK: - Fack data -
     private func setFakeData() {
 //        UserDefaults.isLogin = false
-        UserDefaults.isFirstTime = true
+//        UserDefaults.isFirstTime = true
 //        UserDefaults.accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2Mzk3NGU0YzMxYmE1NTNjZTE2M2JhMmMiLCJwaG9uZSI6IjAxMDAxMDY4MTU3IiwidXNlclR5cGUiOiJ1c2VyIiwiaXNzIjoiQXBwIiwiaWF0IjoxNjcwODYwNDA2NjE1LCJleHAiOjE2NzA4NjEyNzA2MTV9.xqGOUFhgsGHcYT57kA2uYz1Cxg-1qiXnc7gVBvFTCSI"
     }
 }

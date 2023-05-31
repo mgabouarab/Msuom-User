@@ -14,6 +14,7 @@ class NormalTextFieldView: TextFieldView {
     @IBOutlet weak private var textField: UITextField!
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var requiredLabel: UILabel!
     
     //MARK: - Properties -
     @IBInspectable var image: UIImage? {
@@ -35,6 +36,11 @@ class NormalTextFieldView: TextFieldView {
     @IBInspectable var placeholderLocalizedKey: String? {
         didSet {
             self.textField.xibPlaceholderLocKey = placeholderLocalizedKey
+        }
+    }
+    @IBInspectable var isRequired: Bool = true {
+        didSet {
+            self.requiredLabel.isHidden = self.isRequired
         }
     }
     var onChangeTextValue: ((String?)->())?

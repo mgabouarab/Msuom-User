@@ -8,6 +8,7 @@
 
 
 import UIKit
+import FirebaseDynamicLinks
 
 class CarDetailsVC: BaseVC {
     
@@ -39,11 +40,14 @@ class CarDetailsVC: BaseVC {
     @IBOutlet weak private var specificationLabel: UILabel!
     @IBOutlet weak private var descriptionLabel: UILabel!
     @IBOutlet weak private var actionsContainerView: UIView!
+    @IBOutlet weak private var guaranteeLabel: UILabel!
+    @IBOutlet weak private var callView: UIView!
     
     //MARK: - Properties -
     private var id: String!
     private var details: Car.Details?
     private var car: Car?
+    private var ownerPhoneNo: String?
     
     //MARK: - Creation -
     static func create(id: String) -> CarDetailsVC {
@@ -71,13 +75,12 @@ class CarDetailsVC: BaseVC {
         self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         let locationTap = UITapGestureRecognizer(target: self, action: #selector(self.openLocationOnMap))
         self.sellerAddressLabel.addGestureRecognizer(locationTap)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shareButton"), style: .plain, target: self, action: #selector(self.openShareSheet))
         self.actionsContainerView.clipsToBounds = false
         self.actionsContainerView.addShadow()
     }
     private func setCar(details: Car.Details) {
         self.details = details
-        self.sliderView.set(images: details.images)
+        self.sliderView.set(images: details.images.map({SliderView.SliderItem(image: $0, title: nil, description: nil)}))
         self.nameLabel.text = details.name
         self.priceLabel.text = details.price
         self.sellTypeLabel.text = details.sellType
@@ -104,6 +107,31 @@ class CarDetailsVC: BaseVC {
         self.descriptionLabel.text = details.description
         self.containerStackView.isHidden = false
         self.actionsContainerView.isHidden = !details.isMyCar
+        self.guaranteeLabel.text = details.refundableText
+        self.ownerPhoneNo = details.ownerPhoneNo
+        
+        if details.isMyCar {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shareButton"), style: .plain, target: self, action: #selector(self.openShareSheet))
+            self.callView.isHidden = true
+        } else {
+            self.navigationItem.rightBarButtonItems = [
+                UIBarButtonItem(
+                    image: UIImage(named: "shareButton"),
+                    style: .plain,
+                    target: self,
+                    action: #selector(self.openShareSheet)
+                ),
+                UIBarButtonItem(
+                    image: UIImage(named: details.isFav ? "favFill" : "unFav"),
+                    style: .plain,
+                    target: self,
+                    action: #selector(self.toggleFav)
+                )
+            ]
+            self.callView.isHidden = false
+        }
+        
+        
     }
     
     //MARK: - Logic Methods -
@@ -116,9 +144,41 @@ class CarDetailsVC: BaseVC {
         }
     }
     @objc private func openShareSheet() {
-        guard let shareLink = self.details?.shareLink, let url = URL(string: shareLink) else {return}
-        let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        self.present(activityController, animated: true, completion: nil)
+        guard let link = URL(string: "https://maseom.page.link/advertise/\(self.id ?? "")") else { return }
+
+        let dynamicLinksDomainURIPrefix = "https://maseom.page.link"
+        let linkBuilder = DynamicLinkComponents(link: link, domainURIPrefix: dynamicLinksDomainURIPrefix)
+        linkBuilder?.iOSParameters = DynamicLinkIOSParameters(bundleID: "com.aait.Msuom-Client")
+        linkBuilder?.androidParameters = DynamicLinkAndroidParameters(packageName: "com.aait.mseom_user")
+        let socialMetaTagParameters = DynamicLinkSocialMetaTagParameters()
+
+        socialMetaTagParameters.title = self.nameLabel.text
+        socialMetaTagParameters.descriptionText = self.details?.name
+        socialMetaTagParameters.imageURL = URL(string: self.details?.images.first ?? "")
+
+        linkBuilder?.socialMetaTagParameters = socialMetaTagParameters
+        linkBuilder?.shorten(completion: { shorten, _, _ in
+            guard let shorten = shorten else {return}
+            let activityController = UIActivityViewController(activityItems: [shorten], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        })
+    }
+    @objc private func toggleFav() {
+        
+        guard UserDefaults.isLogin else {
+            
+            self.showLogoutAlert { [weak self] in
+                self?.presentLogin()
+            }
+            
+            return
+        }
+        
+        self.showIndicator()
+        CarRouter.toggleAdFav(id: self.id).send { [weak self] (response: APIGlobalResponse) in
+            guard let self = self else {return}
+            self.getDetailsForCar(id: self.id)
+        }
     }
     @IBAction private func deleteButtonPressed() {
         self.showDeleteAlert { [weak self] in
@@ -130,6 +190,9 @@ class CarDetailsVC: BaseVC {
         guard let car = self.car else {return}
         let vc = AddCarVC.create(operationType: .edit(car: car))
         self.push(vc)
+    }
+    @IBAction private func callButtonPressed() {
+        PhoneAction.call(number: self.ownerPhoneNo)
     }
     
 }

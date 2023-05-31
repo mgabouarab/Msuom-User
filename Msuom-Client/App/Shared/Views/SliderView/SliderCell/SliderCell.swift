@@ -11,6 +11,9 @@ class SliderCell: UICollectionViewCell {
 
     //MARK: - IBOutlets -
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var blackView: UIView!
     
     //MARK: - properties -
     var cornerRadius: CGFloat = 8.0 {

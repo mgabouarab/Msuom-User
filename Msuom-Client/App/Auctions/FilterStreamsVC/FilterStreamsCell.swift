@@ -19,6 +19,7 @@ class FilterStreamsCell: UITableViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var priceLabel: UILabel!
     @IBOutlet weak private var liveView: UIView!
+    @IBOutlet weak private var auctionImageView: UIImageView!
     
     //MARK: - properties -
     private var kApiKey: String = ""
@@ -71,7 +72,7 @@ class FilterStreamsCell: UITableViewCell {
     }
     func configureWith(data: BidStream) {
         self.nameLabel.text = data.name
-        self.priceLabel.text = data.lastBidPrice?.stringValue
+        self.priceLabel.text = data.lastBidPrice?.stringValue?.toPrice()
         self.liveView.isHidden = !(data.type == "live")
         self.containerStack.addBorder(
             with: (data.isPlaying == true) ? Theme.colors.secondaryColor.cgColor: UIColor.clear.cgColor
@@ -80,9 +81,16 @@ class FilterStreamsCell: UITableViewCell {
         if let kApiKey = data.credentials?.apiKey, let kSessionId = data.credentials?.sessionId, let kToken = data.credentials?.token {
             configureVideo(kApiKey: kApiKey, kSessionId: kSessionId, kToken: kToken)
         }
-        if data.isPlaying == true {
+        self.auctionImageView.setWith(string: data.image)
+        if data.isPlaying == true && data.type == "live" {
             self.doConnect()
+            self.auctionImageView.isHidden = true
+            self.videoContainerStack.isHidden = false
+        } else {
+            self.auctionImageView.isHidden = false
+            self.videoContainerStack.isHidden = true
         }
+        
     }
     
     //MARK: - Actions -

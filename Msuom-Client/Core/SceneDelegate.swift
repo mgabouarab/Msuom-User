@@ -47,32 +47,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         print("Your Incoming url is \(url.absoluteString)")
         
-//    https://maseom.page.link/auction/live/646a695657fbd89da6733c75
         let absoluteString = url.absoluteString.replacingOccurrences(of: "https://maseom.page.link/", with: "")
         let parameters = absoluteString.components(separatedBy: "/")
         
         guard let id = parameters.last else {return}
         
+        var vc: UIViewController = UIViewController()
+        
         if parameters.contains("auction") {
-            
-            var vc: UIViewController = UIViewController()
-            if parameters.contains("advertise") {
-                vc = CarDetailsVC.create(id: id)
-            } else if parameters.contains("live") ||  parameters.contains("normal") {
-                vc = AuctionDetailsVC.create(id: id)
-            }
-            var rootVC = (UIApplication.shared.windows.first?.rootViewController as? UITabBarController)
-            if rootVC == nil {
-                SplashVC.hasNotification = true
-                AppHelper.changeWindowRoot(vc: AppTabBarController.create())
-                rootVC = (UIApplication.shared.windows.first?.rootViewController as? UITabBarController)
-            }
-            rootVC!.viewControllers![rootVC!.selectedIndex].show(vc, sender: nil)
-            
-            
-            
+            vc = AuctionDetailsVC.create(id: id)
+        } else if parameters.contains("advertise") {
+            vc = CarDetailsVC.create(id: id)
         }
         
+        var rootVC = (UIApplication.shared.windows.first?.rootViewController as? UITabBarController)
+        if rootVC == nil {
+            SplashVC.hasNotification = true
+            AppHelper.changeWindowRoot(vc: AppTabBarController.create())
+            rootVC = (UIApplication.shared.windows.first?.rootViewController as? UITabBarController)
+        }
+        rootVC!.viewControllers![rootVC!.selectedIndex].show(vc, sender: nil)
     }
     
 
