@@ -14,6 +14,7 @@ enum MoreRouter {
     case dataUsedForEvaluation
     case carEvaluation(brandId: String, typeId: String, categoryId: String, statusId: String, walkway: String, type: String, address: String, isDelivery: Bool)
     case chargeWallet(price: String)
+    case setting
 }
 
 extension MoreRouter: APIRouter {
@@ -25,6 +26,7 @@ extension MoreRouter: APIRouter {
         case .dataUsedForEvaluation: return .get
         case .carEvaluation: return .post
         case .chargeWallet: return .patch
+        case .setting: return .get
         }
     }
     
@@ -36,6 +38,7 @@ extension MoreRouter: APIRouter {
         case .dataUsedForEvaluation: return "dataUsedForEvaluation"
         case .carEvaluation: return "carEvaluation"
         case .chargeWallet: return "chargeWallet"
+        case .setting: return "setting"
         }
     }
     
@@ -60,6 +63,8 @@ extension MoreRouter: APIRouter {
             return [
                 "price": price
             ]
+        case .setting:
+            return nil
         }
     }
 }

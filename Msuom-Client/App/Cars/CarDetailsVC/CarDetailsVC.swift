@@ -42,6 +42,13 @@ class CarDetailsVC: BaseVC {
     @IBOutlet weak private var actionsContainerView: UIView!
     @IBOutlet weak private var guaranteeLabel: UILabel!
     @IBOutlet weak private var callView: UIView!
+    @IBOutlet weak private var buyingDepositView: UIView!
+    @IBOutlet weak private var buyingDepositLabel: UILabel!
+    @IBOutlet weak private var howToSellView: UIView!
+    @IBOutlet weak private var financingView: UIView!
+    @IBOutlet weak private var financingLabel: UILabel!
+    @IBOutlet weak private var descriptionContainerView: UIView!
+    @IBOutlet weak private var sellButton: UIButton!
     
     //MARK: - Properties -
     private var id: String!
@@ -109,6 +116,18 @@ class CarDetailsVC: BaseVC {
         self.actionsContainerView.isHidden = !details.isMyCar
         self.guaranteeLabel.text = details.refundableText
         self.ownerPhoneNo = details.ownerPhoneNo
+        
+        self.financingLabel.text = details.financing
+        self.buyingDepositLabel.text = details.buyingDeposit
+        
+        
+        
+        self.financingView.isHidden = details.financing.isEmpty
+        self.buyingDepositView.isHidden = details.buyingDeposit.isEmpty
+        self.howToSellView.isHidden = details.sellType.isEmpty
+        self.descriptionContainerView.isHidden = details.description.isEmpty
+        self.sellButton.isHidden = !details.hasSell
+        
         
         if details.isMyCar {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shareButton"), style: .plain, target: self, action: #selector(self.openShareSheet))
@@ -193,6 +212,10 @@ class CarDetailsVC: BaseVC {
     }
     @IBAction private func callButtonPressed() {
         PhoneAction.call(number: self.ownerPhoneNo)
+    }
+    @IBAction private func tryToSellButtonPressed() {
+//        self.showIndicator()
+        
     }
     
 }

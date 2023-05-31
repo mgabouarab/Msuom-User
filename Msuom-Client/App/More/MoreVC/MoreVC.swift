@@ -17,7 +17,8 @@ class MoreVC: BaseVC {
     
     //MARK: - Properties -
     private lazy var items: [MoreModel] = []
-    
+    private var showHaraj: Bool = false
+    private var showOffers: Bool = false
     
     //MARK: - Creation -
     static func create() -> MoreVC {
@@ -37,6 +38,7 @@ class MoreVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getNotificationCount()
+        self.getEnabledSections()
     }
     
     //MARK: - Design Methods -
@@ -133,71 +135,239 @@ class MoreVC: BaseVC {
         ]
     }
     private func generalInfoSectionItems() -> [MoreItem] {
-        return [
-            MoreItem(
-                iconName: "requestHelp",
-                title: "Help".localized,
-                description: "",
-                action: { [weak self] in
-                    guard let self = self else {return}
-                    self.gotoHelp()
-                }
-            ),
-            MoreItem(
-                iconName: "profileAds",
-                title: "Car show".localized,
-                description: "",
-                action: { [weak self] in
-                    guard let self = self else {return}
-                    self.goToCarShow()
-                }
-            ),
-            MoreItem(
-                iconName: "profileOffers",
-                title: "Offers".localized,
-                description: "",
-                action: { [weak self] in
-                    guard let self = self else {return}
-                    self.goToOffers()
-                }
-            ),
-            MoreItem(
-                iconName: "profileGarag",
-                title: "Car Auction".localized,
-                description: "",
-                action: { [weak self] in
-                    guard let self = self else {return}
-                    self.goToCarAuction()
-                }
-            ),
-            MoreItem(
-                iconName: "termsIcon",
-                title: "Terms and Conditions".localized,
-                description: "",
-                action: { [weak self] in
-                    guard let self = self else {return}
-                    self.goToInfo(type: .terms)
-                }
-            ),
-            MoreItem(
-                iconName: "aboutUsIcon",
-                title: "About Msuom".localized,
-                description: "",
-                action: { [weak self] in
-                    guard let self = self else {return}
-                    self.goToAbout()
-                }
-            ),
-            MoreItem(
-                iconName: "contactusIcon",
-                title: "Contact us".localized,
-                description: "",
-                action: { [weak self] in
-                    guard let self = self else {return}
-                    self.goToContactUs()
-                }
-            )
-        ]
+        
+        if showHaraj && showOffers {
+            return [
+                MoreItem(
+                    iconName: "requestHelp",
+                    title: "Help".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.gotoHelp()
+                    }
+                ),
+                MoreItem(
+                    iconName: "profileAds",
+                    title: "Car show".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToCarShow()
+                    }
+                ),
+                MoreItem(
+                    iconName: "profileOffers",
+                    title: "Offers".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToOffers()
+                    }
+                ),
+                MoreItem(
+                    iconName: "profileGarag",
+                    title: "Car Auction".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToCarAuction()
+                    }
+                ),
+                MoreItem(
+                    iconName: "termsIcon",
+                    title: "Terms and Conditions".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToInfo(type: .terms)
+                    }
+                ),
+                MoreItem(
+                    iconName: "aboutUsIcon",
+                    title: "About Msuom".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToAbout()
+                    }
+                ),
+                MoreItem(
+                    iconName: "contactusIcon",
+                    title: "Contact us".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToContactUs()
+                    }
+                )
+            ]
+        } else if showHaraj {
+            return [
+                MoreItem(
+                    iconName: "requestHelp",
+                    title: "Help".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.gotoHelp()
+                    }
+                ),
+                MoreItem(
+                    iconName: "profileAds",
+                    title: "Car show".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToCarShow()
+                    }
+                ),
+                MoreItem(
+                    iconName: "profileGarag",
+                    title: "Car Auction".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToCarAuction()
+                    }
+                ),
+                MoreItem(
+                    iconName: "termsIcon",
+                    title: "Terms and Conditions".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToInfo(type: .terms)
+                    }
+                ),
+                MoreItem(
+                    iconName: "aboutUsIcon",
+                    title: "About Msuom".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToAbout()
+                    }
+                ),
+                MoreItem(
+                    iconName: "contactusIcon",
+                    title: "Contact us".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToContactUs()
+                    }
+                )
+            ]
+        } else if showOffers {
+            return [
+                MoreItem(
+                    iconName: "requestHelp",
+                    title: "Help".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.gotoHelp()
+                    }
+                ),
+                MoreItem(
+                    iconName: "profileAds",
+                    title: "Car show".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToCarShow()
+                    }
+                ),
+                MoreItem(
+                    iconName: "profileOffers",
+                    title: "Offers".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToOffers()
+                    }
+                ),
+                MoreItem(
+                    iconName: "termsIcon",
+                    title: "Terms and Conditions".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToInfo(type: .terms)
+                    }
+                ),
+                MoreItem(
+                    iconName: "aboutUsIcon",
+                    title: "About Msuom".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToAbout()
+                    }
+                ),
+                MoreItem(
+                    iconName: "contactusIcon",
+                    title: "Contact us".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToContactUs()
+                    }
+                )
+            ]
+        } else {
+            return [
+                MoreItem(
+                    iconName: "requestHelp",
+                    title: "Help".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.gotoHelp()
+                    }
+                ),
+                MoreItem(
+                    iconName: "profileAds",
+                    title: "Car show".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToCarShow()
+                    }
+                ),
+                MoreItem(
+                    iconName: "termsIcon",
+                    title: "Terms and Conditions".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToInfo(type: .terms)
+                    }
+                ),
+                MoreItem(
+                    iconName: "aboutUsIcon",
+                    title: "About Msuom".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToAbout()
+                    }
+                ),
+                MoreItem(
+                    iconName: "contactusIcon",
+                    title: "Contact us".localized,
+                    description: "",
+                    action: { [weak self] in
+                        guard let self = self else {return}
+                        self.goToContactUs()
+                    }
+                )
+            ]
+        }
+        
+        
+        
     }
     private func deleteAccountSectionItems() -> [MoreItem] {
         return [
@@ -367,6 +537,14 @@ extension MoreVC {
             UserDefaults.notificationCount = response.data ?? 0
         }
     }
+    private func getEnabledSections() {
+        MoreRouter.setting.send { [weak self] (response: APIGenericResponse<EnabledSectionsModel>) in
+            guard let self = self else {return}
+            self.showHaraj = response.data?.showHaraj ?? false
+            self.showOffers = response.data?.showOffers ?? false
+            self.handleItemsDependingOnUserLoginStatus()
+        }
+    }
 }
 
 //MARK: - Routes -
@@ -465,4 +643,10 @@ extension MoreVC {
         }
     }
     
+}
+
+
+struct EnabledSectionsModel: Codable {
+    let showHaraj: Bool
+    let showOffers: Bool
 }

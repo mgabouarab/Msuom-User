@@ -57,6 +57,9 @@ struct CarDetails: Codable {
     let isFav: Bool?
     let arrImage: [String]?
     let refundableText: String?
+    let purchaseDeposit: Numerical?
+    let isFinancingTxt: String?
+    let hasSell: Bool?
     /*
     "type": "advertise",
     "isRefundable": true,
@@ -174,6 +177,9 @@ extension Car {
         let isFav: Bool
         let refundableText: String?
         let ownerPhoneNo: String?
+        let financing: String
+        let buyingDeposit: String
+        let hasSell: Bool
     }
     
     //MARK: - Views Data -
@@ -419,7 +425,10 @@ extension Car {
             isMyCar: displayActions,
             isFav: isFav,
             refundableText: self.details.refundableText,
-            ownerPhoneNo: self.owner.phoneNo
+            ownerPhoneNo: self.owner.phoneNo,
+            financing: self.details.isFinancingTxt ?? "" ,
+            buyingDeposit: self.details.purchaseDeposit?.stringValue ?? "",
+            hasSell: self.details.hasSell ?? false
         )
         
     }

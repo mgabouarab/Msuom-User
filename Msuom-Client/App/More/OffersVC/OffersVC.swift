@@ -44,7 +44,7 @@ class OffersVC: BaseVC {
                 self.collectionHeightConstraint.constant = self.providersHeight
             }
             self.view.layoutIfNeeded()
-            self.collectionView.reloadData()
+            
         }
     }
     
@@ -99,7 +99,7 @@ class OffersVC: BaseVC {
                 self.getOffers()
             }
         }
-        
+        self.collectionView.reloadData()
     }
     @IBAction func didChangeType(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -178,12 +178,7 @@ extension OffersVC {
 extension OffersVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch self.filterType {
-        case .brand:
-            return self.brands.count
-        case .provider:
-            return self.providers.count
-        }
+        self.filterType == .brand ? self.brands.count: self.providers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
