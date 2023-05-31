@@ -34,13 +34,18 @@ class MoreVC: BaseVC {
         self.handleItemsDependingOnUserLoginStatus()
         self.addObservers()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getNotificationCount()
+    }
     
     //MARK: - Design Methods -
     private func configureInitialDesign() {
         self.setLeading(title: "More".localized)
         if UserDefaults.isLogin {
-            self.setNotificationButton()
+            self.setNotificationButton(imageName:
+                UserDefaults.notificationCount == 0 ? "notificationButton" : "notificationButtonUnRead"
+            )
         } else {
             self.navigationItem.rightBarButtonItem = nil
         }
@@ -243,10 +248,19 @@ class MoreVC: BaseVC {
     //MARK: - Logic -
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleItemsDependingOnUserLoginStatus), name: .isLoginChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationCountDidChanged), name: .notificationNumberChanged, object: nil)
     }
+    @objc private func notificationCountDidChanged() {
+        self.setNotificationButton(imageName:
+            UserDefaults.notificationCount == 0 ? "notificationButton" : "notificationButtonUnRead"
+        )
+    }
+    
     @objc private func handleItemsDependingOnUserLoginStatus() {
         if UserDefaults.isLogin {
-            self.setNotificationButton()
+            self.setNotificationButton(imageName:
+                UserDefaults.notificationCount == 0 ? "notificationButton" : "notificationButtonUnRead"
+            )
         } else {
             self.navigationItem.rightBarButtonItem = nil
         }
@@ -347,7 +361,12 @@ extension MoreVC: UITableViewDelegate {
 
 //MARK: - Networking -
 extension MoreVC {
-    
+    private func getNotificationCount() {
+        HomeRouter.notifyCount.send { [weak self] (response: APIGenericResponse<Int>) in
+            guard let self = self else {return}
+            UserDefaults.notificationCount = response.data ?? 0
+        }
+    }
 }
 
 //MARK: - Routes -

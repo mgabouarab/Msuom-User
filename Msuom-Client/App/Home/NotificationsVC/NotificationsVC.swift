@@ -37,7 +37,7 @@ class NotificationsVC: BaseVC {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.getNotifications()
+        self.refresh()
     }
     
     //MARK: - Design Methods -
@@ -87,7 +87,56 @@ extension NotificationsVC: UITableViewDataSource {
 }
 extension NotificationsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let item = self.items[indexPath.row]
+        guard let key = item.key, let type = NotificationType(rawValue: key) else {return}
+        
+        switch type {
+        case .userDeleted, .block, .adminNotify:
+           return
+        case .car:
+            guard let id = item.carId else {
+                return
+            }
+            let vc = CarDetailsVC.create(id: id)
+            self.push(vc)
+        case .order:
+            guard let id = item.orderId, let type = item.type else {
+                return
+            }
+            switch type {
+                case "purchaseOrder":
+                let vc = PurchaseOrderVC.create(data: nil, id: id)
+                self.push(vc)
+                case "evaluation":
+                let vc = EvaluationOrderVC.create(data: nil, id: id)
+                self.push(vc)
+                case "shipping":
+                let vc = ShippingOrderVC.create(data: nil, id: id)
+                self.push(vc)
+                case "summaryReport":
+                let vc = SummaryReportOrderVC.create(data: nil, id: id)
+                self.push(vc)
+                case "afterSaleService":
+                let vc = SummaryReportOrderVC.create(data: nil, id: id)
+                self.push(vc)
+                
+            default:
+                return
+            }
+        case .bid:
+            guard let id = item.bidId else {
+                return
+            }
+            let vc = AuctionDetailsVC.create(id: id)
+            self.push(vc)
+        case .dispute:
+            guard let id = item.disputeId else {
+                return
+            }
+            let vc = ReportDetailsVC.create(id: id)
+            self.push(vc)
+        }
+        
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if !self.isLast && !self.isFetching && (indexPath.row % listLimit == 0) {

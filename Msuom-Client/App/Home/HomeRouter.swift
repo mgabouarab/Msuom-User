@@ -13,6 +13,7 @@ enum HomeRouter {
     case browseByCategory(id: String)
     case notifications(page: Int)
     case search(keyword: String)
+    case notifyCount
 }
 
 extension HomeRouter: APIRouter {
@@ -23,6 +24,7 @@ extension HomeRouter: APIRouter {
         case .browseByCategory: return .get
         case .notifications: return .get
         case .search: return .get
+        case .notifyCount: return .get
         }
     }
     
@@ -33,6 +35,7 @@ extension HomeRouter: APIRouter {
         case .browseByCategory: return "browse"
         case .notifications: return "notifications"
         case .search: return "search"
+        case .notifyCount: return "notifyCount"
         }
     }
     
@@ -43,6 +46,7 @@ extension HomeRouter: APIRouter {
         case .browseByCategory(let structureId): return ["structureId":structureId]
         case .notifications(let page): return ["page": page, "limit": listLimit]
         case .search(let keyword): return ["keyword": keyword]
+        case .notifyCount: return nil
         }
     }
 }

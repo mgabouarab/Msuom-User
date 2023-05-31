@@ -60,9 +60,16 @@ class HeaderView: UIView {
     //MARK: - Actions -
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateChildrenDependingOnUserLoginStatus), name: .isLoginChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationCountDidChanged), name: .notificationNumberChanged, object: nil)
     }
     @objc private func updateChildrenDependingOnUserLoginStatus() {
         self.handleButtons()
+    }
+    @objc private func notificationCountDidChanged() {
+        self.notificationButton.setImage(
+            UIImage(named: UserDefaults.notificationCount == 0 ? "notificationButton" : "notificationButtonUnRead"),
+            for: .normal
+        )
     }
     @objc private func searchViewTapped() {
         let vc = SearchVC.create()

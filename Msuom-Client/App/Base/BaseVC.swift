@@ -55,9 +55,9 @@ class BaseVC: UIViewController, UIGestureRecognizerDelegate {
         titleLabel.textColor = Theme.colors.whiteColor
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
     }
-    func setNotificationButton() {
+    func setNotificationButton(imageName: String) {
         let button = UIButton()
-        button.setImage(UIImage(named: "notificationButton"), for: .normal)
+        button.setImage(UIImage(named: imageName), for: .normal)
         button.addTarget(self, action: #selector(self.notificationButtonPressed), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }

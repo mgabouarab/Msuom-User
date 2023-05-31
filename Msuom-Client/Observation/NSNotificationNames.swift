@@ -13,6 +13,7 @@ extension NSNotification.Name {
      */
     private enum Names: String {
         case isLoginChanged
+        case notificationNumberChanged
     }
     
     
@@ -20,6 +21,7 @@ extension NSNotification.Name {
      All Notification cases
      */
     static let isLoginChanged = Notification.Name(rawValue: Names.isLoginChanged.rawValue)
+    static let notificationNumberChanged = Notification.Name(rawValue: Names.notificationNumberChanged.rawValue)
     
     
 }

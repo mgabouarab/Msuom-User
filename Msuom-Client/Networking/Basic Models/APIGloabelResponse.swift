@@ -11,11 +11,13 @@ class APIGlobalResponse: Codable {
     var key: APIServerResponseKey
     var message: String
     var paginate: Paginate?
+    var notifyCount: Int?
     
     enum CodingKeys: String, CodingKey {
         case key
         case message
         case paginate
+        case notifyCount
     }
     
     required init(from decoder: Decoder) throws {
@@ -23,6 +25,7 @@ class APIGlobalResponse: Codable {
         key = try values.decode(APIServerResponseKey.self, forKey: .key)
         message = try values.decode(String.self, forKey: .message)
         paginate = try values.decodeIfPresent(Paginate.self, forKey: .paginate)
+        notifyCount = try values.decodeIfPresent(Int.self, forKey: .notifyCount)
     }
     
 }
@@ -36,6 +39,7 @@ class APIGenericResponse<T: Codable>: APIGlobalResponse {
         case key
         case message
         case paginate
+        case notifyCount
     }
     
     required init(from decoder: Decoder) throws {
@@ -44,6 +48,7 @@ class APIGenericResponse<T: Codable>: APIGlobalResponse {
         key = try values.decode(APIServerResponseKey.self, forKey: .key)
         message = try values.decode(String.self, forKey: .message)
         paginate = try values.decodeIfPresent(Paginate.self, forKey: .paginate)
+        notifyCount = try values.decodeIfPresent(Int.self, forKey: .notifyCount)
         data = try values.decodeIfPresent(T.self, forKey: .data)
     }
     

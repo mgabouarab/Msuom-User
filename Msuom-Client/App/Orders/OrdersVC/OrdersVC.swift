@@ -63,24 +63,35 @@ class OrdersVC: BaseVC {
         super.viewDidLoad()
         self.configureInitialDesign()
         self.setupTableView()
+        self.addObservers()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.refresh()
+        self.getNotificationCount()
     }
     
     //MARK: - Design Methods -
     private func configureInitialDesign() {
         self.setLeading(title: "My Orders".localized)
-        self.setNotificationButton()
+        self.setNotificationButton(imageName:
+            UserDefaults.notificationCount == 0 ? "notificationButton" : "notificationButtonUnRead"
+        )
         self.segmentedCollection.delegate = self
         self.segmentedCollection.reload()
     }
     
     //MARK: - Logic Methods -
-    
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.notificationCountDidChanged), name: .notificationNumberChanged, object: nil)
+    }
     
     //MARK: - Actions -
+    @objc private func notificationCountDidChanged() {
+        self.setNotificationButton(imageName:
+            UserDefaults.notificationCount == 0 ? "notificationButton" : "notificationButtonUnRead"
+        )
+    }
     @objc func refresh() {
         
         self.shippingOrderDetails = []
@@ -235,6 +246,13 @@ extension OrdersVC: UITableViewDelegate {
 
 //MARK: - Networking -
 extension OrdersVC {
+    
+    private func getNotificationCount() {
+        HomeRouter.notifyCount.send { [weak self] (response: APIGenericResponse<Int>) in
+            guard let self = self else {return}
+            UserDefaults.notificationCount = response.data ?? 0
+        }
+    }
     
     private func getShippingOrderDetails(page: Int) {
         self.showIndicator()

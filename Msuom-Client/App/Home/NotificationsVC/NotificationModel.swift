@@ -24,6 +24,7 @@ struct NotificationModel: Codable {
     let timeAdd: String?
     let title: String?
     let userId: String?
+    let type: String?
     
     
     enum CodingKeys: String, CodingKey {
@@ -43,7 +44,7 @@ struct NotificationModel: Codable {
         case timeAdd
         case title
         case userId = "user_id"
-        
+        case type
         
     }
     

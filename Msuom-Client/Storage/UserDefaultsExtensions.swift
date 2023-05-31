@@ -104,7 +104,11 @@ extension UserDefaults {
     static var isFirstTime: Bool
     
     @ValueDefault(key: Keys.notificationCount.rawValue, defaultValue: 0)
-    static var notificationCount: Int
+    static var notificationCount: Int {
+        didSet {
+            NotificationCenter.default.post(name: .notificationNumberChanged, object: nil)
+        }
+    }
     
     @ModelsDefault(key: Keys.addCarData.rawValue, defaultValue: nil)
     static var addCarData: AddCarData?
