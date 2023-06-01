@@ -429,7 +429,7 @@ extension Car {
             ownerPhoneNo: self.owner.phoneNo,
             financing: self.details.isFinancingTxt ?? "" ,
             buyingDeposit: self.details.purchaseDeposit?.stringValue ?? "",
-            hasSell: self.details.hasSell ?? false,
+            hasSell: self.details.type == "haraj",
             providerId: self.owner.id
         )
         

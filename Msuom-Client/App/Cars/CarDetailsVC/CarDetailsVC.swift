@@ -126,7 +126,7 @@ class CarDetailsVC: BaseVC {
         self.buyingDepositView.isHidden = details.buyingDeposit.isEmpty
         self.howToSellView.isHidden = details.sellType.isEmpty
         self.descriptionContainerView.isHidden = details.description.isEmpty
-        self.sellButton.isHidden = details.type == "advertise"
+        self.sellButton.isHidden = details.hasSell
         
         
         if details.isMyCar {
