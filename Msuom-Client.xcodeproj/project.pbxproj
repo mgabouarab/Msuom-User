@@ -238,6 +238,10 @@
 		2C8AB0AE29076644003D233E /* NormalTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C8AB0AD29076644003D233E /* NormalTextFieldView.xib */; };
 		2C8AB0B029076AF1003D233E /* UnderLineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AB0AF29076AF1003D233E /* UnderLineButton.swift */; };
 		2C8AB0B32907754C003D233E /* CircleBorderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AB0B22907754C003D233E /* CircleBorderedImageView.swift */; };
+		2C8BF0E92A2893C500319FFD /* ConfirmationPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8BF0E82A2893C500319FFD /* ConfirmationPayVC.swift */; };
+		2C8BF0EE2A28A42B00319FFD /* TryToBuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8BF0EB2A28A42B00319FFD /* TryToBuyCell.swift */; };
+		2C8BF0EF2A28A42B00319FFD /* TryToBuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8BF0EC2A28A42B00319FFD /* TryToBuyVC.swift */; };
+		2C8BF0F02A28A42B00319FFD /* TryToBuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C8BF0ED2A28A42B00319FFD /* TryToBuyCell.xib */; };
 		2C90D52729947BBB009D1039 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C90D52629947BBB009D1039 /* HomeRouter.swift */; };
 		2C918503280DD48F00262AF5 /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C918502280DD48F00262AF5 /* VerificationCodeVC.swift */; };
 		2C918506280DD79400262AF5 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C918505280DD79400262AF5 /* ForgetPasswordVC.swift */; };
@@ -622,6 +626,10 @@
 		2C8AB0AD29076644003D233E /* NormalTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalTextFieldView.xib; sourceTree = "<group>"; };
 		2C8AB0AF29076AF1003D233E /* UnderLineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineButton.swift; sourceTree = "<group>"; };
 		2C8AB0B22907754C003D233E /* CircleBorderedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBorderedImageView.swift; sourceTree = "<group>"; };
+		2C8BF0E82A2893C500319FFD /* ConfirmationPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPayVC.swift; sourceTree = "<group>"; };
+		2C8BF0EB2A28A42B00319FFD /* TryToBuyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryToBuyCell.swift; sourceTree = "<group>"; };
+		2C8BF0EC2A28A42B00319FFD /* TryToBuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryToBuyVC.swift; sourceTree = "<group>"; };
+		2C8BF0ED2A28A42B00319FFD /* TryToBuyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryToBuyCell.xib; sourceTree = "<group>"; };
 		2C90D52629947BBB009D1039 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		2C918502280DD48F00262AF5 /* VerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
 		2C918505280DD79400262AF5 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
@@ -811,6 +819,8 @@
 		2C0FCE952927B34400108FA8 /* Cars */ = {
 			isa = PBXGroup;
 			children = (
+				2C8BF0EA2A28A40600319FFD /* TryToBuyVC */,
+				2C8BF0E72A28938900319FFD /* ConfirmationPayVC */,
 				2C72D165293CC52D00A6AADF /* Validation */,
 				2CF202B0293365B6004DC391 /* CarDetailsVC */,
 				2C0FCE982927B55F00108FA8 /* AddCarVC */,
@@ -2075,6 +2085,24 @@
 			path = ImageView;
 			sourceTree = "<group>";
 		};
+		2C8BF0E72A28938900319FFD /* ConfirmationPayVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C8BF0E82A2893C500319FFD /* ConfirmationPayVC.swift */,
+			);
+			path = ConfirmationPayVC;
+			sourceTree = "<group>";
+		};
+		2C8BF0EA2A28A40600319FFD /* TryToBuyVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C8BF0EB2A28A42B00319FFD /* TryToBuyCell.swift */,
+				2C8BF0EC2A28A42B00319FFD /* TryToBuyVC.swift */,
+				2C8BF0ED2A28A42B00319FFD /* TryToBuyCell.xib */,
+			);
+			path = TryToBuyVC;
+			sourceTree = "<group>";
+		};
 		2C918501280DD44900262AF5 /* VerificationCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -2920,6 +2948,7 @@
 				2C4E9A77299A51EC008787DD /* CarShowHomeCell.xib in Resources */,
 				2CD7FC312A1EA87E0035CADC /* AfterSaleCell.xib in Resources */,
 				2C3D7A802A18F170004DD1FB /* CarInfoView.xib in Resources */,
+				2C8BF0F02A28A42B00319FFD /* TryToBuyCell.xib in Resources */,
 				2C3E225029290E1600C38B57 /* SelectCarImagesView.xib in Resources */,
 				2C8431F229042E8800AC6009 /* PhoneNumberLocalizable.strings in Resources */,
 			);
@@ -3005,6 +3034,7 @@
 				2CF41C8128FC200200BF923D /* ImageViewerVC.swift in Sources */,
 				2CB750AC2905A59800FEDED9 /* PhoneValidationErrors.swift in Sources */,
 				2CB750AA2905A56F00FEDED9 /* PhoneValidationService.swift in Sources */,
+				2C8BF0EE2A28A42B00319FFD /* TryToBuyCell.swift in Sources */,
 				2C2EB29A2A248438006EF7E2 /* FilterStreamsCell.swift in Sources */,
 				2CF038B92A18FCC800AE3042 /* EvaluationViewCell.swift in Sources */,
 				2C6F377A2926B80F00730812 /* DropDownListCell.swift in Sources */,
@@ -3202,6 +3232,7 @@
 				2C178D2F27F7CB1800D32327 /* Double.swift in Sources */,
 				2C68817E2913FB1000AB9C14 /* ProfileRouter.swift in Sources */,
 				2C178D1E27F7CAF900D32327 /* UIDevice.swift in Sources */,
+				2C8BF0EF2A28A42B00319FFD /* TryToBuyVC.swift in Sources */,
 				2CF038BD2A18FCC800AE3042 /* EvaluationModel.swift in Sources */,
 				2C2EB29E2A262799006EF7E2 /* AboutModel.swift in Sources */,
 				2C178CF927F7C4A900D32327 /* Utilities.swift in Sources */,
@@ -3211,6 +3242,7 @@
 				2CFC793C2986BED20089131A /* FQACell.swift in Sources */,
 				2C4E9A6C299A5144008787DD /* ComingAuctionsCell.swift in Sources */,
 				2C178CB327F7C26200D32327 /* Constants.swift in Sources */,
+				2C8BF0E92A2893C500319FFD /* ConfirmationPayVC.swift in Sources */,
 				2CE1436A280C06DC00A601F5 /* CollectionViewContentSized.swift in Sources */,
 				2CD7FC462A1F64450035CADC /* OpenReportVC.swift in Sources */,
 				2C4E9A84299B0737008787DD /* BrowseCarVC.swift in Sources */,

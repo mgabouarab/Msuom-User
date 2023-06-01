@@ -241,6 +241,7 @@
 "Vehicle shipping service" = "خدمة شحن المركبات";
 "Enter your address" = "ادخل العنوان";
 "Select your address" = "اختر العنوان";
+"Select address" = "اختر العنوان";
 "Address" = "العنوان";
 "How Can we help You" = "كيف نقدر نساعدك";
 "Search..." = "بحث...";
@@ -404,4 +405,9 @@
 "After Sale Orders" = "طلبات ما بعد البيع";
 "Waiting provider response" = "بإنتظار رد مقدم الخدمة";
 "Financing" = "التمويل";
-"Try to sell" = "محاولة الشراء";
+"Try to sell" = "طلب الشراء";
+"depositPurchaseText" = "يرجي العلم انه يتوجب دفع عربون قيمته %d ر.س لتتمكن من القيام بعملية الشراء";
+"Please note that a deposit of" = "يرجي العلم انه يتوجب دفع عربون قيمته ";
+" SAR is required to be able to make the purchase" = " ر.س لتتمكن من القيام بعملية الشراء";
+"Please Select car receive type" = "يرجي تحديد طريقة إستلام السيارة";
+"Select payment type" = "إختر وسيلة الدفع";

@@ -16,6 +16,7 @@ enum SettingRouter {
     case policy
     case intro
     case fqs
+    case paymentMethods
 }
 
 extension SettingRouter: APIRouter {
@@ -41,6 +42,8 @@ extension SettingRouter: APIRouter {
             return "intros"
         case .fqs:
             return "fqs"
+        case .paymentMethods:
+            return "paymentMethods"
             
         }
     }

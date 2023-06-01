@@ -12,3 +12,4 @@
 "Notifications" = "Notifications";
 "Chats" = "Chats";
 "My Account" = "My Account";
+"depositPurchaseText" = "Please note that a deposit of %d SAR is required to be able to make the purchase";

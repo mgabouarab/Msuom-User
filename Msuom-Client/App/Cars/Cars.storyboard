@@ -1398,7 +1398,6 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Try to sell"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="callButtonPressed" destination="zap-Eo-Ixx" eventType="touchUpInside" id="ANL-fs-UEW"/>
                                                             <action selector="tryToSellButtonPressed" destination="zap-Eo-Ixx" eventType="touchUpInside" id="3A0-EY-SVz"/>
                                                         </connections>
                                                     </button>
@@ -2233,6 +2232,313 @@
             </objects>
             <point key="canvasLocation" x="1582" y="674"/>
         </scene>
+        <!--Confirmation PayVC-->
+        <scene sceneID="pyf-MR-cdP">
+            <objects>
+                <viewController storyboardIdentifier="ConfirmationPayVC" id="ZGS-jq-Ebs" customClass="ConfirmationPayVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="41W-dS-6ZA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oQQ-iY-tus">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4kL-Ix-jcK">
+                                <rect key="frame" x="0.0" y="465" width="393" height="387"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topSheetIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="TVi-Y0-Wia">
+                                        <rect key="frame" x="147.66666666666666" y="0.0" width="98" height="4"/>
+                                    </imageView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03W-ST-yic" customClass="SheetView" customModule="Msuom_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="12" width="393" height="375"/>
+                                        <subviews>
+                                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wec-5w-Fxq">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="335"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yZs-eO-ea7">
+                                                        <rect key="frame" x="76.666666666666686" y="0.0" width="240" height="1"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="ScX-tO-PLE"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A02-7p-wkF">
+                                                        <rect key="frame" x="76.666666666666686" y="17" width="240" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="Isq-ez-djB"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lru-8b-tyN">
+                                                        <rect key="frame" x="20" y="53" width="353" height="180"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwG-Ym-eOS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="180"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" name="mainDarkFontColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U9q-0w-9NP">
+                                                        <rect key="frame" x="76.666666666666686" y="249" width="240" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="ytf-fG-mb2"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-D0-6WP" customClass="AppButton" customModule="Msuom_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="285" width="353" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Dki-VV-Ilq"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Confirm">
+                                                            <color key="titleColor" name="whiteColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Send"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="confirmButtonPressed" destination="ZGS-jq-Ebs" eventType="touchUpInside" id="6Jy-SJ-POI"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="lru-8b-tyN" firstAttribute="leading" secondItem="wec-5w-Fxq" secondAttribute="leading" constant="20" id="Fi9-0I-gaB"/>
+                                                    <constraint firstItem="EEP-D0-6WP" firstAttribute="leading" secondItem="wec-5w-Fxq" secondAttribute="leading" constant="20" id="xhd-D8-eJP"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="wec-5w-Fxq" firstAttribute="top" secondItem="03W-ST-yic" secondAttribute="top" id="KQo-3E-SLc"/>
+                                            <constraint firstAttribute="trailing" secondItem="wec-5w-Fxq" secondAttribute="trailing" id="UnL-Eu-1IX"/>
+                                            <constraint firstAttribute="bottom" secondItem="wec-5w-Fxq" secondAttribute="bottom" constant="40" id="eYJ-xe-KZT"/>
+                                            <constraint firstItem="wec-5w-Fxq" firstAttribute="leading" secondItem="03W-ST-yic" secondAttribute="leading" id="v7Z-rb-qTd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="03W-ST-yic" firstAttribute="leading" secondItem="4kL-Ix-jcK" secondAttribute="leading" id="CJd-0M-QVn"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gIf-FL-Mus"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oQQ-iY-tus" firstAttribute="top" secondItem="41W-dS-6ZA" secondAttribute="top" id="7iw-OP-iJQ"/>
+                            <constraint firstItem="oQQ-iY-tus" firstAttribute="trailing" secondItem="gIf-FL-Mus" secondAttribute="trailing" id="8lN-pL-6bK"/>
+                            <constraint firstItem="4kL-Ix-jcK" firstAttribute="leading" secondItem="gIf-FL-Mus" secondAttribute="leading" id="CQx-pD-q0E"/>
+                            <constraint firstItem="oQQ-iY-tus" firstAttribute="leading" secondItem="gIf-FL-Mus" secondAttribute="leading" id="DBU-DP-5ko"/>
+                            <constraint firstAttribute="bottom" secondItem="oQQ-iY-tus" secondAttribute="bottom" id="DKF-C5-dW4"/>
+                            <constraint firstAttribute="trailing" secondItem="4kL-Ix-jcK" secondAttribute="trailing" id="clk-1P-dRk"/>
+                            <constraint firstAttribute="bottom" secondItem="4kL-Ix-jcK" secondAttribute="bottom" id="jg6-oM-nzi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="KwG-Ym-eOS" id="85c-tU-KXe"/>
+                        <outlet property="dismissImageView" destination="oQQ-iY-tus" id="edm-lf-8MN"/>
+                        <outlet property="sheetView" destination="4kL-Ix-jcK" id="GlP-KQ-OS3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ond-WW-1bG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2416" y="674"/>
+        </scene>
+        <!--Try To BuyVC-->
+        <scene sceneID="3VR-bW-2nh">
+            <objects>
+                <viewController storyboardIdentifier="TryToBuyVC" id="lI9-vL-hTI" customClass="TryToBuyVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vow-vE-95y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuv-Lz-ttT">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VDT-52-vbb">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="682.33333333333337"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9eZ-jA-Q8t">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="8"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="8" id="ovA-Ac-7BM"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select car receive type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBg-Xe-Wzu">
+                                                <rect key="frame" x="16" y="24" width="361" height="21.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="textColor" name="mainDarkFontColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Please Select car receive type"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Pq9-CX-pKl">
+                                                <rect key="frame" x="0.0" y="61.666666666666671" width="393" height="60"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WLM-nc-gNw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="16" id="6cG-PJ-Vay"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yj-3L-D48">
+                                                        <rect key="frame" x="20" y="0.0" width="30" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="BnG-Vu-doV"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="radioButtonUnSelected"/>
+                                                        <state key="selected" image="radioButton"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QB-41-upB">
+                                                        <rect key="frame" x="54" y="0.0" width="319" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Delivery"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2us-w1-q4T">
+                                                        <rect key="frame" x="377" y="0.0" width="16" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="16" id="icL-1S-3o9"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="mainWithAlph"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="YaM-AN-S6H"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="yx3-2q-moK" customClass="SelectLocationView" customModule="Msuom_Client" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="137.66666666666666" width="361" height="77"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="addressMarker"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Address"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Select address"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRequired" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="2zb-Fv-n7Y">
+                                                <rect key="frame" x="0.0" y="230.66666666666669" width="393" height="60"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1J-Am-cvN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="16" id="w2u-9O-szp"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sc-F5-aoP">
+                                                        <rect key="frame" x="20" y="0.0" width="30" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="31X-Kn-szv"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="radioButtonUnSelected"/>
+                                                        <state key="selected" image="radioButton"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZA-JG-dVQ">
+                                                        <rect key="frame" x="54" y="0.0" width="319" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Receive"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FBF-Lf-biU">
+                                                        <rect key="frame" x="377" y="0.0" width="16" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="16" id="WTK-Qn-yoy"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="mainWithAlph"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="W4j-Pa-En6"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select payment type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcA-uv-jMm">
+                                                <rect key="frame" x="16" y="306.66666666666669" width="361" height="21.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="textColor" name="mainDarkFontColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Select payment type"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="128" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="x9q-IT-wY9" customClass="TableViewContentSized" customModule="Msuom_Client" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="344.33333333333331" width="393" height="128"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="Tsv-tI-V5C">
+                                                <rect key="frame" x="76.666666666666686" y="488.33333333333337" width="240" height="128"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-rs-bgB" customClass="MainAppButton" customModule="Msuom_Client" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="632.33333333333337" width="353" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ALz-Eu-KCZ"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Confirm"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Confirm"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirmButtonPressed" destination="lI9-vL-hTI" eventType="touchUpInside" id="mOF-MQ-0ae"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="FcA-uv-jMm" firstAttribute="leading" secondItem="VDT-52-vbb" secondAttribute="leading" constant="16" id="Fdl-eX-jod"/>
+                                            <constraint firstItem="yx3-2q-moK" firstAttribute="leading" secondItem="VDT-52-vbb" secondAttribute="leading" constant="16" id="Gsi-ha-cSC"/>
+                                            <constraint firstItem="Pq9-CX-pKl" firstAttribute="leading" secondItem="VDT-52-vbb" secondAttribute="leading" id="Muh-rs-CSc"/>
+                                            <constraint firstItem="2zb-Fv-n7Y" firstAttribute="leading" secondItem="VDT-52-vbb" secondAttribute="leading" id="bt4-MX-cB8"/>
+                                            <constraint firstItem="x9q-IT-wY9" firstAttribute="leading" secondItem="VDT-52-vbb" secondAttribute="leading" id="g08-fk-8RT"/>
+                                            <constraint firstItem="PBg-Xe-Wzu" firstAttribute="leading" secondItem="VDT-52-vbb" secondAttribute="leading" constant="16" id="i0V-o9-PeG"/>
+                                            <constraint firstItem="c3O-rs-bgB" firstAttribute="leading" secondItem="VDT-52-vbb" secondAttribute="leading" constant="20" id="ny8-gL-J9i"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VDT-52-vbb" secondAttribute="bottom" id="0We-aZ-Bnt"/>
+                                    <constraint firstItem="VDT-52-vbb" firstAttribute="top" secondItem="iuv-Lz-ttT" secondAttribute="top" id="JpK-WU-Rwg"/>
+                                    <constraint firstItem="VDT-52-vbb" firstAttribute="width" secondItem="iuv-Lz-ttT" secondAttribute="width" id="jln-Nu-3Kh"/>
+                                    <constraint firstItem="VDT-52-vbb" firstAttribute="leading" secondItem="iuv-Lz-ttT" secondAttribute="leading" id="kMJ-IA-uG1"/>
+                                    <constraint firstAttribute="trailing" secondItem="VDT-52-vbb" secondAttribute="trailing" id="uj0-jn-WNM"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zkp-22-rYg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zkp-22-rYg" firstAttribute="bottom" secondItem="iuv-Lz-ttT" secondAttribute="bottom" id="NJm-8U-lMB"/>
+                            <constraint firstItem="iuv-Lz-ttT" firstAttribute="trailing" secondItem="zkp-22-rYg" secondAttribute="trailing" id="P9e-7f-ytK"/>
+                            <constraint firstItem="iuv-Lz-ttT" firstAttribute="leading" secondItem="zkp-22-rYg" secondAttribute="leading" id="Rsp-11-vPs"/>
+                            <constraint firstItem="iuv-Lz-ttT" firstAttribute="top" secondItem="zkp-22-rYg" secondAttribute="top" id="o91-U0-R5Q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressView" destination="yx3-2q-moK" id="dVs-uD-ULa"/>
+                        <outlet property="deliveryButton" destination="7Yj-3L-D48" id="xPf-2X-Cyi"/>
+                        <outlet property="deliveryView" destination="Pq9-CX-pKl" id="AWX-PT-XA8"/>
+                        <outlet property="receiveButton" destination="6Sc-F5-aoP" id="bb5-l7-0Sb"/>
+                        <outlet property="receiveView" destination="2zb-Fv-n7Y" id="8JF-8z-8QF"/>
+                        <outlet property="scrollView" destination="iuv-Lz-ttT" id="p8u-0m-pPI"/>
+                        <outlet property="tableView" destination="x9q-IT-wY9" id="zOl-Y2-li6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMn-aM-FKB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3154.9618320610684" y="673.94366197183103"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="zaz-LN-PSz">
@@ -2240,6 +2546,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="addressMarker" width="10" height="14"/>
         <image name="carCategory" width="22" height="22"/>
         <image name="carColor" width="22" height="22"/>
         <image name="carCylinderType" width="22" height="22"/>
@@ -2259,6 +2566,7 @@
         <image name="checkBox-Wait" width="16" height="16"/>
         <image name="radioButton" width="22" height="22"/>
         <image name="radioButtonUnSelected" width="22" height="22"/>
+        <image name="topSheetIndicator" width="98" height="4"/>
         <namedColor name="errorColor">
             <color red="0.92500001192092896" green="0.18400000035762787" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -68,6 +68,16 @@ enum CarRouter {
     case providers(page: Int)
     case providerFilter(name: String?, brandId: String?, cityId: String?, page: Int)
     case providerDetails(id: String, page: Int)
+    case purchaseOrders(
+        carId: String,
+        providerId: String,
+        isDelivery: Bool,
+        latitude: Double?,
+        longitude: Double?,
+        address: String?,
+        paymentMethod: String,
+        price: String
+    )
 }
 
 extension CarRouter: APIRouter {
@@ -102,6 +112,8 @@ extension CarRouter: APIRouter {
             return .get
         case .providerDetails:
             return .get
+        case .purchaseOrders:
+            return .post
         }
     }
     
@@ -135,6 +147,8 @@ extension CarRouter: APIRouter {
             return "providerFilter"
         case .providerDetails:
             return "providerDetails"
+        case .purchaseOrders:
+            return "purchaseOrders"
         }
     }
     
@@ -303,6 +317,27 @@ extension CarRouter: APIRouter {
                 "page": page,
                 "limit": listLimit
             ]
+        case .purchaseOrders(
+            let carId,
+            let providerId,
+            let isDelivery,
+            let latitude,
+            let longitude,
+            let address,
+            let paymentMethod,
+            let price
+        ):
+            return [
+                "carId": carId,
+                "providerId": providerId,
+                "isDelivery": isDelivery,
+                "latitude": latitude,
+                "longitude": longitude,
+                "address": address,
+                "paymentMethod": paymentMethod,
+                "price": price
+            ]
+            
         }
     }
     

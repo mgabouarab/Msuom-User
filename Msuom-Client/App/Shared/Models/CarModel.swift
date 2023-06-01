@@ -180,6 +180,7 @@ extension Car {
         let financing: String
         let buyingDeposit: String
         let hasSell: Bool
+        let providerId: String?
     }
     
     //MARK: - Views Data -
@@ -428,7 +429,8 @@ extension Car {
             ownerPhoneNo: self.owner.phoneNo,
             financing: self.details.isFinancingTxt ?? "" ,
             buyingDeposit: self.details.purchaseDeposit?.stringValue ?? "",
-            hasSell: self.details.hasSell ?? false
+            hasSell: self.details.hasSell ?? false,
+            providerId: self.owner.id
         )
         
     }

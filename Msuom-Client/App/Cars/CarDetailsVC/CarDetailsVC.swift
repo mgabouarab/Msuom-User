@@ -126,7 +126,7 @@ class CarDetailsVC: BaseVC {
         self.buyingDepositView.isHidden = details.buyingDeposit.isEmpty
         self.howToSellView.isHidden = details.sellType.isEmpty
         self.descriptionContainerView.isHidden = details.description.isEmpty
-        self.sellButton.isHidden = !details.hasSell
+        self.sellButton.isHidden = details.type == "advertise"
         
         
         if details.isMyCar {
@@ -214,8 +214,10 @@ class CarDetailsVC: BaseVC {
         PhoneAction.call(number: self.ownerPhoneNo)
     }
     @IBAction private func tryToSellButtonPressed() {
-//        self.showIndicator()
-        
+        if let price = details?.buyingDeposit {
+            let vc = ConfirmationPayVC.create(delegate: self, price: price)
+            self.present(vc, animated: false)
+        }
     }
     
 }
@@ -246,4 +248,12 @@ extension CarDetailsVC {
 //MARK: - Routes -
 extension CarDetailsVC {
     
+}
+//MARK: - Delegation -
+extension CarDetailsVC: ConfirmationPayDelegate {
+    func didConfirm() {
+        guard let carId = self.id, let providerId = self.details?.providerId, let price = self.details?.buyingDeposit else {return}
+        let vc = TryToBuyVC.create(carId: carId, providerId: providerId, price: price)
+        self.push(vc)
+    }
 }
