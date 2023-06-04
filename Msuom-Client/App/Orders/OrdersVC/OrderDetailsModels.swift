@@ -40,6 +40,7 @@ struct EvaluationOrderDetails: Codable {
     let typeName: String?
     let walkway: String?
     let orderStatusTxt: String?
+    let deliveryPrice: Double?
 }
 
 struct PurchaseOrderDetails: Codable {
@@ -83,6 +84,5 @@ struct SummaryReportDetails: Codable {
     let typeName: String?
     let year: String?
     let orderStatusTxt: String?
-    
-    
+    let deliveryPrice: Double?
 }

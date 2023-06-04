@@ -139,7 +139,7 @@ extension TryToBuyVC: UITableViewDelegate {
         self.tableView.reloadData()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        90
+        50
     }
 }
 //MARK: - End Of TableView -

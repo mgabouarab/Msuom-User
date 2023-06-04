@@ -65,10 +65,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-gJ-iiU">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="359.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="620.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9Kg-Fp-UAg">
-                                                <rect key="frame" x="16" y="20" width="361" height="319.33333333333331"/>
+                                                <rect key="frame" x="16" y="20" width="361" height="580.33333333333337"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="124.33333333333333" translatesAutoresizingMaskIntoConstraints="NO" id="RDB-ch-83u" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="124.33333333333333"/>
@@ -206,8 +206,8 @@
                                                             <constraint firstAttribute="bottom" secondItem="NVf-FA-8eG" secondAttribute="bottom" constant="8" id="wv0-kO-U0o"/>
                                                         </constraints>
                                                     </view>
-                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="POS-MS-B3L">
-                                                        <rect key="frame" x="0.0" y="294.33333333333331" width="361" height="50"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="POS-MS-B3L">
+                                                        <rect key="frame" x="0.0" y="302.33333333333331" width="361" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrd-Xn-GHc" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="50"/>
@@ -241,7 +241,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting provider response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTx-te-4Td">
-                                                        <rect key="frame" x="0.0" y="302.33333333333331" width="361" height="17"/>
+                                                        <rect key="frame" x="0.0" y="368.33333333333331" width="361" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" name="mainDarkFontColor"/>
                                                         <nil key="highlightedColor"/>
@@ -249,14 +249,14 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Waiting provider response"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxZ-VD-Ywc" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="319.33333333333331" width="361" height="33"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxZ-VD-Ywc" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="401.33333333333331" width="361" height="178.99999999999994"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="12d-ZK-ED0">
-                                                                <rect key="frame" x="0.0" y="8" width="361" height="17"/>
+                                                                <rect key="frame" x="0.0" y="8" width="361" height="163"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select payment method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xb1-Pw-t8T">
-                                                                        <rect key="frame" x="16" y="0.0" width="329" height="0.0"/>
+                                                                        <rect key="frame" x="16" y="0.0" width="329" height="18"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                                         <color key="textColor" name="mainDarkFontColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -265,14 +265,14 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQR-4Y-BXQ">
-                                                                        <rect key="frame" x="0.0" y="8" width="361" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="26.000000000000057" width="361" height="1"/>
                                                                         <color key="backgroundColor" name="separatorColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="pgC-Af-ci1"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XeS-vU-Lb8" customClass="TableViewContentSized" customModule="Msuom_Client" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="17" width="361" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="35.000000000000057" width="361" height="128"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </tableView>
                                                                 </subviews>
@@ -384,10 +384,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ErX-cD-S3v">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="532"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0aw-Yn-cpv">
-                                                <rect key="frame" x="16" y="20" width="361" height="492"/>
+                                                <rect key="frame" x="16" y="20" width="361" height="753"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5D-QH-2fb" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="90"/>
@@ -565,8 +565,8 @@
                                                                                                     <constraint firstAttribute="height" constant="22" id="vgd-kP-3oE"/>
                                                                                                 </constraints>
                                                                                             </imageView>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walkway:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kar-wN-Jj1">
-                                                                                                <rect key="frame" x="26" y="0.0" width="0.0" height="22"/>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Walkway:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kar-wN-Jj1">
+                                                                                                <rect key="frame" x="26" y="0.0" width="53" height="22"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                                 <color key="textColor" name="secondaryDarkFontColor"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -575,13 +575,13 @@
                                                                                                 </userDefinedRuntimeAttributes>
                                                                                             </label>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qpv-Jk-lYF">
-                                                                                                <rect key="frame" x="30" y="0.0" width="25.666666666666671" height="22"/>
+                                                                                                <rect key="frame" x="83" y="0.0" width="0.0" height="22"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                                 <nil key="textColor"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LkS-AT-9OA">
-                                                                                                <rect key="frame" x="59.666666666666657" y="0.0" width="52.666666666666657" height="22"/>
+                                                                                                <rect key="frame" x="87" y="0.0" width="25.333333333333329" height="22"/>
                                                                                             </imageView>
                                                                                         </subviews>
                                                                                     </stackView>
@@ -609,7 +609,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Opp-oe-X6k">
-                                                        <rect key="frame" x="0.0" y="106" width="361" height="352"/>
+                                                        <rect key="frame" x="0.0" y="106" width="361" height="613"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="8IN-21-JCx" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="120"/>
@@ -656,8 +656,42 @@
                                                                     <constraint firstAttribute="bottom" secondItem="2xp-UE-nqC" secondAttribute="bottom" constant="8" id="rx7-sB-C3G"/>
                                                                 </constraints>
                                                             </view>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c5M-6J-zOr">
+                                                                <rect key="frame" x="0.0" y="136" width="361" height="50"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tw-xy-NgC" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="50"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="Accept"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Accept"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="acceptButtonPressed" destination="ngs-qW-meh" eventType="touchUpInside" id="0Cy-SA-1j9"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83a-li-JZn">
+                                                                        <rect key="frame" x="190.66666666666663" y="0.0" width="170.33333333333337" height="50"/>
+                                                                        <color key="backgroundColor" name="errorColor"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="Refuse"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Refuse"/>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <integer key="value" value="10"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="refuseButtonPressed" destination="ngs-qW-meh" eventType="touchUpInside" id="7Ue-y6-wia"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="B9f-Bl-ECE"/>
+                                                                </constraints>
+                                                            </stackView>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="y2J-8w-guf" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="136" width="361" height="120"/>
+                                                                <rect key="frame" x="0.0" y="202" width="361" height="120"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wdf-m0-n2d">
                                                                         <rect key="frame" x="0.0" y="8" width="361" height="104"/>
@@ -702,7 +736,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-NF-Y8c" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="272" width="361" height="80"/>
+                                                                <rect key="frame" x="0.0" y="338" width="361" height="80"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRT-Vj-WJI">
                                                                         <rect key="frame" x="163" y="8" width="35" height="64"/>
@@ -722,14 +756,14 @@
                                                                     <constraint firstAttribute="height" constant="80" id="ggK-zI-f77"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjD-sS-dOL" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="352" width="361" height="33"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjD-sS-dOL" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="434" width="361" height="179"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uU7-jm-vjm">
-                                                                        <rect key="frame" x="0.0" y="8" width="361" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="8" width="361" height="163"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select payment method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9sq-dQ-Ecn">
-                                                                                <rect key="frame" x="16" y="0.0" width="329" height="0.0"/>
+                                                                                <rect key="frame" x="16" y="0.0" width="329" height="18"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                                                 <color key="textColor" name="mainDarkFontColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -738,14 +772,14 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0o1-dz-Yb5">
-                                                                                <rect key="frame" x="0.0" y="8" width="361" height="1"/>
+                                                                                <rect key="frame" x="0.0" y="26" width="361" height="1"/>
                                                                                 <color key="backgroundColor" name="separatorColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="1" id="t8w-mS-iuC"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6ki-Ew-hQf" customClass="TableViewContentSized" customModule="Msuom_Client" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="17" width="361" height="0.0"/>
+                                                                                <rect key="frame" x="0.0" y="35" width="361" height="128"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </tableView>
                                                                         </subviews>
@@ -768,7 +802,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting provider response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VY-bA-qSK">
-                                                        <rect key="frame" x="0.0" y="474" width="361" height="18"/>
+                                                        <rect key="frame" x="0.0" y="735" width="361" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" name="mainDarkFontColor"/>
                                                         <nil key="highlightedColor"/>
@@ -797,24 +831,63 @@
                                     <constraint firstAttribute="trailing" secondItem="ErX-cD-S3v" secondAttribute="trailing" id="kzD-7k-kqZ"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w19-z5-QUY">
+                                <rect key="frame" x="0.0" y="752" width="393" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOE-Tx-XDt" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="15" width="353" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="DlR-0Q-4aL"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Confirm">
+                                            <color key="titleColor" name="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Confirm"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confirmButtonPressed" destination="ngs-qW-meh" eventType="touchUpInside" id="hZu-Rb-lYf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="oOE-Tx-XDt" firstAttribute="top" secondItem="w19-z5-QUY" secondAttribute="top" constant="15" id="0tX-Po-0nv"/>
+                                    <constraint firstAttribute="trailing" secondItem="oOE-Tx-XDt" secondAttribute="trailing" constant="20" id="J03-kb-gVB"/>
+                                    <constraint firstItem="oOE-Tx-XDt" firstAttribute="leading" secondItem="w19-z5-QUY" secondAttribute="leading" constant="20" id="V49-xO-Sra"/>
+                                    <constraint firstAttribute="height" constant="100" id="dX4-en-b19"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PGz-JF-wtw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="w19-z5-QUY" firstAttribute="leading" secondItem="PGz-JF-wtw" secondAttribute="leading" id="1Dc-2Q-qcv"/>
                             <constraint firstItem="rCH-BB-7vv" firstAttribute="leading" secondItem="PGz-JF-wtw" secondAttribute="leading" id="Lcv-Ot-44y"/>
                             <constraint firstItem="PGz-JF-wtw" firstAttribute="bottom" secondItem="rCH-BB-7vv" secondAttribute="bottom" id="Zo2-Tc-Zqu"/>
+                            <constraint firstAttribute="trailing" secondItem="w19-z5-QUY" secondAttribute="trailing" id="bm3-eI-k8p"/>
                             <constraint firstItem="rCH-BB-7vv" firstAttribute="top" secondItem="PGz-JF-wtw" secondAttribute="top" id="eyd-G5-QMn"/>
+                            <constraint firstAttribute="bottom" secondItem="w19-z5-QUY" secondAttribute="bottom" id="inR-1d-rgw"/>
                             <constraint firstItem="PGz-JF-wtw" firstAttribute="trailing" secondItem="rCH-BB-7vv" secondAttribute="trailing" id="pLN-d8-CpS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="acceptRefuseStackView" destination="c5M-6J-zOr" id="qYC-sa-Ify"/>
                         <outlet property="brandLabel" destination="E6B-FT-l3t" id="Unk-ey-ERm"/>
                         <outlet property="categoryLabel" destination="uj6-Pg-FUD" id="jeg-lA-6KN"/>
+                        <outlet property="confirmView" destination="w19-z5-QUY" id="j9I-EC-eOA"/>
                         <outlet property="infoView" destination="Opp-oe-X6k" id="wUt-De-wDz"/>
                         <outlet property="notesLabel" destination="3kC-Gs-PHv" id="snK-Dn-JGf"/>
+                        <outlet property="notesView" destination="y2J-8w-guf" id="aca-Jw-OB1"/>
                         <outlet property="orderNumberLabel" destination="rtB-yW-UDh" id="ndo-VK-he2"/>
+                        <outlet property="orderStatusLabel" destination="4VY-bA-qSK" id="Xgl-TC-lGZ"/>
+                        <outlet property="paymentView" destination="FjD-sS-dOL" id="u4G-fN-blv"/>
+                        <outlet property="pdfFileView" destination="F6H-NF-Y8c" id="q58-L2-ju3"/>
                         <outlet property="priceLabel" destination="opE-2b-PVp" id="zup-Lb-XBy"/>
+                        <outlet property="priceView" destination="8IN-21-JCx" id="vT7-PB-ItJ"/>
                         <outlet property="statusLabel" destination="0Ka-Ti-dCg" id="ohE-DX-Mn7"/>
+                        <outlet property="tableView" destination="6ki-Ew-hQf" id="pme-zi-qcH"/>
                         <outlet property="typeLabel" destination="bmg-Od-dJz" id="Jg7-31-yze"/>
                         <outlet property="waitingView" destination="4VY-bA-qSK" id="QvX-bm-ABr"/>
                         <outlet property="walkwayLabel" destination="qpv-Jk-lYF" id="AaR-EK-bZ2"/>
@@ -836,10 +909,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wI0-CE-BWA">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="889"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1286"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="d64-C3-sJM">
-                                                <rect key="frame" x="16" y="20" width="361" height="849"/>
+                                                <rect key="frame" x="16" y="20" width="361" height="1246"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZV-MJ-vAg" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="719"/>
@@ -929,8 +1002,87 @@
                                                             <constraint firstAttribute="bottom" secondItem="H0p-kU-3AL" secondAttribute="bottom" constant="8" id="gAl-fI-606"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="YUd-rT-ohN" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="735" width="361" height="120"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kgu-Qt-hq5">
+                                                                <rect key="frame" x="0.0" y="8" width="361" height="104"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Report price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaz-xZ-V4O">
+                                                                        <rect key="frame" x="16" y="0.0" width="329" height="37"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <color key="textColor" name="mainDarkFontColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Report price:"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kv2-xU-6z8">
+                                                                        <rect key="frame" x="0.0" y="45" width="361" height="1"/>
+                                                                        <color key="backgroundColor" name="separatorColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="eqD-Ee-cf1"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyw-z2-1iv">
+                                                                        <rect key="frame" x="16" y="54" width="329" height="50"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <color key="textColor" name="secondaryColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="tyw-z2-1iv" firstAttribute="leading" secondItem="Kgu-Qt-hq5" secondAttribute="leading" constant="16" id="EyC-8G-4Qv"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="kv2-xU-6z8" secondAttribute="trailing" id="Y3g-pR-UIT"/>
+                                                                    <constraint firstItem="Uaz-xZ-V4O" firstAttribute="leading" secondItem="Kgu-Qt-hq5" secondAttribute="leading" constant="16" id="mNY-fH-gG6"/>
+                                                                    <constraint firstItem="kv2-xU-6z8" firstAttribute="leading" secondItem="Kgu-Qt-hq5" secondAttribute="leading" id="ql9-jF-MYR"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="Kgu-Qt-hq5" secondAttribute="bottom" constant="8" id="DJL-r6-G7c"/>
+                                                            <constraint firstItem="Kgu-Qt-hq5" firstAttribute="leading" secondItem="YUd-rT-ohN" secondAttribute="leading" id="pa0-09-Zv5"/>
+                                                            <constraint firstItem="Kgu-Qt-hq5" firstAttribute="top" secondItem="YUd-rT-ohN" secondAttribute="top" constant="8" id="u52-pk-tj6"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Kgu-Qt-hq5" secondAttribute="trailing" id="zrf-PQ-AAb"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ARG-ft-p7c">
+                                                        <rect key="frame" x="0.0" y="871" width="361" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hh-Rs-BDk" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="50"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Accept"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Accept"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="acceptButtonPressed" destination="ynF-fg-FgP" eventType="touchUpInside" id="0kS-Zl-Bq8"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6b-49-pjv">
+                                                                <rect key="frame" x="190.66666666666663" y="0.0" width="170.33333333333337" height="50"/>
+                                                                <color key="backgroundColor" name="errorColor"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Refuse"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Refuse"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="refuseButtonPressed" destination="ynF-fg-FgP" eventType="touchUpInside" id="2pN-zj-xf1"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="dZf-ba-4Rt"/>
+                                                        </constraints>
+                                                    </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwz-JV-lEW" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="735" width="361" height="80"/>
+                                                        <rect key="frame" x="0.0" y="937" width="361" height="80"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYz-Gf-Ech">
                                                                 <rect key="frame" x="163" y="8" width="35" height="64"/>
@@ -951,7 +1103,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pU-t0-ELP" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="823" width="361" height="33"/>
+                                                        <rect key="frame" x="0.0" y="1025" width="361" height="33"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CMy-bL-vCp">
                                                                 <rect key="frame" x="0.0" y="8" width="361" height="17"/>
@@ -994,7 +1146,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting provider response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8X-XI-lWg">
-                                                        <rect key="frame" x="0.0" y="831" width="361" height="18"/>
+                                                        <rect key="frame" x="0.0" y="1033" width="361" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" name="mainDarkFontColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1002,6 +1154,49 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Waiting provider response"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLi-09-TGh" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="1067" width="361" height="179"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Yuk-Nl-TVW">
+                                                                <rect key="frame" x="0.0" y="8" width="361" height="163"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select payment method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rkC-rJ-uyO">
+                                                                        <rect key="frame" x="16" y="0.0" width="329" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <color key="textColor" name="mainDarkFontColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Select payment method:"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-6l-JdQ">
+                                                                        <rect key="frame" x="0.0" y="26" width="361" height="1"/>
+                                                                        <color key="backgroundColor" name="separatorColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="pQo-qt-9Sw"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R0V-ss-dH9" customClass="TableViewContentSized" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="35" width="361" height="128"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </tableView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="R0V-ss-dH9" firstAttribute="leading" secondItem="Yuk-Nl-TVW" secondAttribute="leading" id="FI7-rj-EOE"/>
+                                                                    <constraint firstItem="rkC-rJ-uyO" firstAttribute="leading" secondItem="Yuk-Nl-TVW" secondAttribute="leading" constant="16" id="MWE-w0-d4A"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="q4a-6l-JdQ" secondAttribute="trailing" id="bC8-ZS-JUt"/>
+                                                                    <constraint firstItem="q4a-6l-JdQ" firstAttribute="leading" secondItem="Yuk-Nl-TVW" secondAttribute="leading" id="rKm-gj-bYf"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Yuk-Nl-TVW" firstAttribute="leading" secondItem="FLi-09-TGh" secondAttribute="leading" id="StO-g3-cVO"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Yuk-Nl-TVW" secondAttribute="bottom" constant="8" id="ZrG-pt-4YW"/>
+                                                            <constraint firstItem="Yuk-Nl-TVW" firstAttribute="top" secondItem="FLi-09-TGh" secondAttribute="top" constant="8" id="bMs-Ts-XYV"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Yuk-Nl-TVW" secondAttribute="trailing" id="zPw-aE-Slg"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -1023,20 +1218,59 @@
                                     <constraint firstItem="wI0-CE-BWA" firstAttribute="width" secondItem="Imm-th-WHt" secondAttribute="width" id="ydT-zb-XX2"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-Bq-bu8">
+                                <rect key="frame" x="0.0" y="752" width="393" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eo5-vh-IKi" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="15" width="353" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Nq5-Es-wVo"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Confirm">
+                                            <color key="titleColor" name="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Confirm"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confirmButtonPressed" destination="ynF-fg-FgP" eventType="touchUpInside" id="Jga-Jx-Lwg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Eo5-vh-IKi" firstAttribute="top" secondItem="UL1-Bq-bu8" secondAttribute="top" constant="15" id="3dm-9r-oYl"/>
+                                    <constraint firstItem="Eo5-vh-IKi" firstAttribute="leading" secondItem="UL1-Bq-bu8" secondAttribute="leading" constant="20" id="MCv-QX-qif"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eo5-vh-IKi" secondAttribute="trailing" constant="20" id="YKJ-wo-ewd"/>
+                                    <constraint firstAttribute="height" constant="100" id="jcd-oa-BnA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XET-hr-Hzp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="UL1-Bq-bu8" firstAttribute="leading" secondItem="SVP-F0-8dX" secondAttribute="leading" id="3Do-SH-5Rz"/>
+                            <constraint firstAttribute="bottom" secondItem="UL1-Bq-bu8" secondAttribute="bottom" id="J78-Ns-qFc"/>
                             <constraint firstItem="Imm-th-WHt" firstAttribute="top" secondItem="XET-hr-Hzp" secondAttribute="top" id="Kbg-FS-NZO"/>
                             <constraint firstItem="XET-hr-Hzp" firstAttribute="bottom" secondItem="Imm-th-WHt" secondAttribute="bottom" id="LFm-hO-mUG"/>
                             <constraint firstItem="XET-hr-Hzp" firstAttribute="trailing" secondItem="Imm-th-WHt" secondAttribute="trailing" id="VWu-gE-JN6"/>
                             <constraint firstItem="Imm-th-WHt" firstAttribute="leading" secondItem="XET-hr-Hzp" secondAttribute="leading" id="Xx2-qy-Ybh"/>
+                            <constraint firstItem="XET-hr-Hzp" firstAttribute="trailing" secondItem="UL1-Bq-bu8" secondAttribute="trailing" id="jc0-xP-J4z"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="acceptRefuseStackView" destination="ARG-ft-p7c" id="Zhz-jD-7xK"/>
                         <outlet property="bodyLabel" destination="3Yz-Cw-EkI" id="wQG-MK-BQD"/>
+                        <outlet property="confirmView" destination="UL1-Bq-bu8" id="fkS-DB-3u9"/>
                         <outlet property="imageView" destination="o37-BZ-5Lt" id="ww4-Bn-NoH"/>
                         <outlet property="orderNumberLabel" destination="eRp-fS-Dkc" id="K8b-e3-iRX"/>
+                        <outlet property="orderStatusLabel" destination="X8X-XI-lWg" id="0GB-XZ-GuO"/>
+                        <outlet property="paymentView" destination="FLi-09-TGh" id="SQl-yq-aLQ"/>
+                        <outlet property="pdfFileView" destination="vwz-JV-lEW" id="ZeL-lZ-mJt"/>
+                        <outlet property="priceLabel" destination="tyw-z2-1iv" id="UnR-lS-2CD"/>
+                        <outlet property="priceView" destination="LZV-MJ-vAg" id="scL-HG-0un"/>
+                        <outlet property="tableView" destination="R0V-ss-dH9" id="FsV-my-9Nf"/>
                         <outlet property="titleLabel" destination="Bbg-dJ-CLa" id="WVm-bU-57k"/>
                     </connections>
                 </viewController>
@@ -1056,10 +1290,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaD-iB-K4p">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1041"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1120"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="X4z-cb-SJw">
-                                                <rect key="frame" x="16" y="20" width="361" height="1001"/>
+                                                <rect key="frame" x="16" y="20" width="361" height="1080"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O34-IT-zKR" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="110"/>
@@ -1203,30 +1437,8 @@
                                                             <constraint firstItem="hjg-94-Tyw" firstAttribute="top" secondItem="GJz-WE-5p6" secondAttribute="top" constant="8" id="kge-8v-4iv"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pw-8W-XOX" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="735" width="361" height="100"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for the service provider's response" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2F5-Fc-lQd">
-                                                                <rect key="frame" x="16" y="16" width="329" height="68"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                                <color key="textColor" name="mainColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Waiting for the service provider's response"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="2F5-Fc-lQd" secondAttribute="trailing" constant="16" id="EY6-oE-Bco"/>
-                                                            <constraint firstItem="2F5-Fc-lQd" firstAttribute="top" secondItem="8pw-8W-XOX" secondAttribute="top" constant="16" id="bbe-zh-2cF"/>
-                                                            <constraint firstItem="2F5-Fc-lQd" firstAttribute="leading" secondItem="8pw-8W-XOX" secondAttribute="leading" constant="16" id="dim-Ag-6fb"/>
-                                                            <constraint firstAttribute="height" constant="100" id="m7R-UO-5Mq"/>
-                                                            <constraint firstAttribute="bottom" secondItem="2F5-Fc-lQd" secondAttribute="bottom" constant="16" id="pBj-pg-F3u"/>
-                                                        </constraints>
-                                                    </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="26R-ux-amE">
-                                                        <rect key="frame" x="0.0" y="851" width="361" height="50"/>
+                                                        <rect key="frame" x="0.0" y="735" width="361" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1P-kv-ukD" customClass="SubMainAppButton" customModule="Msuom_Client" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="170.66666666666666" height="50"/>
@@ -1259,8 +1471,51 @@
                                                             <constraint firstAttribute="height" constant="50" id="cGD-OL-c4n"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4su-HN-eNP" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="801" width="361" height="179"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PcO-sO-NDf">
+                                                                <rect key="frame" x="0.0" y="8" width="361" height="163"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select payment method:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2Wn-fF-Val">
+                                                                        <rect key="frame" x="16" y="0.0" width="329" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                                        <color key="textColor" name="mainDarkFontColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Select payment method:"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </label>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwu-sF-MLi">
+                                                                        <rect key="frame" x="0.0" y="26" width="361" height="1"/>
+                                                                        <color key="backgroundColor" name="separatorColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="N6q-MS-PSP"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JAd-DT-H49" customClass="TableViewContentSized" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="35" width="361" height="128"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </tableView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="fwu-sF-MLi" firstAttribute="leading" secondItem="PcO-sO-NDf" secondAttribute="leading" id="GND-yi-Vr4"/>
+                                                                    <constraint firstItem="JAd-DT-H49" firstAttribute="leading" secondItem="PcO-sO-NDf" secondAttribute="leading" id="VKJ-op-idh"/>
+                                                                    <constraint firstItem="2Wn-fF-Val" firstAttribute="leading" secondItem="PcO-sO-NDf" secondAttribute="leading" constant="16" id="bxl-fc-Z9d"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="fwu-sF-MLi" secondAttribute="trailing" id="ink-Ed-4HU"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="PcO-sO-NDf" firstAttribute="leading" secondItem="4su-HN-eNP" secondAttribute="leading" id="Kjf-AC-Rsp"/>
+                                                            <constraint firstAttribute="bottom" secondItem="PcO-sO-NDf" secondAttribute="bottom" constant="8" id="YnN-Le-pNp"/>
+                                                            <constraint firstAttribute="trailing" secondItem="PcO-sO-NDf" secondAttribute="trailing" id="rWX-kX-Qv5"/>
+                                                            <constraint firstItem="PcO-sO-NDf" firstAttribute="top" secondItem="4su-HN-eNP" secondAttribute="top" constant="8" id="sbM-KG-Vjv"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRT-hg-kDz" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="909" width="361" height="33"/>
+                                                        <rect key="frame" x="0.0" y="988" width="361" height="33"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eCC-hh-FSd">
                                                                 <rect key="frame" x="0.0" y="8" width="361" height="17"/>
@@ -1303,7 +1558,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting provider response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5j-Kl-gXY">
-                                                        <rect key="frame" x="0.0" y="917" width="361" height="18"/>
+                                                        <rect key="frame" x="0.0" y="996" width="361" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" name="mainDarkFontColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1312,7 +1567,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pXh-zR-n7N">
-                                                        <rect key="frame" x="0.0" y="951" width="361" height="50"/>
+                                                        <rect key="frame" x="0.0" y="1030" width="361" height="50"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qTZ-e4-Yc4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="109.66666666666667" height="50"/>
@@ -1370,14 +1625,17 @@
                     <connections>
                         <outlet property="acceptRefuseStackView" destination="26R-ux-amE" id="ueG-BN-dio"/>
                         <outlet property="amountToBePaidLabel" destination="L8E-Z9-trr" id="2fk-hg-JW1"/>
+                        <outlet property="confirmView" destination="pXh-zR-n7N" id="sso-SJ-tQ0"/>
                         <outlet property="deliveryPriceLabel" destination="SQI-1B-hGD" id="BaD-y3-hed"/>
                         <outlet property="deliveryPriceView" destination="NE7-6l-cLd" id="UHY-qr-ZVc"/>
                         <outlet property="imageView" destination="Q43-IN-C4k" id="om5-qr-Gmv"/>
                         <outlet property="isFinancingLabel" destination="lye-eG-Pgf" id="AzB-iG-qso"/>
                         <outlet property="nameLabel" destination="8NS-W0-XgA" id="SBI-eU-p8A"/>
+                        <outlet property="orderStatusLabel" destination="t5j-Kl-gXY" id="lys-7X-VKK"/>
                         <outlet property="payStack" destination="pXh-zR-n7N" id="eo5-CW-Jkd"/>
+                        <outlet property="paymentView" destination="4su-HN-eNP" id="you-cp-Wnn"/>
                         <outlet property="priceLabel" destination="z00-kf-401" id="lT0-6M-j78"/>
-                        <outlet property="waitingView" destination="8pw-8W-XOX" id="zvB-7w-2pq"/>
+                        <outlet property="tableView" destination="JAd-DT-H49" id="X2F-t7-eZn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTf-Hq-tDX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

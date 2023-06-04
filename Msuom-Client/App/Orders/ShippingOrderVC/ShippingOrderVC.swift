@@ -10,13 +10,12 @@
 import UIKit
 
 enum OrderStatus: String {
+    
     case waitForAccept
-    case acceptOrder
     case sendOffer
-    case rejectOrder
     case waitForPay
-    case processing
     case finishOrder
+    
 }
 
 class ShippingOrderVC: BaseVC {
@@ -37,6 +36,7 @@ class ShippingOrderVC: BaseVC {
     //MARK: - Properties -
     private var data: ShippingOrderDetails?
     private var id: String?
+    private var items: [PaymentModel] = []
     
     //MARK: - Creation -
     static func create(data: ShippingOrderDetails?, id: String?) -> ShippingOrderVC {
@@ -51,6 +51,7 @@ class ShippingOrderVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureInitialDesign()
+        self.setupTableView()
         if let data = self.data {
             self.setViewWith(data: data)
         } else if let id = self.id {
@@ -84,44 +85,45 @@ class ShippingOrderVC: BaseVC {
                 self.orderStatusLabel.isHidden = false
                 self.priceView.isHidden = true
             case .waitForPay:
-                self.confirmView.isHidden = false
+                self.confirmView.isHidden = true
                 self.acceptRefuseStackView.isHidden = true
                 self.paymentView.isHidden = false
-                self.orderStatusLabel.isHidden = false
+                self.orderStatusLabel.isHidden = true
                 self.priceView.isHidden = false
+                self.getPaymentMethods()
             case .finishOrder:
                 self.confirmView.isHidden = true
                 self.acceptRefuseStackView.isHidden = true
                 self.paymentView.isHidden = true
                 self.orderStatusLabel.isHidden = false
                 self.priceView.isHidden = false
-            case .acceptOrder:
-                self.confirmView.isHidden = true
-                self.acceptRefuseStackView.isHidden = true
-                self.paymentView.isHidden = true
-                self.orderStatusLabel.isHidden = false
-                self.priceView.isHidden = true
             case .sendOffer:
                 self.confirmView.isHidden = true
                 self.acceptRefuseStackView.isHidden = true
                 self.paymentView.isHidden = true
-                self.orderStatusLabel.isHidden = false
-                self.priceView.isHidden = true
-            case .rejectOrder:
-                self.confirmView.isHidden = true
-                self.acceptRefuseStackView.isHidden = true
-                self.paymentView.isHidden = true
-                self.orderStatusLabel.isHidden = false
-                self.priceView.isHidden = true
-            case .processing:
-                self.confirmView.isHidden = true
-                self.acceptRefuseStackView.isHidden = true
-                self.paymentView.isHidden = true
-                self.orderStatusLabel.isHidden = false
+                self.orderStatusLabel.isHidden = true
                 self.priceView.isHidden = true
             }
         }
+        self.setVisibility(data: data)
+        
     }
+    
+    private func setVisibility(data: ShippingOrderDetails) {
+        
+        paymentView.isHidden = !(data.orderStatus == OrderStatus.waitForPay.rawValue)
+        priceView.isHidden = !(data.orderStatus != OrderStatus.waitForAccept.rawValue)
+        confirmView.isHidden = !(data.orderStatus == OrderStatus.waitForPay.rawValue)
+        orderStatusLabel.isHidden = !(data.orderStatus == OrderStatus.waitForAccept.rawValue)
+//        pdfFileView.isHidden = !(data.orderStatus == OrderStatus.finishOrder.rawValue)
+        acceptRefuseStackView.isHidden = !(data.orderStatus == OrderStatus.sendOffer.rawValue)
+        
+//        priceView.isHidden = !(data.orderStatus != OrderStatus.waitForAccept.rawValue) //&& data.isDelivery == true)
+        
+//        cvNotes.isHidden = !(data.orderStatus == OrderStatus.finishOrder.rawValue)
+        
+    }
+    
     
     //MARK: - Actions -
     @IBAction private func acceptButtonPressed() {
@@ -139,7 +141,7 @@ class ShippingOrderVC: BaseVC {
         }
     }
     @IBAction private func confirmButtonPressed() {
-        if let id = self.data?.id, let price = self.data?.price, let paymentMethod = self.data?.paymentMethod {
+        if let id = self.data?.id, let price = self.data?.deliveryPrice, let paymentMethod = self.items.first(where: {$0.isSelected == true})?.slug {
             self.payOrder(id: id, paymentMethod: paymentMethod, price: "\(price)")
         }
     }
@@ -173,9 +175,59 @@ extension ShippingOrderVC {
             self.setViewWith(data: data)
         }
     }
+    private func getPaymentMethods() {
+        self.showIndicator()
+        SettingRouter.paymentMethods.send { [weak self] (response: APIGenericResponse<[PaymentModel]>) in
+            guard let self = self else {return}
+            self.items = response.data ?? []
+            if let selectedPaymentMethod = self.data?.paymentMethod, let index = self.items.firstIndex(where: {$0.slug == selectedPaymentMethod}) {
+                self.items[index].isSelected = true
+            } else {
+                if !self.items.isEmpty {
+                    self.items[0].isSelected = true
+                }
+            }
+            self.tableView.reloadData()
+        }
+    }
 }
 
 //MARK: - Routes -
 extension ShippingOrderVC {
     
 }
+
+//MARK: - Start Of TableView -
+extension ShippingOrderVC {
+    func setupTableView() {
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.register(cellType: TryToBuyCell.self, bundle: nil)
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.tableView.tableFooterView = UIView(frame: .zero)
+    }
+}
+extension ShippingOrderVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(with: TryToBuyCell.self, for: indexPath)
+        let item = self.items[indexPath.row]
+        cell.configureWith(data: item)
+        return cell
+    }
+}
+extension ShippingOrderVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        for index in self.items.indices {
+            self.items[index].isSelected = false
+        }
+        self.items[indexPath.row].isSelected = true
+        self.tableView.reloadData()
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        50
+    }
+}
+//MARK: - End Of TableView -
