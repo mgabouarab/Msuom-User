@@ -45,7 +45,7 @@ class OrdersVC: BaseVC {
     private var evaluationOrderDetails: [EvaluationOrderDetails] = []
     private var purchaseOrderDetails: [PurchaseOrderDetails] = []
     private var summaryReportDetails: [SummaryReportDetails] = []
-    private var afterSaleServiceDetails: [SummaryReportDetails] = []
+    private var afterSaleServiceDetails: [ShippingOrderDetails] = []
     private var selectedType: Types = .shipping
     private var currentPage: Int = 1
     private var isLast: Bool = false
@@ -187,7 +187,7 @@ extension OrdersVC: UITableViewDataSource {
             cell.configureWith(data: item)
             return cell
         case .afterSaleService:
-            let cell = tableView.dequeueReusableCell(with: SummaryReportOrderCell.self, for: indexPath)
+            let cell = tableView.dequeueReusableCell(with: ShippingOrderCell.self, for: indexPath)
             let item = self.afterSaleServiceDetails[indexPath.row]
             cell.configureWith(data: item)
             return cell
@@ -216,7 +216,7 @@ extension OrdersVC: UITableViewDelegate {
             self.push(vc)
         case .afterSaleService:
             let item = self.afterSaleServiceDetails[indexPath.row]
-            let vc = SummaryReportOrderVC.create(data: item, id: nil)
+            let vc = AfterBuyOrderVC.create(data: item, id: nil)
             self.push(vc)
         }
     }
@@ -249,7 +249,7 @@ extension OrdersVC {
     
     private func getNotificationCount() {
         HomeRouter.notifyCount.send { [weak self] (response: APIGenericResponse<Int>) in
-            guard let self = self else {return}
+            guard let _ = self else {return}
             UserDefaults.notificationCount = response.data ?? 0
         }
     }
@@ -313,7 +313,7 @@ extension OrdersVC {
     private func getAfterSaleServiceDetails(page: Int) {
         self.showIndicator()
         self.isFetching = true
-        OrderRouter.afterSaleServiceDetails(page: page).send { [weak self] (response: APIGenericResponse<[SummaryReportDetails]>) in
+        OrderRouter.afterSaleServiceDetails(page: page).send { [weak self] (response: APIGenericResponse<[ShippingOrderDetails]>) in
             guard let self = self else {return}
             self.afterSaleServiceDetails = response.data ?? []
             self.tableView.reloadData()

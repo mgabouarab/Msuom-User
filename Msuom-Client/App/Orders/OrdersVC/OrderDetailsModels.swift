@@ -22,6 +22,7 @@ struct ShippingOrderDetails: Codable {
     let typeName: String?
     let year: String?
     let orderStatusTxt: String?
+    let services: String?
 }
 
 struct EvaluationOrderDetails: Codable {

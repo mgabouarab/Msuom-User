@@ -298,6 +298,7 @@
 		2CC025C4293F274A00DB4D10 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC025C3293F274A00DB4D10 /* ScannerVC.swift */; };
 		2CD047E32A1CC3FC00431238 /* AutoBidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD047E22A1CC3FC00431238 /* AutoBidView.swift */; };
 		2CD047E52A1CC41A00431238 /* AutoBidView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD047E42A1CC41A00431238 /* AutoBidView.xib */; };
+		2CD14A7E2A2CCB2100596E41 /* AfterBuyOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14A7D2A2CCB2100596E41 /* AfterBuyOrderVC.swift */; };
 		2CD7FC2F2A1EA87E0035CADC /* AfterSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC2C2A1EA87E0035CADC /* AfterSaleCell.swift */; };
 		2CD7FC302A1EA87E0035CADC /* AfterSaleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC2D2A1EA87E0035CADC /* AfterSaleVC.swift */; };
 		2CD7FC312A1EA87E0035CADC /* AfterSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD7FC2E2A1EA87E0035CADC /* AfterSaleCell.xib */; };
@@ -697,6 +698,7 @@
 		2CC025C3293F274A00DB4D10 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
 		2CD047E22A1CC3FC00431238 /* AutoBidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBidView.swift; sourceTree = "<group>"; };
 		2CD047E42A1CC41A00431238 /* AutoBidView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoBidView.xib; sourceTree = "<group>"; };
+		2CD14A7D2A2CCB2100596E41 /* AfterBuyOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterBuyOrderVC.swift; sourceTree = "<group>"; };
 		2CD7FC2C2A1EA87E0035CADC /* AfterSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSaleCell.swift; sourceTree = "<group>"; };
 		2CD7FC2D2A1EA87E0035CADC /* AfterSaleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSaleVC.swift; sourceTree = "<group>"; };
 		2CD7FC2E2A1EA87E0035CADC /* AfterSaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterSaleCell.xib; sourceTree = "<group>"; };
@@ -1184,6 +1186,7 @@
 		2C197953298A8405000EB796 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				2CD14A7C2A2CCB1200596E41 /* AfterBuyOrderVC */,
 				2CA52209299312AA00925E8A /* PurchaseOrderVC */,
 				2CA522062993128B00925E8A /* SummaryReportOrderVC */,
 				2CA522032993127000925E8A /* EvaluationOrderVC */,
@@ -2422,6 +2425,14 @@
 			path = AutoBidView;
 			sourceTree = "<group>";
 		};
+		2CD14A7C2A2CCB1200596E41 /* AfterBuyOrderVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CD14A7D2A2CCB2100596E41 /* AfterBuyOrderVC.swift */,
+			);
+			path = AfterBuyOrderVC;
+			sourceTree = "<group>";
+		};
 		2CD7FC2B2A1EA85F0035CADC /* AfterSaleVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -3078,6 +3089,7 @@
 				2CA0AC2E2912C143006CBC78 /* AppTextView.swift in Sources */,
 				2C5FD5A8286DED84002DB350 /* MainAppButton.swift in Sources */,
 				2C5E97372924CF170007E92A /* SearchVC.swift in Sources */,
+				2CD14A7E2A2CCB2100596E41 /* AfterBuyOrderVC.swift in Sources */,
 				2CBC94A9286D0A3500E42AB5 /* AppConstants.swift in Sources */,
 				2C54F1D329244C27008F99CE /* AuctionTypeSelectionVC.swift in Sources */,
 				2CE7C8AA29220FE000EE6100 /* AboutVC.swift in Sources */,
@@ -3519,7 +3531,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Msuom-Client/Msuom-Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = BVZ9794FDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Msuom-Client/Core/Info.plist";
@@ -3559,7 +3571,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Msuom-Client/Msuom-Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = BVZ9794FDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Msuom-Client/Core/Info.plist";
