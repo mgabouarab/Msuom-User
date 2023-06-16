@@ -14,7 +14,7 @@ enum AuthRouter {
     case forgetPasswordCode(_ code: String, credential: String, countryKey: String?)
     case resetPassword(code: String, credential: String, password: String, countryKey: String?)
     case codeResend(credential: String, countryKey: String?)
-    case contactUs(name: String, phone: String, message: String, countryKey: String)
+    case contactUs(name: String, phone: String, message: String, countryKey: String, bidId: String?, disputeId: String?)
     case signOut
     case deleteAccount
     case profile
@@ -141,7 +141,7 @@ extension AuthRouter: APIRouter {
         case .forgetPassword(let credential, let countryKey):
             return [
                 AuthParameterKeys.countryKey.rawValue: countryKey,
-                AuthParameterKeys.phone.rawValue: credential,
+                AuthParameterKeys.loginKey.rawValue: credential,
                 AuthParameterKeys.userType.rawValue: userType
             ]
             
@@ -150,7 +150,7 @@ extension AuthRouter: APIRouter {
             return [
                 AuthParameterKeys.countryKey.rawValue: countryKey,
                 AuthParameterKeys.code.rawValue: code,
-                AuthParameterKeys.phone.rawValue: credential,
+                AuthParameterKeys.loginKey.rawValue: credential,
                 AuthParameterKeys.userType.rawValue: userType
             ]
             
@@ -159,7 +159,7 @@ extension AuthRouter: APIRouter {
             return [
                 AuthParameterKeys.countryKey.rawValue: countryKey,
                 AuthParameterKeys.code.rawValue: code,
-                AuthParameterKeys.phone.rawValue: credential,
+                AuthParameterKeys.loginKey.rawValue: credential,
                 AuthParameterKeys.password.rawValue: password,
                 AuthParameterKeys.passwordConfirmation.rawValue: password,
                 AuthParameterKeys.userType.rawValue: userType
@@ -168,16 +168,18 @@ extension AuthRouter: APIRouter {
         case .codeResend(let credential, let countryKey):
             return [
                 AuthParameterKeys.countryKey.rawValue: countryKey,
-                AuthParameterKeys.phone.rawValue: credential,
+                AuthParameterKeys.loginKey.rawValue: credential,
                 AuthParameterKeys.userType.rawValue: userType
             ]
-        case .contactUs(let name, let phone, let message, let countryKey):
+        case .contactUs(let name, let phone, let message, let countryKey, let bidId, let disputeId):
             return [
                 AuthParameterKeys.countryKey.rawValue: countryKey,
                 AuthParameterKeys.phone.rawValue: phone,
                 AuthParameterKeys.message.rawValue: message,
                 AuthParameterKeys.userType.rawValue: userType,
-                AuthParameterKeys.name.rawValue: name
+                AuthParameterKeys.name.rawValue: name,
+                "bidId": bidId,
+                "disputeId": disputeId
             ]
         case .signOut:
             return [

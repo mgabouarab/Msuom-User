@@ -10,7 +10,7 @@ class AppTabBarController: UITabBarController {
     
     
     //MARK: - Properties -
-    
+    private var showLogin: Bool = false
     
     //MARK: - LifeCycle -
     override func loadView() {
@@ -25,6 +25,15 @@ class AppTabBarController: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
         self.initialView()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !UserDefaults.isLogin, showLogin {
+            self.showLogin = false
+            let vc = LoginVC.create()
+            let nav = BaseNav(rootViewController: vc)
+            self.present(nav, animated: true)
+        }
     }
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
@@ -43,8 +52,9 @@ class AppTabBarController: UITabBarController {
     }
     
     //MARK: - Initial -
-    static func create() -> AppTabBarController {
+    static func create(showLogin: Bool = false) -> AppTabBarController {
         let vc = AppTabBarController()
+        vc.showLogin = showLogin
         return vc
     }
     
@@ -143,7 +153,8 @@ class AppTabBarController: UITabBarController {
     ///This is used if you need to implement Middle button to the tabBar
     func middelVC() -> UIViewController {
         let vc = AddCarVC.create()
-        let nav = BaseNav(rootViewController: vc)
+        let nav = ColoredNav(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
         return nav
     }
     

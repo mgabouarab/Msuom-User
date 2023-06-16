@@ -14,24 +14,9 @@ struct SearchModel: Codable {
     let price: String?
     let sellTypeName: String?
     let type: String
+    let carCount: String?
+    let cityName: String?
 }
-
-
-//{
-//  "currency" : "ر.س",
-//  "endDate" : "26\/02\/2023",
-//  "endTime" : "10:30 PM",
-//  "hasSell" : false,
-//  
-//  
-//  "isRunning" : false,
-//  
-//  "startDate" : "26\/02\/2023",
-//  "startPrice" : "سعر البداية : 30000",
-//  "startTime" : "07:30 PM",
-//    live
-//},
-
 
 
 
@@ -102,6 +87,7 @@ class SearchVC: BaseVC {
         super.viewDidLoad()
         self.configureInitialDesign()
         self.setupTableView()
+        self.search(for: nil)
     }
     
     
@@ -125,6 +111,7 @@ extension SearchVC {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(cellType: CarCell.self, bundle: nil)
+        self.tableView.register(cellType: ProvidersCell.self, bundle: nil)
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
         self.tableView.tableFooterView = UIView(frame: .zero)
     }
@@ -136,17 +123,28 @@ extension SearchVC: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(with: CarCell.self, for: indexPath)
-        let car = self.cars[indexPath.row]
-        cell.configureWith(data: car.cellViewData())
-        return cell
-        
+        let item = self.cars[indexPath.row]
+         
+        if item.type == "provider" {
+            let cell = tableView.dequeueReusableCell(with: ProvidersCell.self, for: indexPath)
+            cell.configureWith(data: item)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(with: CarCell.self, for: indexPath)
+            cell.configureWith(data: item.cellViewData())
+            return cell
+        }
     }
 }
 extension SearchVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let car = self.cars[indexPath.row]
-        self.goToCar(id: car.id)
+        let item = self.cars[indexPath.row]
+        if item.type == "provider" {
+            let vc = ProviderDetailsVC.create(providerDetails: nil, id: item.id)
+            self.push(vc)
+        } else {
+            self.goToCar(id: item.id)
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
@@ -159,11 +157,11 @@ extension SearchVC: UITableViewDelegate {
 //MARK: - Networking -
 extension SearchVC {
     private func search(for word: String?) {
-        guard let word = word else {
-            self.cars = []
-            self.tableView.reloadData()
-            return
-        }
+//        guard let word = word else {
+//            self.cars = []
+//            self.tableView.reloadData()
+//            return
+//        }
         
         self.showIndicator()
         HomeRouter.search(keyword: word).send { [weak self] (response: APIGenericResponse<[SearchModel]>) in

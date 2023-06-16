@@ -24,6 +24,7 @@ class SummaryReportOrderVC: BaseVC {
     @IBOutlet weak private var priceView: UIView!
     @IBOutlet weak private var pdfFileView: UIView!
     @IBOutlet weak private var priceLabel: UILabel!
+    @IBOutlet weak private var currentStatusLabel: UILabel!
     
     //MARK: - Properties -
     private var data: SummaryReportDetails?
@@ -66,6 +67,7 @@ class SummaryReportOrderVC: BaseVC {
         self.orderNumberLabel.text = "Ad Number:".localized + " " + "\(data.orderNo ?? 0)"
         self.setVisibility(data: data)
         self.priceLabel.text = data.price?.toPrice()
+        self.currentStatusLabel.text = data.orderStatusTxt
         if data.orderStatus == OrderStatus.waitForPay.rawValue {
             self.getPaymentMethods()
         }
@@ -124,10 +126,18 @@ extension SummaryReportOrderVC {
     }
     private func acceptRejectOffer(id: String, status: String) {
         self.showIndicator()
-        OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGenericResponse<SummaryReportDetails>) in
-            guard let self = self, let data = response.data else {return}
-            self.data = data
-            self.setViewWith(data: data)
+        if status == "accept" {
+            OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGenericResponse<SummaryReportDetails>) in
+                guard let self = self, let data = response.data else {return}
+                self.data = data
+                self.setViewWith(data: data)
+            }
+        } else {
+            OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGlobalResponse) in
+                guard let self = self else {return}
+                self.showSuccessAlert(message: response.message)
+                self.pop()
+            }
         }
     }
     private func payOrder(id: String, paymentMethod: String, price: String) {

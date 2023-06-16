@@ -22,7 +22,7 @@ class AddCarVC: BaseVC {
     @IBOutlet weak private var brandTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var typeTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var classTextFieldView: DropDownTextFieldView!
-    @IBOutlet weak private var yearTextFieldView: NormalTextFieldView!
+    @IBOutlet weak private var yearTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var specificationsTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var incomingTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var colorTextFieldView: DropDownTextFieldView!
@@ -41,6 +41,7 @@ class AddCarVC: BaseVC {
     @IBOutlet weak private var refundableButton: UIButton!
     @IBOutlet weak private var notRefundableView: UIView!
     @IBOutlet weak private var refundableView: UIView!
+    @IBOutlet weak private var actionButton: UIButton!
     
     //MARK: - Properties -
     private var operationType: OperationType = .add
@@ -57,11 +58,13 @@ class AddCarVC: BaseVC {
     private var statusArray: [DropDownItem] = []
     private var howToSellArray: [DropDownItem] = []
     private var cityArray: [DropDownItem] = []
+    private var years: [DropDownItem] = []
     
     //MARK: - Creation -
     static func create(operationType: OperationType = .add) -> AddCarVC {
         let vc = AppStoryboards.cars.instantiate(AddCarVC.self)
         vc.hidesBottomBarWhenPushed = true
+        vc.modalPresentationStyle = .fullScreen
         vc.operationType = operationType
         return vc
     }
@@ -80,9 +83,10 @@ class AddCarVC: BaseVC {
         
         switch self.operationType {
         case .add:
-            self.title = "Add Car".localized
+            self.addDismissibleBackButtonWith(title: "Add Car".localized)
         case .edit:
-            self.title = "Edit Car".localized
+            self.addBackButtonWith(title: "Edit Car".localized)
+            self.actionButton.setTitle("Edit".localized, for: .normal)
         }
         
         let notRefundableTap = UITapGestureRecognizer(target: self, action: #selector(self.notRefundableTapped))
@@ -90,7 +94,39 @@ class AddCarVC: BaseVC {
         let refundableTap = UITapGestureRecognizer(target: self, action: #selector(self.refundableTapped))
         self.refundableView.addGestureRecognizer(refundableTap)
         
+        struct Item: DropDownItem {
+            var id: String
+            var name: String
+        }
+        let year = Calendar.current.component(.year, from: Date())
+        years = Array(year-40 ... year).reversed().map({Item(id: "\($0)", name: "\($0)")})
+        
+        
     }
+    
+    func addDismissibleBackButtonWith(title: String) {
+        let button = UIButton()
+        button.setImage(UIImage(named: "backArrow"), for: .normal)
+        let titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = .boldSystemFont(ofSize: 20)
+        titleLabel.textColor = Theme.colors.whiteColor
+        button.isUserInteractionEnabled = false
+        let stack = UIStackView.init(arrangedSubviews: [button, titleLabel])
+        stack.axis = .horizontal
+        stack.spacing = 8
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissibleBackButtonPressed))
+        stack.addGestureRecognizer(tap)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: stack)
+    }
+    @objc private func dismissibleBackButtonPressed() {
+        self.dismiss(animated: true)
+    }
+    
+    
+    
+    
+    
     private func configureInitialData() {
         
         if let data = UserDefaults.addCarData {
@@ -158,9 +194,14 @@ class AddCarVC: BaseVC {
             if let id = car.details.cityId, let name = car.details.cityName {
                 self.cityTextFieldView.set(value: Item(id: id, name: name))
             }
+            if let year = car.details.year {
+                self.yearTextFieldView.set(value: Item(id: year, name: year))
+            }
+            if let isRefundable = car.details.isRefundable, isRefundable {
+                self.refundableTapped()
+            }
             
             self.priceTextFieldView.set(text: car.details.price?.toString())
-            self.yearTextFieldView.set(text: car.details.year)
             self.cylindersTextFieldView.set(text: car.details.cylinders)
             self.engineTextFieldView.set(text: car.details.engineSize)
             self.walkwayTextFieldView.set(text: car.details.walkway)
@@ -189,6 +230,7 @@ class AddCarVC: BaseVC {
         self.statusTextFieldView.delegate = self
         self.howToSellTextFieldView.delegate = self
         self.cityTextFieldView.delegate = self
+        self.yearTextFieldView.delegate = self
         
     }
     
@@ -222,7 +264,7 @@ class AddCarVC: BaseVC {
                 let brandId = try CarValidationService.validate(brandId: self.brandTextFieldView.value()?.id)
                 let typeId = try CarValidationService.validate(typeId: self.typeTextFieldView.value()?.id)
                 let classId = try CarValidationService.validate(classId: self.classTextFieldView.value()?.id)
-                let year = try CarValidationService.validate(year: self.yearTextFieldView.textValue())
+                let year = try CarValidationService.validate(year: self.yearTextFieldView.value()?.id)
                 let engine = try CarValidationService.validate(engineId: self.engineTextFieldView.textValue())
                 let specificationsId = try CarValidationService.validate(specificationsId: self.specificationsTextFieldView.value()?.id)
                 let incomingId = try CarValidationService.validate(incomingId: self.incomingTextFieldView.value()?.id)
@@ -282,7 +324,7 @@ class AddCarVC: BaseVC {
                 let brandId = try CarValidationService.validate(brandId: self.brandTextFieldView.value()?.id)
                 let typeId = try CarValidationService.validate(typeId: self.typeTextFieldView.value()?.id)
                 let classId = try CarValidationService.validate(classId: self.classTextFieldView.value()?.id)
-                let year = try CarValidationService.validate(year: self.yearTextFieldView.textValue())
+                let year = try CarValidationService.validate(year: self.yearTextFieldView.value()?.id)
                 let engine = try CarValidationService.validate(engineId: self.engineTextFieldView.textValue())
                 let specificationsId = try CarValidationService.validate(specificationsId: self.specificationsTextFieldView.value()?.id)
                 let incomingId = try CarValidationService.validate(incomingId: self.incomingTextFieldView.value()?.id)
@@ -458,6 +500,7 @@ extension AddCarVC: DropDownTextFieldViewDelegate {
         case statusTextFieldView: return self.statusArray
         case howToSellTextFieldView: return self.howToSellArray
         case cityTextFieldView: return self.cityArray
+        case yearTextFieldView: return self.years
         default: return []
         }
     }

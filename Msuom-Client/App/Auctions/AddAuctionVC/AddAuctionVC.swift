@@ -54,7 +54,7 @@ class AddAuctionVC: BaseVC {
     @IBOutlet weak private var brandTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var typeTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var classTextFieldView: DropDownTextFieldView!
-    @IBOutlet weak private var yearTextFieldView: NormalTextFieldView!
+    @IBOutlet weak private var yearTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var specificationsTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var incomingTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var colorTextFieldView: DropDownTextFieldView!
@@ -82,6 +82,7 @@ class AddAuctionVC: BaseVC {
     private var statusArray: [DropDownItem] = []
     private var howToSellArray: [DropDownItem] = []
     private var cityArray: [DropDownItem] = []
+    private var years: [DropDownItem] = []
     private var type: AuctionTypeSelectionVC.AuctionTypes = .normal
     
     //MARK: - Creation -
@@ -113,6 +114,13 @@ class AddAuctionVC: BaseVC {
         case .live:
             self.basicInfoView.isHidden = true
         }
+        
+        struct Item: DropDownItem {
+            var id: String
+            var name: String
+        }
+        let year = Calendar.current.component(.year, from: Date())
+        years = Array(year-40 ... year).reversed().map({Item(id: "\($0)", name: "\($0)")})
         
     }
     private func configureInitialData() {
@@ -149,6 +157,7 @@ class AddAuctionVC: BaseVC {
         self.statusTextFieldView.delegate = self
         self.howToSellTextFieldView.delegate = self
         self.cityTextFieldView.delegate = self
+        self.yearTextFieldView.delegate = self
         
     }
     
@@ -168,7 +177,7 @@ class AddAuctionVC: BaseVC {
             let brandId = try CarValidationService.validate(brandId: self.brandTextFieldView.value()?.id)
             let typeId = try CarValidationService.validate(typeId: self.typeTextFieldView.value()?.id)
             let classId = try CarValidationService.validate(classId: self.classTextFieldView.value()?.id)
-            let year = try CarValidationService.validate(year: self.yearTextFieldView.textValue())
+            let year = try CarValidationService.validate(year: self.yearTextFieldView.value()?.id)
             let engine = try CarValidationService.validate(engineId: self.engineTextFieldView.textValue())
             let specificationsId = try CarValidationService.validate(specificationsId: self.specificationsTextFieldView.value()?.id)
             let incomingId = try CarValidationService.validate(incomingId: self.incomingTextFieldView.value()?.id)
@@ -378,6 +387,7 @@ extension AddAuctionVC: DropDownTextFieldViewDelegate {
         case statusTextFieldView: return self.statusArray
         case howToSellTextFieldView: return self.howToSellArray
         case cityTextFieldView: return self.cityArray
+        case yearTextFieldView: return self.years
         default: return []
         }
     }

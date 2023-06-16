@@ -11,7 +11,7 @@ class LoginVC: BaseVC {
     
     //MARK: - IBOutlets -
     @IBOutlet weak private var stackView: UIStackView!
-    @IBOutlet private weak var credentialTextField: PhoneTextFieldView!
+    @IBOutlet private weak var credentialTextField: NormalTextFieldView!
     @IBOutlet private weak var passwordTextField: PasswordTextFieldView!
     
     //MARK: - Properties -
@@ -46,10 +46,9 @@ class LoginVC: BaseVC {
     }
     @IBAction private func loginButtonPressed() {
         do {
-            let credential = try credentialTextField.phoneText()
-            let countryKey = try credentialTextField.countryCodeText()
+            let credential = try ValidationService.validate(credential: self.credentialTextField.textValue())
             let password = try passwordTextField.passwordText(for: .password)
-            self.loginWith(countryKey, credential, password)
+            self.loginWith(credential, password)
         } catch {
             self.showErrorAlert(error: error.localizedDescription)
         }
@@ -67,11 +66,11 @@ class LoginVC: BaseVC {
 
 //MARK: - Networking -
 extension LoginVC {
-    private func loginWith(_ countryKey: String?, _ credential: String, _ password: String) {
+    private func loginWith(_ credential: String, _ password: String) {
         
         self.showIndicator()
 
-        AuthRouter.login(credential: credential, password: password, countryKey: countryKey).send { [weak self] (response: APIGenericResponse<User>) in
+        AuthRouter.login(credential: credential, password: password, countryKey: nil).send { [weak self] (response: APIGenericResponse<User>) in
 
             guard let self = self, let user = response.data else {return}
 
@@ -88,7 +87,7 @@ extension LoginVC {
 //MARK: - Routes -
 extension LoginVC {
     private func goToForgetPassword() {
-        let vc = ForgetPasswordVC.create(credential: self.credentialTextField.phoneTextValue())
+        let vc = ForgetPasswordVC.create(credential: self.credentialTextField.textValue())
         self.push(vc)
     }
     private func goToHome() {

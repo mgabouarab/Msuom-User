@@ -15,6 +15,7 @@ class PurchaseOrderCell: UITableViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var priceLabel: UILabel!
     @IBOutlet weak private var isFinancingLabel: UILabel!
+    @IBOutlet weak private var currentStatusLabel: UILabel!
     
     //MARK: - properties -
     
@@ -50,6 +51,7 @@ class PurchaseOrderCell: UITableViewCell {
         nameLabel.text = items.joined(separator: " ")
         priceLabel.text = "Cash price:".localized + " \(data.price ?? 0) \(data.currency ?? appCurrency)"
         isFinancingLabel.text = data.isFinancing
+        self.currentStatusLabel.text = data.orderStatusTxt
     }
     
     //MARK: - Actions -

@@ -29,6 +29,8 @@ class PurchaseOrderVC: BaseVC {
     @IBOutlet weak private var confirmView: UIView!
     @IBOutlet weak private var orderStatusLabel: UILabel!
     
+    @IBOutlet weak private var currentStatusLabel: UILabel!
+    
     
     
     //MARK: - Properties -
@@ -72,6 +74,7 @@ class PurchaseOrderVC: BaseVC {
         deliveryPriceLabel.text = "\(data.deliveryPrice ?? 0) \(data.currency ?? appCurrency)"
         amountToBePaidLabel.text = "\(data.price ?? 0) \(data.currency ?? appCurrency)"
         isFinancingLabel.text = data.isFinancing
+        self.currentStatusLabel.text = data.orderStatusTxt
         if let status = data.orderStatus, let orderStatus = OrderStatus(rawValue: status) {
             switch orderStatus {
             case .waitForAccept:
@@ -150,10 +153,18 @@ extension PurchaseOrderVC {
     }
     private func acceptRejectOffer(id: String, status: String) {
         self.showIndicator()
-        OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGenericResponse<PurchaseOrderDetails>) in
-            guard let self = self, let data = response.data else {return}
-            self.data = data
-            self.setViewWith(data: data)
+        if status == "accept" {
+            OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGenericResponse<PurchaseOrderDetails>) in
+                guard let self = self, let data = response.data else {return}
+                self.data = data
+                self.setViewWith(data: data)
+            }
+        } else {
+            OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGlobalResponse) in
+                guard let self = self else {return}
+                self.showSuccessAlert(message: response.message)
+                self.pop()
+            }
         }
     }
     private func getPaymentMethods() {

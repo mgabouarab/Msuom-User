@@ -46,7 +46,11 @@ class SplashVC: UIViewController {
         case true:
             self.goToLanguage()
         case false:
-            self.goToHome()
+            if UserDefaults.isLogin {
+                self.goToHome()
+            } else {
+                self.goToLanguage()
+            }
         }
     }
     

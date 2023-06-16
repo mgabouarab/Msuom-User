@@ -11,6 +11,7 @@ enum CarValidationError: Error {
     
     case emptyImages
     case emptyPrice
+    case invalidPrice
     case emptyBrand
     case emptyType
     case emptyClass
@@ -42,6 +43,8 @@ extension CarValidationError: LocalizedError {
             return "Select all images".localized
         case .emptyPrice:
             return "Please enter the purchase price".localized
+        case .invalidPrice:
+            return "Please enter the valid price".localized
         case .emptyStartAuctionPrice:
             return "Please enter auction start price".localized
         case .emptyBrand:

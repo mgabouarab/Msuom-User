@@ -22,17 +22,24 @@ class ProviderDetailsVC: BaseVC {
     
     //MARK: - Properties -
     private var items: [MyCarsModel] = []
-    private var providerDetails: OfferProvider!
+    private var providerDetails: OfferProvider?
+    private var id: String?
     private var currentPage: Int = 1
     private var isLast: Bool = false
     private var isFetching: Bool = false
+    private var brandId: String? = nil
+    private var typeId: String? = nil
+    private var year: String? = nil
+    private var cityId: String? = nil
+    private var statusId: String? = nil
     
     
     //MARK: - Creation -
-    static func create(providerDetails: OfferProvider) -> ProviderDetailsVC {
+    static func create(providerDetails: OfferProvider?, id: String?) -> ProviderDetailsVC {
         let vc = AppStoryboards.more.instantiate(ProviderDetailsVC.self)
         vc.hidesBottomBarWhenPushed = true
         vc.providerDetails = providerDetails
+        vc.id = id
         return vc
     }
     
@@ -48,13 +55,15 @@ class ProviderDetailsVC: BaseVC {
     //MARK: - Design Methods -
     private func configureInitialDesign() {
         self.addBackButtonWith(title: "Provider Details".localized)
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
-//            image: UIImage(named: "filterIcon"),
-//            style: .plain,
-//            target: self,
-//            action: #selector(self.filterButtonPressed)
-//        )
-        self.configureWith(data: self.providerDetails)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "filterIcon"),
+            style: .plain,
+            target: self,
+            action: #selector(self.filterButtonPressed)
+        )
+        if let providerDetails = self.providerDetails {
+            self.configureWith(data: providerDetails)
+        }
     }
     func configureWith(data: OfferProvider) {
         self.imageView.setWith(string: data.image)
@@ -69,11 +78,13 @@ class ProviderDetailsVC: BaseVC {
     
     //MARK: - Actions -
     @IBAction private func goToLocation() {
-        guard let latitude = self.providerDetails.latitude, let longitude = self.providerDetails.longitude else {return}
+        guard let latitude = self.providerDetails?.latitude, let longitude = self.providerDetails?.longitude else {return}
         AppHelper.openLocationOnMap(lat: latitude, long: longitude)
     }
     @objc private func filterButtonPressed() {
-        
+        let vc = ProviderDetailsFilterVC.create(delegate: self)
+        let nav = BaseNav(rootViewController: vc)
+        self.present(nav, animated: true)
     }
 }
 
@@ -116,14 +127,27 @@ extension ProviderDetailsVC: UITableViewDelegate {
 //MARK: - Networking -
 extension ProviderDetailsVC {
     private func getProviderDetails() {
-        guard let id = self.providerDetails.id else {return}
+        
+        var providerId: String?
+        
+        if let id = self.providerDetails?.id {
+            providerId = id
+        } else if let id = self.id {
+            providerId = id
+        }
+        guard let id = providerId else {return}
+        
         self.showIndicator()
         
-        CarRouter.providerDetails(id: id ,page: self.currentPage).send { [weak self] (response: APIGenericResponse<ProviderDetailsModel>) in
+        CarRouter.providerDetails(id: id ,page: self.currentPage, brandId: brandId, typeId: typeId, year: year, cityId: cityId, statusId: statusId).send { [weak self] (response: APIGenericResponse<ProviderDetailsModel>) in
             guard let self = self else {return}
             self.tableView.refreshControl?.endRefreshing()
             self.items.append(contentsOf: response.data?.cars ?? [])
             self.tableView.reloadData()
+            self.providerDetails = response.data?.provider
+            if let providerDetails = self.providerDetails {
+                self.configureWith(data: providerDetails)
+            }
             self.currentPage += 1
             if self.items.isEmpty || (response.data?.cars ?? []).isEmpty || response.data?.cars.count != listLimit {
                 self.isLast = true
@@ -135,5 +159,24 @@ extension ProviderDetailsVC {
 
 //MARK: - Routes -
 extension ProviderDetailsVC {
+    
+}
+//MARK: - Routes -
+extension ProviderDetailsVC: ProviderDetailsFilterDelegate {
+    
+    func didSelectFilter(brandId: String?, typeId: String?, year: String?, cityId: String?, statusId: String?) {
+        
+        self.brandId = brandId
+        self.typeId = typeId
+        self.year = year
+        self.cityId = cityId
+        self.statusId = statusId
+        
+        self.items = []
+        self.tableView.reloadData()
+        self.currentPage = 1
+        
+        self.getProviderDetails()
+    }
     
 }

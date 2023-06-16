@@ -51,7 +51,8 @@ final class DropDownListResultVC: UIViewController {
 
 extension DropDownListResultVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.items.count
+        self.tableView.setPlaceholder(isEmpty: items.isEmpty, separator: .singleLine)
+        return self.items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = DropDownListCell()
@@ -61,7 +62,10 @@ extension DropDownListResultVC: UITableViewDataSource {
 }
 extension DropDownListResultVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate.didSelect(item: items[indexPath.row])
+        let selectedItem = self.items[indexPath.row]
+        self.dismiss(animated: false) {
+            self.delegate.didSelect(item: selectedItem)
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50

@@ -32,6 +32,7 @@ class HarajVC: BaseVC {
     private var typeId: String?
     private var cityId: String?
     private var statusId: String?
+    private var year: String?
     
     //MARK: - Creation -
     static func create() -> HarajVC {
@@ -72,7 +73,7 @@ class HarajVC: BaseVC {
         self.isLast = false
         switch self.mode {
         case .filter:
-            self.filterHaraj(brandId: self.brandId, typeId: self.typeId, cityId: self.cityId, statusId: self.statusId)
+            self.filterHaraj(brandId: brandId, typeId: typeId, year: year, cityId: cityId, statusId: statusId)
         case .normal:
             self.getHaraj(brandId: self.selectedBrandId)
         }
@@ -81,7 +82,7 @@ class HarajVC: BaseVC {
         self.tableView.refreshControl?.endRefreshing()
     }
     @objc private func filterButtonPressed() {
-        let vc = HarajFilterVC.create(delegate: self)
+        let vc = ProviderDetailsFilterVC.create(delegate: self)
         let nav = BaseNav(rootViewController: vc)
         self.present(nav, animated: true)
     }
@@ -108,9 +109,9 @@ extension HarajVC {
             self.isFetching = false
         }
     }
-    private func filterHaraj(brandId: String?, typeId: String?, cityId: String?, statusId: String?) {
+    private func filterHaraj(brandId: String?, typeId: String?, year: String?, cityId: String?, statusId: String?) {
         self.showIndicator()
-        CarRouter.harajFilter(brandId: brandId, typeId: typeId, cityId: cityId, statusId: statusId).send { [weak self] (response: APIGenericResponse<HarajModel>) in
+        CarRouter.harajFilter(brandId: brandId, typeId: typeId, year: year, cityId: cityId, statusId: statusId).send { [weak self] (response: APIGenericResponse<HarajModel>) in
             guard let self = self else {return}
             self.tableView.refreshControl?.endRefreshing()
             self.items.append(contentsOf: response.data?.cars ?? [])
@@ -164,7 +165,7 @@ extension HarajVC: UITableViewDelegate {
         if !self.isLast && !self.isFetching && (indexPath.row % listLimit == 0) {
             switch self.mode {
                 case .filter:
-                    self.filterHaraj(brandId: self.brandId, typeId: self.typeId, cityId: self.cityId, statusId: self.statusId)
+                self.filterHaraj(brandId: self.brandId, typeId: self.typeId, year: self.year, cityId: self.cityId, statusId: self.statusId)
                 case .normal:
                     self.getHaraj(brandId: self.selectedBrandId)
             }
@@ -217,10 +218,11 @@ extension HarajVC: UICollectionViewDelegateFlowLayout {
 }
 
 //MARK: - Delegate -
-extension HarajVC: HarajFilterDelegate {
-    func didSelect(brandId: String?, typeId: String?, cityId: String?, statusId: String?) {
+extension HarajVC: ProviderDetailsFilterDelegate {
+    func didSelectFilter(brandId: String?, typeId: String?, year: String?, cityId: String?, statusId: String?) {
         self.brandId = brandId
         self.typeId = typeId
+        self.year = year
         self.cityId = cityId
         self.statusId = statusId
         self.mode = .filter

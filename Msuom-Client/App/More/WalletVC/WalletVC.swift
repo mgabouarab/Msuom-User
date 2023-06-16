@@ -53,7 +53,15 @@ class WalletVC: BaseVC {
         let nextAction: UIAlertAction = UIAlertAction(title: "Continue".localized, style: .default) { action -> Void in
             if let text = alertController.textFields?.first?.text, let amount = Double(text) {
 //                self.showPaymentTypes(amount: amount)
-                self.chargeWallet(with: "\(amount)")
+                if amount == 0 {
+                    self.showErrorAlert(error: "Please enter the valid amount".localized)
+                    self.showEnterAmountAlert()
+                } else {
+                    self.chargeWallet(with: "\(amount)")
+                }
+            } else {
+                self.showErrorAlert(error: "Please enter the amount".localized)
+                self.showEnterAmountAlert()
             }
         }
         alertController.addAction(nextAction)
@@ -64,7 +72,7 @@ class WalletVC: BaseVC {
             textField.keyboardType = .asciiCapableNumberPad
         }
         //Present the AlertController
-        self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: false, completion: nil)
     }
     private func showPaymentTypes(amount: Double) {
         

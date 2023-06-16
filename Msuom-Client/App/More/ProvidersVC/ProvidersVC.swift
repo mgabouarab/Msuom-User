@@ -106,7 +106,7 @@ extension ProvidersVC: UITableViewDataSource {
 extension ProvidersVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let provider = self.items[indexPath.row]
-        let vc = ProviderDetailsVC.create(providerDetails: provider)
+        let vc = ProviderDetailsVC.create(providerDetails: provider, id: nil)
         self.push(vc)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

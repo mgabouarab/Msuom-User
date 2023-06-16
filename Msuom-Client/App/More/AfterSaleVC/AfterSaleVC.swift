@@ -183,6 +183,7 @@ extension AfterSaleVC: UITableViewDelegate {
             self.items[index].isSelected = false
         }
         self.items[indexPath.row].isSelected = true
+        self.tableView.reloadData()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 30

@@ -19,7 +19,7 @@
 "Next" = "التالى";
 "Start" = "إبدأ تجربتك الان";
 "Skip" = "تخطى";
-"Home" = "الرئيسة";
+"Home" = "الرئيسية";
 "Auctions" = "المزادات";
 "Notifications" = "الإشعارات";
 "Cars" = "السيارات";
@@ -414,3 +414,14 @@
 "Report price:" = "سعر التقرير:";
 "Requestes Order:" = "الخدمات المطلوبة:";
 "Services price:" = "سعر الخدمات:";
+"Phone/E-mail" = "رقم الجوال/البريد الإلكتروني";
+"Please enter phone/E-mail" = "الرجاء ادخال رقم الجوال / البريد الإلكتروني";
+"Please enter phone/E-mail data" = "يرجي ادخال رقم الجوال / البريد الإلكتروني المسجل لدينا ";
+"Confirm the password" = "تأكيد كلمة المرور الجديدة";
+"Please confirm the password" = "الرجاء ادخال كلمة المرور الجديدة";
+"Please enter the valid amount" = "الرجاء ادخال مبلغ صحيح";
+"Please enter the valid price" = "الرجاء ادخال سعر صحيح";
+"Please enter the amount" = "الرجاء ادخال المبلغ";
+"Pay" = "دفع";
+"What is the problem" = "ما هي المشكلة";
+"Please specify how to collect the vehicle" = "يرجي تحديد طريقة استلام السيارة";

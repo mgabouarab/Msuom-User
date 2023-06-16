@@ -109,7 +109,7 @@ class CarDetailsVC: BaseVC {
         self.fuelTypeLabel.text = details.fuelType
         self.engineSizeLabel.text = details.engineSize
         self.colorLabel.text = details.color
-        self.colorLabel.textColor = UIColor(hex: details.hexColor)
+//        self.colorLabel.textColor = UIColor(hex: details.hexColor)
         self.specificationLabel.text = details.specification
         self.descriptionLabel.text = details.description
         self.containerStackView.isHidden = false

@@ -86,6 +86,7 @@ class OpenReportVC: BaseVC {
 //MARK: - Networking -
 extension OpenReportVC {
     private func dispute(bidId: String, questionId: String?, description: String, images: [UploadData]?) {
+        self.showIndicator()
         AuctionRouter.dispute(bidId: bidId, questionId: questionId, description: description).send(data: images) { [weak self] (response: APIGlobalResponse) in
             guard let self = self else {return}
             self.showSuccessAlert(message: response.message)

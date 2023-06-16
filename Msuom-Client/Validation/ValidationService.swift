@@ -81,6 +81,23 @@ struct ValidationService {
         }
         return phone
     }
+    static func validate(credential: String?) throws -> String {
+        guard let credential = credential, !credential.trimWhiteSpace().isEmpty else {
+            throw ValidationError.emptyCredential
+        }
+        if let _ = Int(credential) {
+            guard credential.isValidPhoneNumber(pattern: RegularExpression.saudiArabiaPhone.value) else {
+                throw ValidationError.incorrectPhoneNumber
+            }
+            return credential
+        } else {
+            guard credential.isValidEmail() else{
+                throw ValidationError.wrongMail
+            }
+            return credential
+        }
+        
+    }
     
     //MARK: - Verification code -
     static func validate(verificationCode: String?) throws -> String {
@@ -268,6 +285,12 @@ struct ValidationService {
             throw ValidationError.youngAge
         }
         return age
+    }
+    static func validate(birthday: Date?) throws -> Date {
+        guard let birthday = birthday else {
+            throw ValidationError.emptyAge
+        }
+        return birthday
     }
     static func validate(oldDate: String?) throws -> String {
         guard let oldDate = oldDate, let date = oldDate.toDate() else {

@@ -3,7 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -56,11 +56,12 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3q7-nf-eKI">
                                                         <rect key="frame" x="0.0" y="199.33333333333331" width="358" height="174"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="r1d-ls-ZIO" customClass="PhoneTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="r1d-ls-ZIO" customClass="NormalTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="77"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableCode" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Phone/E-mail"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Please enter phone/E-mail"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="3fP-Qg-jtZ" customClass="PasswordTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
@@ -438,13 +439,13 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Welcome"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1m-Mz-3xI">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter phone/E-mail data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1m-Mz-3xI">
                                                                 <rect key="frame" x="0.0" y="33.333333333333343" width="358" height="14.333333333333336"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" name="secondaryDarkFontColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Welcome"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Please enter phone/E-mail data"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
@@ -452,11 +453,12 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hrr-RO-jkY">
                                                         <rect key="frame" x="0.0" y="199.33333333333331" width="358" height="145"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="Vlf-yr-LZW" customClass="PhoneTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="Vlf-yr-LZW" customClass="NormalTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="77"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableCode" value="NO"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Phone/E-mail"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Please enter phone/E-mail"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ios-LT-pmp" customClass="AppButton" customModule="Msuom_Client" customModuleProvider="target">
@@ -465,11 +467,11 @@
                                                                     <constraint firstAttribute="height" constant="48" id="z8M-fh-L6i"/>
                                                                 </constraints>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title="Continue">
+                                                                <state key="normal" title="Confirm">
                                                                     <color key="titleColor" name="mainColor"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Continue"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Confirm"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="continueButtonPressed" destination="0mm-vO-f5l" eventType="touchUpInside" id="LPL-JH-rhS"/>
@@ -678,10 +680,10 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="797"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCc-ej-onK" customClass="IQPreviousNextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="999.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="879.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Drf-yY-vdU">
-                                                <rect key="frame" x="16" y="30" width="358" height="939.66666666666663"/>
+                                                <rect key="frame" x="16" y="30" width="358" height="819.66666666666663"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="3QY-0l-Chz">
                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="47.666666666666664"/>
@@ -706,8 +708,8 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kg-Kn-WJo">
-                                                        <rect key="frame" x="0.0" y="67.666666666666657" width="358" height="100"/>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kg-Kn-WJo">
+                                                        <rect key="frame" x="0.0" y="57.666666666666657" width="358" height="100"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YcM-OH-V6h" customClass="CircleBorderedImageView" customModule="Msuom_Client" customModuleProvider="target">
                                                                 <rect key="frame" x="129" y="0.0" width="100" height="100"/>
@@ -742,7 +744,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W0h-4t-lvO">
-                                                        <rect key="frame" x="0.0" y="187.66666666666669" width="358" height="562"/>
+                                                        <rect key="frame" x="0.0" y="67.666666666666629" width="358" height="562"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="m8X-gx-1Ol" customClass="NormalTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="77"/>
@@ -760,7 +762,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="Wm7-51-dbU" customClass="DropDownTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="194" width="358" height="77"/>
+                                                                <rect key="frame" x="0.0" y="194.00000000000003" width="358" height="76.999999999999972"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="City"/>
@@ -768,7 +770,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="EYz-qx-ien" customClass="DatePickerTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="290.99999999999994" width="358" height="77"/>
+                                                                <rect key="frame" x="0.0" y="291" width="358" height="77"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Birthday"/>
@@ -777,7 +779,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="QL4-ah-jhF" customClass="EmailTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="387.99999999999994" width="358" height="77"/>
+                                                                <rect key="frame" x="0.0" y="388" width="358" height="77"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="350" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="vEy-Z0-nzb" customClass="PasswordTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
@@ -793,7 +795,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPG-7D-AUB" customClass="AppButton" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="769.66666666666663" width="358" height="50"/>
+                                                        <rect key="frame" x="0.0" y="649.66666666666663" width="358" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="vaG-4K-cM0"/>
                                                         </constraints>
@@ -809,7 +811,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mt9-7g-nU6">
-                                                        <rect key="frame" x="0.0" y="839.66666666666663" width="358" height="30"/>
+                                                        <rect key="frame" x="0.0" y="719.66666666666663" width="358" height="30"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EZw-og-GcG">
                                                                 <rect key="frame" x="101.66666666666669" y="0.0" width="155" height="30"/>
@@ -851,7 +853,7 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="358" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="SpV-Ha-Wau">
-                                                        <rect key="frame" x="0.0" y="889.66666666666663" width="358" height="50"/>
+                                                        <rect key="frame" x="0.0" y="769.66666666666663" width="358" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>

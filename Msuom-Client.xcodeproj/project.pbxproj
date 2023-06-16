@@ -92,7 +92,6 @@
 		2C2EB29B2A248438006EF7E2 /* FilterStreamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB2982A248438006EF7E2 /* FilterStreamsVC.swift */; };
 		2C2EB29C2A248438006EF7E2 /* FilterStreamsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2EB2992A248438006EF7E2 /* FilterStreamsCell.xib */; };
 		2C2EB29E2A262799006EF7E2 /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2EB29D2A262799006EF7E2 /* AboutModel.swift */; };
-		2C3020F2297EA3F6000B47C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C3020F1297EA3F6000B47C9 /* GoogleService-Info.plist */; };
 		2C34B18629474D2400EAA358 /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C34B18529474D2400EAA358 /* SettingRouter.swift */; };
 		2C34D617297ED9DB0005E9DC /* DatePickerTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C34D616297ED9DB0005E9DC /* DatePickerTextFieldView.swift */; };
 		2C34D619297ED9E80005E9DC /* DatePickerTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C34D618297ED9E80005E9DC /* DatePickerTextFieldView.xib */; };
@@ -238,6 +237,7 @@
 		2C8AB0AE29076644003D233E /* NormalTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C8AB0AD29076644003D233E /* NormalTextFieldView.xib */; };
 		2C8AB0B029076AF1003D233E /* UnderLineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AB0AF29076AF1003D233E /* UnderLineButton.swift */; };
 		2C8AB0B32907754C003D233E /* CircleBorderedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AB0B22907754C003D233E /* CircleBorderedImageView.swift */; };
+		2C8AD1C92A386CDB00F5F5DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C8AD1C82A386CDB00F5F5DC /* GoogleService-Info.plist */; };
 		2C8BF0E92A2893C500319FFD /* ConfirmationPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8BF0E82A2893C500319FFD /* ConfirmationPayVC.swift */; };
 		2C8BF0EE2A28A42B00319FFD /* TryToBuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8BF0EB2A28A42B00319FFD /* TryToBuyCell.swift */; };
 		2C8BF0EF2A28A42B00319FFD /* TryToBuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8BF0EC2A28A42B00319FFD /* TryToBuyVC.swift */; };
@@ -296,6 +296,7 @@
 		2CBC94BE286D0C6D00E42AB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC94C0286D0C6D00E42AB5 /* Localizable.strings */; };
 		2CBD858028063F380036C9B1 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD857F28063F380036C9B1 /* Print.swift */; };
 		2CC025C4293F274A00DB4D10 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC025C3293F274A00DB4D10 /* ScannerVC.swift */; };
+		2CC4D54B2A3A017B0038FDB4 /* ProviderDetailsFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4D54A2A3A017B0038FDB4 /* ProviderDetailsFilterVC.swift */; };
 		2CD047E32A1CC3FC00431238 /* AutoBidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD047E22A1CC3FC00431238 /* AutoBidView.swift */; };
 		2CD047E52A1CC41A00431238 /* AutoBidView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD047E42A1CC41A00431238 /* AutoBidView.xib */; };
 		2CD14A7E2A2CCB2100596E41 /* AfterBuyOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD14A7D2A2CCB2100596E41 /* AfterBuyOrderVC.swift */; };
@@ -478,7 +479,6 @@
 		2C2EB2982A248438006EF7E2 /* FilterStreamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStreamsVC.swift; sourceTree = "<group>"; };
 		2C2EB2992A248438006EF7E2 /* FilterStreamsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterStreamsCell.xib; sourceTree = "<group>"; };
 		2C2EB29D2A262799006EF7E2 /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
-		2C3020F1297EA3F6000B47C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C34B18529474D2400EAA358 /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
 		2C34D616297ED9DB0005E9DC /* DatePickerTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextFieldView.swift; sourceTree = "<group>"; };
 		2C34D618297ED9E80005E9DC /* DatePickerTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerTextFieldView.xib; sourceTree = "<group>"; };
@@ -627,6 +627,7 @@
 		2C8AB0AD29076644003D233E /* NormalTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalTextFieldView.xib; sourceTree = "<group>"; };
 		2C8AB0AF29076AF1003D233E /* UnderLineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineButton.swift; sourceTree = "<group>"; };
 		2C8AB0B22907754C003D233E /* CircleBorderedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleBorderedImageView.swift; sourceTree = "<group>"; };
+		2C8AD1C82A386CDB00F5F5DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C8BF0E82A2893C500319FFD /* ConfirmationPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPayVC.swift; sourceTree = "<group>"; };
 		2C8BF0EB2A28A42B00319FFD /* TryToBuyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryToBuyCell.swift; sourceTree = "<group>"; };
 		2C8BF0EC2A28A42B00319FFD /* TryToBuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryToBuyVC.swift; sourceTree = "<group>"; };
@@ -696,6 +697,7 @@
 		2CBC94C1286D0C7000E42AB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CBD857F28063F380036C9B1 /* Print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
 		2CC025C3293F274A00DB4D10 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
+		2CC4D54A2A3A017B0038FDB4 /* ProviderDetailsFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailsFilterVC.swift; sourceTree = "<group>"; };
 		2CD047E22A1CC3FC00431238 /* AutoBidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBidView.swift; sourceTree = "<group>"; };
 		2CD047E42A1CC41A00431238 /* AutoBidView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoBidView.xib; sourceTree = "<group>"; };
 		2CD14A7D2A2CCB2100596E41 /* AfterBuyOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterBuyOrderVC.swift; sourceTree = "<group>"; };
@@ -1032,8 +1034,8 @@
 			isa = PBXGroup;
 			children = (
 				2C37A634290024EF0054442E /* Msuom-Client.entitlements */,
-				2C3020F1297EA3F6000B47C9 /* GoogleService-Info.plist */,
 				2C178CE027F7C34A00D32327 /* PushNotifications.swift */,
+				2C8AD1C82A386CDB00F5F5DC /* GoogleService-Info.plist */,
 			);
 			name = FCM;
 			sourceTree = "<group>";
@@ -2344,6 +2346,7 @@
 		2CBB3E9C2908B00E00A32C3E /* More */ = {
 			isa = PBXGroup;
 			children = (
+				2CC4D5492A3A01550038FDB4 /* ProviderDetailsFilterVC */,
 				2CD7FC4C2A1F809D0035CADC /* ReportsVC */,
 				2CD7FC492A1F7EA00035CADC /* ReportDetailsVC */,
 				2CD7FC3A2A1F44500035CADC /* OpenReportVC */,
@@ -2414,6 +2417,14 @@
 				2CC025C3293F274A00DB4D10 /* ScannerVC.swift */,
 			);
 			path = ScannerVC;
+			sourceTree = "<group>";
+		};
+		2CC4D5492A3A01550038FDB4 /* ProviderDetailsFilterVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CC4D54A2A3A017B0038FDB4 /* ProviderDetailsFilterVC.swift */,
+			);
+			path = ProviderDetailsFilterVC;
 			sourceTree = "<group>";
 		};
 		2CD047E12A1CC3CF00431238 /* AutoBidView */ = {
@@ -2898,6 +2909,7 @@
 				2C178CBA27F7C28100D32327 /* Theme.xcassets in Resources */,
 				2C9C72472A1A3AAA001C90E5 /* LiveStreamCell.xib in Resources */,
 				2C178CC127F7C29000D32327 /* Cairo-SemiBold.ttf in Resources */,
+				2C8AD1C92A386CDB00F5F5DC /* GoogleService-Info.plist in Resources */,
 				2C5FD5A0286DED39002DB350 /* README.md in Resources */,
 				2C3D7A7B2A18F170004DD1FB /* FeedbacksView.xib in Resources */,
 				2CF41C9528FC211F00BF923D /* SliderCell.xib in Resources */,
@@ -2921,7 +2933,6 @@
 				2C34D619297ED9E80005E9DC /* DatePickerTextFieldView.xib in Resources */,
 				2CD7FC442A1F59420035CADC /* SelectImageView.xib in Resources */,
 				2C178CC527F7C29000D32327 /* Cairo-Black.ttf in Resources */,
-				2C3020F2297EA3F6000B47C9 /* GoogleService-Info.plist in Resources */,
 				2CD7FC422A1F4CA60035CADC /* SelectImageCell.xib in Resources */,
 				2CBC94B2286D0C0700E42AB5 /* PhotoLibraryServices.strings in Resources */,
 				2C3D7A872A18F170004DD1FB /* ExpandableDetailsView.xib in Resources */,
@@ -3135,6 +3146,7 @@
 				2C03E4BD27FDBA6300A081DF /* Optional.swift in Sources */,
 				2C178D3727F7CCD500D32327 /* ValidationService.swift in Sources */,
 				2C4E9A58299A4F09008787DD /* HomeSliderCell.swift in Sources */,
+				2CC4D54B2A3A017B0038FDB4 /* ProviderDetailsFilterVC.swift in Sources */,
 				2C178D3927F7CCD500D32327 /* RegularExpression.swift in Sources */,
 				2C4E9A76299A51EC008787DD /* CarShowHomeCell.swift in Sources */,
 				2C4E9A67299A5110008787DD /* CurrentAuctionsCell.swift in Sources */,
@@ -3531,7 +3543,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Msuom-Client/Msuom-Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = BVZ9794FDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Msuom-Client/Core/Info.plist";
@@ -3571,7 +3583,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Msuom-Client/Msuom-Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = BVZ9794FDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Msuom-Client/Core/Info.plist";

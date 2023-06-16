@@ -16,6 +16,8 @@ class EvaluationOrderCell: UITableViewCell {
     @IBOutlet weak private var statusLabel: UILabel!
     @IBOutlet weak private var walkwayLabel: UILabel!
     @IBOutlet weak private var orderNumberLabel: UILabel!
+    @IBOutlet weak private var yearLabel: UILabel!
+    @IBOutlet weak private var currentStatusLabel: UILabel!
     
     //MARK: - properties -
     
@@ -42,11 +44,13 @@ class EvaluationOrderCell: UITableViewCell {
     //MARK: - Configure Data -
     func configureWith(data: EvaluationOrderDetails) {
         self.brandLabel.text = data.brandName
-        self.typeLabel.text = data.type
+        self.typeLabel.text = data.typeName
         self.categoryLabel.text = data.categoryName
         self.statusLabel.text = data.statusName
         self.walkwayLabel.text = data.walkway
         self.orderNumberLabel.text = "Order Number:".localized + " " + "\(data.orderNo ?? 0)"
+        self.yearLabel.text = data.year
+        self.currentStatusLabel.text = data.orderStatusTxt
     }
     
     //MARK: - Actions -

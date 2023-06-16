@@ -21,7 +21,7 @@ class InfoVC: BaseVC {
             case .about:
                 return "About".localized
             case .terms:
-                return "Contact us".localized
+                return "Terms and Conditions".localized
             case .privacy:
                 return "Privacy Policy".localized
             }

@@ -88,11 +88,11 @@ class HeaderView: UIView {
         self.parentContainerViewController?.show(vc, sender: nil)
     }
     @IBAction private func scannerButtonPressed() {
-        AppAlert.showLogoutAlert {
-            let vc = LoginVC.create()
-            let nav = BaseNav(rootViewController: vc)
-            self.parentContainerViewController?.present(vc, animated: true)
-        }
+//        AppAlert.showLogoutAlert {
+//            let vc = LoginVC.create()
+//            let nav = BaseNav(rootViewController: vc)
+//            self.parentContainerViewController?.present(vc, animated: true)
+//        }
         let vc = ScannerViewController()
         vc.modalPresentationStyle = .fullScreen
         self.parentContainerViewController?.present(vc, animated: true)

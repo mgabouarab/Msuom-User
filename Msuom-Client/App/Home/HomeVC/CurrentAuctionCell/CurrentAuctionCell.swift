@@ -38,7 +38,7 @@ class CurrentAuctionCell: UICollectionViewCell {
     }
     func configureWith(data: Auction.HomeSoonAuction) {
         self.liveView.isHidden = !data.isLive
-        nameLabel.text = data.name
+        nameLabel.text = data.name + data.advertiseNumber
         priceLabel.text = data.fullStartDate
         self.fullDate = data.fullEndDate
         self.timer?.invalidate()

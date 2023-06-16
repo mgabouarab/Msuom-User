@@ -12,7 +12,7 @@ enum HomeRouter {
     case browseByBrand(id: String)
     case browseByCategory(id: String)
     case notifications(page: Int)
-    case search(keyword: String)
+    case search(keyword: String?)
     case notifyCount
 }
 

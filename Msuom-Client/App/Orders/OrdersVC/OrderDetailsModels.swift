@@ -40,6 +40,7 @@ struct EvaluationOrderDetails: Codable {
     let type: String?
     let typeName: String?
     let walkway: String?
+    let year: String?
     let orderStatusTxt: String?
     let deliveryPrice: Double?
 }

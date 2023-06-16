@@ -3,7 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -862,8 +862,8 @@
                                                                         <rect key="frame" x="0.0" y="194" width="342" height="77"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Please enter the password"/>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Please enter username"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Confirm the password"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Please confirm the password"/>
                                                                             <userDefinedRuntimeAttribute type="image" keyPath="secureImage" value="eye.slash.fill" catalog="system"/>
                                                                             <userDefinedRuntimeAttribute type="image" keyPath="unSecureImage" value="eye" catalog="system"/>
                                                                         </userDefinedRuntimeAttributes>
@@ -879,11 +879,11 @@
                                                                     <constraint firstAttribute="height" constant="48" id="OL3-Mc-RDf"/>
                                                                 </constraints>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title="Saving changes">
+                                                                <state key="normal" title="Confirm">
                                                                     <color key="titleColor" name="mainColor"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Saving changes"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Confirm"/>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="changeButtonPressed" destination="tAe-G2-Rql" eventType="touchUpInside" id="mmN-Eg-6VJ"/>
@@ -1820,7 +1820,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zY8-Q2-PLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7774" y="727"/>
+            <point key="canvasLocation" x="7786" y="727"/>
         </scene>
         <!--Provider DetailsVC-->
         <scene sceneID="U0w-mf-UQX">
@@ -2009,6 +2009,139 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZy-mb-125" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8490.7692307692305" y="726.5402843601895"/>
+        </scene>
+        <!--Provider Details FilterVC-->
+        <scene sceneID="kwz-UJ-2Tw">
+            <objects>
+                <viewController storyboardIdentifier="ProviderDetailsFilterVC" id="Qf0-zT-r34" customClass="ProviderDetailsFilterVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RZK-lP-vNP">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrX-mK-Sao">
+                                <rect key="frame" x="0.0" y="47" width="390" height="797"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aV8-Qd-fG9">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="886.33333333333337"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uq2-hY-cIy">
+                                                <rect key="frame" x="20" y="20" width="350" height="846.33333333333337"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PH-E2-4Ut" customClass="CardView" customModule="Msuom_Client" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="846.33333333333337"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Fbq-9X-Er6">
+                                                                <rect key="frame" x="8" y="16" width="334" height="814.33333333333337"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="uo1-kt-e2S" customClass="DropDownTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="392.33333333333331"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Brand"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Choose the brand"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="ebZ-Ap-M8p" customClass="DropDownTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="408.33333333333331" width="334" height="77"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Vehicle class"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Choose the vehicle class"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="Et6-hE-6qQ" customClass="DropDownTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="501.33333333333337" width="334" height="77"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Year"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Choose the year"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="lx5-Tf-ybv" customClass="DropDownTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="594.33333333333337" width="334" height="77"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="City"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Choose the city"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="WeR-G2-PtR" customClass="DropDownTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="687.33333333333337" width="334" height="77"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Status"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Choose status"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rRg-Bv-r87">
+                                                                        <rect key="frame" x="0.0" y="780.33333333333337" width="334" height="34"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzN-gy-fMg" customClass="MainAppButton" customModule="Msuom_Client" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                <state key="normal" title="Filter"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Filter"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="filterButtonPressed" destination="Qf0-zT-r34" eventType="touchUpInside" id="A7w-ty-5uW"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="Fbq-9X-Er6" secondAttribute="bottom" constant="16" id="9B3-fG-hez"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Fbq-9X-Er6" secondAttribute="trailing" constant="8" id="B5m-dC-Ny8"/>
+                                                            <constraint firstItem="Fbq-9X-Er6" firstAttribute="top" secondItem="6PH-E2-4Ut" secondAttribute="top" constant="16" id="LW7-f5-iHZ"/>
+                                                            <constraint firstItem="Fbq-9X-Er6" firstAttribute="leading" secondItem="6PH-E2-4Ut" secondAttribute="leading" constant="8" id="lhh-4Q-WE4"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="uq2-hY-cIy" firstAttribute="leading" secondItem="aV8-Qd-fG9" secondAttribute="leading" constant="20" id="Dp8-U2-HjF"/>
+                                            <constraint firstAttribute="bottom" secondItem="uq2-hY-cIy" secondAttribute="bottom" constant="20" id="O4t-9e-vjd"/>
+                                            <constraint firstItem="uq2-hY-cIy" firstAttribute="top" secondItem="aV8-Qd-fG9" secondAttribute="top" constant="20" id="TAd-EO-vdz"/>
+                                            <constraint firstAttribute="trailing" secondItem="uq2-hY-cIy" secondAttribute="trailing" constant="20" id="VRa-Gx-zlm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="aV8-Qd-fG9" firstAttribute="top" secondItem="OrX-mK-Sao" secondAttribute="top" id="9EU-vo-jsX"/>
+                                    <constraint firstItem="aV8-Qd-fG9" firstAttribute="leading" secondItem="OrX-mK-Sao" secondAttribute="leading" id="EpK-PN-xgA"/>
+                                    <constraint firstAttribute="bottom" secondItem="aV8-Qd-fG9" secondAttribute="bottom" id="Xaa-vT-S7c"/>
+                                    <constraint firstAttribute="trailing" secondItem="aV8-Qd-fG9" secondAttribute="trailing" id="h6g-cg-e1Y"/>
+                                    <constraint firstItem="aV8-Qd-fG9" firstAttribute="width" secondItem="OrX-mK-Sao" secondAttribute="width" id="mCy-4h-rzb"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JI1-pk-9ic"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OrX-mK-Sao" firstAttribute="top" secondItem="JI1-pk-9ic" secondAttribute="top" id="J8v-mV-X1n"/>
+                            <constraint firstAttribute="bottom" secondItem="OrX-mK-Sao" secondAttribute="bottom" id="OYG-fo-hz6"/>
+                            <constraint firstItem="OrX-mK-Sao" firstAttribute="leading" secondItem="JI1-pk-9ic" secondAttribute="leading" id="k1I-cS-Za8"/>
+                            <constraint firstAttribute="trailing" secondItem="OrX-mK-Sao" secondAttribute="trailing" id="vMK-ls-bxi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="brandTextFieldView" destination="uo1-kt-e2S" id="ePu-vg-xVC"/>
+                        <outlet property="cityTextFieldView" destination="lx5-Tf-ybv" id="MlQ-MM-doq"/>
+                        <outlet property="statusTextFieldView" destination="WeR-G2-PtR" id="LtA-6X-D7p"/>
+                        <outlet property="typeTextFieldView" destination="ebZ-Ap-M8p" id="Qvz-6k-RCr"/>
+                        <outlet property="yearTextFieldView" destination="Et6-hE-6qQ" id="x5P-i1-89E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7YG-Tb-n84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9291" y="727"/>
         </scene>
     </scenes>
     <resources>

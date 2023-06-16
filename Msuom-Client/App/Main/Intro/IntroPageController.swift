@@ -94,7 +94,7 @@ class IntroPageController: UIPageViewController {
         self.view.addSubview(self.skipButton)
         
         self.skipButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50).isActive = true
-        self.skipButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
+        self.skipButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30).isActive = true
         
     }
     private func addContainerView() {
@@ -116,7 +116,7 @@ class IntroPageController: UIPageViewController {
     }
     @objc private func skipButtonPressed() {
         UserDefaults.isFirstTime = false
-        let vc = AppTabBarController.create()
+        let vc = AppTabBarController.create(showLogin: true)
         AppHelper.changeWindowRoot(vc: vc)
     }
     

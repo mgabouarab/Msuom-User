@@ -160,12 +160,14 @@ extension FeedbacksView {
         }
     }
     func delete(commentId: String) {
-        AppIndicator.shared.show(isGif: false)
-        AuctionRouter.delete(commentId: commentId).send { [weak self] (response: APIGenericResponse<APIGlobalResponse>) in
-            guard let self = self else {return}
-            guard let index = self.items.firstIndex(where: {$0.id == commentId}) else {return}
-            self.items.remove(at: index)
-            self.tableView.reloadData()
+        (self.parentContainerViewController as? BaseVC)?.showDeleteAlert {
+            AppIndicator.shared.show(isGif: false)
+            AuctionRouter.delete(commentId: commentId).send { [weak self] (response: APIGlobalResponse) in
+                guard let self = self else {return}
+                guard let index = self.items.firstIndex(where: {$0.id == commentId}) else {return}
+                self.items.remove(at: index)
+                self.tableView.reloadData()
+            }
         }
     }
 }
@@ -183,7 +185,7 @@ extension FeedbacksView: LoadMoreFeedbacks {
         }
     }
     func delete(id: String, _ completion: @escaping ([FeedbackModel]) -> ()) {
-        AuctionRouter.delete(commentId: id).send { [weak self] (response: APIGenericResponse<APIGlobalResponse>) in
+        AuctionRouter.delete(commentId: id).send { [weak self] (response: APIGlobalResponse) in
             guard let self = self else {return}
             guard let index = self.items.firstIndex(where: {$0.id == id}) else {return}
             self.items.remove(at: index)

@@ -9,8 +9,11 @@ import Foundation
 
 struct CarValidationService {
     static func validate(price: String?) throws -> String {
-        guard let price, !price.trimWhiteSpace().isEmpty else {
+        guard let price, !price.trimWhiteSpace().isEmpty, let double = Double(price) else {
             throw CarValidationError.emptyPrice
+        }
+        guard double != 0 else {
+            throw CarValidationError.invalidPrice
         }
         return price
     }

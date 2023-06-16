@@ -532,8 +532,9 @@ extension MoreVC: UITableViewDelegate {
 //MARK: - Networking -
 extension MoreVC {
     private func getNotificationCount() {
+        guard UserDefaults.isLogin else {return}
         HomeRouter.notifyCount.send { [weak self] (response: APIGenericResponse<Int>) in
-            guard let self = self else {return}
+            guard let _ = self else {return}
             UserDefaults.notificationCount = response.data ?? 0
         }
     }

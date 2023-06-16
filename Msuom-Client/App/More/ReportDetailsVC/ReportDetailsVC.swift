@@ -27,6 +27,7 @@ class ReportDetailsVC: BaseVC {
     
     //MARK: - Properties -
     private var id: String!
+    private var bidId: String?
     
     //MARK: - Creation -
     static func create(id: String) -> ReportDetailsVC {
@@ -55,7 +56,7 @@ class ReportDetailsVC: BaseVC {
     
     //MARK: - Actions -
     @IBAction private func toMangerButtonPressed() {
-        let vc = ContactUsVC.create()
+        let vc = ContactUsVC.create(bidId: self.bidId, disputeId: self.id)
         self.push(vc)
     }
 }
@@ -75,7 +76,7 @@ extension ReportDetailsVC {
             self.statusLabel.text = response.data?.status
             self.reasonLabel.text = response.data?.question
             self.descriptionProblemLabel.text = response.data?.description
-            
+            self.bidId = response.data?.bidId
             if let attachedImages = response.data?.attachedImages, !attachedImages.isEmpty {
                 self.selectImageView.isHidden = false
                 self.selectImageView.set(images: attachedImages.map({SelectImageView.ImageModel(url: $0, id: "")}), enableDelete: false)

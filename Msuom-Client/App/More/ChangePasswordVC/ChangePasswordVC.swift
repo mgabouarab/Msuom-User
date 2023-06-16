@@ -61,7 +61,7 @@ class ChangePasswordVC: BaseVC {
 extension ChangePasswordVC {
     private func change(currentPassword: String, to newPassword: String) {
         self.showIndicator()
-        ProfileRouter.updatePassword(oldPassword: currentPassword, password: newPassword, passwordConfirmation: newPassword).send { [weak self] (response: APIGlobalResponse) in
+        AuthRouter.updatePassword(password: newPassword, oldPassword: currentPassword).send { [weak self] (response: APIGlobalResponse) in
             guard let self = self else {return}
             switch response.key {
             case .success:

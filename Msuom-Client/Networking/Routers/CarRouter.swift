@@ -61,13 +61,13 @@ enum CarRouter {
     case toggleAdFav(id: String)
     case toggleAuctionFav(id: String, streamId: String)
     case haraj(brandId: String?, page: Int)
-    case harajFilter(brandId: String?, typeId: String?, cityId: String?, statusId: String?)
+    case harajFilter(brandId: String?, typeId: String?, year: String?, cityId: String?, statusId: String?)
     case offers(page: Int, type: String)
     case offerFilter(brandId: String?, providerId: String?, page: Int)
     case offerDetails(id: String)
     case providers(page: Int)
     case providerFilter(name: String?, brandId: String?, cityId: String?, page: Int)
-    case providerDetails(id: String, page: Int)
+    case providerDetails(id: String, page: Int, brandId: String?, typeId: String?, year: String?, cityId: String?, statusId: String?)
     case purchaseOrders(
         carId: String,
         providerId: String,
@@ -275,11 +275,12 @@ extension CarRouter: APIRouter {
                 "page": page,
                 "limit": listLimit
             ]
-        case .harajFilter(let brandId, let typeId, let cityId, let statusId):
+        case .harajFilter(let brandId, let typeId, let year, let cityId, let statusId):
             return [
                 "brandId": brandId,
                 "typeId": typeId,
                 "cityId": cityId,
+                "year": year,
                 "statusId": statusId
             ]
         case .offers(let page, let type):
@@ -311,11 +312,23 @@ extension CarRouter: APIRouter {
                 "cityId": cityId,
                 "page": page
             ]
-        case .providerDetails(let id, let page):
+        case .providerDetails(
+            let id,
+            let page,
+            let brandId,
+            let typeId,
+            let year,
+            let cityId,
+            let statusId):
             return [
                 "id": id,
                 "page": page,
-                "limit": listLimit
+                "limit": listLimit,
+                "brandId": brandId,
+                "typeId": typeId,
+                "year": year,
+                "cityId": cityId,
+                "statusId": statusId
             ]
         case .purchaseOrders(
             let carId,

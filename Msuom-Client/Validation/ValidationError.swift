@@ -28,6 +28,7 @@ enum ValidationError: Error {
     case emptyPhoneNumber
     case incorrectPhoneNumber
     case incorrectWhatsAppNumber
+    case emptyCredential
 
     //MARK: - Verification Code -
     case emptyVerificationCode
@@ -80,6 +81,7 @@ enum ValidationError: Error {
     case emptyDate
     case notOldDate
     case notNewDate
+    case emptyBirthday
 
     //MARK: - Message -
     case emptyTitle
@@ -146,6 +148,8 @@ extension ValidationError: LocalizedError {
             return "Please enter correct phone number.".validationLocalized
         case .incorrectWhatsAppNumber:
             return "Please enter correct whatsApp number.".validationLocalized
+        case .emptyCredential:
+            return "Please enter your phone number or email.".validationLocalized
         
         //MARK: - Verification Code -
         case .emptyVerificationCode:
@@ -235,6 +239,8 @@ extension ValidationError: LocalizedError {
             return "Please select newer date.".validationLocalized
         case .emptyDate:
             return "Please select the date.".validationLocalized
+        case .emptyBirthday:
+            return "Please select birth day.".validationLocalized
 
         //MARK: - Message -
         case .emptyTitle:

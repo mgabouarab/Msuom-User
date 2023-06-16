@@ -11,7 +11,7 @@ class ForgetPasswordVC: BaseVC {
     
     //MARK: - IBOutlets -
     @IBOutlet weak private var stackView: UIStackView!
-    @IBOutlet private weak var credentialTextField: PhoneTextFieldView!
+    @IBOutlet private weak var credentialTextField: NormalTextFieldView!
     
     //MARK: - Properties -
     private var credential: String?
@@ -43,8 +43,8 @@ class ForgetPasswordVC: BaseVC {
     //MARK: - Actions -
     @IBAction private func continueButtonPressed() {
         do {
-            let credential = try self.credentialTextField.phoneText()
-            let countryKey = try self.credentialTextField.countryCodeText()
+            let credential = try ValidationService.validate(credential: self.credentialTextField.textValue())
+            let countryKey = "+966"//try self.credentialTextField.countryCodeText()
             self.forgetPassword(for: credential, countryKey: countryKey)
         } catch {
             self.showErrorAlert(error: error.localizedDescription)

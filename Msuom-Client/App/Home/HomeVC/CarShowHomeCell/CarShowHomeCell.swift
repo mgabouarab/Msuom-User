@@ -63,7 +63,7 @@ extension CarShowHomeCell: UITableViewDataSource {
 extension CarShowHomeCell: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let provider = self.items[indexPath.row]
-        let vc = ProviderDetailsVC.create(providerDetails: provider)
+        let vc = ProviderDetailsVC.create(providerDetails: provider, id: nil)
         self.parentContainerViewController?.show(vc, sender: self)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -31,6 +31,8 @@ class EvaluationOrderVC: BaseVC {
     @IBOutlet weak private var priceView: UIView!
     @IBOutlet weak private var notesView: UIView!
     @IBOutlet weak private var pdfFileView: UIView!
+    @IBOutlet weak private var yearLabel: UILabel!
+    @IBOutlet weak private var currentStatusLabel: UILabel!
     
     //MARK: - Properties -
     private var data: EvaluationOrderDetails?
@@ -67,15 +69,15 @@ class EvaluationOrderVC: BaseVC {
     //MARK: - Logic Methods -
     func setViewWith(data: EvaluationOrderDetails) {
         self.brandLabel.text = data.brandName
-        self.typeLabel.text = data.type
+        self.typeLabel.text = data.typeName
         self.categoryLabel.text = data.categoryName
         self.statusLabel.text = data.statusName
         self.walkwayLabel.text = data.walkway
         self.orderNumberLabel.text = "Order Number:".localized + " " + "\(data.orderNo ?? 0)"
         self.priceLabel.text = "\(data.deliveryPrice ?? 0) \(data.currency ?? appCurrency)"
         self.notesLabel.text = data.notes
-        self.statusLabel.text = data.statusName
-        
+        self.yearLabel.text = data.year
+        self.currentStatusLabel.text = data.orderStatusTxt
         if let status = data.orderStatus, let orderStatus = OrderStatus(rawValue: status) {
             switch orderStatus {
             case .waitForPay:
@@ -143,10 +145,18 @@ extension EvaluationOrderVC {
     }
     private func acceptRejectOffer(id: String, status: String) {
         self.showIndicator()
-        OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGenericResponse<EvaluationOrderDetails>) in
-            guard let self = self, let data = response.data else {return}
-            self.data = data
-            self.setViewWith(data: data)
+        if status == "accept" {
+            OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGenericResponse<EvaluationOrderDetails>) in
+                guard let self = self, let data = response.data else {return}
+                self.data = data
+                self.setViewWith(data: data)
+            }
+        } else {
+            OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGlobalResponse) in
+                guard let self = self else {return}
+                self.showSuccessAlert(message: response.message)
+                self.pop()
+            }
         }
     }
     private func payOrder(id: String, paymentMethod: String, price: String) {

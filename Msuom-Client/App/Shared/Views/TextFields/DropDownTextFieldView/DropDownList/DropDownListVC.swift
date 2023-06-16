@@ -60,7 +60,8 @@ final class DropDownListVC: UIViewController {
 extension DropDownListVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.items.count
+        self.tableView.setPlaceholder(isEmpty: items.isEmpty, separator: .singleLine)
+        return self.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

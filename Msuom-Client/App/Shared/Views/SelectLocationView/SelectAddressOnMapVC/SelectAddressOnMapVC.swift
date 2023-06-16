@@ -44,6 +44,8 @@ class SelectAddressOnMapVC: BaseVC {
     private func configureInitialDesign() {
         self.addBackButtonWith(title: "Select Location".localized)
         self.mapView.delegate = self
+        let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
+        self.navigationItem.rightBarButtonItem = buttonItem
     }
     
     //MARK: - Logic Methods -

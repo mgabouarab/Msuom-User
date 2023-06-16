@@ -43,7 +43,7 @@ extension ProfileRouter: APIRouter {
         case .updateProfile:
             return "profile/update"
         case .updatePassword:
-            return "profile/update-password"
+            return "update-password"
         case .updateAvailability:
             return "profile/update-availability"
         case .changedPhoneActivation:
@@ -63,11 +63,10 @@ extension ProfileRouter: APIRouter {
                 "phone": phone,
                 "country_key": countryKey
             ]
-        case .updatePassword(let oldPassword, let password, let passwordConfirmation):
+        case .updatePassword(let oldPassword, let password, _):
             return [
-                "old_password": oldPassword,
-                "password": password,
-                "password_confirmation": passwordConfirmation
+                "oldPassword": oldPassword,
+                "password": password
             ]
         case .updateAvailability:
             fatalError()

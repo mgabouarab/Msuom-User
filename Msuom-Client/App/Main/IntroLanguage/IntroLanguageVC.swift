@@ -152,7 +152,7 @@ extension IntroLanguageVC {
         if UserDefaults.isFirstTime {
             self.getIntro()
         } else {
-            let vc = AppTabBarController.create()
+            let vc = AppTabBarController.create(showLogin: true)
             AppHelper.changeWindowRoot(vc: vc)
         }
     }

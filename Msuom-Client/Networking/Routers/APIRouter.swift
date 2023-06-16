@@ -78,6 +78,7 @@ extension APIRouter {
             return
         }
         AF.request(self).responseData { data in
+            data.response?.statusCode
             printApiResponse(data.data)
             self.handleResponse(data) { (respons: T?,errorType) in
                 AppIndicator.shared.dismiss()
@@ -114,10 +115,12 @@ extension APIRouter {
             print("the Progress is \(Int(progress.fractionCompleted*100)) %")
         }).responseData { data in
             printApiResponse(data.data)
+            
             self.handleResponse(data, completion: completion)
         }
     }
     private func handleResponse<T: Codable>(_ response: AFDataResponse<Data>, completion: @escaping (_ respons: T?, _ errorType: APIErrors?) -> Void) {
+        
         switch response.result {
         case .failure(_):
             completion(nil, .connectionError)

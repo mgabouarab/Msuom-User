@@ -150,10 +150,14 @@ extension CarsVC: AuctionTypeSelectionDelegate {
             
         case .normal:
             let vc = AddCarVC.create()
-            self.push(vc)
+            let nav = ColoredNav(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
         case .live:
             let vc = AddCarVC.create()
-            self.push(vc)
+            let nav = ColoredNav(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
         }
         
     }

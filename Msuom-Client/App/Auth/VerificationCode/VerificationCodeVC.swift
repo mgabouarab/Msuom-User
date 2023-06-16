@@ -97,13 +97,13 @@ class VerificationCodeVC: BaseVC {
     }
     @IBAction private func resendButtonPressed() {
         self.showIndicator()
-//        AuthRouter.codeResend(credential: credential, countryKey: countryKey).send { [weak self] (response: APIGlobalResponse) in
-//            guard let self = self else {return}
-//            self.showSuccessAlert(message: response.message)
+        AuthRouter.codeResend(credential: credential, countryKey: countryKey).send { [weak self] (response: APIGlobalResponse) in
+            guard let self = self else {return}
+            self.showSuccessAlert(message: response.message)
             self.startTimer()
             self.resendView.isHidden = true
             self.timerStack.isHidden = false
-//        }
+        }
     }
     
 }

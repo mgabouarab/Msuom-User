@@ -91,7 +91,7 @@ class EditProfileVC: BaseVC {
         var profileImage: [UploadData]?
         
         if let imageData = self.selectedImageData {
-            profileImage = [UploadData(data: imageData, fileName: Date().toString(), mimeType: .jpeg, name: "edit_avatar")]
+            profileImage = [UploadData(data: imageData, fileName: Date().toString(), mimeType: .jpeg, name: "avatar")]
         }
         
         do {

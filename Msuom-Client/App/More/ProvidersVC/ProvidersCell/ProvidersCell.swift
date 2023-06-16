@@ -51,6 +51,12 @@ class ProvidersCell: UITableViewCell {
         countLabel.text = data.carCount?.htmlToAttributedString?.string
         placeLabel.text = data.cityName
     }
+    func configureWith(data: SearchModel) {
+        cellImageView.setWith(string: data.image)
+        nameLabel.text = data.name
+        countLabel.text = data.carCount?.htmlToAttributedString?.string ?? data.carCount
+        placeLabel.text = data.cityName
+    }
     
     
     //MARK: - Actions -

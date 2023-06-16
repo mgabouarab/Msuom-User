@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -472,7 +472,7 @@
                                         <rect key="frame" x="0.0" y="568" width="393" height="135"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f16-0e-ST2">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1520"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1480"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="PKp-VH-Of9" customClass="SellIndicatorView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="0.0" width="361" height="128"/>
@@ -492,18 +492,15 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekF-nm-9it">
-                                                        <rect key="frame" x="0.0" y="296" width="393" height="40"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekF-nm-9it">
+                                                        <rect key="frame" x="0.0" y="296" width="393" height="0.0"/>
                                                         <color key="backgroundColor" name="secondaryDarkFontColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="iqv-QA-IhZ"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" name="mainDarkFontColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="6mD-re-bqS" customClass="AutoBidView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="356" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="316" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -512,7 +509,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="fQ6-yn-zcz" customClass="LastBidsView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="504" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="464" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -521,7 +518,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="77Q-Vt-nGU" customClass="CarInfoView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="652" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="612" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -530,7 +527,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="CtW-jm-Sjg" customClass="SellerInfoView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="800" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="760" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -539,7 +536,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="M0t-Ku-jh7" customClass="AuctionAdvantagesView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="948" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="908" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -548,7 +545,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="SQ5-1n-L8r" customClass="FeedbacksView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="1096" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="1056" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -557,7 +554,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="OFP-sG-vhz" customClass="NextAuctionsView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="1244" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="1204" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -566,7 +563,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-nW-aVQ" customClass="ExpandableDetailsView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="1392" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="1352" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -926,13 +923,12 @@
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Choose the vehicle class"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="bp4-ov-gcc" customClass="NormalTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="bp4-ov-gcc" customClass="DropDownTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="425.33333333333337" width="345" height="77"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="Year"/>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="Choose the year"/>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isNumericKeyboard" value="YES"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="77" translatesAutoresizingMaskIntoConstraints="NO" id="PfT-TF-9zC" customClass="DropDownTextFieldView" customModule="Msuom_Client" customModuleProvider="target">
@@ -1707,7 +1703,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="D7N-jm-UJs"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charge Request" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cox-Gb-U5B">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please specify how to collect the vehicle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cox-Gb-U5B">
                                                                 <rect key="frame" x="0.0" y="9.0000000000000568" width="345" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="i9V-qE-Z5l"/>
@@ -1716,7 +1712,7 @@
                                                                 <color key="textColor" name="mainDarkFontColor"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Charge Request"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Please specify how to collect the vehicle"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKz-cD-EAp">
@@ -2041,7 +2037,7 @@
                                                                         <color key="textColor" name="mainDarkFontColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="After sale Services"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="What is the problem"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8R-kL-4B1">

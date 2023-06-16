@@ -22,6 +22,7 @@ class AfterBuyOrderVC: BaseVC {
     @IBOutlet weak private var orderStatusLabel: UILabel!
     @IBOutlet weak private var priceView: UIView!
     @IBOutlet weak private var servicesLabel: UILabel!
+    @IBOutlet weak private var currentStatusLabel: UILabel!
     
     //MARK: - Properties -
     private var data: ShippingOrderDetails?
@@ -65,8 +66,9 @@ class AfterBuyOrderVC: BaseVC {
         self.bodyLabel.text = data.description
         self.orderNumberLabel.text = "Ad Number:".localized + " " + "\(data.orderNo ?? 0)"
         self.priceLabel.text = "\(data.deliveryPrice ?? 0) \(data.currency ?? appCurrency)"
-        self.orderStatusLabel.text = data.orderStatusTxt
+//        self.orderStatusLabel.text = data.orderStatusTxt
         self.servicesLabel.text = data.services
+        self.currentStatusLabel.text = data.orderStatusTxt
         if let status = data.orderStatus, let orderStatus = OrderStatus(rawValue: status) {
             switch orderStatus {
             case .waitForAccept:
@@ -152,10 +154,18 @@ extension AfterBuyOrderVC {
     }
     private func acceptRejectOffer(id: String, status: String) {
         self.showIndicator()
-        OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGenericResponse<ShippingOrderDetails>) in
-            guard let self = self, let data = response.data else {return}
-            self.data = data
-            self.setViewWith(data: data)
+        if status == "accept" {
+            OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGenericResponse<ShippingOrderDetails>) in
+                guard let self = self, let data = response.data else {return}
+                self.data = data
+                self.setViewWith(data: data)
+            }
+        } else {
+            OrderRouter.acceptRejectOffer(id: id, status: status).send { [weak self] (response: APIGlobalResponse) in
+                guard let self = self else {return}
+                self.showSuccessAlert(message: response.message)
+                self.pop()
+            }
         }
     }
     private func payOrder(id: String, paymentMethod: String, price: String) {

@@ -17,12 +17,15 @@ class ContactUsVC: BaseVC {
     @IBOutlet weak var messageTextView: AppTextView!
     
     //MARK: - Properties -
-    
+    var bidId: String?
+    var disputeId: String?
     
     //MARK: - Creation -
-    static func create() -> ContactUsVC {
+    static func create(bidId: String? = nil, disputeId: String? = nil) -> ContactUsVC {
         let vc = AppStoryboards.more.instantiate(ContactUsVC.self)
         vc.hidesBottomBarWhenPushed = true
+        vc.bidId = bidId
+        vc.disputeId = disputeId
         return vc
     }
     
@@ -64,7 +67,7 @@ class ContactUsVC: BaseVC {
 extension ContactUsVC {
     private func contactWith(phone: String, countryCode: String, name: String, message: String) {
         self.showIndicator()
-        AuthRouter.contactUs(name: name, phone: phone, message: message, countryKey: countryCode).send { [weak self] (response: APIGlobalResponse) in
+        AuthRouter.contactUs(name: name, phone: phone, message: message, countryKey: countryCode, bidId: self.bidId, disputeId: self.disputeId).send { [weak self] (response: APIGlobalResponse) in
             guard let self = self else {return}
             self.showSuccessAlert(message: response.message)
             self.pop()

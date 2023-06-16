@@ -17,6 +17,7 @@ final class CarEvaluationVC: BaseVC {
     @IBOutlet weak private var typeTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var classTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var statusTextFieldView: DropDownTextFieldView!
+    @IBOutlet weak private var yearTextFieldView: DropDownTextFieldView!
     @IBOutlet weak private var walkwayTextFieldView: NormalTextFieldView!
     @IBOutlet weak private var evaluateLabel: UILabel!
     @IBOutlet weak private var chargeLabel: UILabel!
@@ -35,6 +36,7 @@ final class CarEvaluationVC: BaseVC {
     private var typeArray: [DropDownItem] = []
     private var classArray: [DropDownItem] = []
     private var statusArray: [DropDownItem] = []
+    private var years: [DropDownItem] = []
     
     //MARK: - Creation -
     static func create() -> CarEvaluationVC {
@@ -68,8 +70,12 @@ final class CarEvaluationVC: BaseVC {
         
         self.deliveryViewTapTapped()
         
-        
-        
+        struct Item: DropDownItem {
+            var id: String
+            var name: String
+        }
+        let year = Calendar.current.component(.year, from: Date())
+        years = Array(year-40 ... year).reversed().map({Item(id: "\($0)", name: "\($0)")})
         
         
     }
@@ -93,6 +99,7 @@ final class CarEvaluationVC: BaseVC {
         self.typeTextFieldView.delegate = self
         self.classTextFieldView.delegate = self
         self.statusTextFieldView.delegate = self
+        self.yearTextFieldView.delegate = self
         
     }
     private func addGestures() {
@@ -129,6 +136,7 @@ final class CarEvaluationVC: BaseVC {
             let typeId = try CarValidationService.validate(typeId: self.typeTextFieldView.value()?.id)
             let classId = try CarValidationService.validate(classId: self.classTextFieldView.value()?.id)
             let statusId = try CarValidationService.validate(statusId: self.statusTextFieldView.value()?.id)
+            let year = try CarValidationService.validate(year: self.yearTextFieldView.value()?.id)
             let walkway = try CarValidationService.validate(walkway: self.walkwayTextFieldView.textValue())
             let address = try ValidationService.validate(addressDetails: self.addressTextFieldView.textValue())
             
@@ -140,7 +148,8 @@ final class CarEvaluationVC: BaseVC {
                 statusId: statusId,
                 walkway: walkway,
                 type: "general",
-                address: address
+                address: address,
+                year: year
             )
             
             
@@ -154,6 +163,7 @@ final class CarEvaluationVC: BaseVC {
             let typeId = try CarValidationService.validate(typeId: self.typeTextFieldView.value()?.id)
             let classId = try CarValidationService.validate(classId: self.classTextFieldView.value()?.id)
             let statusId = try CarValidationService.validate(statusId: self.statusTextFieldView.value()?.id)
+            let year = try CarValidationService.validate(year: self.yearTextFieldView.value()?.id)
             let walkway = try CarValidationService.validate(walkway: self.walkwayTextFieldView.textValue())
             let address = try ValidationService.validate(addressDetails: self.addressTextFieldView.textValue())
             
@@ -164,7 +174,8 @@ final class CarEvaluationVC: BaseVC {
                 statusId: statusId,
                 walkway: walkway,
                 type: "certified",
-                address: address
+                address: address,
+                year: year
             )
             
             
@@ -194,9 +205,9 @@ final class CarEvaluationVC: BaseVC {
 
 //MARK: - Networking -
 extension CarEvaluationVC {
-    private func carEvaluation(brandId: String, typeId: String, categoryId: String, statusId: String, walkway: String, type: String, address: String) {
+    private func carEvaluation(brandId: String, typeId: String, categoryId: String, statusId: String, walkway: String, type: String, address: String, year: String) {
         self.showIndicator()
-        MoreRouter.carEvaluation(brandId: brandId, typeId: typeId, categoryId: categoryId, statusId: statusId, walkway: walkway, type: type, address: address, isDelivery: self.isDelivery).send { [weak self] (response: APIGenericResponse<CarEvaluationResultModel>) in
+        MoreRouter.carEvaluation(brandId: brandId, typeId: typeId, categoryId: categoryId, statusId: statusId, walkway: walkway, type: type, address: address, isDelivery: self.isDelivery, year: year).send { [weak self] (response: APIGenericResponse<CarEvaluationResultModel>) in
             guard let self = self else {return}
             if let data = response.data, type == "general", data.result != nil {
                 let vc = CarEvaluationResultVC.create(result: data, evaluateDescription: self.evaluateLabel.text)
@@ -257,6 +268,7 @@ extension CarEvaluationVC: DropDownTextFieldViewDelegate {
         case typeTextFieldView: return self.typeArray
         case classTextFieldView: return self.classArray
         case statusTextFieldView: return self.statusArray
+        case yearTextFieldView: return self.years
         default: return []
         }
     }

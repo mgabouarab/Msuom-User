@@ -87,6 +87,7 @@ class AuctionsVC: BaseVC {
         self.bids = []
         self.cityArray = []
         self.selectedCityId = nil
+        self.cityTextFieldView.set(value: nil)
         self.tableView.reloadData()
         self.tableView.refreshControl?.endRefreshing()
         self.getAuctionsData()
@@ -160,15 +161,15 @@ extension AuctionsVC: UITableViewDataSource {
                 titleLabel.textColor = Theme.colors.mainDarkFontColor
                 titleLabel.text = "Stores".localized
                 
-                let allButton = UIButton()
-                allButton.setTitle("See all".localized, for: .normal)
-                allButton.addTarget(self, action: #selector(sectionZeroSeeAll), for: .touchUpInside)
-                allButton.setTitleColor(Theme.colors.mainColor, for: .normal)
+//                let allButton = UIButton()
+//                allButton.setTitle("See all".localized, for: .normal)
+//                allButton.addTarget(self, action: #selector(sectionZeroSeeAll), for: .touchUpInside)
+//                allButton.setTitleColor(Theme.colors.mainColor, for: .normal)
                 
                 stack.addArrangedSubview(spacer())
                 stack.addArrangedSubview(titleLabel)
                 stack.addArrangedSubview(UIImageView())
-                stack.addArrangedSubview(allButton)
+//                stack.addArrangedSubview(allButton)
                 stack.addArrangedSubview(spacer())
                 
                 return stack

@@ -70,6 +70,7 @@ extension Auction {
         let fullEndDate: String
         let isLive: Bool
         let isStart: Bool
+        let advertiseNumber: String
     }
     
     //MARK: - Views Data -
@@ -131,6 +132,12 @@ extension Auction {
             }
             return true
         }
+        var advertiseNumber: String {
+            guard let adNumber = self.adNumber else {
+                return ""
+            }
+            return " (\(adNumber))"
+        }
         
         return  HomeSoonAuction(
             id: self.id,
@@ -140,7 +147,8 @@ extension Auction {
             fullStartDate: displayedFullDate,
             fullEndDate: displayedFullEndDate,
             isLive: isLive,
-            isStart: isStart
+            isStart: isStart,
+            advertiseNumber: advertiseNumber
         )
         
     }

@@ -42,6 +42,7 @@ class RegisterVC: BaseVC {
     //MARK: - Design Methods -
     private func configureInitialDesign() {
         self.title = "Register".localized
+        self.birthdayTextFieldView.mode = .date(minimum: nil, maximum: Date())
     }
     private func configureInitialData() {
         
@@ -76,7 +77,7 @@ class RegisterVC: BaseVC {
             let email = try self.emailTextField.emailText()
             let password = try passwordTextField.passwordText(for: .newPassword)
             let cityId = try CarValidationService.validate(cityId: self.cityTextFieldView.value()?.id)
-            let birthday = self.birthdayTextFieldView.value()
+            let birthday = try ValidationService.validate(birthday: self.birthdayTextFieldView.value())
             var uploads: [UploadData]?
             
             if let selectedImage {
@@ -85,7 +86,7 @@ class RegisterVC: BaseVC {
                 ]
             }
             
-            self.registerWith(name, countryKey, phone, email, password, uploads, cityId, birthday?.apiDateString())
+            self.registerWith(name, countryKey, phone, email, password, uploads, cityId, birthday.apiDateString())
             
         } catch {
             self.showErrorAlert(error: error.localizedDescription)
@@ -146,3 +147,9 @@ extension RegisterVC: DropDownTextFieldViewDelegate {
         
     }
 }
+
+
+//MARK: - Medical Station -> Done
+//MARK: - JM -> Done
+//MARK: - MASKAN -> DisplayName
+//MARK: - LOH -> Done
