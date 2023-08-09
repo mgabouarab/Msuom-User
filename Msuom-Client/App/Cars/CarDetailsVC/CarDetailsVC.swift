@@ -87,7 +87,7 @@ class CarDetailsVC: BaseVC {
     }
     private func setCar(details: Car.Details) {
         self.details = details
-        self.sliderView.set(images: details.images.map({SliderView.SliderItem(image: $0, title: nil, description: nil)}))
+        self.sliderView.set(images: details.images.map({SliderView.SliderItem(image: $0, title: nil, description: nil, link: nil)}))
         self.nameLabel.text = details.name
         self.priceLabel.text = details.price
         self.sellTypeLabel.text = details.sellType

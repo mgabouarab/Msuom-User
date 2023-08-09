@@ -85,7 +85,7 @@ extension ShowAllProvidersVC: UITableViewDataSource {
 extension ShowAllProvidersVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let providerId = self.items[indexPath.row].providerId else {return}
-        let vc = ProviderStreamsVC.create(type: self.selectedType, providerId: providerId, topTitle: self.topTitle)
+        let vc = ProviderStreamsVC.create(type: self.selectedType, providerId: providerId, topTitle: self.topTitle, cityId: nil)
         self.push(vc)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

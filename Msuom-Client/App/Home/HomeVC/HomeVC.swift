@@ -81,7 +81,7 @@ extension HomeVC: UITableViewDataSource {
         switch item.key {
         case .sliders:
             let cell = tableView.dequeueReusableCell(with: HomeSliderCell.self, for: indexPath)
-            cell.setup(data: item.sliders.compactMap({SliderView.SliderItem(image: $0.image, title: $0.title, description: $0.description)}))
+            cell.setup(data: item.sliders.compactMap({SliderView.SliderItem(image: $0.image, title: $0.title, description: $0.description, link: $0.link)}))
             return cell
         case .carBrands:
             let cell = tableView.dequeueReusableCell(with: HomeCategoryCell.self, for: indexPath)

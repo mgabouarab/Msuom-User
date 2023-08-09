@@ -18,14 +18,16 @@ class FilterStreamsVC: BaseVC {
     //MARK: - Properties -
     private var items: [BidStream] = []
     private var selectedIds: [String] = []
+    private var providerIds: [String] = []
     private var topTitle: String?
     
     //MARK: - Creation -
-    static func create(selectedIds: [String], topTitle: String?) -> FilterStreamsVC {
+    static func create(selectedIds: [String], topTitle: String?, providerIds: [String]) -> FilterStreamsVC {
         let vc = AppStoryboards.auctions.instantiate(FilterStreamsVC.self)
         vc.hidesBottomBarWhenPushed = true
         vc.selectedIds = selectedIds
         vc.topTitle = topTitle
+        vc.providerIds = providerIds
         return vc
     }
     
@@ -124,7 +126,7 @@ extension FilterStreamsVC: UITableViewDelegate {
 extension FilterStreamsVC {
     private func getData() {
         self.showIndicator()
-        AuctionRouter.filterStreams(streamIds: self.selectedIds.toString()).send { [weak self] (response: APIGenericResponse<ProviderStreamsModel>) in
+        AuctionRouter.filterStreams(streamIds: self.selectedIds.toString(), providerIds: self.providerIds.toString()).send { [weak self] (response: APIGenericResponse<ProviderStreamsModel>) in
             guard let self = self else {return}
             self.items = response.data?.streams ??  []
             self.tableView.reloadData()

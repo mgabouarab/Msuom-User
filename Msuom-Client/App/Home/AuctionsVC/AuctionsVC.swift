@@ -25,7 +25,7 @@ class AuctionsVC: BaseVC {
     
     //MARK: - Properties -
     private var streams: [BidStream] = []
-    private var bids: [BidDetails] = []
+    private var bids: [ProviderStreams] = []
     private var cityArray: [Cities] = []
     private var cityFilterArray: [DropDownItem] = []
     private var selectedType: AuctionTimeType = .current
@@ -44,10 +44,10 @@ class AuctionsVC: BaseVC {
         self.setupTableView()
         self.configureInitialData()
         self.cityTextFieldView.delegate = self
+        self.refresh()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.refresh()
     }
     
     //MARK: - Design Methods -
@@ -134,6 +134,7 @@ extension AuctionsVC {
         self.tableView.register(cellType: AuctionCell.self, bundle: nil)
         self.tableView.register(cellType: AuctionsStoreCell.self, bundle: nil)
         self.tableView.register(cellType: ComingSoonAuctionCell.self, bundle: nil)
+        self.tableView.register(cellType: AuctionBidsCell.self)
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
         self.tableView.tableFooterView = UIView(frame: .zero)
         self.tableView.addRefresh(action: #selector(self.refresh))
@@ -161,43 +162,18 @@ extension AuctionsVC: UITableViewDataSource {
                 titleLabel.textColor = Theme.colors.mainDarkFontColor
                 titleLabel.text = "Stores".localized
                 
-//                let allButton = UIButton()
-//                allButton.setTitle("See all".localized, for: .normal)
-//                allButton.addTarget(self, action: #selector(sectionZeroSeeAll), for: .touchUpInside)
-//                allButton.setTitleColor(Theme.colors.mainColor, for: .normal)
+                let allButton = UIButton()
+                allButton.setTitle("See all".localized, for: .normal)
+                allButton.addTarget(self, action: #selector(sectionZeroSeeAll), for: .touchUpInside)
+                allButton.setTitleColor(Theme.colors.mainColor, for: .normal)
                 
                 stack.addArrangedSubview(spacer())
                 stack.addArrangedSubview(titleLabel)
                 stack.addArrangedSubview(UIImageView())
-//                stack.addArrangedSubview(allButton)
+                stack.addArrangedSubview(allButton)
                 stack.addArrangedSubview(spacer())
                 
                 return stack
-            } else {
-                return nil
-            }
-        case 1:
-            if !self.bids.isEmpty {
-                let stack = UIStackView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 60))
-                
-                let titleLabel = UILabel()
-                titleLabel.font = .systemFont(ofSize: 16)
-                titleLabel.textColor = Theme.colors.mainDarkFontColor
-                titleLabel.text = "Bids".localized
-                
-//                let allButton = UIButton()
-//                allButton.setTitle("See all".localized, for: .normal)
-//                allButton.addTarget(self, action: #selector(sectionOneSeeAll), for: .touchUpInside)
-//                allButton.setTitleColor(Theme.colors.mainColor, for: .normal)
-                
-                stack.addArrangedSubview(spacer())
-                stack.addArrangedSubview(titleLabel)
-                stack.addArrangedSubview(UIImageView())
-//                stack.addArrangedSubview(allButton)
-                stack.addArrangedSubview(spacer())
-                
-                return stack
-                
             } else {
                 return nil
             }
@@ -236,8 +212,13 @@ extension AuctionsVC: UITableViewDataSource {
             return cell
         case 1:
             let item = self.bids[indexPath.row]
-            let cell = tableView.dequeueReusableCell(with: ComingSoonAuctionCell.self, for: indexPath)
-            cell.configureWith(details: item.homeComingSoonCellData())
+            let cell = tableView.dequeueReusableCell(with: AuctionBidsCell.self, for: indexPath)
+            cell.set(name: item.bidName, items: item.bids)
+            cell.showAllAction = { [weak self] in
+                guard let self = self else {return}
+                let vc = AllAuctionsProvidersVC.create(bidIds: item.bidIds?.toString() ?? "")
+                self.push(vc)
+            }
             return cell
         default:
             return UITableViewCell()
@@ -251,18 +232,19 @@ extension AuctionsVC: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             guard let providerId = self.streams[indexPath.row].providerId else {return}
-            let vc = ProviderStreamsVC.create(type: self.selectedType.rawValue, providerId: providerId, topTitle: selectedType == .current ? "currentAuctions".localized : "nextAuctions".localized)
-            self.push(vc)
-        case 1:
-            guard let id = self.bids[indexPath.row].id else {return}
-            let vc = AuctionDetailsVC.create(id: id)
+            let vc = ProviderStreamsVC.create(type: self.selectedType.rawValue, providerId: providerId, topTitle: selectedType == .current ? "currentAuctions".localized : "nextAuctions".localized, cityId: self.selectedCityId)
             self.push(vc)
         default:
             return
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        switch indexPath.section {
+        case 0:
+            return 120
+        default:
+            return UITableView.automaticDimension
+        }
     }
 }
 
@@ -276,7 +258,7 @@ extension AuctionsVC {
         AuctionRouter.listOfComingOrCurrentBids(type: self.selectedType.rawValue, cityId: self.selectedCityId).send { [weak self] (response: APIGenericResponse<AuctionsModel>) in
             guard let self = self else {return}
             self.streams = response.data?.streams ?? []
-            self.bids = response.data?.bids ?? []
+            self.bids = response.data?.providerStreams ?? []
             self.cityArray = response.data?.cities ?? []
             self.tableView.reloadData()
         }
@@ -315,10 +297,17 @@ extension AuctionsVC: DropDownTextFieldViewDelegate {
     }
 }
 
-
+struct ProviderStreams: Codable {
+    let bids: [BidDetails]
+    let providerId: String?
+    let bidName: String?
+    let bidId: String?
+    let bidAdNumber: Int?
+    let bidIds: [String]?
+}
 struct AuctionsModel: Codable {
     let streams: [BidStream]
-    let bids: [BidDetails]
+    let providerStreams: [ProviderStreams]
     let cities: [Cities]
 }
 

@@ -296,6 +296,11 @@
 		2CBC94BE286D0C6D00E42AB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC94C0286D0C6D00E42AB5 /* Localizable.strings */; };
 		2CBD858028063F380036C9B1 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD857F28063F380036C9B1 /* Print.swift */; };
 		2CC025C4293F274A00DB4D10 /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC025C3293F274A00DB4D10 /* ScannerVC.swift */; };
+		2CC414672A7FDC3E00C51DF4 /* AuctionBidsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC414652A7FDC3E00C51DF4 /* AuctionBidsCell.swift */; };
+		2CC414682A7FDC3E00C51DF4 /* AuctionBidsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC414662A7FDC3E00C51DF4 /* AuctionBidsCell.xib */; };
+		2CC4146C2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4146A2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.swift */; };
+		2CC4146D2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC4146B2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.xib */; };
+		2CC414732A7FE8C500C51DF4 /* AllAuctionsProvidersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC414702A7FE8C500C51DF4 /* AllAuctionsProvidersVC.swift */; };
 		2CC4D54B2A3A017B0038FDB4 /* ProviderDetailsFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4D54A2A3A017B0038FDB4 /* ProviderDetailsFilterVC.swift */; };
 		2CD047E32A1CC3FC00431238 /* AutoBidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD047E22A1CC3FC00431238 /* AutoBidView.swift */; };
 		2CD047E52A1CC41A00431238 /* AutoBidView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD047E42A1CC41A00431238 /* AutoBidView.xib */; };
@@ -325,6 +330,7 @@
 		2CE14370280C0C7100A601F5 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE1436F280C0C7100A601F5 /* Auth.storyboard */; };
 		2CE14373280C132300A601F5 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE14372280C132300A601F5 /* AuthRouter.swift */; };
 		2CE7C8AA29220FE000EE6100 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7C8A929220FE000EE6100 /* AboutVC.swift */; };
+		2CEDAC012A811890009B8566 /* AuctionProviderDetailsFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEDAC002A811890009B8566 /* AuctionProviderDetailsFilterVC.swift */; };
 		2CF038B92A18FCC800AE3042 /* EvaluationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF038B32A18FCC800AE3042 /* EvaluationViewCell.swift */; };
 		2CF038BA2A18FCC800AE3042 /* EvaluationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF038B42A18FCC800AE3042 /* EvaluationViewCell.xib */; };
 		2CF038BB2A18FCC800AE3042 /* EvaluationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF038B52A18FCC800AE3042 /* EvaluationView.xib */; };
@@ -697,6 +703,11 @@
 		2CBC94C1286D0C7000E42AB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CBD857F28063F380036C9B1 /* Print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
 		2CC025C3293F274A00DB4D10 /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
+		2CC414652A7FDC3E00C51DF4 /* AuctionBidsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionBidsCell.swift; sourceTree = "<group>"; };
+		2CC414662A7FDC3E00C51DF4 /* AuctionBidsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionBidsCell.xib; sourceTree = "<group>"; };
+		2CC4146A2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionBidsCollectionCell.swift; sourceTree = "<group>"; };
+		2CC4146B2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionBidsCollectionCell.xib; sourceTree = "<group>"; };
+		2CC414702A7FE8C500C51DF4 /* AllAuctionsProvidersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAuctionsProvidersVC.swift; sourceTree = "<group>"; };
 		2CC4D54A2A3A017B0038FDB4 /* ProviderDetailsFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailsFilterVC.swift; sourceTree = "<group>"; };
 		2CD047E22A1CC3FC00431238 /* AutoBidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBidView.swift; sourceTree = "<group>"; };
 		2CD047E42A1CC41A00431238 /* AutoBidView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoBidView.xib; sourceTree = "<group>"; };
@@ -726,6 +737,7 @@
 		2CE1436F280C0C7100A601F5 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		2CE14372280C132300A601F5 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		2CE7C8A929220FE000EE6100 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		2CEDAC002A811890009B8566 /* AuctionProviderDetailsFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionProviderDetailsFilterVC.swift; sourceTree = "<group>"; };
 		2CF038B32A18FCC800AE3042 /* EvaluationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationViewCell.swift; sourceTree = "<group>"; };
 		2CF038B42A18FCC800AE3042 /* EvaluationViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluationViewCell.xib; sourceTree = "<group>"; };
 		2CF038B52A18FCC800AE3042 /* EvaluationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluationView.xib; sourceTree = "<group>"; };
@@ -1746,6 +1758,7 @@
 		2C54F1AF2922CD1C008F99CE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2CC4146E2A7FE89B00C51DF4 /* AllAuctionsProvidersVC */,
 				2C4E9A7F299B070F008787DD /* BrowseCarVC */,
 				2C5E97352924CF060007E92A /* SearchVC */,
 				2C54F1D929246538008F99CE /* NotificationsVC */,
@@ -1816,6 +1829,8 @@
 		2C54F1CB292417CC008F99CE /* AuctionsVC */ = {
 			isa = PBXGroup;
 			children = (
+				2CC414692A7FDD2C00C51DF4 /* AuctionBidsCollectionCell */,
+				2CC414642A7FDC2500C51DF4 /* AuctionBidsCell */,
 				2C2EB2802A233859006EF7E2 /* AuctionsStoreCell */,
 				2C54F1CC292417E5008F99CE /* AuctionsVC.swift */,
 			);
@@ -2346,6 +2361,7 @@
 		2CBB3E9C2908B00E00A32C3E /* More */ = {
 			isa = PBXGroup;
 			children = (
+				2CEDABFF2A811880009B8566 /* AuctionProviderDetailsFilterVC */,
 				2CC4D5492A3A01550038FDB4 /* ProviderDetailsFilterVC */,
 				2CD7FC4C2A1F809D0035CADC /* ReportsVC */,
 				2CD7FC492A1F7EA00035CADC /* ReportDetailsVC */,
@@ -2417,6 +2433,32 @@
 				2CC025C3293F274A00DB4D10 /* ScannerVC.swift */,
 			);
 			path = ScannerVC;
+			sourceTree = "<group>";
+		};
+		2CC414642A7FDC2500C51DF4 /* AuctionBidsCell */ = {
+			isa = PBXGroup;
+			children = (
+				2CC414652A7FDC3E00C51DF4 /* AuctionBidsCell.swift */,
+				2CC414662A7FDC3E00C51DF4 /* AuctionBidsCell.xib */,
+			);
+			path = AuctionBidsCell;
+			sourceTree = "<group>";
+		};
+		2CC414692A7FDD2C00C51DF4 /* AuctionBidsCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				2CC4146A2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.swift */,
+				2CC4146B2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.xib */,
+			);
+			path = AuctionBidsCollectionCell;
+			sourceTree = "<group>";
+		};
+		2CC4146E2A7FE89B00C51DF4 /* AllAuctionsProvidersVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CC414702A7FE8C500C51DF4 /* AllAuctionsProvidersVC.swift */,
+			);
+			path = AllAuctionsProvidersVC;
 			sourceTree = "<group>";
 		};
 		2CC4D5492A3A01550038FDB4 /* ProviderDetailsFilterVC */ = {
@@ -2567,6 +2609,14 @@
 				2C2EB29D2A262799006EF7E2 /* AboutModel.swift */,
 			);
 			path = AboutVC;
+			sourceTree = "<group>";
+		};
+		2CEDABFF2A811880009B8566 /* AuctionProviderDetailsFilterVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CEDAC002A811890009B8566 /* AuctionProviderDetailsFilterVC.swift */,
+			);
+			path = AuctionProviderDetailsFilterVC;
 			sourceTree = "<group>";
 		};
 		2CF038B12A18FCC800AE3042 /* EvaluationView */ = {
@@ -2915,6 +2965,7 @@
 				2CF41C9528FC211F00BF923D /* SliderCell.xib in Resources */,
 				2C3D7A8E2A18F170004DD1FB /* AuctionPricesView.xib in Resources */,
 				2CD7FC522A1F80AE0035CADC /* ReportsCell.xib in Resources */,
+				2CC414682A7FDC3E00C51DF4 /* AuctionBidsCell.xib in Resources */,
 				2CB750C92905CF7B00FEDED9 /* EmailLocalizable.strings in Resources */,
 				2CA0AC302912C18D006CBC78 /* AppTextView.xib in Resources */,
 				2C3D7A672A18F170004DD1FB /* AdvantageAndDisadvantageCell.xib in Resources */,
@@ -2966,6 +3017,7 @@
 				2CF41C8B28FC207100BF923D /* SegmentedCollectionCell.xib in Resources */,
 				2C3D7A6D2A18F170004DD1FB /* LiveCommentsCell.xib in Resources */,
 				2CF41C8428FC201300BF923D /* ImageViewerCell.xib in Resources */,
+				2CC4146D2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.xib in Resources */,
 				2C8AB0AE29076644003D233E /* NormalTextFieldView.xib in Resources */,
 				2C4E9A77299A51EC008787DD /* CarShowHomeCell.xib in Resources */,
 				2CD7FC312A1EA87E0035CADC /* AfterSaleCell.xib in Resources */,
@@ -3061,6 +3113,7 @@
 				2CF038B92A18FCC800AE3042 /* EvaluationViewCell.swift in Sources */,
 				2C6F377A2926B80F00730812 /* DropDownListCell.swift in Sources */,
 				2C178D4C27F7D15A00D32327 /* Emailer.swift in Sources */,
+				2CC4146C2A7FDD4300C51DF4 /* AuctionBidsCollectionCell.swift in Sources */,
 				2CE14373280C132300A601F5 /* AuthRouter.swift in Sources */,
 				2CD7FC4B2A1F7EBB0035CADC /* ReportDetailsVC.swift in Sources */,
 				2C178D2E27F7CB1800D32327 /* String.swift in Sources */,
@@ -3148,6 +3201,7 @@
 				2C4E9A58299A4F09008787DD /* HomeSliderCell.swift in Sources */,
 				2CC4D54B2A3A017B0038FDB4 /* ProviderDetailsFilterVC.swift in Sources */,
 				2C178D3927F7CCD500D32327 /* RegularExpression.swift in Sources */,
+				2CEDAC012A811890009B8566 /* AuctionProviderDetailsFilterVC.swift in Sources */,
 				2C4E9A76299A51EC008787DD /* CarShowHomeCell.swift in Sources */,
 				2C4E9A67299A5110008787DD /* CurrentAuctionsCell.swift in Sources */,
 				2C178D2127F7CAF900D32327 /* AnimateGifImage.swift in Sources */,
@@ -3156,6 +3210,7 @@
 				2C19795D298A9FFD000EB796 /* OrdersVC.swift in Sources */,
 				2C178CB627F7C26200D32327 /* Theme.swift in Sources */,
 				2C178CB427F7C26200D32327 /* Fonts.swift in Sources */,
+				2CC414732A7FE8C500C51DF4 /* AllAuctionsProvidersVC.swift in Sources */,
 				2CFC793D2986BED20089131A /* FQAVC.swift in Sources */,
 				2CA73C0B29478BD50055839E /* CarRouter.swift in Sources */,
 				2C178CF227F7C46E00D32327 /* APIGloabelResponse.swift in Sources */,
@@ -3246,6 +3301,7 @@
 				2CA0AC19291297F4006CBC78 /* EditProfileVC.swift in Sources */,
 				2C3D7A702A18F170004DD1FB /* AuctionDetailsVC.swift in Sources */,
 				2C178D4E27F7D15A00D32327 /* AppHelper.swift in Sources */,
+				2CC414672A7FDC3E00C51DF4 /* AuctionBidsCell.swift in Sources */,
 				2C178CAD27F7C22400D32327 /* UserDefaultsExtensions.swift in Sources */,
 				2CFB384329069997001619E1 /* PasswordTextFieldView + Localization.swift in Sources */,
 				2C3C27AC299283D400FECAB8 /* SummaryReportOrderCell.swift in Sources */,
@@ -3543,7 +3599,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Msuom-Client/Msuom-Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = BVZ9794FDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Msuom-Client/Core/Info.plist";
@@ -3583,7 +3639,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Msuom-Client/Msuom-Client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = BVZ9794FDX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Msuom-Client/Core/Info.plist";

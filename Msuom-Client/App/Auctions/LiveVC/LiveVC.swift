@@ -26,7 +26,7 @@ class LiveVC: BaseVC {
     @IBOutlet weak private var playView: LottieView!
     @IBOutlet weak private var fullScreenButton: UIButton!
     @IBOutlet weak private var actionButtonsView: UIView!
-    @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var tableView: UITableView?
     @IBOutlet weak private var commentsContainerView: UIView!
     @IBOutlet weak private var replayContainerView: UIView!
     @IBOutlet weak private var textView: UITextView!
@@ -49,7 +49,7 @@ class LiveVC: BaseVC {
     private var isFullScreen: Bool = false {
         didSet {
             self.commentsContainerView.isHidden = !isFullScreen
-            self.tableView.reloadData()
+            self.tableView?.reloadData()
         }
     }
     
@@ -100,9 +100,9 @@ class LiveVC: BaseVC {
         self.resetView()
     }
     private func setupTableView() {
-        self.tableView.register(cellType: LiveCommentsCell.self)
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        self.tableView?.register(cellType: LiveCommentsCell.self)
+        self.tableView?.dataSource = self
+        self.tableView?.delegate = self
     }
     func resetView() {
         self.playView.isHidden = false
@@ -130,7 +130,7 @@ class LiveVC: BaseVC {
         self.items = []
         self.currentPage = 1
         self.isLast = false
-        self.tableView.reloadData()
+        self.tableView?.reloadData()
         self.getComments(streamId: streamId, bidId: bidId)
     }
     func reloadCollectionView() {
@@ -179,8 +179,8 @@ class LiveVC: BaseVC {
                         name: UserDefaults.user?.name
                     )
                 )
-                self.tableView.reloadData()
-                self.tableView.scrollToBottom(animated: false)
+                self.tableView?.reloadData()
+                self.tableView?.scrollToBottom(animated: false)
                 self.textView.text = nil
             }
     }
@@ -400,8 +400,8 @@ extension LiveVC {
             )
             self.items.append(newMessage)
             
-            self.tableView.reloadData()
-            self.tableView.scrollToBottom(animated: false)
+            self.tableView?.reloadData()
+            self.tableView?.scrollToBottom(animated: false)
         }
     }
 }
@@ -415,7 +415,7 @@ extension LiveVC {
             self.items = (response.data ?? []).reversed() + self.items
             isLast = response.paginate?.currentPage == response.paginate?.lastPage
             self.currentPage += 1
-            self.tableView.reloadData()
+            self.tableView?.reloadData()
             self.isFetching = false
         }
     }

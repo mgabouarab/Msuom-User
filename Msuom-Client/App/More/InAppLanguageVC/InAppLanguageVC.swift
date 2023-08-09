@@ -129,7 +129,7 @@ extension InAppLanguageVC {
 //MARK: - Routes -
 extension InAppLanguageVC {
     private func goToNext() {
-        let vc = AppTabBarController.create()
+        let vc = SplashVC.create()
         AppHelper.changeWindowRoot(vc: vc)
     }
 }

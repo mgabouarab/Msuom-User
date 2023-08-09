@@ -21,7 +21,7 @@ class AuctionAdvantagesCell: UITableViewCell {
     
     //MARK: - Design -
     func setup(advantages: Advantages) {
-        self.expandableDetailsView.set(title: advantages.title, description: advantages.description, isSelected: advantages.isSelected)
+        self.expandableDetailsView.set(title: advantages.title, description: advantages.description, image: advantages.image, isSelected: advantages.isSelected)
     }
     
 }

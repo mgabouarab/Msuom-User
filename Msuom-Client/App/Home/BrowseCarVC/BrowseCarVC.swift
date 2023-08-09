@@ -84,6 +84,9 @@ extension BrowseCarVC {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(cellType: CarCell.self, bundle: nil)
+        self.tableView.register(cellType: OffersCell.self, bundle: nil)
+        self.tableView.register(cellType: ComingSoonAuctionCell.self, bundle: nil)
+        self.tableView.register(cellType: ComingSoonAuctionCell.self, bundle: nil)
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
         self.tableView.tableFooterView = UIView(frame: .zero)
         self.tableView.addRefresh(action: #selector(self.refresh))
@@ -95,22 +98,73 @@ extension BrowseCarVC: UITableViewDataSource {
         return items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(with: CarCell.self, for: indexPath)
         let item = self.items[indexPath.row]
-        cell.configureWith(data: item)
-        return cell
+        if item.type == "advertise" {
+            let cell = tableView.dequeueReusableCell(with: CarCell.self, for: indexPath)
+            cell.setupDataWith(data: item)
+            return cell
+        } else if item.type == "offer" {
+            let cell = tableView.dequeueReusableCell(with: OffersCell.self, for: indexPath)
+            cell.configureWith(model: item)
+            return cell
+        } else if item.type == "live" {
+            let cell = tableView.dequeueReusableCell(with: ComingSoonAuctionCell.self, for: indexPath)
+            cell.configureWith(model: item)
+            return cell
+        } else if item.type == "normal" {
+            let cell = tableView.dequeueReusableCell(with: ComingSoonAuctionCell.self, for: indexPath)
+            cell.configureWith(model: item)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
 }
 extension BrowseCarVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let id = self.items[indexPath.row].id
-        let vc = CarDetailsVC.create(id: id)
-        self.push(vc)
+        
+        let item = self.items[indexPath.row]
+        let id = item.id
+        
+        if item.type == "advertise" {
+            let vc = CarDetailsVC.create(id: id)
+            self.push(vc)
+        } else if item.type == "offer" {
+            let vc = OfferDetailsVC.create(
+                offer: OfferModel(
+                    offer: item,
+                    provider: OfferProvider(
+                        id: nil,
+                        name: item.name,
+                        phoneNo: item.phoneNo,
+                        image: item.avatar,
+                        endDate: item.endDate,
+                        cityName: nil,
+                        address: nil,
+                        latitude: nil,
+                        longitude: nil,
+                        carCount: nil,
+                        bio: nil,
+                        star: nil
+                    )
+                )
+            )
+            self.push(vc)
+        } else if item.type == "live" {
+            let vc = AuctionDetailsVC.create(id: id)
+            self.push(vc)
+        } else if item.type == "normal" {
+            let vc = AuctionDetailsVC.create(id: id)
+            self.push(vc)
+        }
+        
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
 }
+
 //MARK: - End Of TableView -
 
 

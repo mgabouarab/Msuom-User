@@ -76,7 +76,7 @@ class AutoBidView: UIView {
         self.streamId = streamId
         self.bidId = bidId
         self.isAutoEnabled = isAutoEnabled
-//        self.autoBidTextField.text = "\(max ?? 0)"
+        self.autoBidTextField.text = "\(max ?? 0)"
     }
     
     
@@ -127,13 +127,18 @@ class AutoBidView: UIView {
         guard let price = self.increaseAmountTextField.text?.toDouble() else {return}
         guard let streamId = self.streamId else {return}
         guard let bidId = self.bidId else {return}
-        SocketConnection.sharedInstance.sendBid(
-            streamId: streamId,
-            bidId: bidId,
-            viewerId: UserDefaults.user?.id ?? "",
-            price: "\(price)") {
-                print("🚦Socket:: suction Sent")
-            }
+        
+        (self.parentContainerViewController as? BaseVC)?.showConfirmation(message: "Are you sure to continue?".localized) {
+            SocketConnection.sharedInstance.sendBid(
+                streamId: streamId,
+                bidId: bidId,
+                viewerId: UserDefaults.user?.id ?? "",
+                price: "\(price)") {
+                    print("🚦Socket:: suction Sent")
+                    self.increaseAmountTextField.text = "1000"
+                }
+        }
+        
     }
     @objc private func textDidChange(_ sender: UITextField) {
         guard let price = increaseAmountTextField.text?.toDouble() else {

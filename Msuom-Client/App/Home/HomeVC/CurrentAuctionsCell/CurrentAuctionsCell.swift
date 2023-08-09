@@ -55,12 +55,12 @@ extension CurrentAuctionsCell: UICollectionViewDataSource {
 }
 extension CurrentAuctionsCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard UserDefaults.isLogin else {
-            (self.parentContainerViewController as? BaseVC)?.showLogoutAlert { [weak self] in
-                (self?.parentContainerViewController as? BaseVC)?.presentLogin()
-            }
-            return
-        }
+//        guard UserDefaults.isLogin else {
+//            (self.parentContainerViewController as? BaseVC)?.showLogoutAlert { [weak self] in
+//                (self?.parentContainerViewController as? BaseVC)?.presentLogin()
+//            }
+//            return
+//        }
         let item = self.items[indexPath.row]
         let vc = AuctionDetailsVC.create(id: item.id, isFromHome: true)
         self.parentContainerViewController?.show(vc, sender: self)

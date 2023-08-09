@@ -20,15 +20,17 @@ class ProviderStreamsVC: BaseVC {
     private var type: String!
     private var providerId: String!
     private var topTitle: String?
+    private var cityId: String?
     
     
     //MARK: - Creation -
-    static func create(type: String, providerId: String, topTitle: String?) -> ProviderStreamsVC {
+    static func create(type: String, providerId: String, topTitle: String?, cityId: String?) -> ProviderStreamsVC {
         let vc = AppStoryboards.auctions.instantiate(ProviderStreamsVC.self)
         vc.hidesBottomBarWhenPushed = true
         vc.providerId = providerId
         vc.type = type
         vc.topTitle = topTitle
+        vc.cityId = cityId
         return vc
     }
     
@@ -50,12 +52,13 @@ class ProviderStreamsVC: BaseVC {
     
     //MARK: - Actions -
     @IBAction private func showButtonPressed() {
-        let ids = self.items.filter({$0.isSelected == true}).compactMap { $0.id }
+        let ids = self.items.filter({$0.isSelected == true}).compactMap { $0.streamIds }.flatMap({$0})
+        let providerIds = self.items.filter({$0.isSelected == true}).compactMap { $0.id }
         guard !ids.isEmpty else {
             self.showErrorAlert(error: "Please select at lest one auction".localized)
             return
         }
-        let vc = FilterStreamsVC.create(selectedIds: ids, topTitle: self.topTitle)
+        let vc = FilterStreamsVC.create(selectedIds: ids, topTitle: self.topTitle, providerIds: providerIds)
         self.push(vc)
     }
     
@@ -103,7 +106,7 @@ extension ProviderStreamsVC: UITableViewDelegate {
 extension ProviderStreamsVC {
     private func getData() {
         self.showIndicator()
-        AuctionRouter.providerStreams(type: self.type, providerId: self.providerId).send { [weak self] (response: APIGenericResponse<ProviderStreamsModel>) in
+        AuctionRouter.providerStreams(type: self.type, providerId: self.providerId, cityId: self.cityId).send { [weak self] (response: APIGenericResponse<ProviderStreamsModel>) in
             guard let self = self else {return}
             self.items = response.data?.streams ?? []
             self.tableView.reloadData()

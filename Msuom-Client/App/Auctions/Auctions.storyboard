@@ -472,7 +472,7 @@
                                         <rect key="frame" x="0.0" y="568" width="393" height="135"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="f16-0e-ST2">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1480"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1608"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="PKp-VH-Of9" customClass="SellIndicatorView" customModule="Msuom_Client" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="0.0" width="361" height="128"/>
@@ -492,15 +492,36 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekF-nm-9it">
-                                                        <rect key="frame" x="0.0" y="296" width="393" height="0.0"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hI8-wK-Roi">
+                                                        <rect key="frame" x="20" y="296" width="353" height="128"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-N6-R7Q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="8" height="128"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="8" id="oRr-jA-h5w"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="der3" translatesAutoresizingMaskIntoConstraints="NO" id="7Ma-qH-spS">
+                                                                <rect key="frame" x="11.999999999999998" y="0.0" width="22.333333333333329" height="128"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekF-nm-9it">
+                                                                <rect key="frame" x="38.333333333333343" y="0.0" width="302.66666666666663" height="128"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <color key="textColor" name="mainDarkFontColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="54s-zX-tNz">
+                                                                <rect key="frame" x="345" y="0.0" width="8" height="128"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="8" id="zXf-Qz-adV"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
                                                         <color key="backgroundColor" name="secondaryDarkFontColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <color key="textColor" name="mainDarkFontColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    </stackView>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="6mD-re-bqS" customClass="AutoBidView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="316" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="444" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -509,7 +530,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="fQ6-yn-zcz" customClass="LastBidsView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="464" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="592" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -518,7 +539,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="77Q-Vt-nGU" customClass="CarInfoView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="612" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="740" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -527,7 +548,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="CtW-jm-Sjg" customClass="SellerInfoView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="760" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="888" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -536,7 +557,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="M0t-Ku-jh7" customClass="AuctionAdvantagesView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="908" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="1036" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -545,7 +566,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="SQ5-1n-L8r" customClass="FeedbacksView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="1056" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="1184" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -554,7 +575,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="OFP-sG-vhz" customClass="NextAuctionsView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="1204" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="1332" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -563,7 +584,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-nW-aVQ" customClass="ExpandableDetailsView" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="1352" width="361" height="128"/>
+                                                        <rect key="frame" x="16" y="1480" width="361" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -573,10 +594,10 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="hI8-wK-Roi" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="20" id="2Ee-dP-v3V"/>
                                                     <constraint firstItem="bPy-3j-lBC" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="KqS-jt-hyp"/>
                                                     <constraint firstItem="6mD-re-bqS" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="NGm-a8-ARL"/>
                                                     <constraint firstItem="M0t-Ku-jh7" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="VBb-Vu-CLe"/>
-                                                    <constraint firstItem="ekF-nm-9it" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" id="boX-ng-27K"/>
                                                     <constraint firstItem="fQ6-yn-zcz" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="bu9-oQ-h4V"/>
                                                     <constraint firstItem="CtW-jm-Sjg" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="eKj-lz-Fh2"/>
                                                     <constraint firstItem="PKp-VH-Of9" firstAttribute="leading" secondItem="f16-0e-ST2" secondAttribute="leading" constant="16" id="pFQ-wP-SrO"/>
@@ -663,6 +684,7 @@
                         <outlet property="nextAuctionsView" destination="OFP-sG-vhz" id="GuI-do-N4P"/>
                         <outlet property="numberLabel" destination="2jP-Em-J3d" id="ynq-iA-Hg5"/>
                         <outlet property="priceView" destination="eBZ-m6-PSr" id="gyP-D3-efH"/>
+                        <outlet property="refundImageView" destination="7Ma-qH-spS" id="hgB-St-yBo"/>
                         <outlet property="refundableView" destination="ekF-nm-9it" id="xl1-NP-2bh"/>
                         <outlet property="scrollView" destination="SLP-iy-j4h" id="Egh-g9-nS6"/>
                         <outlet property="sellActionButton" destination="bGP-yP-eGd" id="BGD-cf-4cF"/>
@@ -2661,12 +2683,43 @@
             </objects>
             <point key="canvasLocation" x="1756" y="2917"/>
         </scene>
+        <!--All Auctions ProvidersVC-->
+        <scene sceneID="h7M-su-vVf">
+            <objects>
+                <viewController storyboardIdentifier="AllAuctionsProvidersVC" id="A4l-rX-l7S" customClass="AllAuctionsProvidersVC" customModule="Msuom_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4CG-zO-FIK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="j5R-UX-HLE">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8kq-Bb-WTG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j5R-UX-HLE" firstAttribute="leading" secondItem="8kq-Bb-WTG" secondAttribute="leading" id="BgW-sh-hgu"/>
+                            <constraint firstItem="8kq-Bb-WTG" firstAttribute="trailing" secondItem="j5R-UX-HLE" secondAttribute="trailing" id="aLA-Uw-rOI"/>
+                            <constraint firstItem="8kq-Bb-WTG" firstAttribute="bottom" secondItem="j5R-UX-HLE" secondAttribute="bottom" id="hQh-3s-VRG"/>
+                            <constraint firstItem="j5R-UX-HLE" firstAttribute="top" secondItem="8kq-Bb-WTG" secondAttribute="top" id="x9g-NG-Kcg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="j5R-UX-HLE" id="ZYs-oW-QjS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERm-m2-eFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2598" y="2917"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addressMarker" width="10" height="14"/>
         <image name="attachment" width="13.333333015441895" height="15.333333015441895"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="clock" catalog="system" width="128" height="123"/>
+        <image name="der3" width="22.333333969116211" height="25"/>
         <image name="enterFullScreen" width="20" height="20"/>
         <image name="existFullScreen" width="20" height="17.666666030883789"/>
         <image name="radioButton" width="22" height="22"/>

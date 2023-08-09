@@ -16,12 +16,49 @@ struct SearchModel: Codable {
     let type: String
     let carCount: String?
     let cityName: String?
+    
+    private let startDate: String?
+    private let startTime: String?
+    private let endDate: String?
+    private let endTime: String?
+    private let isRunning: Bool?
+    let startPrice: String?
+    
+    var fullStartDate: String {
+        guard let startDate = self.startDate else {
+            print("The Auction with id: \(self.id) has no startDate")
+            return ""
+        }
+        guard let startTime = self.startTime else {
+            print("The Auction with id: \(self.id) has no startTime")
+            return ""
+        }
+        return "\(startDate) \(startTime)"
+    }
+    var fullEndDate: String {
+        guard let endDate = self.endDate else {
+            print("The Auction with id: \(self.id) has no endDate")
+            return ""
+        }
+        guard let endTime = self.endTime else {
+            print("The Auction with id: \(self.id) has no endTime")
+            return ""
+        }
+        return "\(endDate) \(endTime)"
+    }
+    var isLive: Bool {
+        guard type == "live" else {
+            return false
+        }
+        return true
+    }
+    var isStart: Bool {
+        guard self.isRunning == true else {
+            return false
+        }
+        return true
+    }
 }
-
-
-
-
-
 
 
 extension SearchModel {
@@ -112,6 +149,7 @@ extension SearchVC {
         self.tableView.delegate = self
         self.tableView.register(cellType: CarCell.self, bundle: nil)
         self.tableView.register(cellType: ProvidersCell.self, bundle: nil)
+        self.tableView.register(cellType: ComingSoonAuctionCell.self, bundle: nil)
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
         self.tableView.tableFooterView = UIView(frame: .zero)
     }
@@ -129,6 +167,10 @@ extension SearchVC: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(with: ProvidersCell.self, for: indexPath)
             cell.configureWith(data: item)
             return cell
+        } else if item.type == "live" || item.type == "normal" {
+            let cell = tableView.dequeueReusableCell(with: ComingSoonAuctionCell.self, for: indexPath)
+            cell.configureWith(auction: item)
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(with: CarCell.self, for: indexPath)
             cell.configureWith(data: item.cellViewData())
@@ -141,6 +183,9 @@ extension SearchVC: UITableViewDelegate {
         let item = self.cars[indexPath.row]
         if item.type == "provider" {
             let vc = ProviderDetailsVC.create(providerDetails: nil, id: item.id)
+            self.push(vc)
+        } else if item.type == "live" || item.type == "normal" {
+            let vc = AuctionDetailsVC.create(id: item.id)
             self.push(vc)
         } else {
             self.goToCar(id: item.id)

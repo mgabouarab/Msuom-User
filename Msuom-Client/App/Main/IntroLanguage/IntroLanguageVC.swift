@@ -99,14 +99,14 @@ class IntroLanguageVC: BaseVC {
             if Language.isRTL() {
                 if self.selectedLanguage == Language.Languages.en {
                     Language.setAppLanguage(lang: Language.Languages.en)
-                    goToNext()
+                    getAddCarData()
                 } else {
                     goToNext()
                 }
             } else {
                 if self.selectedLanguage == Language.Languages.ar {
                     Language.setAppLanguage(lang: Language.Languages.ar)
-                    goToNext()
+                    getAddCarData()
                 } else {
                     goToNext()
                 }
@@ -142,6 +142,15 @@ extension IntroLanguageVC {
                 
             }
             
+        }
+    }
+    private func getAddCarData() {
+        CarRouter.addCarData.send { [weak self] (response: APIGenericResponse<AddCarData>) in
+            guard let self = self else {return}
+            UserDefaults.addCarData = response.data
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.goToNext()
+            }
         }
     }
 }

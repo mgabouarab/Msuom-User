@@ -38,7 +38,11 @@ class BaseNav: UINavigationController {
     }
     
 }
-extension BaseNav: UIGestureRecognizerDelegate {}
+extension BaseNav: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        self.viewControllers.count > 1
+    }
+}
 extension UINavigationController {
     func hideHairline() {
         if let hairline = findHairlineImageViewUnder(navigationBar) {

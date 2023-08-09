@@ -12,13 +12,9 @@ class ExpandableDetailsView: UIView {
     //MARK: - IBOutlet -
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var descriptionLabel: UILabel!
+    @IBOutlet weak private var imageView: UIImageView!
     
     //MARK: - Properties -
-    private var isSelected: Bool? {
-        didSet {
-            self.descriptionLabel.isHidden = isSelected != true
-        }
-    }
     
     //MARK: - Initializer -
     override init(frame: CGRect) {
@@ -50,17 +46,20 @@ class ExpandableDetailsView: UIView {
     private func setupInitialDesign() {
         
     }
-    func set(title: String?, description: String?, isSelected: Bool?) {
-        self.titleLabel.text = title
-        self.descriptionLabel.text = description
-        self.isSelected = isSelected
-    }
     func set(title: String?, description: String?) {
         self.titleLabel.text = title
         self.descriptionLabel.text = description
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped))
         self.addGestureRecognizer(tap)
     }
+    func set(title: String?, description: String?, image: String?, isSelected: Bool?) {
+        self.titleLabel.text = title
+        self.descriptionLabel.text = description
+        self.imageView.setWith(string: image)
+        self.descriptionLabel.isHidden = isSelected != true
+        self.imageView.isHidden = isSelected != true
+    }
+    
     
     //MARK: - Encapsulation -
     

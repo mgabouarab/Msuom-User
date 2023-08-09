@@ -44,6 +44,7 @@ enum AuctionRouter {
     case edit(comment: String, rate: Int, commentId: String)
     case delete(commentId: String)
     case summaryReport(bidId: String, providerId: String)
+    case refund(bidId: String, providerId: String)
     case commentsLiveStream(streamId: String, bidId: String, page: Int)
     case subscription(streamId: String, bidId: String)
     case sellCar(streamId: String, bidId: String)
@@ -59,8 +60,9 @@ enum AuctionRouter {
     case disputeDetails(disputeId: String)
     case listOfComingOrCurrentBids(type: String, cityId: String?)
     case showAllProviders(type: String)
-    case providerStreams(type: String, providerId: String)
-    case filterStreams(streamIds: String)
+    case providerStreams(type: String, providerId: String, cityId: String?)
+    case filterStreams(streamIds: String, providerIds: String)
+    case auctionsFilter(bidIds: String, brandId: String?, typeId: String?, year: String?, cityId: String?, statusId: String?, gearId: String?, colorId: String?)
 }
 
 extension AuctionRouter: APIRouter {
@@ -76,6 +78,7 @@ extension AuctionRouter: APIRouter {
         case .edit: return .patch
         case .delete: return .delete
         case .summaryReport: return .post
+        case .refund: return .post
         case .commentsLiveStream: return .get
         case .subscription: return .patch
         case .sellCar: return .patch
@@ -92,6 +95,7 @@ extension AuctionRouter: APIRouter {
         case .showAllProviders: return .get
         case .providerStreams: return .get
         case .filterStreams: return .get
+        case .auctionsFilter: return .get
         }
     }
     
@@ -106,6 +110,7 @@ extension AuctionRouter: APIRouter {
         case .edit: return "comment"
         case .delete: return "comment"
         case .summaryReport: return "summaryReport"
+        case .refund: return "refund"
         case .commentsLiveStream: return "commentsLiveStream"
         case .subscription: return "subscription"
         case .sellCar: return "sell-car"
@@ -118,10 +123,11 @@ extension AuctionRouter: APIRouter {
         case .disputeQuestions: return "dispute-questions"
         case .disputeDetails: return "dispute-details"
         case .disputesUser: return "disputes-user"
-        case .listOfComingOrCurrentBids: return "listOfComingOrCurrentBids"
+        case .listOfComingOrCurrentBids: return "listOfComingOrCurrentProviderBids"
         case .showAllProviders: return "showAllProviders"
         case .providerStreams: return "providerStreams"
         case .filterStreams: return "filterStreams"
+        case .auctionsFilter: return "auctionsFilter"
         }
     }
     
@@ -205,6 +211,30 @@ extension AuctionRouter: APIRouter {
                 "bidId": bidId,
                 "providerId": providerId
             ]
+        case .refund(let bidId, let providerId):
+            return [
+                "bidId": bidId,
+                "providerId": providerId
+            ]
+        case .auctionsFilter(
+            let bidId,
+            let brandId,
+            let typeId,
+            let year,
+            let cityId,
+            let statusId,
+            let gearId,
+            let colorId):
+            return [
+                "bidIds": bidId,
+                "brandId": brandId,
+                "typeId": typeId,
+                "year": year,
+                "cityId": cityId,
+                "statusId": statusId,
+                "colorId": colorId,
+                "transmissionGearId": gearId
+            ]
         case .commentsLiveStream(let streamId, let bidId, let page):
             return [
                 "streamId": streamId,
@@ -275,14 +305,16 @@ extension AuctionRouter: APIRouter {
             return [
                 "type": type
             ]
-        case .providerStreams(let type, let providerId):
+        case .providerStreams(let type, let providerId, let cityId):
             return [
                 "type": type,
-                "providerId": providerId
+                "providerId": providerId,
+                "cityId": cityId
             ]
-        case .filterStreams(let streamIds):
+        case .filterStreams(let streamIds, let providerIds):
             return [
-                "streamIds": streamIds
+                "streamIds": streamIds,
+                "providerIds": providerIds
             ]
         }
     }

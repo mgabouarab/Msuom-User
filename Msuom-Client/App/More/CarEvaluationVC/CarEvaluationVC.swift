@@ -131,56 +131,64 @@ final class CarEvaluationVC: BaseVC {
     }
     
     @IBAction private func generalButtonPressed() {
-        do {
-            let brandId = try CarValidationService.validate(brandId: self.brandTextFieldView.value()?.id)
-            let typeId = try CarValidationService.validate(typeId: self.typeTextFieldView.value()?.id)
-            let classId = try CarValidationService.validate(classId: self.classTextFieldView.value()?.id)
-            let statusId = try CarValidationService.validate(statusId: self.statusTextFieldView.value()?.id)
-            let year = try CarValidationService.validate(year: self.yearTextFieldView.value()?.id)
-            let walkway = try CarValidationService.validate(walkway: self.walkwayTextFieldView.textValue())
-            let address = try ValidationService.validate(addressDetails: self.addressTextFieldView.textValue())
-            
-            
-            self.carEvaluation(
-                brandId: brandId,
-                typeId: typeId,
-                categoryId: classId,
-                statusId: statusId,
-                walkway: walkway,
-                type: "general",
-                address: address,
-                year: year
-            )
-            
-            
-        } catch {
-            self.showErrorAlert(error: error.localizedDescription)
+        
+        self.showConfirmation(message: "Are you sure to continue?".localized) { [weak self] in
+            guard let self = self else {return}
+            do {
+                let brandId = try CarValidationService.validate(brandId: self.brandTextFieldView.value()?.id)
+                let typeId = try CarValidationService.validate(typeId: self.typeTextFieldView.value()?.id)
+                let classId = try CarValidationService.validate(classId: self.classTextFieldView.value()?.id)
+                let statusId = try CarValidationService.validate(statusId: self.statusTextFieldView.value()?.id)
+                let year = try CarValidationService.validate(year: self.yearTextFieldView.value()?.id)
+                let walkway = try CarValidationService.validate(walkway: self.walkwayTextFieldView.textValue())
+                let address = try ValidationService.validate(addressDetails: self.addressTextFieldView.textValue())
+                
+                
+                self.carEvaluation(
+                    brandId: brandId,
+                    typeId: typeId,
+                    categoryId: classId,
+                    statusId: statusId,
+                    walkway: walkway,
+                    type: "general",
+                    address: address,
+                    year: year
+                )
+                
+                
+            } catch {
+                self.showErrorAlert(error: error.localizedDescription)
+            }
         }
+        
     }
     @IBAction private func certificateButtonPressed() {
-        do {
-            let brandId = try CarValidationService.validate(brandId: self.brandTextFieldView.value()?.id)
-            let typeId = try CarValidationService.validate(typeId: self.typeTextFieldView.value()?.id)
-            let classId = try CarValidationService.validate(classId: self.classTextFieldView.value()?.id)
-            let statusId = try CarValidationService.validate(statusId: self.statusTextFieldView.value()?.id)
-            let year = try CarValidationService.validate(year: self.yearTextFieldView.value()?.id)
-            let walkway = try CarValidationService.validate(walkway: self.walkwayTextFieldView.textValue())
-            let address = try ValidationService.validate(addressDetails: self.addressTextFieldView.textValue())
-            
-            self.carEvaluation(
-                brandId: brandId,
-                typeId: typeId,
-                categoryId: classId,
-                statusId: statusId,
-                walkway: walkway,
-                type: "certified",
-                address: address,
-                year: year
-            )
-            
-            
-        } catch {
-            self.showErrorAlert(error: error.localizedDescription)
+        self.showConfirmation(message: "Are you sure to continue?".localized) { [weak self] in
+            guard let self = self else {return}
+            do {
+                let brandId = try CarValidationService.validate(brandId: self.brandTextFieldView.value()?.id)
+                let typeId = try CarValidationService.validate(typeId: self.typeTextFieldView.value()?.id)
+                let classId = try CarValidationService.validate(classId: self.classTextFieldView.value()?.id)
+                let statusId = try CarValidationService.validate(statusId: self.statusTextFieldView.value()?.id)
+                let year = try CarValidationService.validate(year: self.yearTextFieldView.value()?.id)
+                let walkway = try CarValidationService.validate(walkway: self.walkwayTextFieldView.textValue())
+                let address = try ValidationService.validate(addressDetails: self.addressTextFieldView.textValue())
+                
+                self.carEvaluation(
+                    brandId: brandId,
+                    typeId: typeId,
+                    categoryId: classId,
+                    statusId: statusId,
+                    walkway: walkway,
+                    type: "certified",
+                    address: address,
+                    year: year
+                )
+                
+                
+            } catch {
+                self.showErrorAlert(error: error.localizedDescription)
+            }
         }
     }
     private var isDelivery: Bool = true

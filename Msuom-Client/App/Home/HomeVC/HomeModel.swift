@@ -13,6 +13,7 @@ struct HomeSliderModel: Codable {
     let image: String
     let title: String?
     let description: String?
+    let link: String?
 }
 
 struct HomeModel: Codable {

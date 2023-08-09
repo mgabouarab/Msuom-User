@@ -53,6 +53,13 @@ class OffersCell: UITableViewCell {
         self.companyImageView.setWith(string: data.provider.image)
         self.dateLabel.text = data.offer.available?.htmlToAttributedString?.string
     }
+    func configureWith(model data: MyCarsModel) {
+        self.cellImageView.setWith(string: data.image)
+        self.nameLabel.text = data.title
+        self.companyNameLabel.text = data.name
+        self.companyImageView.setWith(string: data.avatar)
+        self.dateLabel.text = data.available
+    }
     
     
     //MARK: - Actions -

@@ -24,6 +24,7 @@ struct MyCarsModel: Codable {
     let faceBook: String?
     let twitter: String?
     let whats: String?
+    let phoneNo: String?
     
     let endDate: String?
     let endedAt: String?
@@ -34,7 +35,7 @@ struct MyCarsModel: Codable {
     let startPrice: String?
     let startTime: String?
     let streamId: String?
-    
+    let avatar: String?
     
     
     
@@ -105,6 +106,8 @@ struct MyCarsModel: Codable {
         self.startPrice = try container.decodeIfPresent(String.self, forKey: .startPrice)
         self.startTime = try container.decodeIfPresent(String.self, forKey: .startTime)
         self.streamId = try container.decodeIfPresent(String.self, forKey: .streamId)
+        self.avatar = try container.decodeIfPresent(String.self, forKey: .avatar)
+        self.phoneNo = try container.decodeIfPresent(String.self, forKey: .phoneNo)
         
         
     }

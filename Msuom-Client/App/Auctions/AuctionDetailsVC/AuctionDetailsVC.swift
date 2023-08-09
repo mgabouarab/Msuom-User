@@ -33,6 +33,7 @@ class AuctionDetailsVC: BaseVC {
     @IBOutlet weak private var actionContainerView: UIView!
     @IBOutlet weak private var subscribeActionButton: UIButton!
     @IBOutlet weak private var sellActionButton: UIButton!
+    @IBOutlet weak private var refundImageView: UIImageView!
     
     //MARK: - Properties -
     private var id: String!
@@ -96,7 +97,8 @@ class AuctionDetailsVC: BaseVC {
         self.isFinished = data.currentBid?.isFinished == "finished"
         self.isRunning = data.currentBid?.isRunning ?? false
         self.firstImageLinkForDeepLink = data.currentBid?.image
-        self.autoBidView.isHidden = !(data.currentBid?.hasSubscription ?? false)
+        let conditionToShow = isRunning && ((data.currentBid?.hasSubscription ?? false) == true)
+        self.autoBidView.isHidden = !conditionToShow
         self.lastBidsView.lastBidder = { [weak self] userId in
             guard let self = self else {return}
             self.autoBidView.isMyLastBid = userId == UserDefaults.user?.id
@@ -119,7 +121,7 @@ class AuctionDetailsVC: BaseVC {
             self.liveView = LiveVC.create(delegate: self)
             self.addLiveView()
             
-//            self.liveView.resetView()
+            //            self.liveView.resetView()
             if let kApiKey = data.stream?.credentials?.apiKey, let kSessionId = data.stream?.credentials?.sessionId, let kToken = data.stream?.credentials?.token, isRunning {
                 self.liveView.set(kApiKey: kApiKey, kSessionId: kSessionId, kToken: kToken)
                 self.liveView.set(streamId: data.stream?.id, bidId: data.currentBid?.id)
@@ -138,10 +140,10 @@ class AuctionDetailsVC: BaseVC {
             self.sliderView.isHidden = false
             
             self.sliderView.set(
-                images: (data.currentBid?.arrImage ?? []).map({SliderView.SliderItem(image: $0, title: nil, description: nil)})
+                images: (data.currentBid?.arrImage ?? []).map({SliderView.SliderItem(image: $0, title: nil, description: nil, link: nil)})
             )
         }
-        
+        self.refundImageView.isHidden = !(data.currentBid?.isRefundable ?? false)
         self.nameLabel.text = details?.currentBid?.name
         self.numberLabel.text = "Ad Number:".localized +  String(Int(details?.currentBid?.adNumber?.doubleValue ?? 0))
         self.priceView.set(
@@ -179,13 +181,15 @@ class AuctionDetailsVC: BaseVC {
             self.autoBidView.currentHighBid = price
         }
         self.refundableView.text = data.currentBid?.refundable
+        let showRefund = (data.currentBid?.hasSubscription == true && data.currentBid?.isFinished == "finished" && !(data.currentBid?.isWinner ?? false) == true)
         self.sellerInfoView.set(
             name: data.provider?.name,
             address: data.provider?.cityName,
             image: data.provider?.image,
             pdfLink: data.currentBid?.checkReport,
             bidId: data.currentBid?.id,
-            providerId: data.provider?.id
+            providerId: data.provider?.id,
+            isRefund: showRefund
         )
         self.auctionAdvantagesView.set(items: details?.currentBid?.advantages ?? [])
         if let currentBidId = data.currentBid?.id {
@@ -229,7 +233,7 @@ class AuctionDetailsVC: BaseVC {
             if isRunning {
                 guard let fullDate = self.fullEndDate else {return}
                 if let _ = fullDate.toTimeRemain() {
-//                    print("Time remain to end is\n \(time)\n")
+                    //                    print("Time remain to end is\n \(time)\n")
                 } else {
                     guard let currentBidId, !isFinished else {
                         self.timer?.invalidate()
@@ -245,7 +249,7 @@ class AuctionDetailsVC: BaseVC {
             } else {
                 guard let fullDate = self.fullStartDate else {return}
                 if let _ = fullDate.toTimeRemain() {
-//                    print("Time remain to start is\n \(time)\n")
+                    //                    print("Time remain to start is\n \(time)\n")
                 } else {
                     if let currentBidId = self.currentBidId {
                         self.timer?.invalidate()
@@ -278,17 +282,17 @@ class AuctionDetailsVC: BaseVC {
     @objc private func openShareSheet() {
         guard let currentBidId = self.currentBidId else {return}
         guard let link = URL(string: "https://maseom.page.link/auction/\(type)/\(currentBidId)") else { return }
-
+        
         let dynamicLinksDomainURIPrefix = "https://maseom.page.link"
         let linkBuilder = DynamicLinkComponents(link: link, domainURIPrefix: dynamicLinksDomainURIPrefix)
         linkBuilder?.iOSParameters = DynamicLinkIOSParameters(bundleID: "com.aait.Msuom-Client")
         linkBuilder?.androidParameters = DynamicLinkAndroidParameters(packageName: "com.aait.mseom_user")
         let socialMetaTagParameters = DynamicLinkSocialMetaTagParameters()
-
+        
         socialMetaTagParameters.title = self.nameLabel.text
         socialMetaTagParameters.descriptionText = "Join the auction now".localized
         socialMetaTagParameters.imageURL = URL(string: firstImageLinkForDeepLink ?? "")
-
+        
         linkBuilder?.socialMetaTagParameters = socialMetaTagParameters
         linkBuilder?.shorten(completion: { shorten, _, _ in
             guard let shorten = shorten else {return}
@@ -303,7 +307,9 @@ class AuctionDetailsVC: BaseVC {
             }
             return
         }
-        self.makeAction(isSell: false)
+        self.showConfirmation(message: "Are you sure to continue?".localized) { [weak self] in
+            self?.makeAction(isSell: false)
+        }
     }
     @IBAction private func sellButtonPressed() {
         guard UserDefaults.isLogin else {
@@ -340,6 +346,9 @@ extension AuctionDetailsVC {
         let request = !isSell ? AuctionRouter.subscription(streamId: self.id, bidId: currentBidId) : AuctionRouter.sellCar(streamId: self.id, bidId: currentBidId)
         request.send { [weak self] (response: APIGlobalResponse) in
             guard let self = self else {return}
+            if !isSell {
+                self.subscribeActionButton.isHidden = true
+            }
             self.getDetails(id: currentBidId)
         }
     }
@@ -401,28 +410,21 @@ extension AuctionDetailsVC {
                     guard let _ = self else {return}
                     print("🚦Socket:: enterAuction")
                     self?.liveView.resetList()
-                    SocketConnection.sharedInstance.socket.on(SocketConnection.ChannelTypes.newBid) { [weak self] (value, ack) in
-                        guard let self = self else {return}
-                        self.gotBid(value: value)
-                    }
-                    SocketConnection.sharedInstance.socket.on(SocketConnection.ChannelTypes.onBidFinished) { [weak self] (value, ack) in
-                        guard let self = self else {return}
-                        if let nextBidId = self.nextBidId {
-                            self.showSuccessAlert(message: "Auction Finished".localized)
-                            self.getDetails(id: nextBidId)
-                        } else {
-                            self.showSuccessAlert(message: "Auction Finished".localized)
-                            self.pop()
-                        }
-                    }
                 }
-            
-//            SocketConnection.sharedInstance.socket.on(SocketConnection.ChannelTypes.newComment) { [weak self] (value, ack) in
-//                guard let self = self else {return}
-//                self.liveView.gotMessage(value: value)
-//            }
-            
-            
+        }
+        SocketConnection.sharedInstance.socket.on(SocketConnection.ChannelTypes.newBid) { [weak self] (value, ack) in
+            guard let self = self else {return}
+            self.gotBid(value: value)
+        }
+        SocketConnection.sharedInstance.socket.on(SocketConnection.ChannelTypes.onBidFinished) { [weak self] (value, ack) in
+            guard let self = self else {return}
+            if let nextBidId = self.nextBidId {
+                self.showSuccessAlert(message: "Auction Finished".localized)
+                self.getDetails(id: nextBidId)
+            } else {
+                self.showSuccessAlert(message: "Auction Finished".localized)
+                self.pop()
+            }
         }
         SocketConnection.sharedInstance.socket.on(clientEvent: .connect) { [weak self] (data, ack) in
             guard let self = self else {return}

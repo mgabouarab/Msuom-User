@@ -14,6 +14,7 @@ class SliderView: UIView {
         let image: String
         let title: String?
         let description: String?
+        let link: String?
     }
     
     //MARK: - IBOutlets -
@@ -186,9 +187,13 @@ extension SliderView: UICollectionViewDataSource {
 }
 extension SliderView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let items = self.items.map({ImageViewerItem(urlImage: $0.image, dataImage: nil)})
-        let vc = ImageViewerVC.create(images: items, selectedIndex: self.currentIndex)
-        self.parentContainerViewController?.present(vc, animated: true)
+        guard let link = self.items[indexPath.row].link else {
+            let items = self.items.map({ImageViewerItem(urlImage: $0.image, dataImage: nil)})
+            let vc = ImageViewerVC.create(images: items, selectedIndex: self.currentIndex)
+            self.parentContainerViewController?.present(vc, animated: true)
+            return
+        }
+        AppHelper.openUrl(link)
     }
 }
 extension SliderView: UICollectionViewDelegateFlowLayout {

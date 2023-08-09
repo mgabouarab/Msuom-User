@@ -48,6 +48,7 @@ struct BidDetails: Codable {
     let insideCar : String?
     let isFav : Bool?
     let isFinished : String?
+    let isWinner: Bool?
     let isRefundable : Bool?
     let isRunning : Bool?
     let isTrySell : Bool?
@@ -205,6 +206,7 @@ extension BidDetails {
 struct Advantages : Codable {
     let description : String?
     let title : String?
+    let image: String?
     var isSelected: Bool?
 }
 
@@ -262,6 +264,7 @@ struct BidStream: Codable {
     var bidsCount: Numerical?
     var lastBidPrice: Numerical?
     var isPlaying: Bool?
+    var streamIds: [String]?
 }
 
 struct Credentials : Codable {

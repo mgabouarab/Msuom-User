@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         //MARK: - Fack data -
         self.setFakeData()
         

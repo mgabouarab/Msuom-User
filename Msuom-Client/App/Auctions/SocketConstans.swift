@@ -49,7 +49,7 @@ open class SocketConnection {
     
     //MARK: - Init -
     private init() {
-        manager = SocketManager(socketURL: URL(string: url)!, config: [.log(false), .compress])
+        manager = SocketManager(socketURL: URL(string: url)!, config: [.log(false), .compress, .extraHeaders(["Authorization" : "Bearer \(UserDefaults.accessToken ?? "")"])])
         socket = manager.defaultSocket
         self.handleEvents()
     }
