@@ -140,6 +140,7 @@ class AutoBidView: UIView {
         }
         
     }
+    
     @objc private func textDidChange(_ sender: UITextField) {
         guard let price = increaseAmountTextField.text?.toDouble() else {
             increaseAmountTextField.text = 500.0.toString()

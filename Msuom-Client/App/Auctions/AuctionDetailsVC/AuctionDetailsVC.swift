@@ -94,7 +94,7 @@ class AuctionDetailsVC: BaseVC {
         self.id = data.stream?.id
         self.currentBidId = data.currentBid?.id
         self.nextBidId = data.nextBids?.first?.id
-        self.isFinished = data.currentBid?.isFinished == "finished"
+        self.isFinished = (data.currentBid?.isFinished == "finished" || data.currentBid?.isFinished ==  "notSold")
         self.isRunning = data.currentBid?.isRunning ?? false
         self.firstImageLinkForDeepLink = data.currentBid?.image
         let conditionToShow = isRunning && ((data.currentBid?.hasSubscription ?? false) == true)
@@ -106,7 +106,7 @@ class AuctionDetailsVC: BaseVC {
         
         
         self.subscribeActionButton.isHidden = data.currentBid?.hasSubscription ?? false
-        self.sellActionButton.isHidden = !(data.currentBid?.hasSubscription == true && (data.currentBid?.hasSell == true))
+        self.sellActionButton.isHidden = !(data.currentBid?.hasSubscription == true && (data.currentBid?.hasSell == true && data.currentBid?.type == "live"))
         self.actionContainerView.isHidden = (self.subscribeActionButton.isHidden && self.sellActionButton.isHidden)
         
         self.isFav = data.currentBid?.isFav
@@ -189,7 +189,8 @@ class AuctionDetailsVC: BaseVC {
             pdfLink: data.currentBid?.checkReport,
             bidId: data.currentBid?.id,
             providerId: data.provider?.id,
-            isRefund: showRefund
+            isRefund: showRefund,
+            isSubscribe: data.currentBid?.hasSubscription ?? false
         )
         self.auctionAdvantagesView.set(items: details?.currentBid?.advantages ?? [])
         if let currentBidId = data.currentBid?.id {
@@ -254,7 +255,9 @@ class AuctionDetailsVC: BaseVC {
                     if let currentBidId = self.currentBidId {
                         self.timer?.invalidate()
                         self.timer = nil
-                        self.getDetails(id: currentBidId)
+                        if !isFinished {
+                            self.getDetails(id: currentBidId)
+                        }
                     }
                 }
             }

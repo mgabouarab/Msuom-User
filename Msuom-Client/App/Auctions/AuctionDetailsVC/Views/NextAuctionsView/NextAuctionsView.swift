@@ -70,7 +70,7 @@ extension NextAuctionsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(with: ComingSoonAuctionCell.self, for: indexPath)
         let item = self.items[indexPath.row]
-        cell.configureWith(details: item.homeComingSoonCellData())
+        cell.configureWith(details: item.homeComingSoonCellData(), index: indexPath.row + 2)
         return cell
     }
 }

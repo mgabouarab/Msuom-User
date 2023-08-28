@@ -25,13 +25,14 @@ class AllAuctionsProvidersVC: BaseVC {
     private var statusId: String? = nil
     private var gearId: String? = nil
     private var colorId: String? = nil
-    
+    private var headerTitle: String? = nil
     
     //MARK: - Creation -
-    static func create(bidIds: String) -> AllAuctionsProvidersVC {
+    static func create(bidIds: String, headerTitle: String?) -> AllAuctionsProvidersVC {
         let vc = AppStoryboards.auctions.instantiate(AllAuctionsProvidersVC.self)
         vc.bidIds = bidIds
         vc.hidesBottomBarWhenPushed = true
+        vc.headerTitle = headerTitle
         return vc
     }
     
@@ -45,7 +46,7 @@ class AllAuctionsProvidersVC: BaseVC {
     
     //MARK: - Design Methods -
     private func configureInitialDesign() {
-        self.addBackButtonWith(title: "Car show".localized)
+        self.addBackButtonWith(title: self.headerTitle ?? "Car show".localized)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "filterIcon"),
             style: .plain,

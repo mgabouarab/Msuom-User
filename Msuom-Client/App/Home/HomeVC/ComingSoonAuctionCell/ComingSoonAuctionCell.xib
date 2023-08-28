@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,17 +24,54 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4Qm-0l-GZi">
                                 <rect key="frame" x="8" y="8" width="272" height="91"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wD3-Rk-lTW">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtY-g1-bdV">
                                         <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wD3-Rk-lTW">
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="wD3-Rk-lTW" secondAttribute="height" id="xPz-zM-yCf"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tik-P4-7Ny">
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="91"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be3-Vo-15Y">
+                                                        <rect key="frame" x="41.666666666666671" y="35.333333333333336" width="7.6666666666666643" height="20.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="whiteColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.19758899006622516" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="Be3-Vo-15Y" firstAttribute="centerY" secondItem="Tik-P4-7Ny" secondAttribute="centerY" id="HDK-k5-qdb"/>
+                                                    <constraint firstItem="Be3-Vo-15Y" firstAttribute="centerX" secondItem="Tik-P4-7Ny" secondAttribute="centerX" id="JhQ-bB-iSQ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="wD3-Rk-lTW" secondAttribute="height" id="xPz-zM-yCf"/>
+                                            <constraint firstAttribute="bottom" secondItem="wD3-Rk-lTW" secondAttribute="bottom" id="2Mj-d6-8gX"/>
+                                            <constraint firstItem="wD3-Rk-lTW" firstAttribute="top" secondItem="rtY-g1-bdV" secondAttribute="top" id="8rQ-gF-ygb"/>
+                                            <constraint firstItem="Tik-P4-7Ny" firstAttribute="top" secondItem="rtY-g1-bdV" secondAttribute="top" id="FCT-pX-cfM"/>
+                                            <constraint firstAttribute="trailing" secondItem="wD3-Rk-lTW" secondAttribute="trailing" id="QVr-tu-Okp"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tik-P4-7Ny" secondAttribute="bottom" id="QYr-9p-gOY"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tik-P4-7Ny" secondAttribute="trailing" id="b0w-bo-7FS"/>
+                                            <constraint firstItem="Tik-P4-7Ny" firstAttribute="leading" secondItem="rtY-g1-bdV" secondAttribute="leading" id="c0q-hA-egC"/>
+                                            <constraint firstItem="wD3-Rk-lTW" firstAttribute="leading" secondItem="rtY-g1-bdV" secondAttribute="leading" id="ffR-ZD-5Zn"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </imageView>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oeL-49-Smk">
                                         <rect key="frame" x="99" y="0.0" width="173" height="91"/>
                                         <subviews>
@@ -60,7 +97,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oz5-s4-uLa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="30.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="30.333333333333332"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P4B-C1-1lk">
                                                         <rect key="frame" x="0.0" y="0.0" width="173" height="30.333333333333332"/>
@@ -165,6 +202,8 @@
                 <outlet property="containerView" destination="ogw-FJ-W48" id="tO3-tk-vPe"/>
                 <outlet property="liveView" destination="P4B-C1-1lk" id="BkM-IB-xu0"/>
                 <outlet property="nameLabel" destination="KbC-TQ-0eZ" id="aKd-hh-8FI"/>
+                <outlet property="numberLabel" destination="Be3-Vo-15Y" id="Ktg-Ic-MiY"/>
+                <outlet property="numberView" destination="Tik-P4-7Ny" id="RAL-rc-RM1"/>
                 <outlet property="priceLabel" destination="Bvf-BO-Iy3" id="q4D-ti-Tfo"/>
                 <outlet property="timeLabel" destination="qiY-wl-jyl" id="ze0-N9-T6A"/>
             </connections>

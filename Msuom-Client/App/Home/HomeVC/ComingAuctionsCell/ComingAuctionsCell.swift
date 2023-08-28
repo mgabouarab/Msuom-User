@@ -15,6 +15,7 @@ class ComingAuctionsCell: UITableViewCell {
 
     //MARK: - Properties -
     private var items: [Auction.HomeSoonAuction] = []
+    var didEndWaitingTime: ((_ index: Int)->())?
     
     // MARK: - Lifecycle -
     override func awakeFromNib() {
@@ -52,6 +53,10 @@ extension ComingAuctionsCell: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(with: ComingSoonAuctionCell.self, for: indexPath)
         let item = self.items[indexPath.row]
         cell.configureWith(data: item)
+        cell.didEndWaitingTime = { [weak self] in
+            guard let self = self else {return}
+            self.didEndWaitingTime?(indexPath.row)
+        }
         return cell
     }
 }

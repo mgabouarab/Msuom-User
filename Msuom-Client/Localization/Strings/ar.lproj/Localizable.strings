@@ -365,7 +365,7 @@
 "Sale Decision" = "قرار البيع";
 "Join the auction now" = "إنضم للمزاد الان";
 "Subscribe" = "إشترك";
-"Buying order" = "طلب شراء";
+"Buying order" = "محاولة شراء";
 "Automated auction" = "المزاد الالى";
 "Start_Automatic_auction" = "بدأ";
 "The maximum bid" = "الحد الأعلى للمزايدة";
@@ -426,4 +426,5 @@
 "What is the problem" = "ما هي المشكلة";
 "Please specify how to collect the vehicle" = "يرجي تحديد طريقة استلام السيارة";
 "Are you sure to continue?" = "هل انت متأكد؟";
-"Refund Order" = "طلب الاسترجاع";
+"Refund Order" = "طلب الاسترداد";
+"Please Subscribe first" = "الرجاء الاشتراك اولا";

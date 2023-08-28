@@ -16,11 +16,14 @@ class ComingSoonAuctionCell: UITableViewCell {
     @IBOutlet weak private var priceLabel: UILabel!
     @IBOutlet weak private var timeLabel: UILabel!
     @IBOutlet weak private var liveView: UIStackView!
+    @IBOutlet weak private var numberView: UIView!
+    @IBOutlet weak private var numberLabel: UILabel!
     
     //MARK: - Properties -
     private var timer: Timer?
     private var fullDate: String?
     private var isStart: Bool = false
+    var didEndWaitingTime: (()->())?
     
     //MARK: - Lifecycle -
     override func awakeFromNib() {
@@ -51,7 +54,7 @@ class ComingSoonAuctionCell: UITableViewCell {
         self.timer = nil
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateDate), userInfo: nil, repeats: true)
     }
-    func configureWith(details data: BidDetails.HomeSoonAuction) {
+    func configureWith(details data: BidDetails.HomeSoonAuction, index: Int? = 0) {
         cellImageView.setWith(string: data.image)
         self.liveView.isHidden = !data.isLive
         isStart = data.isStart
@@ -61,6 +64,12 @@ class ComingSoonAuctionCell: UITableViewCell {
         self.timer?.invalidate()
         self.timer = nil
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateDate), userInfo: nil, repeats: true)
+        if let index = index {
+            self.numberView.isHidden = false
+            self.numberLabel.text = "\(index)"
+        } else {
+            self.numberView.isHidden = true
+        }
     }
     func configureWith(model data: MyCarsModel) {
         cellImageView.setWith(string: data.image)
@@ -91,6 +100,7 @@ class ComingSoonAuctionCell: UITableViewCell {
             self.timeLabel.text = "Remain".localized + " " + time
             self.timeLabel.textColor = isStart ? Theme.colors.mainDarkFontColor : Theme.colors.errorColor
         } else {
+            self.didEndWaitingTime?()
             self.timeLabel.text = "Finished".localized
             self.timeLabel.textColor = Theme.colors.errorColor
         }

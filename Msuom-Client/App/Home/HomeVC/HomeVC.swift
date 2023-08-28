@@ -68,6 +68,7 @@ extension HomeVC {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        self.tableView.addRefresh(action: #selector(self.refresh))
     }
 }
 extension HomeVC: UITableViewDataSource {
@@ -94,6 +95,15 @@ extension HomeVC: UITableViewDataSource {
         case .bidsComingSoon:
             let cell = tableView.dequeueReusableCell(with: ComingAuctionsCell.self, for: indexPath)
             cell.set(title: item.title, items: item.bidsComingSoon.compactMap({$0.homeComingSoonCellData()}))
+            cell.didEndWaitingTime = { [weak self] index in
+                guard let self = self else {return}
+                if let streamIndex = self.items.firstIndex(where: {$0.streams.isEmpty == false}) {
+                    let auction = self.items[indexPath.row].bidsComingSoon[index]
+                    self.items[streamIndex].streams.append(auction)
+                    self.items[indexPath.row].bidsComingSoon.remove(at: index)
+                    self.tableView.reloadData()
+                }
+            }
             return cell
         case .haraj:
             let cell = tableView.dequeueReusableCell(with: HarajHomeCell.self, for: indexPath)

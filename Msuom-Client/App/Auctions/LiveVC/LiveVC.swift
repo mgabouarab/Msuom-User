@@ -32,6 +32,9 @@ class LiveVC: BaseVC {
     @IBOutlet weak private var textView: UITextView!
     @IBOutlet weak private var collectionView: UICollectionView!
     @IBOutlet weak private var selectedStreamView: UIView!
+    @IBOutlet weak private var bidView: UIView!
+    @IBOutlet weak private var bidContainerView: UIView!
+    @IBOutlet weak private var increaseAmountTextField: UITextField!
     
     //MARK: - Properties -
     private var kApiKey: String = ""
@@ -49,6 +52,8 @@ class LiveVC: BaseVC {
     private var isFullScreen: Bool = false {
         didSet {
             self.commentsContainerView.isHidden = !isFullScreen
+            self.bidView.isHidden = true
+            self.bidContainerView.isHidden = !(isFullScreen && replayContainerView.isHidden == false)
             self.tableView?.reloadData()
         }
     }
@@ -143,6 +148,12 @@ class LiveVC: BaseVC {
     //MARK: - Actions -
     @IBAction private func viewTapped() {
         
+        guard UserDefaults.isLogin else {
+            self.showLogoutAlert {
+                self.presentLogin()
+            }
+            return
+        }
         
         self.isFullScreen.toggle()
         self.fullScreenButton.isSelected = self.isFullScreen
@@ -184,6 +195,54 @@ class LiveVC: BaseVC {
                 self.textView.text = nil
             }
     }
+    @IBAction private func sendBidButtonPressed() {
+        if bidView.isHidden {
+            self.bidView.isHidden = false
+        } else {
+            guard let price = self.increaseAmountTextField.text?.toDouble() else {return}
+            guard let streamId = self.streamId else {return}
+            guard let bidId = self.bidId else {return}
+            
+            self.showConfirmation(message: "Are you sure to continue?".localized) {
+                SocketConnection.sharedInstance.sendBid(
+                    streamId: streamId,
+                    bidId: bidId,
+                    viewerId: UserDefaults.user?.id ?? "",
+                    price: "\(price)") {
+                        print("🚦Socket:: suction Sent")
+                        self.increaseAmountTextField.text = "1000"
+                    }
+            }
+        }
+    }
+    @IBAction private func closeButtonPressed() {
+        self.bidView.isHidden = true
+    }
+    
+    
+    @IBAction private func increaseButtonPressed() {
+        
+        let currentPrice = self.increaseAmountTextField.text?.toDouble() ?? 0
+        let newPrice = currentPrice + 500
+        
+//        guard self.maxManualIncrease >= newPrice else {return}
+        
+        self.increaseAmountTextField.text = (newPrice).toString()
+    }
+    @IBAction private func decreaseButtonPressed() {
+        
+        let currentPrice = self.increaseAmountTextField.text?.toDouble() ?? 0
+        let newPrice = currentPrice - 500
+        
+        guard newPrice >= 500 else {
+            self.increaseAmountTextField.text = (500.0).toString()
+            return
+        }
+        
+        self.increaseAmountTextField.text = (newPrice).toString()
+        
+    }
+    
     
 }
 

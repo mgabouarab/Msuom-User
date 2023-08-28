@@ -30,6 +30,7 @@ class AuctionsVC: BaseVC {
     private var cityFilterArray: [DropDownItem] = []
     private var selectedType: AuctionTimeType = .current
     private var selectedCityId: String?
+    private var isGoingToMap: Bool = false
     
     //MARK: - Creation -
     static func create() -> AuctionsVC {
@@ -44,10 +45,14 @@ class AuctionsVC: BaseVC {
         self.setupTableView()
         self.configureInitialData()
         self.cityTextFieldView.delegate = self
-        self.refresh()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if isGoingToMap {
+            isGoingToMap = false
+        } else {
+            self.refresh()
+        }
     }
     
     //MARK: - Design Methods -
@@ -79,6 +84,7 @@ class AuctionsVC: BaseVC {
     
     //MARK: - Actions -
     @objc private func mapButtonPressed() {
+        self.isGoingToMap = true
         let vc = AuctionCitiesVC.create(cities: self.cityArray, delegate: self)
         self.push(vc)
     }
@@ -216,7 +222,10 @@ extension AuctionsVC: UITableViewDataSource {
             cell.set(name: item.bidName, items: item.bids)
             cell.showAllAction = { [weak self] in
                 guard let self = self else {return}
-                let vc = AllAuctionsProvidersVC.create(bidIds: item.bidIds?.toString() ?? "")
+                let vc = AllAuctionsProvidersVC.create(
+                    bidIds: item.bidIds?.toString() ?? "",
+                    headerTitle: selectedType == .current ? "currentAuctions".localized : "nextAuctions".localized
+                )
                 self.push(vc)
             }
             return cell

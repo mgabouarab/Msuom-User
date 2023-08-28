@@ -21,6 +21,7 @@ class SellerInfoView: UIView {
     private var pdfLink: String?
     private var bidId: String?
     private var providerId: String?
+    private var isSubscribe: Bool = false
     
     //MARK: - Initializer -
     override init(frame: CGRect) {
@@ -64,7 +65,7 @@ class SellerInfoView: UIView {
         self.refundView.addGestureRecognizer(refundTap)
         
     }
-    func set(name: String?, address: String?, image: String?, pdfLink: String?, bidId: String?, providerId: String?, isRefund: Bool) {
+    func set(name: String?, address: String?, image: String?, pdfLink: String?, bidId: String?, providerId: String?, isRefund: Bool, isSubscribe: Bool) {
         self.imageView.setWith(string: image)
         self.nameLabel.text = name
         self.addressLabel.text = address
@@ -72,6 +73,7 @@ class SellerInfoView: UIView {
         self.bidId = bidId
         self.providerId = providerId
         self.refundView.isVisible = isRefund
+        self.isSubscribe = isSubscribe
     }
     
     //MARK: - Encapsulation -
@@ -88,6 +90,11 @@ class SellerInfoView: UIView {
         AppHelper.openUrl(self.pdfLink)
     }
     @objc private func requestReport() {
+        
+        guard self.isSubscribe else {
+            AppAlert.showErrorAlert(error: "Please Subscribe first".localized)
+            return
+        }
         
         guard UserDefaults.isLogin else {
             (self.parentContainerViewController as? BaseVC)?.showLogoutAlert { [weak self] in

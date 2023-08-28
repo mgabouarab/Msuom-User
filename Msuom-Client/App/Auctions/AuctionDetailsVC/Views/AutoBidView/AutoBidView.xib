@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,32 +33,8 @@
                                 <constraint firstAttribute="height" constant="8" id="b7r-f2-R9O"/>
                             </constraints>
                         </imageView>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5eV-XU-r8z">
-                            <rect key="frame" x="12" y="20" width="369" height="35"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automated auction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZK-Lv-7vr">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" name="mainDarkFontColor"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Automated auction"/>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
-                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="04H-bh-opb">
-                                    <rect key="frame" x="320" y="0.0" width="51" height="35"/>
-                                    <color key="onTintColor" name="secondaryColor"/>
-                                    <connections>
-                                        <action selector="switchToggle:" destination="-1" eventType="valueChanged" id="o4O-hJ-acV"/>
-                                    </connections>
-                                </switch>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="IrW-Hn-MJu"/>
-                            </constraints>
-                        </stackView>
                         <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="go1-iS-DAJ">
-                            <rect key="frame" x="12" y="61" width="369" height="44"/>
+                            <rect key="frame" x="12" y="14" width="369" height="44"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The highest price of the automated auction" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6Z-wn-nwb">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -88,15 +64,8 @@
                                 <constraint firstAttribute="height" constant="44" id="Npb-gR-tBc"/>
                             </constraints>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-n2-EOA">
-                            <rect key="frame" x="0.0" y="67" width="393" height="1"/>
-                            <color key="backgroundColor" name="separatorColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="xAY-cX-9Fc"/>
-                            </constraints>
-                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6bP-bx-T6o">
-                            <rect key="frame" x="16" y="80" width="361" height="163"/>
+                            <rect key="frame" x="16" y="20" width="361" height="163"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Jge-PS-5Oe">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="97"/>
@@ -182,6 +151,37 @@
                                     </connections>
                                 </button>
                             </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-n2-EOA">
+                            <rect key="frame" x="0.0" y="195" width="393" height="1"/>
+                            <color key="backgroundColor" name="separatorColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="xAY-cX-9Fc"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5eV-XU-r8z">
+                            <rect key="frame" x="12" y="208" width="369" height="35"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automated auction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZK-Lv-7vr">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" name="mainDarkFontColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Automated auction"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="04H-bh-opb">
+                                    <rect key="frame" x="320" y="0.0" width="51" height="35"/>
+                                    <color key="onTintColor" name="secondaryColor"/>
+                                    <connections>
+                                        <action selector="switchToggle:" destination="-1" eventType="valueChanged" id="o4O-hJ-acV"/>
+                                    </connections>
+                                </switch>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="IrW-Hn-MJu"/>
+                            </constraints>
                         </stackView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPa-31-FcN">
                             <rect key="frame" x="0.0" y="255" width="393" height="8"/>
