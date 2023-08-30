@@ -241,7 +241,8 @@ class AuctionDetailsVC: BaseVC {
                         self.timer = nil
                         return
                     }
-                    SocketConnection.sharedInstance.finishAuction(streamId: self.id, bidId: currentBidId, type: self.type) {
+                    SocketConnection.sharedInstance.finishAuction(streamId: self.id, bidId: currentBidId, type: "closeBid",providerId: self.details?.provider?.id ?? "",
+                                                                  nextBidLength: "\(self.details?.nextBids?.count ?? 0)") {
                         print("🚦Socket:: finishedAuction")
                         self.timer?.invalidate()
                         self.timer = nil
@@ -351,8 +352,20 @@ extension AuctionDetailsVC {
             guard let self = self else {return}
             if !isSell {
                 self.subscribeActionButton.isHidden = true
+                self.getDetails(id: currentBidId)
+            } else {
+                guard !isFinished else {
+                    self.timer?.invalidate()
+                    self.timer = nil
+                    return
+                }
+                SocketConnection.sharedInstance.finishAuction(streamId: self.id, bidId: currentBidId, type: "sellCar", providerId: self.details?.provider?.id ?? "",
+                                                              nextBidLength: "\(self.details?.nextBids?.count ?? 0)") {
+                    print("🚦Socket:: sellCar")
+                    self.timer?.invalidate()
+                    self.timer = nil
+                }
             }
-            self.getDetails(id: currentBidId)
         }
     }
 }
@@ -421,13 +434,31 @@ extension AuctionDetailsVC {
         }
         SocketConnection.sharedInstance.socket.on(SocketConnection.ChannelTypes.onBidFinished) { [weak self] (value, ack) in
             guard let self = self else {return}
-            if let nextBidId = self.nextBidId {
-                self.showSuccessAlert(message: "Auction Finished".localized)
-                self.getDetails(id: nextBidId)
-            } else {
-                self.showSuccessAlert(message: "Auction Finished".localized)
-                self.pop()
+            
+            
+            guard let dict = value[0] as? [String: Any] else{
+                print("🚦Socket:: can not decode the new Bid as [String:Any]")
+                return
             }
+            print("onBidFinished🚦::\n\(dict)\nonBidFinished::🚦")
+            
+            
+            DispatchQueue.main.async { [weak self] in
+                
+                guard let self = self else {return}
+                
+                let key = dict["finish"] as? String
+                
+                if key == "refresh" {
+                    self.showSuccessAlert(message: "Auction Finished".localized)
+                    self.getDetails(id: self.id)
+                } else {
+                    self.showSuccessAlert(message: "Auction Finished".localized)
+                    self.pop()
+                }
+                
+            }
+            
         }
         SocketConnection.sharedInstance.socket.on(clientEvent: .connect) { [weak self] (data, ack) in
             guard let self = self else {return}

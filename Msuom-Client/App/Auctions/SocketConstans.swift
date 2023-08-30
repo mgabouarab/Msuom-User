@@ -32,6 +32,7 @@ open class SocketConnection {
         static let lang = "lang"
         static let autoBid = "autoBid"
         static let providerId = "providerId"
+        static let nextBidLength = "nextBidLength"
     }
     enum ChannelTypes {
         static let newBid = "newBid"
@@ -174,6 +175,8 @@ open class SocketConnection {
         streamId: String,
         bidId: String,
         type: String,
+        providerId: String,
+        nextBidLength: String,
         completion: (() -> ())?
     ) {
         var data = [String: Any]()
@@ -181,6 +184,8 @@ open class SocketConnection {
         data[DataSocketKeys.bidId] = bidId
         data[DataSocketKeys.lang] = Language.apiLanguage()
         data[DataSocketKeys.type] = type
+        data[DataSocketKeys.providerId] = providerId
+        data[DataSocketKeys.nextBidLength] = nextBidLength
         emit(for: EmitTypes.finishedAuction, data: data, completion: completion)
     }
     
