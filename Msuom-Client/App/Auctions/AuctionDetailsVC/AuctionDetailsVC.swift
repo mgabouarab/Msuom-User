@@ -76,6 +76,7 @@ class AuctionDetailsVC: BaseVC {
         super.viewDidLoad()
         self.configureInitialDesign()
         self.getDetails(id: self.id)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.exit), name: .didEnterBackground, object: nil)
     }
     
     //MARK: - Design Methods -
@@ -89,6 +90,9 @@ class AuctionDetailsVC: BaseVC {
         }
         self.actionContainerView.isHidden = true
         self.scrollView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        self.autoBidView.onAutoBidChange = { [weak self] isAutoEnabled in
+            self?.liveView.isAutoBidOn = isAutoEnabled
+        }
     }
     private func updateViewWith(details data: AuctionDetails) {
         self.id = data.stream?.id
@@ -120,7 +124,7 @@ class AuctionDetailsVC: BaseVC {
             self.liveView.removeFromParent()
             self.liveView = LiveVC.create(delegate: self)
             self.addLiveView()
-            
+            self.liveView.isAutoBidOn = data.currentBid?.hasAutoBid ?? false
             //            self.liveView.resetView()
             if let kApiKey = data.stream?.credentials?.apiKey, let kSessionId = data.stream?.credentials?.sessionId, let kToken = data.stream?.credentials?.token, isRunning {
                 self.liveView.set(kApiKey: kApiKey, kSessionId: kSessionId, kToken: kToken)
@@ -229,6 +233,7 @@ class AuctionDetailsVC: BaseVC {
     private func startTimer() {
         self.timer?.invalidate()
         self.timer = nil
+        var didSendFinish = false
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] timer in
             guard let self = self else {return}
             if isRunning {
@@ -236,16 +241,16 @@ class AuctionDetailsVC: BaseVC {
                 if let _ = fullDate.toTimeRemain() {
                     //                    print("Time remain to end is\n \(time)\n")
                 } else {
-                    guard let currentBidId, !isFinished else {
+                    guard let currentBidId, !isFinished, !didSendFinish else {
                         self.timer?.invalidate()
                         self.timer = nil
                         return
                     }
-                    SocketConnection.sharedInstance.finishAuction(streamId: self.id, bidId: currentBidId, type: "closeBid",providerId: self.details?.provider?.id ?? "",
-                                                                  nextBidLength: "\(self.details?.nextBids?.count ?? 0)") {
+                    SocketConnection.sharedInstance.finishAuction(streamId: self.id, bidId: currentBidId, type: "closeBid",providerId: self.details?.provider?.id ?? "", nextBidLength: "\(self.details?.nextBids?.count ?? 0)") {
                         print("🚦Socket:: finishedAuction")
                         self.timer?.invalidate()
                         self.timer = nil
+                        didSendFinish = true
                     }
                 }
             } else {
@@ -324,11 +329,16 @@ class AuctionDetailsVC: BaseVC {
         }
         self.makeAction(isSell: true)
     }
+    @objc private func exit() {
+        self.liveView.dismiss(animated: false)
+        self.pop()
+    }
     
     
     //MARK: - Deinit -
     deinit {
         print("ChatVC is AuctionDetailsVC, No memory leak found")
+        NotificationCenter.default.removeObserver(self, name: .didEnterBackground, object: nil)
         self.exitAuction()
     }
     
@@ -451,7 +461,10 @@ extension AuctionDetailsVC {
                 
                 if key == "refresh" {
                     self.showSuccessAlert(message: "Auction Finished".localized)
-                    self.getDetails(id: self.id)
+                    AuctionRouter.bidDetailsFromHome(id: id).send { [weak self] (response: APIGenericResponse<AuctionDetails>) in
+                        guard let self = self else {return}
+                        self.details = response.data
+                    }
                 } else {
                     self.showSuccessAlert(message: "Auction Finished".localized)
                     self.pop()

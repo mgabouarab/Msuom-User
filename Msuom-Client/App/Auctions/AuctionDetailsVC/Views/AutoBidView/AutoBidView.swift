@@ -23,6 +23,7 @@ class AutoBidView: UIView {
     private var isAutoEnabled: Bool = false {
         didSet {
             self.manualBidView.isHidden = isAutoEnabled
+            self.onAutoBidChange?(isAutoEnabled)
         }
     }
     var currentHighBid: Double = 0
@@ -31,7 +32,7 @@ class AutoBidView: UIView {
     private var maxManualIncrease: Double = 500
     private var streamId: String?
     private var bidId: String?
-    
+    var onAutoBidChange: ((Bool)->())?
     
     //MARK: - Initializer -
     override init(frame: CGRect) {

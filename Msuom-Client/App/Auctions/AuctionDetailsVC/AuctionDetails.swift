@@ -79,6 +79,7 @@ struct BidDetails: Codable {
     let year : String?
     let maxPrice : Numerical?
     let descriptionBid: String?
+    let hasAutoBid: Bool?
 }
 
 extension BidDetails {

@@ -35,6 +35,7 @@ class LiveVC: BaseVC {
     @IBOutlet weak private var bidView: UIView!
     @IBOutlet weak private var bidContainerView: UIView!
     @IBOutlet weak private var increaseAmountTextField: UITextField!
+    @IBOutlet weak private var biddingButton: UIButton!
     
     //MARK: - Properties -
     private var kApiKey: String = ""
@@ -49,6 +50,11 @@ class LiveVC: BaseVC {
     private var bidId: String?
     
     weak private var delegate: LiveDelegate?
+    var isAutoBidOn: Bool = false {
+        didSet {
+            self.biddingButton.isHidden = isAutoBidOn
+        }
+    }
     private var isFullScreen: Bool = false {
         didSet {
             self.commentsContainerView.isHidden = !isFullScreen

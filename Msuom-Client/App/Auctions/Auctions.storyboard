@@ -1490,6 +1490,7 @@
                         <outlet property="actionButtonsView" destination="DWI-xD-dq9" id="dF6-hl-zG3"/>
                         <outlet property="bidContainerView" destination="ELx-u7-6qt" id="Uwc-re-mSE"/>
                         <outlet property="bidView" destination="PcB-EP-Knv" id="HnO-NG-KTZ"/>
+                        <outlet property="biddingButton" destination="eMZ-Hc-8jC" id="emb-X2-oy7"/>
                         <outlet property="collectionView" destination="uN6-FQ-dfN" id="Gbi-0K-QnA"/>
                         <outlet property="commentsContainerView" destination="PYy-RQ-asy" id="uI6-JM-nzg"/>
                         <outlet property="fullScreenButton" destination="ZI0-xM-fMI" id="uCl-GF-DgZ"/>

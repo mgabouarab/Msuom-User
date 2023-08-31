@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func sceneDidBecomeActive(_ scene: UIScene) {
         Theme.current.style = .light
+        NotificationCenter.default.post(name: .didEnterBackground, object: nil)
     }
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {

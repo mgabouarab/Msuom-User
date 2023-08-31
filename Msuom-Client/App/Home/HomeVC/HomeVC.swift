@@ -98,6 +98,7 @@ extension HomeVC: UITableViewDataSource {
             cell.didEndWaitingTime = { [weak self] index in
                 guard let self = self else {return}
                 if let streamIndex = self.items.firstIndex(where: {$0.streams.isEmpty == false}) {
+                    guard self.items[indexPath.row].bidsComingSoon.count > index else {return}
                     let auction = self.items[indexPath.row].bidsComingSoon[index]
                     self.items[streamIndex].streams.append(auction)
                     self.items[indexPath.row].bidsComingSoon.remove(at: index)
