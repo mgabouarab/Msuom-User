@@ -54,7 +54,7 @@ class ComingSoonAuctionCell: UITableViewCell {
         self.timer = nil
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateDate), userInfo: nil, repeats: true)
     }
-    func configureWith(details data: BidDetails.HomeSoonAuction, index: Int? = 0) {
+    func configureWith(details data: BidDetails.HomeSoonAuction, index: Int? = nil) {
         cellImageView.setWith(string: data.image)
         self.liveView.isHidden = !data.isLive
         isStart = data.isStart
