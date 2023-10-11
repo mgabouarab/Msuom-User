@@ -41,7 +41,15 @@ class LiveVC: BaseVC {
     private var kApiKey: String = ""
     private var kSessionId: String = ""
     private var kToken: String = ""
-    var subscribers: [LiveStreamModel] = []
+    var subscribers: [LiveStreamModel] = [] {
+        didSet {
+            self.playView.isHidden = !subscribers.isEmpty
+            self.actionButtonsView.isHidden = subscribers.isEmpty
+            if subscribers.isEmpty {
+                self.exitFullScreen()
+            }
+        }
+    }
     
     private var session: OTSession?
     var error: OTError?
@@ -175,6 +183,19 @@ class LiveVC: BaseVC {
             self.collectionView.isHidden = subscribers.count <= 1
         }
     }
+    
+    func exitFullScreen() {
+        guard isFullScreen else {return}
+        self.isFullScreen.toggle()
+        self.fullScreenButton.isSelected = self.isFullScreen
+        self.dismiss(animated: false) { [weak self] in
+            self?.delegate?.addLiveView()
+        }
+        self.collectionView.isHidden = subscribers.count <= 1
+    }
+    
+    
+    
     @IBAction private func sendButtonPressed() {
         guard let text = self.textView.text, !text.trimWhiteSpace().isEmpty else {return}
         guard let streamId = self.streamId, let bidId = self.bidId else {return}

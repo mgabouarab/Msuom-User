@@ -352,6 +352,14 @@ extension AuctionDetailsVC {
         request.send { [weak self] (response: APIGenericResponse<AuctionDetails>) in
             guard let self = self else {return}
             self.details = response.data
+            SocketConnection.sharedInstance.enterAuction(
+                streamId: self.id,
+                bidId: self.currentBidId ?? "",
+                viewerId: UserDefaults.user?.id ?? "",
+                type: self.type) { [weak self] in
+                    guard let _ = self else {return}
+                    print("🚦Socket:: enterAuction")
+                }
         }
     }
     private func makeAction(isSell: Bool) {
@@ -460,6 +468,9 @@ extension AuctionDetailsVC {
                 let key = dict["finish"] as? String
                 
                 if key == "refresh" {
+                    self.addLiveView()
+                    self.liveView.exitFullScreen()
+                    
                     self.showSuccessAlert(message: "Auction Finished".localized)
                     AuctionRouter.bidDetailsFromHome(id: id).send { [weak self] (response: APIGenericResponse<AuctionDetails>) in
                         guard let self = self else {return}
@@ -513,6 +524,9 @@ extension AuctionDetailsVC {
             let name = newBidding?["name"] as? String
             let price = newBidding?["price"] as? Double
             
+            let currentBidId = newBidding?["currentBidId"] as? String
+            
+            guard self.currentBidId == currentBidId else {return}
             
             if let lastBidPrice = lastBidPrice, let userId = id {
                 self.autoBidView.currentHighBid = lastBidPrice
