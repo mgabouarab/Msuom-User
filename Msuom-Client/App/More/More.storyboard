@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -280,6 +280,7 @@
                                                     <constraint firstItem="D42-Xp-fTL" firstAttribute="top" secondItem="hDU-aq-0wx" secondAttribute="top" id="7QI-eb-U1M"/>
                                                     <constraint firstItem="PrY-Tx-8zb" firstAttribute="leading" secondItem="hDU-aq-0wx" secondAttribute="leading" id="Nfp-Jw-4aL"/>
                                                     <constraint firstItem="D42-Xp-fTL" firstAttribute="leading" secondItem="hDU-aq-0wx" secondAttribute="leading" id="RhQ-uV-ps8"/>
+                                                    <constraint firstAttribute="width" secondItem="hDU-aq-0wx" secondAttribute="height" id="UKy-OY-QoB"/>
                                                     <constraint firstItem="PrY-Tx-8zb" firstAttribute="top" secondItem="hDU-aq-0wx" secondAttribute="top" id="tft-jy-XFT"/>
                                                     <constraint firstAttribute="trailing" secondItem="D42-Xp-fTL" secondAttribute="trailing" id="wgo-ja-IAc"/>
                                                     <constraint firstAttribute="trailing" secondItem="PrY-Tx-8zb" secondAttribute="trailing" id="xZB-Wx-eVS"/>
@@ -357,9 +358,6 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="hDU-aq-0wx" firstAttribute="width" secondItem="hDU-aq-0wx" secondAttribute="height" id="UKy-OY-QoB"/>
-                                        </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c9d-6M-eXc">
                                         <rect key="frame" x="75" y="647" width="240" height="50"/>
@@ -2306,7 +2304,7 @@
         <image name="callIcon" width="8.6666669845581055" height="8.6666669845581055"/>
         <image name="edit" width="25.333333969116211" height="25.333333969116211"/>
         <image name="eye" catalog="system" width="128" height="79"/>
-        <image name="eye.slash.fill" catalog="system" width="128" height="85"/>
+        <image name="eye.slash.fill" catalog="system" width="128" height="96"/>
         <image name="faceIcon" width="5.3333334922790527" height="10"/>
         <image name="language" width="375.66665649414062" height="268"/>
         <image name="saudi" width="33" height="21.666666030883789"/>

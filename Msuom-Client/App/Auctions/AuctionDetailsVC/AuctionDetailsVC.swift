@@ -472,6 +472,7 @@ extension AuctionDetailsVC {
                     self.liveView.exitFullScreen()
                     
                     self.showSuccessAlert(message: "Auction Finished".localized)
+                    self.showIndicator()
                     AuctionRouter.bidDetailsFromHome(id: id).send { [weak self] (response: APIGenericResponse<AuctionDetails>) in
                         guard let self = self else {return}
                         self.details = response.data

@@ -1,27 +1,27 @@
 PODS:
-  - Alamofire (5.6.4)
-  - Firebase/CoreOnly (10.3.0):
-    - FirebaseCore (= 10.3.0)
-  - Firebase/DynamicLinks (10.3.0):
+  - Alamofire (5.8.1)
+  - Firebase/CoreOnly (10.17.0):
+    - FirebaseCore (= 10.17.0)
+  - Firebase/DynamicLinks (10.17.0):
     - Firebase/CoreOnly
-    - FirebaseDynamicLinks (~> 10.3.0)
-  - Firebase/Messaging (10.3.0):
+    - FirebaseDynamicLinks (~> 10.17.0)
+  - Firebase/Messaging (10.17.0):
     - Firebase/CoreOnly
-    - FirebaseMessaging (~> 10.3.0)
-  - FirebaseCore (10.3.0):
+    - FirebaseMessaging (~> 10.17.0)
+  - FirebaseCore (10.17.0):
     - FirebaseCoreInternal (~> 10.0)
     - GoogleUtilities/Environment (~> 7.8)
     - GoogleUtilities/Logger (~> 7.8)
-  - FirebaseCoreInternal (10.3.0):
+  - FirebaseCoreInternal (10.17.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
-  - FirebaseDynamicLinks (10.3.0):
+  - FirebaseDynamicLinks (10.17.0):
     - FirebaseCore (~> 10.0)
-  - FirebaseInstallations (10.3.0):
+  - FirebaseInstallations (10.17.0):
     - FirebaseCore (~> 10.0)
     - GoogleUtilities/Environment (~> 7.8)
     - GoogleUtilities/UserDefaults (~> 7.8)
     - PromisesObjC (~> 2.1)
-  - FirebaseMessaging (10.3.0):
+  - FirebaseMessaging (10.17.0):
     - FirebaseCore (~> 10.0)
     - FirebaseInstallations (~> 10.0)
     - GoogleDataTransport (~> 9.2)
@@ -30,42 +30,42 @@ PODS:
     - GoogleUtilities/Reachability (~> 7.8)
     - GoogleUtilities/UserDefaults (~> 7.8)
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleDataTransport (9.2.0):
+  - GoogleDataTransport (9.2.5):
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/AppDelegateSwizzler (7.10.0):
+  - GoogleUtilities/AppDelegateSwizzler (7.12.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.10.0):
+  - GoogleUtilities/Environment (7.12.0):
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.10.0):
+  - GoogleUtilities/Logger (7.12.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/Network (7.10.0):
+  - GoogleUtilities/Network (7.12.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.10.0)"
-  - GoogleUtilities/Reachability (7.10.0):
+  - "GoogleUtilities/NSData+zlib (7.12.0)"
+  - GoogleUtilities/Reachability (7.12.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (7.10.0):
+  - GoogleUtilities/UserDefaults (7.12.0):
     - GoogleUtilities/Logger
-  - IQKeyboardManager (6.5.10)
-  - IQKeyboardManagerSwift (6.5.10)
-  - Kingfisher (7.4.1)
-  - lottie-ios (4.0.1)
-  - nanopb (2.30909.0):
-    - nanopb/decode (= 2.30909.0)
-    - nanopb/encode (= 2.30909.0)
-  - nanopb/decode (2.30909.0)
-  - nanopb/encode (2.30909.0)
+  - IQKeyboardManager (6.5.16)
+  - IQKeyboardManagerSwift (6.5.16)
+  - Kingfisher (7.10.0)
+  - lottie-ios (4.3.3)
+  - nanopb (2.30909.1):
+    - nanopb/decode (= 2.30909.1)
+    - nanopb/encode (= 2.30909.1)
+  - nanopb/decode (2.30909.1)
+  - nanopb/encode (2.30909.1)
   - OpenTok (2.25.0):
     - VonageWebRTC (= 99.2.39)
-  - PromisesObjC (2.1.1)
-  - Socket.IO-Client-Swift (16.0.1):
-    - Starscream (~> 4.0)
-  - Starscream (4.0.4)
+  - PromisesObjC (2.3.1)
+  - Socket.IO-Client-Swift (16.1.0):
+    - Starscream (~> 4.0.6)
+  - Starscream (4.0.6)
   - VonageWebRTC (99.2.39)
 
 DEPENDENCIES:
@@ -77,10 +77,10 @@ DEPENDENCIES:
   - Kingfisher
   - lottie-ios
   - OpenTok
-  - Socket.IO-Client-Swift (~> 16.0.1)
+  - Socket.IO-Client-Swift
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Firebase
     - FirebaseCore
@@ -102,26 +102,26 @@ SPEC REPOS:
     - VonageWebRTC
 
 SPEC CHECKSUMS:
-  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
-  Firebase: f92fc551ead69c94168d36c2b26188263860acd9
-  FirebaseCore: 988754646ab3bd4bdcb740f1bfe26b9f6c0d5f2a
-  FirebaseCoreInternal: 29b76f784d607df8b2a1259d73c3f04f1210137b
-  FirebaseDynamicLinks: 51c81d07bd63155bb56d76b0abdda79c8a3d8d02
-  FirebaseInstallations: e2f26126089dcf41e215f7b8925af8d953c7d602
-  FirebaseMessaging: e345b219fd15d325f0cf2fef28cb8ce00d851b3f
-  GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
-  GoogleUtilities: bad72cb363809015b1f7f19beb1f1cd23c589f95
-  IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
-  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
-  Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
-  lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
-  nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  Firebase: f4ac0b02927af9253ae094d23deecf0890da7374
+  FirebaseCore: 534544dd98cabcf4bf8598d88ec683b02319a528
+  FirebaseCoreInternal: 2cf9202e226e3f78d2bf6d56c472686b935bfb7f
+  FirebaseDynamicLinks: 66878206d55d4aba6e63744f57151a80d76e472e
+  FirebaseInstallations: 9387bf15abfc69a714f54e54f74a251264fdb79b
+  FirebaseMessaging: 1367b28c0c83a63072af4a711328fcc2e6899902
+  GoogleDataTransport: 54dee9d48d14580407f8f5fbf2f496e92437a2f2
+  GoogleUtilities: 0759d1a57ebb953965c2dfe0ba4c82e95ccc2e34
+  IQKeyboardManager: 024b54d7dcb765c5bc99882cb4d5ea24a8cb7c3c
+  IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
+  Kingfisher: a18f05d3b6d37d8650ee4a3e61d57a28fc6207f6
+  lottie-ios: 25e7b2675dad5c3ddad369ac9baab03560c5bfdd
+  nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   OpenTok: f837a493e3e6993ae604ede80d2548dde4f8cc96
-  PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
-  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
-  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
+  Socket.IO-Client-Swift: ee4b8f80a3db18dd7f32b266ddf273310609443c
+  Starscream: fb2c4510bebf908c62bd383bcf05e673720e91fd
   VonageWebRTC: 4b57187170ef4ea435006e932600646a0521d6b0
 
-PODFILE CHECKSUM: 728375c16cdb70d110193cb388680707cafd8c9c
+PODFILE CHECKSUM: 5558251deb841acba3def6503ce470722f33f481
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.13.0
