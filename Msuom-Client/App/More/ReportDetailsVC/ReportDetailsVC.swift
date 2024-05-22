@@ -28,6 +28,7 @@ class ReportDetailsVC: BaseVC {
     //MARK: - Properties -
     private var id: String!
     private var bidId: String?
+    private var adNumber: Int?
     
     //MARK: - Creation -
     static func create(id: String) -> ReportDetailsVC {
@@ -56,7 +57,7 @@ class ReportDetailsVC: BaseVC {
     
     //MARK: - Actions -
     @IBAction private func toMangerButtonPressed() {
-        let vc = ContactUsVC.create(bidId: self.bidId, disputeId: self.id)
+        let vc = ContactUsVC.create(bidId: self.bidId, disputeId: self.id, adNumber: adNumber)
         self.push(vc)
     }
 }
@@ -73,6 +74,7 @@ extension ReportDetailsVC {
             self.nameLabel.text = response.data?.carName
             self.descriptionLabel.text = response.data?.descriptionBid
             self.adNumberLabel.text = "Number:".localized + " " + "\(response.data?.adNumber ?? 0)"
+            self.adNumber = response.data?.adNumber
             self.statusLabel.text = response.data?.status
             self.reasonLabel.text = response.data?.question
             self.descriptionProblemLabel.text = response.data?.description

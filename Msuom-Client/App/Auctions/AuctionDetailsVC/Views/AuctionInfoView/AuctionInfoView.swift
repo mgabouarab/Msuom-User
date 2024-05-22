@@ -90,6 +90,9 @@ class AuctionInfoView: UIView {
     
     
     //MARK: - Action -
+    @IBAction private func detailsButtonPressed() {
+        self.detailsAction?()
+    }
     
     
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -496,10 +496,10 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yEz-wc-laG" customClass="IQPreviousNextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="793.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="847.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EvV-q7-jef">
-                                                <rect key="frame" x="16" y="30" width="358" height="733.66666666666663"/>
+                                                <rect key="frame" x="16" y="30" width="358" height="787.66666666666663"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Vyd-81-hTy">
                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="111.66666666666667"/>
@@ -537,8 +537,18 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2v-Bb-wvR">
+                                                        <rect key="frame" x="0.0" y="615.66666666666663" width="358" height="34"/>
+                                                        <color key="backgroundColor" name="mainWithAlph"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="bsp-xb-DXR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" name="mainColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGM-VN-XGR" customClass="AppButton" customModule="Msuom_Client" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="615.66666666666663" width="358" height="48"/>
+                                                        <rect key="frame" x="0.0" y="669.66666666666663" width="358" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="5Ba-yW-iZg"/>
                                                         </constraints>
@@ -554,7 +564,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="358" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="aT3-wD-zS3">
-                                                        <rect key="frame" x="0.0" y="683.66666666666663" width="358" height="50"/>
+                                                        <rect key="frame" x="0.0" y="737.66666666666663" width="358" height="50"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -594,6 +604,7 @@
                     <connections>
                         <outlet property="messageTextView" destination="1dS-nA-vyq" id="6FL-Dk-1YH"/>
                         <outlet property="nameTextFieldView" destination="uAX-lI-CRt" id="Fn9-6Q-oCq"/>
+                        <outlet property="numberLabel" destination="c2v-Bb-wvR" id="OQl-JC-EAt"/>
                         <outlet property="phoneTextFieldView" destination="edO-NG-qNR" id="b1E-yr-ibb"/>
                     </connections>
                 </viewController>
@@ -2319,6 +2330,9 @@
         </namedColor>
         <namedColor name="mainDarkFontColor">
             <color red="0.11400000005960464" green="0.11400000005960464" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainWithAlph">
+            <color red="0.18799999356269836" green="0.40000000596046448" blue="0.2199999988079071" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="secondaryColor">
             <color red="0.58399999141693115" green="0.75700002908706665" blue="0.12200000137090683" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

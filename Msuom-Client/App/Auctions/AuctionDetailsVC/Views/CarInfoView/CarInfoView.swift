@@ -31,6 +31,7 @@ class CarInfoView: UIView {
     @IBOutlet weak private var imagesButton: UIButton!
     @IBOutlet weak private var actionStack: UIStackView!
     @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var carEngineContainerView: UIView!
     
     //MARK: - Properties -
     private var items: [String] = []
@@ -106,6 +107,8 @@ class CarInfoView: UIView {
         
         self.actionStack.isHidden = details.type != "live"
         self.titleLabel.isHidden = details.type == "live"
+        
+        self.carEngineContainerView.isHidden = (details.engineSize == nil || details.engineSize?.isEmpty == true)
         
     }
     

@@ -100,6 +100,10 @@
 		2C37A63629002DE80054442E /* Localizable+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C37A63529002DE80054442E /* Localizable+Storyboard.swift */; };
 		2C37A638290030600054442E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C37A637290030600054442E /* UITextField.swift */; };
 		2C37A63A290030820054442E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C37A639290030820054442E /* UIView.swift */; };
+		2C3831122BF3602200F48AF1 /* SellIndicatorDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3831112BF3602200F48AF1 /* SellIndicatorDetailsViewController.xib */; };
+		2C3831132BF3602200F48AF1 /* SellIndicatorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3831102BF3602200F48AF1 /* SellIndicatorDetailsViewController.swift */; };
+		2C3831172BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3831162BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.xib */; };
+		2C3831182BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3831152BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.swift */; };
 		2C3C2798299281D200FECAB8 /* ShippingOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3C2796299281D200FECAB8 /* ShippingOrderCell.swift */; };
 		2C3C2799299281D200FECAB8 /* ShippingOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3C2797299281D200FECAB8 /* ShippingOrderCell.xib */; };
 		2C3C279D2992821100FECAB8 /* EvaluationOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3C279B2992821100FECAB8 /* EvaluationOrderCell.swift */; };
@@ -494,6 +498,10 @@
 		2C37A63529002DE80054442E /* Localizable+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localizable+Storyboard.swift"; sourceTree = "<group>"; };
 		2C37A637290030600054442E /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2C37A639290030820054442E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		2C3831102BF3602200F48AF1 /* SellIndicatorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellIndicatorDetailsViewController.swift; sourceTree = "<group>"; };
+		2C3831112BF3602200F48AF1 /* SellIndicatorDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellIndicatorDetailsViewController.xib; sourceTree = "<group>"; };
+		2C3831152BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellIndicatorDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		2C3831162BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellIndicatorDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		2C3C2796299281D200FECAB8 /* ShippingOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingOrderCell.swift; sourceTree = "<group>"; };
 		2C3C2797299281D200FECAB8 /* ShippingOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShippingOrderCell.xib; sourceTree = "<group>"; };
 		2C3C279B2992821100FECAB8 /* EvaluationOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationOrderCell.swift; sourceTree = "<group>"; };
@@ -1315,6 +1323,15 @@
 			path = DatePickerVC;
 			sourceTree = "<group>";
 		};
+		2C3831142BF3617800F48AF1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2C3831152BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.swift */,
+				2C3831162BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		2C3C2795299281A500FECAB8 /* ShippingOrderCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1417,6 +1434,7 @@
 		2C3D7A2F2A18F170004DD1FB /* AuctionDetailsVC */ = {
 			isa = PBXGroup;
 			children = (
+				2CA37A652BF224F1002E231A /* SellIndicatorDetailsViewController */,
 				2C3D7A302A18F170004DD1FB /* AuctionDetails.swift */,
 				2C3D7A312A18F170004DD1FB /* AuctionDetailsVC.swift */,
 				2C3D7A322A18F170004DD1FB /* Views */,
@@ -2240,6 +2258,16 @@
 			path = AppTextView;
 			sourceTree = "<group>";
 		};
+		2CA37A652BF224F1002E231A /* SellIndicatorDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2C3831142BF3617800F48AF1 /* Cell */,
+				2C3831102BF3602200F48AF1 /* SellIndicatorDetailsViewController.swift */,
+				2C3831112BF3602200F48AF1 /* SellIndicatorDetailsViewController.xib */,
+			);
+			path = SellIndicatorDetailsViewController;
+			sourceTree = "<group>";
+		};
 		2CA52200299311F800925E8A /* ShippingOrderVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2945,7 +2973,9 @@
 				2CBC94BA286D0C4400E42AB5 /* PhotosUI.strings in Resources */,
 				2CF41C9828FC217C00BF923D /* SliderView.xib in Resources */,
 				2C3C27AD299283D400FECAB8 /* SummaryReportOrderCell.xib in Resources */,
+				2C3831122BF3602200F48AF1 /* SellIndicatorDetailsViewController.xib in Resources */,
 				2C3C279E2992821100FECAB8 /* EvaluationOrderCell.xib in Resources */,
+				2C3831172BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.xib in Resources */,
 				2C54F1CA2923F5B8008F99CE /* AuctionCell.xib in Resources */,
 				2C3D7A912A18F170004DD1FB /* Auctions.storyboard in Resources */,
 				2C3D7A892A18F170004DD1FB /* LastBidsView.xib in Resources */,
@@ -3305,7 +3335,9 @@
 				2C178CAD27F7C22400D32327 /* UserDefaultsExtensions.swift in Sources */,
 				2CFB384329069997001619E1 /* PasswordTextFieldView + Localization.swift in Sources */,
 				2C3C27AC299283D400FECAB8 /* SummaryReportOrderCell.swift in Sources */,
+				2C3831182BF3618D00F48AF1 /* SellIndicatorDetailsTableViewCell.swift in Sources */,
 				2C54F1DE2924654E008F99CE /* NotificationsVC.swift in Sources */,
+				2C3831132BF3602200F48AF1 /* SellIndicatorDetailsViewController.swift in Sources */,
 				2CF41C8F28FC20AD00BF923D /* SegmentedCollection.swift in Sources */,
 				2C3D7A8B2A18F170004DD1FB /* AllLastBidsVC.swift in Sources */,
 				2C0D3DCA28007407002736E7 /* TopAlert.swift in Sources */,

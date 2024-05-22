@@ -15,17 +15,20 @@ class ContactUsVC: BaseVC {
     @IBOutlet weak var nameTextFieldView: NormalTextFieldView!
     @IBOutlet weak var phoneTextFieldView: PhoneTextFieldView!
     @IBOutlet weak var messageTextView: AppTextView!
+    @IBOutlet weak var numberLabel: UILabel!
     
     //MARK: - Properties -
     var bidId: String?
     var disputeId: String?
+    var adNumber: Int?
     
     //MARK: - Creation -
-    static func create(bidId: String? = nil, disputeId: String? = nil) -> ContactUsVC {
+    static func create(bidId: String? = nil, disputeId: String? = nil, adNumber: Int? = nil) -> ContactUsVC {
         let vc = AppStoryboards.more.instantiate(ContactUsVC.self)
         vc.hidesBottomBarWhenPushed = true
         vc.bidId = bidId
         vc.disputeId = disputeId
+        vc.adNumber = adNumber
         return vc
     }
     
@@ -42,6 +45,11 @@ class ContactUsVC: BaseVC {
         self.phoneTextFieldView.set(text: UserDefaults.user?.phoneNo)
 //        self.phoneTextFieldView.set(code: UserDefaults.user?.countryKey)
         self.nameTextFieldView.set(text: UserDefaults.user?.name)
+        if let adNumber {
+            self.numberLabel.text = "Advertise number".localized + " \(adNumber)"
+        } else {
+            self.numberLabel.isHidden = true
+        }
     }
     
     //MARK: - Logic Methods -

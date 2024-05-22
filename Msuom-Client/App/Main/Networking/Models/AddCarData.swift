@@ -19,6 +19,7 @@ struct AddCarData: Codable {
     var carStatus: [IdName]
     var sellTypes: [IdName]
     var cities: [IdName]
+    let rateInfo: [AuctionRateInfo]
 }
 
 struct CarBrandModel: Codable, DropDownItem {
@@ -31,4 +32,10 @@ struct IdName: Codable, DropDownItem {
     let id: String
     let name: String
     let image: String?
+}
+
+struct AuctionRateInfo: Codable {
+    let color: String
+    let title: String?
+    let description: String?
 }

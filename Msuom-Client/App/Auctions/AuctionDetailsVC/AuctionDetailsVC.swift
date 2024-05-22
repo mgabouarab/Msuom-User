@@ -157,13 +157,23 @@ class AuctionDetailsVC: BaseVC {
         )
         self.sellIndicator.isHidden = true
         self.sellIndicator.set(progress: data.currentBid?.soldProgress)
-        self.sellIndicator.setDetailsButton(isHidden: true)
+//        self.sellIndicator.setDetailsButton(isHidden: true)
+//        self.sellIndicator.detailsAction = { [weak self] in
+//            guard let data = UserDefaults.addCarData?.rateInfo else {return}
+//            let vc = SellIndicatorDetailsViewController(data: data)
+//            self?.present(vc, animated: true)
+//        }
         self.auctionInfoView.set(
             date: data.currentBid?.startDate,
             time: data.currentBid?.startTime,
             evaluationLetter: data.currentBid?.rating,
             isLive: data.currentBid?.type == "live"
         )
+        self.auctionInfoView.detailsAction = { [weak self] in
+            guard let data = UserDefaults.addCarData?.rateInfo else {return}
+            let vc = SellIndicatorDetailsViewController(data: data)
+            self?.present(vc, animated: true)
+        }
         if let currentBid = data.currentBid {
             self.carInfoView.set(info: currentBid)
         }

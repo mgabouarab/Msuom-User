@@ -70,6 +70,7 @@ class SellerInfoView: UIView {
         self.nameLabel.text = name
         self.addressLabel.text = address
         self.pdfLink = pdfLink
+        self.showPDFView.isHidden = (pdfLink == nil || pdfLink == "")
         self.bidId = bidId
         self.providerId = providerId
         self.refundView.isVisible = isRefund
